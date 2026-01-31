@@ -2,7 +2,8 @@
 
 Проект представляет собой систему семантического поиска по коду (RAG - Retrieval Augmented Generation), состоящую из нескольких модулей, обеспечивающих индексацию, генерацию эмбеддингов и предоставление интерфейсов для взаимодействия.
 
-![architecture](../pictures/architecture.png)
+![architecture](diagrams/architecture/component-diagram.png)
+[Исходник диаграммы (PlantUML)](diagrams/architecture/component-diagram.puml)
 
 ## Компоненты системы
 

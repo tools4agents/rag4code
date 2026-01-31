@@ -1,0 +1,53 @@
+@startuml
+!theme plain
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+' Возвращаемся к стандартным линиям, но с умной компоновкой
+' Отключаем ortho, так как он создает сложные маршруты
+' skinparam linetype ortho 
+
+' Располагаем компоненты линейно сверху вниз
+package "User Interfaces" as UI {
+    [Web Interface] as Web
+    [CLI Interface] as CLI
+    [IDE Extension] as IDE
+}
+
+component "MCP Tool для агента" as MCP
+
+node "Backend Sandbox" as Backend {
+    [uvx, npx, etc.] as Sandbox
+}
+
+database "Vector DB" as VDB {
+    [Qdrant / LanceDB] as DB
+}
+
+package "Embedding Model Host" as EmbedHost {
+    [Remote (OpenAI)] as RemoteEmbed
+    [Local (Ollama)] as LocalEmbed
+}
+
+' Прямые связи для чистоты
+Web -down-> Backend
+CLI -down-> Backend
+IDE -down-> Backend
+
+' MCP слева от Backend, связь горизонтальная
+MCP -right-> Backend : "запрос"
+Backend -left-> MCP : "ответ"
+
+' Данные и модели снизу
+Backend -down-> VDB : "поиск"
+Backend -down-> EmbedHost : "эмбеддинг"
+
+' Принудительное расположение слоев
+UI -[hidden]down- Backend
+Backend -[hidden]down- VDB
+VDB -[hidden]right- EmbedHost
+
+' Выравнивание MCP по горизонтали с Backend
+MCP -[hidden]right- Backend
+
+@enduml
