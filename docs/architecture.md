@@ -2,8 +2,49 @@
 
 Проект представляет собой систему семантического поиска по коду (RAG - Retrieval Augmented Generation), состоящую из нескольких модулей, обеспечивающих индексацию, генерацию эмбеддингов и предоставление интерфейсов для взаимодействия.
 
-![architecture](diagrams/architecture/component-diagram.png)
-[Исходник диаграммы (PlantUML)](diagrams/architecture/component-diagram.puml)
+```mermaid
+flowchart TD
+    %% Стилизация
+    classDef container fill:#fff,stroke:#333,stroke-width:2px;
+    classDef database fill:#f9f9f9,stroke:#333,stroke-width:2px,shape:cylinder;
+    classDef component fill:#e1f5fe,stroke:#333,stroke-width:1px;
+
+    %% Подграф Интерфейсов
+    subgraph UI [User Interfaces]
+        direction TB
+        Web[Web Interface]:::component
+        CLI[CLI Interface]:::component
+        IDE[IDE Extension]:::component
+    end
+
+    %% Основные компоненты
+    MCP["MCP Tool для агента"]:::component
+    Backend["Backend Sandbox\n(uvx, npx)"]:::container
+    
+    %% Хранилище и Модели
+    VDB[("Vector DB\nQdrant/LanceDB")]:::database
+    
+    subgraph EmbedHost [Embedding Model Host]
+        direction LR
+        Remote[Remote OpenAI]:::component
+        Local[Local Ollama]:::component
+    end
+
+    %% Связи
+    Web --> Backend
+    CLI --> Backend
+    IDE --> Backend
+
+    MCP <-->|запрос/ответ| Backend
+    
+    Backend -->|поиск| VDB
+    Backend -->|эмбеддинг| EmbedHost
+
+    %% Принудительное позиционирование через невидимые связи (хак для Mermaid)
+    UI ~~~ Backend
+    Backend ~~~ VDB
+```
+[Исходник диаграммы (Mermaid)](diagrams/architecture/component-diagram.mmd)
 
 ## Компоненты системы
 
