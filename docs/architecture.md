@@ -1,106 +1,96 @@
-# Архитектура проекта
+# Архитектура проекта rag4code
 
-Проект представляет собой систему семантического поиска по коду (RAG - Retrieval Augmented Generation), состоящую из нескольких модулей, обеспечивающих индексацию, генерацию эмбеддингов и предоставление интерфейсов для взаимодействия.
+Система спроектирована как модульная платформа семантического поиска по коду, где каждый компонент является заменяемым модулем ("кирпичиком"). Архитектура разделяет потребителей (акторов), интерфейсы доступа и внутреннюю бизнес-логику.
+
+## Схема компонентов (C4-style)
 
 ```mermaid
 flowchart TD
     %% Стилизация
-    classDef container fill:#fff,stroke:#333,stroke-width:2px;
-    classDef database fill:#f9f9f9,stroke:#333,stroke-width:2px,shape:cylinder;
-    classDef component fill:#e1f5fe,stroke:#333,stroke-width:1px;
+    classDef actor fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef core fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef brick fill:#fff,stroke:#333,stroke-width:1px;
+    classDef interface fill:#fff3e0,stroke:#ef6c00,stroke-width:1px;
+    classDef future fill:#f5f5f5,stroke:#9e9e9e,stroke-dasharray: 5 5;
 
-    %% Подграф Интерфейсов
-    subgraph UI [User Interfaces]
-        direction TB
-        Web[Web Interface]:::component
-        CLI[CLI Interface]:::component
-        IDE[IDE Extension]:::component
-    end
+    %% Акторы
+    User([Человек]):::actor
+    Agent([AI Агент]):::actor
 
-    %% Основные компоненты
-    MCP["MCP Tool для агента"]:::component
-    Backend["Backend Sandbox\n(uvx, npx)"]:::container
-    
-    %% Хранилище и Модели
-    VDB[("Vector DB\nQdrant/LanceDB")]:::database
-    
-    subgraph EmbedHost [Embedding Model Host]
+    subgraph UI [Интерфейсы доступа]
         direction LR
-        Remote[Remote OpenAI]:::component
-        Local[Local Ollama]:::component
+        Web[Web UI]:::interface
+        CLI[CLI]:::interface
+        MCP[MCP Server]:::interface
+        IDE[IDE Extension]:::future
     end
 
-    %% Связи
-    Web --> Backend
-    CLI --> Backend
-    IDE --> Backend
-
-    MCP <-->|запрос/ответ| Backend
+    subgraph Logic [Ядро системы]
+        Backend[["Backend Engine\n(Python + uv)"]]:::core
+    end
     
-    Backend -->|поиск| VDB
-    Backend -->|эмбеддинг| EmbedHost
+    subgraph Processing [Обработка данных]
+        Chunker["Chunking Module\n(Python Package)"]:::brick
+    end
 
-    %% Принудительное позиционирование через невидимые связи (хак для Mermaid)
-    UI ~~~ Backend
-    Backend ~~~ VDB
+    subgraph Storage [Векторные БД]
+        Qdrant[("Qdrant\n(Current)")]:::brick
+        LanceDB[("Future DBs")]:::future
+    end
+    
+    subgraph EmbedHost [Embedding Models]
+        Ollama["Ollama (Local)\n(Qwen3-Embedding)"]:::brick
+        Remote["Remote API"]:::future
+    end
+
+    %% Связи Акторы -> Интерфейсы
+    User -->|Управляет и ищет| Web
+    User -->|Выполняет команды| CLI
+    Agent -->|Использует инструменты| MCP
+
+    %% Связи Интерфейсы -> Core
+    Web -->|Запросы и мониторинг| Backend
+    CLI -->|Команды индексации/поиска| Backend
+    MCP -->|Вызов функций поиска| Backend
+    IDE -.->|Контекстный поиск| Backend
+
+    %% Внутренние связи Core -> Components
+    Backend <-->|Разбиение на чанки| Chunker
+    Backend -->|Поиск и хранение векторов| Storage
+    Backend -->|Генерация эмбеддингов| EmbedHost
 ```
-[Исходник диаграммы (Mermaid)](diagrams/architecture/component-diagram.mmd)
 
 ## Компоненты системы
 
-### 1. Backend Sandbox
+### 1. Backend Engine (Core Logic)
+Центральный оркестратор на **Python (uv)**, реализующий всю бизнес-логику.
+- **Роль**: Координация процессов индексации, поиска и формирования контекста.
+- **Интерфейс**: Предоставляет единый внутренний API для всех внешних интерфейсов (Web, CLI, MCP).
 
-Центральный компонент системы, выполняющий всю работу.
+### 2. Интерфейсы доступа
+- **Web UI**: Панель для пользователя. Позволяет вводить запросы и визуализировать внутренние процессы системы (observability).
+- **CLI**: Интерфейс командной строки для автоматизации и быстрой работы.
+- **MCP Server**: Тонкий адаптер, открывающий возможности Backend Engine для AI-агентов по протоколу Model Context Protocol.
+- **IDE Extension (Roadmap)**: Планируемый модуль для работы с RAG прямо из редактора кода.
 
-- **Технологии**: uvx, npx и другие инструменты выполнения в изолированной среде.
+### 3. Chunking Module
+Отдельный Python-пакет, отвечающий за преобразование файлов в чанки.
+- **Принцип**: "Files in -> Chunks out".
+- **Текущая реализация**: `Simple Split`. Модуль легко заменяем на AST-based или семантические парсеры.
 
-- **Ответственность**:
-  - Обработка запросов на поиск кода.
-  - Координация запросов между компонентами.
-  - Взаимодействие с провайдерами эмбеддингов и векторной базой данных.
+### 4. Vector DB (Storage Brick)
+Модуль хранения векторных представлений.
+- **Текущий кирпичик**: **Qdrant** (Docker).
+- **Будущее**: Архитектура позволяет подключать LanceDB или другие векторные хранилища как альтернативные модули.
 
-### 2. Vector DB (Векторная База Данных)
-
-Контейнер для хранения векторных представлений (эмбеддингов) кода.
-
-- **Технологии**: Qdrant, LanceDB (в Docker контейнере).
-- **Ответственность**: Хранение и быстрый поиск похожих фрагментов кода по векторному представлению.
-- **Взаимодействие**: Принимает запросы на "поиск похожих" от Backend Sandbox.
-
-### 3. Embedding Model Host (Провайдер Эмбеддингов)
-
-Подсистема генерации векторных представлений текста/кода. Может быть реализована в двух вариантах:
-
-- **Remote Embedding model host**: Удаленный API (OpenAI, Mediator).
-- **Embedding model local host**: Локальный хост (Docker, Ollama).
-- **Взаимодействие**: Backend Sandbox отправляет текст/код и получает эмбеддинги.
-
-### 4. MCP Tool для агента
-
-Инструмент, реализующий Model Context Protocol (MCP) для интеграции с AI-агентами.
-
-- **Доступность**: Локальный адрес.
-- **Взаимодействие**:
-  - Отправляет запрос "найди файлы с кодом" в Backend Sandbox.
-  - Получает "список файлов с кодом" для чтения моделью.
-
-### 5. Пользовательские интерфейсы
-
-Набор интерфейсов для взаимодействия конечного пользователя с системой:
-
-*   **Web интерфейс**:
-    *   Технологии: React.
-    *   Доступ: Локальный адрес (доступен всем).
-*   **CLI интерфейс**:
-    *   Доступ: Терминал.
-*   **IDE расширение**:
-    *   Технологии: React (WebView).
-    *   Доступ: Внутри IDE (ограничен одной средой разработки).
+### 5. Embedding Model Host
+Модуль генерации векторов (эмбеддингов).
+- **Текущий кирпичик**: **Ollama** (локально) с моделью **Qwen3-Embedding**.
+- **Будущее**: Поддержка удаленных API (OpenAI/Anthropic) через унифицированный интерфейс.
 
 ## Потоки данных (Data Flow)
 
-1.  **Поиск кода**:
-    *   Запрос поступает через один из интерфейсов или MCP Tool в **Backend Sandbox**.
-    *   **Backend Sandbox** при необходимости обращается к **Embedding Model Host** для получения вектора запроса.
-    *   С полученным вектором **Backend Sandbox** выполняет поиск в **Vector DB**.
-    *   Результаты (список файлов/фрагментов) возвращаются инициатору запроса (например, агенту через MCP).
+1. **Индексация**:
+   - `User/CLI` -> `Backend` -> `Chunker` (разбиение) -> `Embedder` (векторы) -> `Vector DB` (сохранение).
+2. **Поиск (Query)**:
+   - `User/Agent` -> `Interface` -> `Backend` -> `Embedder` (вектор запроса) -> `Vector DB` (поиск) -> `Backend` (формирование ответа).
