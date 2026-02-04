@@ -1,0 +1,12 @@
+name: rag4code-chunker
+version: 0.1.0
+description: Chunker module
+type: library
+sources:
+  prod:
+    type: local
+    path: ./packages/rag4code-chunker
+  dev:
+    type: local
+    path: ./packages/rag4code-chunker
+    editable: true

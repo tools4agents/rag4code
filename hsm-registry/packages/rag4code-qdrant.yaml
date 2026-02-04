@@ -1,0 +1,14 @@
+name: rag4code-qdrant
+version: 0.0.1
+description: Qdrant vector DB adapter
+type: library
+sources:
+  prod:
+    type: git
+    url: https://github.com/tools4agents/rag4code-qdrant.git
+  dev:
+    type: local
+    path: ./packages/rag4code-qdrant
+    editable: true
+implies:
+  container_group:vector-db-service: qdrant

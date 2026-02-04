@@ -1,0 +1,29 @@
+project:
+  name: rag4code
+  version: 0.1.0
+dependencies:
+  package_manager: uv
+  package_groups:
+    vector-db:
+      strategy: 1-of-N
+      selection: rag4code-qdrant
+      mode: dev
+    embedder:
+      strategy: 1-of-N
+      selection: rag4code-ollama
+      mode: dev
+    chunker:
+      strategy: 1-of-N
+      selection: rag4code-chunker
+      mode: dev
+  packages: []
+services:
+  container_groups:
+    vector-db-service:
+      strategy: 1-of-N
+      selection: qdrant
+      mode: dev
+    embedding-service:
+      strategy: 1-of-N
+      selection: ollama
+      mode: dev

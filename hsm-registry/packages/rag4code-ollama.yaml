@@ -1,0 +1,14 @@
+name: rag4code-ollama
+version: 0.1.0
+description: Ollama adapter
+type: library
+sources:
+  prod:
+    type: local
+    path: ./packages/rag4code-ollama
+  dev:
+    type: local
+    path: ./packages/rag4code-ollama
+    editable: true
+implies:
+  container_group:embedding-service: ollama

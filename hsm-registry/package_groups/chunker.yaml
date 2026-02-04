@@ -1,0 +1,6 @@
+name: chunker
+type: package_group
+strategy: 1-of-N
+options:
+- name: rag4code-chunker
+description: Text Chunking Module

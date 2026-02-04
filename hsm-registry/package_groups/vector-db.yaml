@@ -1,0 +1,6 @@
+name: vector-db
+type: package_group
+strategy: 1-of-N
+options:
+- name: rag4code-qdrant
+description: Vector Database Adapter

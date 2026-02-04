@@ -1,0 +1,15 @@
+name: ollama
+description: Ollama service for embeddings
+type: container
+container_name: null
+network_aliases: []
+ports:
+- 11434:11434
+volumes:
+- ./ollama_data:/root/.ollama
+env: {}
+sources:
+  prod:
+    type: docker-image
+    image: ollama/ollama:latest
+  dev: null

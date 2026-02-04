@@ -1,0 +1,6 @@
+name: embedding-service
+type: container_group
+strategy: 1-of-N
+options:
+- name: ollama
+description: Embedding Service

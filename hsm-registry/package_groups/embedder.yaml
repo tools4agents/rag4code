@@ -1,0 +1,6 @@
+name: embedder
+type: package_group
+strategy: 1-of-N
+options:
+- name: rag4code-ollama
+description: Embedding Provider

@@ -1,0 +1,14 @@
+name: qdrant
+description: Qdrant Vector DB
+type: container
+container_name: null
+network_aliases: []
+ports:
+- 6333:6333
+volumes: []
+env: {}
+sources:
+  prod:
+    type: docker-image
+    image: qdrant/qdrant:latest
+  dev: null

@@ -1,0 +1,6 @@
+name: vector-db-service
+type: container_group
+strategy: 1-of-N
+options:
+- name: qdrant
+description: Vector Database Service
