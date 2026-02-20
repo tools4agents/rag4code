@@ -1,13 +1,11 @@
 [project]
-name = "rag4code"
-version = "0.0.1"
-description = "RAG for coding agents"
+name = "hyper-graph"
+version = "0.1.0"
+description = "HyperGraph Knowledge Ecosystem"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["rag4code-qdrant @ file:///home/anton-admin/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/develop/education/rag4code/packages/rag4code-qdrant", "rag4code-ollama @ file:///home/anton-admin/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/develop/education/rag4code/packages/rag4code-ollama", "rag4code-chunker @ file:///home/anton-admin/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/develop/education/rag4code/packages/rag4code-chunker"]
+dependencies = []
 
 [build-system]
-requires = [
-    "uv_build>=0.9.26",
-]
+requires = ["uv_build>=0.9.26"]
 build-backend = "uv_build"

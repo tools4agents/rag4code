@@ -1,0 +1,20 @@
+name: code-rag
+description: Local service code-rag
+type: service
+container_name: null
+network_aliases: []
+ports: []
+volumes: []
+env: {}
+sources:
+  prod:
+    type: local
+    path: services/code-rag
+  dev:
+    type: local
+    path: services/code-rag
+dependencies: []
+deployment_profiles:
+  default:
+    mode: managed
+    runtime: uv
