@@ -1,0 +1,197 @@
+# Project Methodology Runtime Overview
+
+> Status: Draft  
+> Scope: общий обзор слоя `Project Methodology Runtime`  
+> Role: входная точка для человека и агента перед чтением специализированных спецификаций
+
+## 1. Зачем нужен этот слой
+
+`Project Methodology Runtime` — это слой HyperGraph, который управляет методологическими артефактами проекта как отдельным предметным доменом.
+
+В контексте этого проекта методология нужна не просто как набор текстовых правил, а как формализованная модель разработки ПО вместе с командой ИИ-агентов.
+
+Ее задача — зафиксировать:
+- центральный `methodology workflow` проекта;
+- reusable `agent-role` как профиль исполнителя;
+- `step-vacancy` как назначение роли на конкретный шаг workflow;
+- подмножества `rules`, `skills` и `MCP tools`, назначаемые ролям;
+- связанные `workflow`, которые могут использоваться внутри проекта как локальные многошаговые протоколы;
+- project-level выбор methodology, profiles, discovery decisions и `primary_agent_system`.
+
+Сам слой связывает между собой:
+- канонические `markdown` и `yaml` artifacts;
+- project-level methodology intent;
+- environment-facing runtime projection для agent system;
+- derived graph representation для navigation, provenance и traceability.
+
+Слой нужен, чтобы methodology проекта была:
+- переносимой;
+- воспроизводимой;
+- навигируемой;
+- пригодной и для человека, и для агента;
+- не завязанной на machine-specific storage paths.
+
+## 2. Что слой должен уметь
+
+На уровне архитектуры этот слой должен:
+- хранить и резолвить `Project Portable Intent`;
+- работать с `Central methodology catalog` как с переиспользуемым источником methodology artifacts;
+- хранить reusable role packs с core `agent-role` и adapter projections;
+- задавать и поддерживать `methodology workflow` проекта;
+- связывать шаги `methodology workflow` с `step-vacancy`, а через них — с `agent-role`, rules, skills и `MCP tools`;
+- хранить внутри methodology описания отдельных `workflow`, используемых как рабочие многошаговые протоколы;
+- materialize `project-scoped runtime` для конкретной agent environment, выбранной через `primary_agent_system`;
+- строить `graph projection` в ArcadeDB как derived state;
+- поддерживать `manual-hybrid discovery` для project boundaries;
+- обнаруживать drift между desired state и materialized runtime state;
+- выполнять `reconcile`, если projection или runtime вышли из согласованного состояния.
+
+## 3. Основные инварианты
+
+Для этого слоя зафиксированы следующие архитектурные инварианты:
+
+### 3.1 File-first Source of Truth
+
+`Source of Truth` для methodology artifacts — это `markdown` и `yaml` files.
+
+Database не является каноническим источником. Она хранит derived representation, пригодную для navigation, traceability и explainability.
+
+### 3.2 Project portability
+
+Проект хранит только `portable references` и не должен зависеть от machine-specific absolute paths.
+
+Это значит, что project metadata может хранить:
+- `methodology_id`;
+- `version_ref`;
+- `artifact_id`;
+- `profile_id`;
+- `role_id`;
+- `primary_agent_system`;
+- project-relative discovery decisions.
+
+Но project metadata не должна хранить physical path до `Central methodology catalog` или service-local operational storage.
+
+### 3.3 Runtime как projection
+
+Environment-facing runtime должен рассматриваться как `Runtime Materialization State`, а не как канонический source layer.
+
+Для Kilo Code это означает, что файлы в `.kilocode/` и смежные runtime artifacts — это materialized projection, которую можно rebuild.
+
+### 3.4 Unified project-scoped runtime
+
+Для агента runtime должен быть единым `project-scoped runtime`.
+
+Различие между global и project уровнями полезно на уровне source layering, но agent-facing consumption должен видеть один согласованный local layer.
+
+### 3.5 Explicit discovery policy
+
+`Project Discovery` не должен быть скрытой эвристикой.
+
+Для первой итерации используется `manual-hybrid discovery`:
+- сервис ищет candidates;
+- разработчик подтверждает final classification;
+- результат сохраняется как project-owned decision;
+- автоматического rediscovery без явного запроса нет.
+
+## 4. Границы слоя
+
+Этот слой отвечает за:
+- methodology artifacts;
+- roles, role packs, rules, skills и related metadata;
+- workflow assignment layer через `step-vacancy`;
+- project selection и activation policy;
+- выбор `primary_agent_system` и adapter projection policy;
+- discovery classification для project boundaries;
+- runtime materialization;
+- graph projection;
+- drift detection и `reconcile`.
+
+Этот слой не должен смешивать в одном документе:
+- архитектурный обзор;
+- терминологический glossary;
+- focused domain specs;
+- implementation contracts.
+
+Поэтому документация слоя разделена на несколько уровней.
+
+## 5. Карта документации слоя
+
+### 5.1 Терминология
+
+- `docs/terms/common/terms_map.md` — каноническая карта общих терминов
+- `docs/terms/project/terms_map.md` — каноническая карта project-specific терминов
+
+### 5.2 Обзор слоя
+
+- этот файл — `docs/methodology-layer/overview.md`
+- `docs/methodology-layer/principles.md` — производные архитектурные принципы и patterns решений именно для этого слоя
+
+### 5.3 Focused specs
+
+- `docs/methodology-layer/artifact-model.md` — `MethodologyArtifact`, `MethodologyArtifactType`, baseline types, artifact families и role packs как packaging boundary
+- `docs/methodology-layer/workflow-and-roles.md` — `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и process semantics workflow assignment
+- `docs/methodology-layer/interfaces-and-storage.md` — interface model, storage boundaries, portability и runtime projection policy
+- `docs/methodology-layer/project-discovery.md` — `manual-hybrid discovery`, classification policy и минимальный graph contract
+
+### 5.4 Contracts
+
+- `docs/contracts/` — отдельный слой контрактов
+
+Контракты должны описывать конкретные schemas, MCP operations, sync lifecycle и другие implementation-facing boundaries, но не дублировать архитектурные объяснения из overview и focused specs.
+
+## 6. Рекомендуемый маршрут чтения
+
+Для человека и агента рекомендуется одинаковый маршрут чтения:
+
+1. прочитать `docs/methodology-layer/overview.md`;
+2. открыть `docs/terms/common/terms_map.md` и `docs/terms/project/terms_map.md`, если встречаются незнакомые или нагруженные термины;
+3. перейти только в релевантный focused spec;
+4. открыть конкретный contract в `docs/contracts/` только когда нужна implementation detail.
+
+Это и есть целевой `lazy loading` и `progressive disclosure` подход для слоя methodology runtime.
+
+## 7. Как распределяется ответственность между документами
+
+Чтобы избежать дублирования, каждый документ имеет собственную ответственность:
+
+- `overview.md` объясняет зачем слой существует, какие у него инварианты и как устроена карта документации;
+- `artifact-model.md` отвечает только за meta-model artifacts, baseline types, artifact families и role packs как packaging boundary;
+- `workflow-and-roles.md` отвечает только за process semantics `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и workflow assignment layer;
+- `interfaces-and-storage.md` отвечает только за interfaces, `Source of Truth`, portability и storage boundary;
+- `project-discovery.md` отвечает только за discovery policy, classification model и минимальный graph contract;
+- `docs/contracts/` отвечает только за explicit contracts.
+
+Если определение повторяется в нескольких местах, источником истины становятся `docs/terms/common/terms_map.md` и `docs/terms/project/terms_map.md`, а остальные документы должны ссылаться на них, а не копировать полное объяснение.
+
+## 8. Что должно исчезнуть после миграции из planning docs
+
+После миграции из старых planning documents должны исчезнуть:
+- крупные повторяющиеся блоки про `Source of Truth`;
+- дублирование объяснений про Web UI и MCP в нескольких файлах;
+- повторяющиеся формулировки про `Central methodology catalog`;
+- конкурирующие описания `manual-hybrid discovery`;
+- смешение `agent-role`, `step-vacancy` и workflow step semantics в одном определении;
+- повторяющиеся объяснения про `project-scoped runtime` и adapter projections;
+- смешение архитектурного обзора и contract-level деталей в одном документе.
+
+## 9. Связь с общей архитектурой проекта
+
+Этот слой не существует изолированно. Он продолжает идеи из:
+- `docs/idea/project-first-model-and-storage.md`;
+- `docs/idea/HyperGraph_vision.md`;
+- `docs/idea/integrated_knowledge_graph_schema.md`;
+- `docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`.
+
+Но эти документы задают более широкий контекст. Каноническое описание именно слоя `Project Methodology Runtime` должно жить в `docs/methodology-layer/`.
+
+## 10. Целевое состояние документации слоя
+
+После миграции documentation package для этого слоя должен стать:
+- компактным на входе;
+- многоуровневым;
+- пригодным для lazy navigation;
+- удобным для человека;
+- удобным для агента;
+- свободным от конкурирующих planning versions.
+
+Этот файл является канонической входной точкой в documentation package слоя `Project Methodology Runtime`.
