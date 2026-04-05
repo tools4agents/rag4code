@@ -53,7 +53,7 @@
 - `workflow-step`
 - `step-vacancy`
 - `agent-system`
-- `primary_agent_system` не является preferred human-facing term, потому что это field-like selector, а не чистый glossary term
+- `primary-agent-system`
 
 ### 4.2 Зачем это нужно
 
@@ -181,6 +181,8 @@ agent_roles/
 - filesystem namespace: `agent_systems/`
 - Python class: `AgentSystem`
 - project-level selector field: `primary_agent_system`
+- related human-facing selector term: `primary-agent-system`
+- related abstract asset class: `agent-system-agnostic asset`
 - related concept: `agent-system-specific asset`
 - runtime process term: `agent-system materialization`
 
@@ -188,7 +190,9 @@ agent_roles/
 
 - `agent-system` — это term;
 - `agent_systems/` — это layout namespace;
+- `primary-agent-system` — это human-facing selector term;
 - `primary_agent_system` — это field-like selector inside project intent;
+- `primary-agent-system` используется для developer-specific active `agent-system` внутри project context;
 - они не конкурируют друг с другом, а относятся к разным naming domains.
 
 ## 9. Что не нужно смешивать
@@ -224,6 +228,9 @@ agent_roles/
 - namespace directory: `agent_systems/`
 - Python class: `AgentSystem`
 - selector field: `primary_agent_system`
+
+- term: `primary-agent-system`
+- config field: `primary_agent_system`
 
 ## 11. Что этот документ не делает
 

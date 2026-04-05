@@ -275,6 +275,13 @@ Ownership этого документа распространяется на:
 - human-readable docs;
 - support metadata.
 
+Это не должно автоматически распространяться на все reusable packs.
+
+Для `agent-system`-agnostic packs baseline другой:
+- они используются как общий reusable source layer для всех `agent-system`;
+- они не должны содержать внутри себя `agent-system`-specific assets;
+- system-specific assets должны выделяться в отдельную artifact family или separate pack structure.
+
 Важно:
 - packaging boundary не отменяет semantic boundary;
 - core role artifact и projection artifact остаются разными artifacts;

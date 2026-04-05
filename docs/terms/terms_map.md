@@ -44,6 +44,12 @@
 | portable references | Stable identifiers и relative references в project metadata вместо machine-specific physical paths. | none |
 | MethodologyArtifact | Базовая generic artifact entity для слоя methodology runtime вместо hardcoded списка document kinds. | none |
 | MethodologyArtifactType | Конфигурируемое описание artifact type, которое задает storage, graph semantics, rendering и validation expectations. | none |
+| agent-system | ПО для работы с coding agents на базе LLM, у которого есть собственная модель `agent-role`, rules, tools и runtime artifacts, и под которое HyperGraph может готовить совместимые assets и выполнять materialization. | `docs/terms/project/terms/agent-system.md` |
+| primary-agent-system | Выбранная разработчиком для работы с конкретным проектом основная `agent-system`, под которую HyperGraph materialize runtime и related environment-facing assets. В project configuration этот выбор фиксируется через поле `primary_agent_system`. | `docs/terms/project/terms/primary-agent-system.md` |
+| role-pack | Reusable packaging unit для одной `agent-role`, которая объединяет abstract role artifact, `agent-system`-specific assets, docs и related metadata без смешения semantic boundaries. | `docs/terms/project/terms/role-pack.md` |
+| agent-system-agnostic asset | Asset, который не зависит от конкретной `agent-system`, может использоваться как reusable source artifact до выбора runtime target и не содержит внутри себя `agent-system`-specific assets. | `docs/terms/project/terms/agent-system-agnostic-asset.md` |
+| agent-system-specific asset | Asset, совместимый с конкретной `agent-system` на уровне представляемого артефакта и используемый как source layer для соответствующего runtime target. | `docs/terms/project/terms/agent-system-specific-asset.md` |
+| agent-system materialization | Процесс, при котором HyperGraph раскладывает assets для выбранной `primary-agent-system` в конкретном проекте как runtime-facing artifacts. | `docs/terms/project/terms/agent-system-materialization.md` |
 | agent-role | Общая role entity для agent environment. В Kilo Code `mode` — частный случай `agent-role`. | none |
 | manual-hybrid discovery | Discovery mode, в котором сервис heuristically находит candidates, а разработчик вручную подтверждает final classification. | none |
 | project candidate | Директория, которую discovery heuristics определили как возможный project root, обычно по `.git` marker или другим project signals. | none |
@@ -67,6 +73,12 @@
 - portable references
 - MethodologyArtifact
 - MethodologyArtifactType
+- agent-system
+- primary-agent-system
+- role-pack
+- agent-system-agnostic asset
+- agent-system-specific asset
+- agent-system materialization
 - agent-role
 - manual-hybrid discovery
 - external-project-reference
