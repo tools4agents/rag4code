@@ -8,14 +8,14 @@
   - [`docs/methodology-layer/workflow-and-roles.md`](../../docs/methodology-layer/workflow-and-roles.md)
   - [`docs/methodology-layer/interfaces-and-storage.md`](../../docs/methodology-layer/interfaces-and-storage.md)
   - [`docs/methodology-layer/project-discovery.md`](../../docs/methodology-layer/project-discovery.md)
-  - [`docs/idea/project-first-model-and-storage.md`](../../docs/idea/project-first-model-and-storage.md)
-  - [`docs/idea/HyperGraph_vision.md`](../../docs/idea/HyperGraph_vision.md)
-  - [`docs/idea/integrated_knowledge_graph_schema.md`](../../docs/idea/integrated_knowledge_graph_schema.md)
+  - [`operational_scope/ideas/project-first-model-and-storage.md`](../ideas/project-first-model-and-storage.md)
+  - [`operational_scope/ideas/HyperGraph_vision.md`](../ideas/HyperGraph_vision.md)
+  - [`operational_scope/ideas/integrated_knowledge_graph_schema.md`](../ideas/integrated_knowledge_graph_schema.md)
   - [`../../../../.kilocode/skills-architect/architect-stage/SKILL.md`](../../../../.kilocode/skills-architect/architect-stage/SKILL.md)
 
 ## Architecture Context References
-- [ ] [`docs/idea/project-first-model-and-storage.md`](../../docs/idea/project-first-model-and-storage.md)
-- [ ] [`docs/idea/HyperGraph_vision.md`](../../docs/idea/HyperGraph_vision.md)
+- [ ] [`operational_scope/ideas/project-first-model-and-storage.md`](../ideas/project-first-model-and-storage.md)
+- [ ] [`operational_scope/ideas/HyperGraph_vision.md`](../ideas/HyperGraph_vision.md)
 - [ ] [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../../docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md)
 
 ## Specification References

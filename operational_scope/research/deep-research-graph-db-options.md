@@ -21,7 +21,7 @@ HyperGraph строится как граф знаний, объединяющи
 Источник истины: файлы (Git). Проекции: SQL operational state и graph query store.
 
 См.:
-- `docs/idea/HyperGraph_vision.md`
+- `operational_scope/ideas/HyperGraph_vision.md`
 - `services/hyper-project-memory/docs/execution/plans/architecture-graph-git-versioning-strategy.md`
 
 ### 2.2 Project-first модель (уточнено в обсуждении)
@@ -156,11 +156,10 @@ HyperGraph строится как граф знаний, объединяющи
 ## 8) Context Files (read-first)
 Минимальный набор артефактов, которые нужно прочитать перед выводами:
 
-- HyperGraph vision: `../docs/idea/HyperGraph_vision.md`
-- Integrated schema: `../docs/idea/integrated_knowledge_graph_schema.md`
-- Obsidian Assistant architecture: `../services/obsidian-assistant/docs/spec/architecture.md`
-- Obsidian Assistant indexing strategy: `../services/obsidian-assistant/docs/spec/indexing.md`
-- Hyper Project Memory: `../services/hyper-project-memory/README.md`
-- Git-authoritative + projections: `../services/hyper-project-memory/docs/execution/plans/architecture-graph-git-versioning-strategy.md`
+- HyperGraph vision: `../ideas/HyperGraph_vision.md`
+- Integrated schema: `../ideas/integrated_knowledge_graph_schema.md`
+- Obsidian Assistant architecture: `../../services/obsidian-assistant/docs/spec/architecture.md`
+- Obsidian Assistant indexing strategy: `../../services/obsidian-assistant/docs/spec/indexing.md`
+- Hyper Project Memory: `../../services/hyper-project-memory/README.md`
+- Git-authoritative + projections: `../../services/hyper-project-memory/docs/execution/plans/architecture-graph-git-versioning-strategy.md`
 - Pain points: graph index for markdown links: `/home/anton-admin/.kilocode/plans/ai-self-reflection-report-graph-links.md`
-

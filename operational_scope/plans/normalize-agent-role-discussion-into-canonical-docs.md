@@ -1,7 +1,7 @@
 # Plan: Нормализация `agent-role` discussion в каноническую документацию
 
 ## Контекст
-- Источник обсуждения: `docs/specification/agent-role-discussion.md`
+- Источник обсуждения: `operational_scope/discussion/agent-role-discussion.md`
 - Уже зафиксированные связанные артефакты:
   - `docs/terms/project/terms/agent-role.md`
   - `docs/terms/project/terms/step-vacancy.md`
@@ -11,7 +11,7 @@
   - `docs/methodology-layer/workflow-and-roles.md`
 
 ## Цель
-Перевести накопленную discussion-спецификацию по `agent-role` из временного обсуждения в набор канонических focused docs слоя `Project Methodology Runtime`, чтобы `docs/specification/agent-role-discussion.md` перестал быть единственным носителем ключевых решений.
+Перевести накопленную discussion-спецификацию по `agent-role` из временного обсуждения в набор канонических focused docs слоя `Project Methodology Runtime`, чтобы `operational_scope/discussion/agent-role-discussion.md` перестал быть единственным носителем ключевых решений.
 
 ## Проблема
 Сейчас важные решения по:
@@ -27,7 +27,7 @@
 
 ## Целевое состояние
 После выполнения плана:
-- ключевые решения из `docs/specification/agent-role-discussion.md` разложены по каноническим focused specs;
+- ключевые решения из `operational_scope/discussion/agent-role-discussion.md` разложены по каноническим focused specs;
 - discussion-doc либо удаляется как временный buffer artifact, либо удаляется после короткого финального прохода по остаточным деталям;
 - термины, architectural decisions и focused specs больше не расходятся между собой;
 - `agent-role` описан как reusable сущность, а adapter projection — как отдельный artifact layer.
@@ -62,9 +62,9 @@
 - links на formal contracts, когда они появятся.
 
 ## Что должно остаться в discussion doc
-Целевая модель для `docs/specification/agent-role-discussion.md` изменилась.
+Целевая модель для `operational_scope/discussion/agent-role-discussion.md` изменилась.
 
-Так как `docs/specification/` должен содержать только SoT спецификации, discussion doc после нормализации не должен сохраняться как постоянный artifact.
+Так как `docs/specification/` должен содержать только SoT спецификации, discussion doc после нормализации не должен сохраняться как постоянный artifact и должен жить в `operational_scope/discussion/` до завершения работы.
 
 Допустимы только два варианта:
 - либо выполнить короткий финальный проход по остаточным деталям и затем удалить файл;
@@ -91,8 +91,8 @@
 1. Создать канонический `docs/methodology-layer/workflow-and-roles.md`.
 2. Перенести в него process и role model.
 3. Обновить `artifact-model.md` и `interfaces-and-storage.md`.
-4. Выполнить короткий финальный проход по остаточным деталям `docs/specification/agent-role-discussion.md`.
-5. После переноса или ADR-extraction удалить `docs/specification/agent-role-discussion.md` как временный buffer artifact.
+4. Выполнить короткий финальный проход по остаточным деталям `operational_scope/discussion/agent-role-discussion.md`.
+5. После переноса или ADR-extraction удалить `operational_scope/discussion/agent-role-discussion.md` как временный buffer artifact.
 
 ## Ожидаемый результат
 `agent-role` discussion перестает быть временным knowledge island и становится частью стабильной канонической документации слоя.

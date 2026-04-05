@@ -57,7 +57,7 @@
 - один ArcadeDB container на HyperGraph runtime
 - внутри: `1 project -> 1 ArcadeDB database`
 
-Выбор зафиксирован в ADR: [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../adr/0001-arcadedb-as-unified-storage-for-mvp.md)
+Выбор зафиксирован в ADR: [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../../docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md)
 
 ## 3. Модель вложенных проектов
 
@@ -118,7 +118,7 @@ Pipeline читает `changed_files` из SQL и прогоняет через 
 
 Требование: изоляция per project должна быть достижима без enterprise-only функций.
 
-Кандидаты (по результатам research в `tasks_descriptions/research/db-overview/`):
+Кандидаты (по результатам research в `operational_scope/research/db-overview/`):
 - ArcadeDB (multi-model: SQL + Graph + Vector + KV)
 - PostgreSQL + Apache AGE (граф как расширение внутри Postgres)
 - FalkorDB (multi-graph в одном инстансе)
@@ -128,7 +128,7 @@ Pipeline читает `changed_files` из SQL и прогоняет через 
 Решение для MVP принято:
 - **ArcadeDB** как единый storage engine, при сохранении логической модели SQL/Graph/Vector/KV.
 
-См. ADR: [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../adr/0001-arcadedb-as-unified-storage-for-mvp.md)
+См. ADR: [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../../docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md)
 
 ## 8. Диаграмма: проекты и переключение контекста
 
@@ -152,8 +152,8 @@ flowchart TD
 ```
 
 ## 9. References
-- Vision: [`docs/idea/HyperGraph_vision.md`](HyperGraph_vision.md)
-- ADR: [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../adr/0001-arcadedb-as-unified-storage-for-mvp.md)
+- Vision: [`operational_scope/ideas/HyperGraph_vision.md`](HyperGraph_vision.md)
+- ADR: [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../../docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md)
 - Git authoritative: [`services/hyper-project-memory/docs/execution/plans/architecture-graph-git-versioning-strategy.md`](../../services/hyper-project-memory/docs/execution/plans/architecture-graph-git-versioning-strategy.md)
 - Obsidian Assistant indexing baseline: [`services/obsidian-assistant/docs/spec/indexing.md`](../../services/obsidian-assistant/docs/spec/indexing.md)
-- Research outputs: [`tasks_descriptions/research/db-overview/`](../../tasks_descriptions/research/db-overview/)
+- Research outputs: [`operational_scope/research/db-overview/`](../research/db-overview/)

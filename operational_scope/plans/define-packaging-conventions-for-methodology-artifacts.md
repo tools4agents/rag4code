@@ -102,7 +102,7 @@
 - разные семейства артефактов могут иметь разные conventions, но внутри общего проекта нужен единый vocabulary и единый reasoning framework;
 - packaging conventions продолжают artifact-oriented layer, а не process layer;
 - role packs рассматриваются как artifact family, а не как способ смешать workflow semantics и pack layout;
-- discussion и planning по packaging conventions остаются buffer layer в `tasks_descriptions/` до переноса результата в канонический doc.
+- discussion и planning по packaging conventions остаются buffer layer в `operational_scope/` до переноса результата в канонический doc.
 
 ## Следующий шаг
 После утверждения этого плана нужно:

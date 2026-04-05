@@ -21,8 +21,8 @@ HyperGraph развивает модель **Project-first**: проект — �
 - минимальная Ops-сложность для разработки и демонстрации
 
 См. сравнительные заметки:
-- [`tasks_descriptions/research/db-overview/arcade_db.md`](../../tasks_descriptions/research/db-overview/arcade_db.md)
-- [`tasks_descriptions/research/db-overview/multi_db.md`](../../tasks_descriptions/research/db-overview/multi_db.md)
+- [`operational_scope/research/db-overview/arcade_db.md`](../../operational_scope/research/db-overview/arcade_db.md)
+- [`operational_scope/research/db-overview/multi_db.md`](../../operational_scope/research/db-overview/multi_db.md)
 
 ## Decision
 
@@ -64,7 +64,7 @@ ArcadeDB поддерживает несколько протоколов/язы
 Минусы:
 - polyglot persistence (несколько движков) усложняет консистентность, бэкапы и диагностику
 
-См. сравнение: [`tasks_descriptions/research/db-overview/glm_research.md`](../../tasks_descriptions/research/db-overview/glm_research.md)
+См. сравнение: [`operational_scope/research/db-overview/glm_research.md`](../../operational_scope/research/db-overview/glm_research.md)
 
 ### B) PostgreSQL + Apache AGE + pgvector
 Плюсы:
@@ -74,7 +74,7 @@ ArcadeDB поддерживает несколько протоколов/язы
 Минусы:
 - AGE как extension требует аккуратной матрицы версий и может быть менее удобен как “native graph”
 
-См. сравнение: [`tasks_descriptions/research/db-overview/qwen_research.md`](../../tasks_descriptions/research/db-overview/qwen_research.md)
+См. сравнение: [`operational_scope/research/db-overview/qwen_research.md`](../../operational_scope/research/db-overview/qwen_research.md)
 
 ### C) No-op / best-of-breed
 Например: PostgreSQL (SQL) + Neo4j CE (graph) + Qdrant (vector).
@@ -111,6 +111,6 @@ ArcadeDB поддерживает несколько протоколов/язы
 3. Обеспечиваем export/import для сущностей MVP (Artifacts, Links, Terms, Embeddings).
 
 ## Related documents
-- Platform invariants: [`docs/idea/project-first-model-and-storage.md`](../idea/project-first-model-and-storage.md)
+- Platform invariants: [`operational_scope/ideas/project-first-model-and-storage.md`](../../operational_scope/ideas/project-first-model-and-storage.md)
 - Obsidian Assistant architecture: [`services/obsidian-assistant/docs/spec/architecture.md`](../../services/obsidian-assistant/docs/spec/architecture.md)
 - Hyper Project Memory strategy: [`services/hyper-project-memory/docs/execution/plans/architecture-graph-git-versioning-strategy.md`](../../services/hyper-project-memory/docs/execution/plans/architecture-graph-git-versioning-strategy.md)

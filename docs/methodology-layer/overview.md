@@ -177,9 +177,9 @@ Environment-facing runtime должен рассматриваться как `R
 ## 9. Связь с общей архитектурой проекта
 
 Этот слой не существует изолированно. Он продолжает идеи из:
-- `docs/idea/project-first-model-and-storage.md`;
-- `docs/idea/HyperGraph_vision.md`;
-- `docs/idea/integrated_knowledge_graph_schema.md`;
+- `operational_scope/ideas/project-first-model-and-storage.md`;
+- `operational_scope/ideas/HyperGraph_vision.md`;
+- `operational_scope/ideas/integrated_knowledge_graph_schema.md`;
 - `docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`.
 
 Но эти документы задают более широкий контекст. Каноническое описание именно слоя `Project Methodology Runtime` должно жить в `docs/methodology-layer/`.

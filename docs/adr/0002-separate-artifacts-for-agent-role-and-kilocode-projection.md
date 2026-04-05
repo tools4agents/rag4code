@@ -3,7 +3,7 @@
 - Status: Accepted
 - Date: 2026-03-30
 - Deciders: User + Architect
-- Related Task: `tasks_descriptions/tasks/arch-011-consolidate-project-methodology-runtime-planning.md`
+- Related Task: `operational_scope/tasks/arch-011-consolidate-project-methodology-runtime-planning.md`
 - Related Architecture: `docs/methodology-layer/workflow-and-roles.md`
 - Related Artifact Model: `docs/methodology-layer/artifact-model.md`
 

@@ -7,12 +7,12 @@
   - [`docs/methodology-layer/workflow-and-roles.md`](../../docs/methodology-layer/workflow-and-roles.md)
   - [`docs/methodology-layer/interfaces-and-storage.md`](../../docs/methodology-layer/interfaces-and-storage.md)
   - [`docs/methodology-layer/project-discovery.md`](../../docs/methodology-layer/project-discovery.md)
-  - [`docs/idea/project-first-model-and-storage.md`](../../docs/idea/project-first-model-and-storage.md)
-  - [`docs/idea/HyperGraph_vision.md`](../../docs/idea/HyperGraph_vision.md)
-  - [`docs/idea/integrated_knowledge_graph_schema.md`](../../docs/idea/integrated_knowledge_graph_schema.md)
+  - [`operational_scope/ideas/project-first-model-and-storage.md`](../ideas/project-first-model-and-storage.md)
+  - [`operational_scope/ideas/HyperGraph_vision.md`](../ideas/HyperGraph_vision.md)
+  - [`operational_scope/ideas/integrated_knowledge_graph_schema.md`](../ideas/integrated_knowledge_graph_schema.md)
 
 ## Architecture Context References
-- [ ] [`docs/idea/project-first-model-and-storage.md`](../../docs/idea/project-first-model-and-storage.md)
+- [ ] [`operational_scope/ideas/project-first-model-and-storage.md`](../ideas/project-first-model-and-storage.md)
 - [ ] [`docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md`](../../docs/adr/0001-arcadedb-as-unified-storage-for-mvp.md)
 
 ## Specification References
@@ -36,7 +36,7 @@
 - Подготовить пакет документов так, чтобы его можно было безопасно продолжать в новом чате или передать другому Architect agent без потери контекста.
 
 ## Ключевой контекст для продолжения
-- Legacy planning-пакет в `docs/plans/` уже использован как buffer-источник для миграции в канонические focused specs слоя.
+- Legacy planning-пакет в `operational_scope/plans/` уже использован как buffer-источник для миграции в канонические focused specs слоя.
 - Уже созданы канонические документы [`docs/methodology-layer/artifact-model.md`](../../docs/methodology-layer/artifact-model.md), [`docs/methodology-layer/workflow-and-roles.md`](../../docs/methodology-layer/workflow-and-roles.md), [`docs/methodology-layer/interfaces-and-storage.md`](../../docs/methodology-layer/interfaces-and-storage.md) и [`docs/methodology-layer/project-discovery.md`](../../docs/methodology-layer/project-discovery.md).
 - Пользователь отдельно подтвердил, что `docs/` является SoT, а planning и discussion artifacts являются buffer-слоем и после миграции должны очищаться.
 - Принятые решения, которые должны быть единообразно отражены во всех документах:
@@ -72,7 +72,7 @@
 
 ## Execution Status
 - Current State: Канонические focused specs для `Project Methodology Runtime` уже созданы в `docs/methodology-layer/`; идет cleanup legacy planning и discussion artifacts, а также синхронизация task-buffer с новым SoT.
-- Next Step: Обновить оставшиеся task and ADR references, затем удалить временные artifacts из `docs/plans/` и `docs/specification/` после финальной проверки ссылок.
+- Next Step: Обновить оставшиеся task and ADR references, затем очистить временные artifacts из `operational_scope/plans/` и `operational_scope/discussion/` после финальной проверки ссылок.
 - Blockers: none
 - Contract Changes: none
 - Verification: Сверить [`docs/methodology-layer/overview.md`](../../docs/methodology-layer/overview.md), [`docs/methodology-layer/artifact-model.md`](../../docs/methodology-layer/artifact-model.md), [`docs/methodology-layer/workflow-and-roles.md`](../../docs/methodology-layer/workflow-and-roles.md), [`docs/methodology-layer/interfaces-and-storage.md`](../../docs/methodology-layer/interfaces-and-storage.md) и [`docs/methodology-layer/project-discovery.md`](../../docs/methodology-layer/project-discovery.md) и убедиться, что решения по SoT, discovery, graph contract, role separation и terminology совпадают.
