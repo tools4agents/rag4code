@@ -132,6 +132,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/workflow-and-roles.md` — `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и process semantics workflow assignment
 - `docs/methodology-layer/interfaces-and-storage.md` — interface model, storage boundaries, portability и runtime projection policy
 - `docs/methodology-layer/project-discovery.md` — `manual-hybrid discovery`, classification policy и минимальный graph contract
+- `docs/methodology-layer/naming-conventions.md` — naming rules для glossary terms, pack layout, Python identifiers и `agent-system`-related namespaces
 
 ### 5.4 Contracts
 
@@ -159,6 +160,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `workflow-and-roles.md` отвечает только за process semantics `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и workflow assignment layer;
 - `interfaces-and-storage.md` отвечает только за interfaces, `Source of Truth`, portability и storage boundary;
 - `project-discovery.md` отвечает только за discovery policy, classification model и минимальный graph contract;
+- `naming-conventions.md` отвечает только за naming rules для human-facing terms, filesystem layout и Python-facing identifiers;
 - `docs/contracts/` отвечает только за explicit contracts.
 
 Если определение повторяется в нескольких местах, источником истины становятся `docs/terms/common/terms_map.md` и `docs/terms/project/terms_map.md`, а остальные документы должны ссылаться на них, а не копировать полное объяснение.
