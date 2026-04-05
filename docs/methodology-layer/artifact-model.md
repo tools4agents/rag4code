@@ -263,6 +263,17 @@ Ownership этого документа распространяется на:
 - project-level decisions должны ссылаться на reusable artifacts, а не копировать их без необходимости;
 - runtime artifacts не должны считаться каноническим источником смысла.
 
+Поверх этого distinction полезно явно различать два класса reusable source artifacts:
+
+- `agent-system`-agnostic assets;
+- `agent-system`-specific assets.
+
+Это означает:
+
+- один reusable artifact может быть общим для всех target systems;
+- другой reusable artifact может быть authored specifically для одной `agent-system`;
+- runtime materialization не должна смешиваться ни с первым, ни со вторым классом.
+
 ## 9. `role pack` как artifact family и packaging boundary
 
 В этом документе фиксируется ownership для `role pack` как artifact family.
@@ -284,7 +295,7 @@ Ownership этого документа распространяется на:
 
 Важно:
 - packaging boundary не отменяет semantic boundary;
-- core role artifact и projection artifact остаются разными artifacts;
+- core role artifact и `agent-system`-specific role asset остаются разными artifacts;
 - physical proximity файлов не должна трактоваться как semantic collapse.
 
 Этот документ владеет:
@@ -294,7 +305,45 @@ Ownership этого документа распространяется на:
 
 Но этот документ не описывает process semantics использования роли в workflow. Это responsibility другого focused spec.
 
-## 10. High-level graph implications
+## 10. `agent-system`-agnostic и `agent-system`-specific assets
+
+Artifact model должен явно поддерживать distinction между двумя reusable source classes.
+
+### 10.1 `agent-system`-agnostic asset
+
+Это reusable source artifact, который:
+
+- не зависит от конкретной `agent-system`;
+- может использоваться как общий source layer для всех supported systems;
+- не содержит внутри себя `agent-system`-specific assets.
+
+Типичные примеры:
+
+- methodology docs и related methodology assets;
+- часть governance artifacts;
+- abstract reusable artifacts, которые не завязаны на одну runtime platform.
+
+### 10.2 `agent-system`-specific asset
+
+Это reusable source artifact, который:
+
+- совместим с конкретной `agent-system`;
+- отражает constraints и expected representation этой system;
+- остается source artifact, а не runtime materialization output.
+
+Типичный пример:
+
+- `agent_roles/critic/agent_systems/kilo/role.md`.
+
+### 10.3 Почему distinction важен
+
+Такое distinction нужно, чтобы:
+
+- не смешивать abstract reusable layer и system-specific layer;
+- не пытаться упаковать все pack families по одному и тому же шаблону;
+- сохранить ясную границу между authored source assets и generated runtime outputs.
+
+## 11. High-level graph implications
 
 Artifact model должен быть совместим с graph-backed traceability.
 
@@ -306,7 +355,7 @@ Artifact model должен быть совместим с graph-backed traceabi
 
 При этом точные graph contracts для отдельных bounded contexts могут быть формализованы позже в contract layer или в других focused specs.
 
-## 11. Что этот документ принципиально не делает
+## 12. Что этот документ принципиально не делает
 
 Этот документ не должен:
 - описывать `workflow -> workflow-step -> step-vacancy -> agent-role` как process semantics;
@@ -317,7 +366,7 @@ Artifact model должен быть совместим с graph-backed traceabi
 
 Если этот документ начинает описывать runtime layers, project discovery или handoff semantics workflow, это означает нарушение boundaries.
 
-## 12. Связь с другими каноническими документами
+## 13. Связь с другими каноническими документами
 
 Этот документ нужно читать вместе с:
 - `docs/methodology-layer/overview.md` как обзором слоя;
@@ -325,20 +374,23 @@ Artifact model должен быть совместим с graph-backed traceabi
 - `docs/methodology-layer/workflow-and-roles.md` как process-level spec;
 - `docs/methodology-layer/interfaces-and-storage.md` как storage and interface boundary spec;
 - `docs/methodology-layer/project-discovery.md` как discovery policy spec;
+- `docs/terms/project/terms/role-pack.md`, `docs/terms/project/terms/agent-system-agnostic-asset.md` и `docs/terms/project/terms/agent-system-specific-asset.md` как glossary layer для asset taxonomy;
 - `docs/contracts/README.md` как contract policy layer.
 
-## 13. Canonical invariants
+## 14. Canonical invariants
 
 Для первой итерации migration baseline считаются обязательными следующие invariants:
 - artifact model строится через `MethodologyArtifact` и `MethodologyArtifactType`, а не через жесткий список hardcoded kinds;
 - baseline artifact types включают как минимум `methodology-doc`, `rule-doc`, `skill-doc` и `agent-role`;
 - reusable artifact families должны оставаться отличимыми от project-specific bindings и runtime projections;
+- distinction между `agent-system`-agnostic assets и `agent-system`-specific assets должен оставаться явным;
+- `agent-system`-agnostic packs не должны содержать внутри себя `agent-system`-specific assets;
 - `role pack` является artifact-oriented packaging boundary;
 - canonical pack structure и artifact family semantics не должны определяться process-level документом;
 - contract policy не принадлежит artifact model;
 - runtime details и storage states не принадлежат artifact model.
 
-## 14. Целевое назначение для миграции legacy docs
+## 15. Целевое назначение для миграции legacy docs
 
 При миграции legacy planning package этот документ должен стать канонической точкой сборки для:
 - meta-model artifacts;

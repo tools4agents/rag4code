@@ -178,21 +178,27 @@
 
 На process layer важно признавать distinction между:
 - core `agent-role`;
-- adapter-specific projection этой роли.
+- `agent-system`-specific asset этой роли.
 
 При этом:
 - reusable role semantics принадлежат core role artifact;
-- adapter projection не подменяет role semantics;
-- process layer может учитывать, что у роли есть projection для выбранной agent system;
-- но этот документ не описывает storage, layout или runtime materialization projection artifacts.
+- `agent-system`-specific asset не подменяет role semantics;
+- process layer может учитывать, что у роли есть совместимый asset для выбранной `agent-system`;
+- но этот документ не описывает storage, layout или runtime materialization artifacts.
 
 Нужный invariant такой:
 - workflow использует role semantics, а не runtime-specific file layout;
-- execution environment может потребовать adapter projection, но это не меняет process model.
+- execution environment может потребовать `agent-system`-specific asset, но это не меняет process model.
 
 ## 9. `role pack` как reusable source unit
 
 Process layer признает, что `agent-role` может поставляться через `role pack` как reusable source unit.
+
+На process layer важно признавать, что `role-pack` является специальным reusable packaging pattern для роли:
+
+- он может объединять core role artifact;
+- он может включать `agent-system`-specific assets для этой роли;
+- он не должен трактоваться как универсальный шаблон для всех reusable packs.
 
 Но этот документ не владеет:
 - canonical pack structure;
@@ -204,14 +210,25 @@ Process layer признает, что `agent-role` может поставля�
 - semantic usage роли внутри workflow не определяет и не переопределяет packaging conventions;
 - pack structure задается artifact-oriented документацией, а не process semantics.
 
-## 10. `primary_agent_system` в process layer
+## 10. `primary-agent-system` в process layer
 
-`Primary_agent_system` на process layer допускается только как process awareness concept.
+`Primary-agent-system` на process layer допускается только как process awareness concept.
 
 Это означает:
-- project может знать, какая agent system выбрана как primary execution target;
-- role usage может зависеть от наличия подходящей projection для этой system;
-- сам выбор `primary_agent_system` не меняет reusable role semantics.
+- process layer может учитывать, какая `agent-system` активна для текущего developer context в проекте;
+- role usage может зависеть от наличия совместимого `agent-system`-specific asset для этой system;
+- сам выбор `primary-agent-system` не меняет reusable role semantics.
+
+Важно различать:
+
+- `primary-agent-system` как human-facing term;
+- `primary_agent_system` как field-like selector в project configuration.
+
+Process layer признает только semantic смысл этого selector:
+
+- у конкретного разработчика в конкретном проекте обычно есть одна active `agent-system` в момент работы;
+- при этом сам проект не должен считаться навсегда привязанным к одной agent system;
+- разные разработчики могут использовать разные `agent-system` для одного и того же проекта.
 
 Важное ограничение:
 - этот документ не фиксирует storage, selector schema или runtime resolution pipeline для `primary_agent_system`;
@@ -306,7 +323,7 @@ Process layer должен быть совместим с graph-backed traceabil
 - `docs/methodology-layer/artifact-model.md` как artifact-oriented spec;
 - `docs/methodology-layer/interfaces-and-storage.md` как boundary spec для interfaces и storage;
 - `docs/methodology-layer/project-discovery.md` как discovery policy spec;
-- `docs/terms/project/terms/agent-role.md`, `docs/terms/project/terms/workflow.md`, `docs/terms/project/terms/workflow-step.md` и `docs/terms/project/terms/step-vacancy.md` как glossary layer.
+- `docs/terms/project/terms/agent-role.md`, `docs/terms/project/terms/workflow.md`, `docs/terms/project/terms/workflow-step.md`, `docs/terms/project/terms/step-vacancy.md`, `docs/terms/project/terms/agent-system.md`, `docs/terms/project/terms/primary-agent-system.md` и `docs/terms/project/terms/role-pack.md` как glossary layer.
 
 ## 16. Canonical invariants
 
@@ -317,6 +334,8 @@ Process layer должен быть совместим с graph-backed traceabil
 - `workflow` — process map, а не хранилище всех деталей шага;
 - связь `workflow -> workflow-step -> step-vacancy -> agent-role` является однонаправленной;
 - `when_to_use` усиливает explainability роли, но не заменяет workflow assignment;
+- наличие `agent-system`-specific asset не меняет process semantics роли;
+- `primary-agent-system` описывает active target environment для developer context, а не semantic ownership роли;
 - process layer не владеет pack structure;
 - process layer не владеет contract policy;
 - process layer не владеет storage and runtime model.

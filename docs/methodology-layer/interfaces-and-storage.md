@@ -131,6 +131,11 @@ Web UI не обязан:
 - должен оставаться machine-independent;
 - хранит references и intent, а не physical resolution service storage.
 
+Важно:
+- `primary_agent_system` является field-like representation для human-facing concept `primary-agent-system`;
+- этот selector описывает active `agent-system` для developer-specific runtime context внутри проекта;
+- он не должен трактоваться как признак того, что сам проект навсегда привязан к одной agent system.
+
 ### 6.3 `Service-local Runtime State`
 
 Это internal operational representation сервиса.
@@ -194,7 +199,20 @@ Web UI не обязан:
 - materialize runtime для одной и той же методологии в разных environments;
 - не смешивать logical selection и physical storage.
 
-## 8. Central catalog и service-local storage
+## 8. Developer-specific agent-system selection
+
+Для одного и того же проекта разные разработчики могут использовать разные `agent-system`.
+
+Типичная модель такая:
+
+- проект остается `agent-system`-agnostic на уровне reusable assets и portable intent;
+- каждый разработчик может выбрать удобную для себя active `agent-system`;
+- HyperGraph materialize runtime под этот выбор через `primary-agent-system`;
+- в каждый момент времени для одного developer context используется только одна active `agent-system`.
+
+Это означает, что `primary-agent-system` является developer-specific project selector, а не project-wide обязательной навязкой одной environment всем участникам.
+
+## 9. Central catalog и service-local storage
 
 ### 8.1 Central methodology catalog
 
@@ -217,26 +235,32 @@ Web UI не обязан:
 
 Этот storage не должен протекать в project metadata как обязательная часть portability model.
 
-## 9. Adapter projection policy
+## 10. Agent-system asset and materialization policy
 
-### 9.1 Общий принцип
+### 10.1 Общий принцип
 
 Каждая target agent system подключается через adapter boundary.
 
 Это означает:
 - reusable source artifacts не должны хранить runtime-specific file layout как core knowledge;
 - project выбирает execution target через `primary_agent_system`;
-- service-resolver выбирает нужную projection для этого target;
-- runtime materialization создает environment-facing representation выбранного adapter.
+- service-resolver выбирает нужные `agent-system`-specific assets для этого target;
+- runtime materialization создает environment-facing representation выбранной `agent-system`.
 
-### 9.2 Что это значит для проектного слоя
+Нужно различать:
+
+- `agent-system`-agnostic asset;
+- `agent-system`-specific asset;
+- `agent-system materialization` как runtime process.
+
+### 10.2 Что это значит для проектного слоя
 
 Project layer не должен:
 - считать runtime artifacts каноническим source layer;
 - хранить полный materialized snapshot как смысловую модель проекта;
-- смешивать role semantics и adapter-specific representation.
+- смешивать role semantics и `agent-system`-specific representation.
 
-### 9.3 Unified project-scoped runtime
+### 10.3 Unified project-scoped runtime
 
 Для выбранной agent system runtime должен materialize как единый project-scoped local layer.
 
@@ -245,9 +269,23 @@ Project layer не должен:
 - но agent-facing runtime должен быть согласованным локальным слоем проекта;
 - adapter отвечает за сборку этого unified local runtime.
 
-## 10. `primary_agent_system`
+### 10.4 Developer-local isolation as preferred practice
 
-`Primary_agent_system` — это project-level selector, который говорит сервису, какой adapter projection materialize как основной runtime target.
+Предпочтительная практика такая:
+
+- reusable project assets остаются в project-oriented source layers;
+- runtime settings конкретной `agent-system` живут изолированно и не загрязняют основной project repo;
+- developer-specific environment files могут жить в отдельном nested git repo или другом isolation layer.
+
+Публикация таких runtime settings в основной репозиторий теоретически возможна, но считается анти-паттерном, если она:
+
+- начинает засорять project-level SoT;
+- навязывает всем разработчикам одну agent environment;
+- смешивает reusable project artifacts и developer-local runtime files.
+
+## 11. `primary_agent_system`
+
+`Primary_agent_system` — это field-like selector в `Project Portable Intent`, который говорит сервису, под какую active `agent-system` materialize runtime в текущем developer context.
 
 В этом документе важно зафиксировать только следующее:
 - поле принадлежит `Project Portable Intent`;
@@ -255,9 +293,15 @@ Project layer не должен:
 - оно не подменяет собой reusable role semantics;
 - оно должно работать через stable adapter identity, а не через эвристику по наличию runtime files.
 
+Важно:
+
+- human-facing term для этого concept — `primary-agent-system`;
+- config field shape — `primary_agent_system`;
+- этот selector может отличаться у разных разработчиков, работающих с одним и тем же проектом.
+
 Подробный process смысл использования роли при разных systems не принадлежит этому документу.
 
-## 11. Role pack storage location rules
+## 12. Role pack storage location rules
 
 Этот документ не описывает canonical pack structure, но фиксирует storage-level правила для reusable packs.
 
@@ -267,9 +311,14 @@ Project layer не должен:
 - service-local runtime state может хранить resolved role bundle;
 - runtime materialization создает environment-facing output, а не reusable pack structure.
 
+Для других reusable packs baseline может быть другим:
+
+- `agent-system`-agnostic packs не должны содержать внутри себя `agent-system`-specific assets;
+- `role-pack` является специальным packaging pattern, а не universal convention for all packs.
+
 То есть `role pack` как reusable source unit остается в source-oriented layer, а не растворяется в project config или runtime directories.
 
-## 12. Contract layer boundary
+## 13. Contract layer boundary
 
 `Docs/contracts/README.md` остается единственным Source of Truth для contract policy.
 
@@ -285,7 +334,7 @@ Project layer не должен:
 - repository pointers;
 - traceability.
 
-## 13. Traceability and navigation implications
+## 14. Traceability and navigation implications
 
 Storage and interface model должны поддерживать traceability между:
 - документацией;
@@ -302,7 +351,7 @@ Storage and interface model должны поддерживать traceability �
 - derived graph должен сохранять provenance и relationship context;
 - runtime materialization должна быть explainable через source references.
 
-## 14. Что этот документ не должен делать
+## 15. Что этот документ не должен делать
 
 Этот документ не должен:
 - описывать artifact type taxonomy;
@@ -313,7 +362,7 @@ Storage and interface model должны поддерживать traceability �
 
 Если в документ начинают попадать подробные type families, role semantics или discovery heuristics, это означает нарушение boundaries.
 
-## 15. Связь с другими каноническими документами
+## 16. Связь с другими каноническими документами
 
 Этот документ нужно читать вместе с:
 - `docs/methodology-layer/overview.md` как обзором слоя;
@@ -321,20 +370,23 @@ Storage and interface model должны поддерживать traceability �
 - `docs/methodology-layer/artifact-model.md` как artifact-oriented spec;
 - `docs/methodology-layer/workflow-and-roles.md` как process-level spec;
 - `docs/methodology-layer/project-discovery.md` как discovery policy spec;
+- `docs/terms/project/terms/agent-system.md`, `docs/terms/project/terms/primary-agent-system.md`, `docs/terms/project/terms/agent-system-agnostic-asset.md`, `docs/terms/project/terms/agent-system-specific-asset.md`, `docs/terms/project/terms/agent-system-materialization.md` как glossary layer для runtime target model;
 - `docs/contracts/README.md` как contract boundary layer.
 
-## 16. Canonical invariants
+## 17. Canonical invariants
 
 Для первой итерации migration baseline считаются обязательными следующие invariants:
 - file-first workflow остается canonical Source of Truth;
 - project хранит portable intent, а не machine-specific storage paths;
 - `Catalog Source of Truth`, `Project Portable Intent`, `Service-local Runtime State` и `Runtime Materialization State` являются разными слоями;
 - runtime materialization считается rebuildable projection;
-- `primary_agent_system` принадлежит project-level intent и выбирает adapter target;
+- `primary_agent_system` принадлежит project-level intent и выбирает active `agent-system` target для developer context;
+- разные разработчики могут materialize runtime для одного проекта под разные `agent-system`;
+- project repo не должен засоряться developer-local runtime settings без явной необходимости;
 - contract policy не дублируется вне `docs/contracts/README.md`;
 - MCP и Web UI усиливают navigation and configuration, но не подменяют file-based SoT.
 
-## 17. Целевое назначение для миграции legacy docs
+## 18. Целевое назначение для миграции legacy docs
 
 При миграции legacy planning package этот документ должен стать канонической точкой сборки для:
 - interface model;
