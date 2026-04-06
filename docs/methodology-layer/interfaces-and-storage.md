@@ -95,6 +95,10 @@ Web UI не обязан:
 
 ## 6. Four-layer storage model
 
+Этот раздел описывает storage and runtime states внутри `Project Methodology Runtime`.
+
+Он не заменяет более широкую ownership model между внутренним каноном HyperGraph, config layers и derived states; для этого см. [`Layered SoT and Materialization Model for Project Methodology Runtime`](layered-sot-and-materialization-model.md).
+
 Для этого слоя фиксируется модель из четырех состояний.
 
 ### 6.1 `Catalog Source of Truth`
@@ -368,6 +372,7 @@ Storage and interface model должны поддерживать traceability �
 - `docs/methodology-layer/overview.md` как обзором слоя;
 - `docs/methodology-layer/principles.md` как набором guiding principles;
 - `docs/methodology-layer/artifact-model.md` как artifact-oriented spec;
+- `docs/methodology-layer/layered-sot-and-materialization-model.md` как ownership model для canonical layers и derived states;
 - `docs/methodology-layer/workflow-and-roles.md` как process-level spec;
 - `docs/methodology-layer/project-discovery.md` как discovery policy spec;
 - `docs/terms/project/terms/agent-system.md`, `docs/terms/project/terms/primary-agent-system.md`, `docs/terms/project/terms/agent-system-agnostic-asset.md`, `docs/terms/project/terms/agent-system-specific-asset.md`, `docs/terms/project/terms/agent-system-materialization.md` как glossary layer для runtime target model;

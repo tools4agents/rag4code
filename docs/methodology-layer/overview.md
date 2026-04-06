@@ -130,6 +130,7 @@ Environment-facing runtime должен рассматриваться как `R
 
 - `docs/methodology-layer/artifact-model.md` — `MethodologyArtifact`, `MethodologyArtifactType`, baseline types, artifact families и role packs как packaging boundary
 - `docs/methodology-layer/workflow-and-roles.md` — `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и process semantics workflow assignment
+- `docs/methodology-layer/layered-sot-and-materialization-model.md` — canonical SoT layers, resolved states и runtime materialization model
 - `docs/methodology-layer/interfaces-and-storage.md` — interface model, storage boundaries, portability и runtime projection policy
 - `docs/methodology-layer/project-discovery.md` — `manual-hybrid discovery`, classification policy и минимальный graph contract
 - `docs/methodology-layer/naming-conventions.md` — naming rules для glossary terms, pack layout, Python identifiers и `agent-system`-related namespaces
@@ -158,6 +159,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `overview.md` объясняет зачем слой существует, какие у него инварианты и как устроена карта документации;
 - `artifact-model.md` отвечает только за meta-model artifacts, baseline types, artifact families и role packs как packaging boundary;
 - `workflow-and-roles.md` отвечает только за process semantics `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и workflow assignment layer;
+- `layered-sot-and-materialization-model.md` отвечает только за ownership model между внутренним каноном HyperGraph, `agent-system` config layers и derived runtime states;
 - `interfaces-and-storage.md` отвечает только за interfaces, `Source of Truth`, portability и storage boundary;
 - `project-discovery.md` отвечает только за discovery policy, classification model и минимальный graph contract;
 - `naming-conventions.md` отвечает только за naming rules для human-facing terms, filesystem layout и Python-facing identifiers;
