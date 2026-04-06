@@ -130,7 +130,7 @@ Asset taxonomy не требует, чтобы каждый asset type жест�
 | Asset type | Concrete asset | Роль в composition |
 | --- | --- | --- |
 | `knowledge-lifecycle asset` | `document-driven-development` | Задает lifecycle знания через documentation layers. |
-| `task-management-system asset` | `task-map` | Задает систему хранения, индексации и управления задачами. |
+| `task-management-system asset` | [`task-map`](assets/task-management/task-map.md) | Задает систему хранения, индексации и управления задачами. |
 | `terms-management-system asset` | `terms-map` | Задает систему хранения и progressive disclosure терминов. |
 | `methodology asset` | `waterfall` | Задает process model разработки. |
 | `rules pack` | `project-selected rules` | Подключает набор policy и operating rules. |
