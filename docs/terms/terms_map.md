@@ -47,6 +47,11 @@
 | agent-system | ПО для работы с coding agents на базе LLM, у которого есть собственная модель `agent-role`, rules, tools и runtime artifacts, и под которое HyperGraph может готовить совместимые assets и выполнять materialization. | `docs/terms/project/terms/agent-system.md` |
 | primary-agent-system | Выбранная разработчиком для работы с конкретным проектом основная `agent-system`, под которую HyperGraph materialize runtime и related environment-facing assets. В project configuration этот выбор фиксируется через поле `primary_agent_system`. | `docs/terms/project/terms/primary-agent-system.md` |
 | role-pack | Reusable packaging unit для одной `agent-role`, которая объединяет abstract role artifact, `agent-system`-specific assets, docs и related metadata без смешения semantic boundaries. | `docs/terms/project/terms/role-pack.md` |
+| knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
+| task-management-system asset | Asset type, который задает систему хранения, индексации и управления task artifacts. | `docs/terms/project/terms/task-management-system-asset.md` |
+| terms-management-system asset | Asset type, который задает систему хранения, карты и progressive disclosure терминов. | `docs/terms/project/terms/terms-management-system-asset.md` |
+| methodology asset | Asset type, который задает process model разработки: workflows, role usage, critique and review loops и другие methodology semantics. | `docs/terms/project/terms/methodology-asset.md` |
+| composition pack | Совместимый publishable набор assets разных типов, который можно подключить как готовый методологический стек. | `docs/terms/project/terms/composition-pack.md` |
 | agent-system-agnostic asset | Asset, который не зависит от конкретной `agent-system`, может использоваться как reusable source artifact до выбора runtime target и не содержит внутри себя `agent-system`-specific assets. | `docs/terms/project/terms/agent-system-agnostic-asset.md` |
 | agent-system-specific asset | Asset, совместимый с конкретной `agent-system` на уровне представляемого артефакта и используемый как source layer для соответствующего runtime target. | `docs/terms/project/terms/agent-system-specific-asset.md` |
 | agent-system materialization | Процесс, при котором HyperGraph раскладывает assets для выбранной `primary-agent-system` в конкретном проекте как runtime-facing artifacts. | `docs/terms/project/terms/agent-system-materialization.md` |
@@ -76,6 +81,11 @@
 - agent-system
 - primary-agent-system
 - role-pack
+- knowledge-lifecycle asset
+- task-management-system asset
+- terms-management-system asset
+- methodology asset
+- composition pack
 - agent-system-agnostic asset
 - agent-system-specific asset
 - agent-system materialization

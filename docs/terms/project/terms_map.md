@@ -45,6 +45,23 @@
 | workflow-step | Отдельный markdown-артефакт, который подробно описывает конкретный шаг workflow: входы, что нужно сделать, связанную `step-vacancy`, назначенную на нее `agent-role`, выходы, `DoD` и критерии возврата на предыдущие шаги. | `docs/terms/project/terms/workflow-step.md` |
 | agent-role | Самодостаточный reusable role profile агента или человека с `system_prompt` и подмножествами `rules`, `skills` и `MCP tools`. Роль не знает, на каких шагах ее будут использовать: это решает `workflow-step` через `step-vacancy`. Одна и та же роль может входить в общий reusable набор и затем подключаться как подмножество в разных workflow конкретной методологии. | `docs/terms/project/terms/agent-role.md` |
 | step-vacancy | Позиция на конкретном шаге конкретного workflow, которая должна быть закрыта подходящей `agent-role`. `step-vacancy` отвечает за назначение роли на шаг, а не за описание самой роли или полной логики шага. | `docs/terms/project/terms/step-vacancy.md` |
+| knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
+| task-management-system asset | Asset type, который задает систему хранения, индексации и управления task artifacts. | `docs/terms/project/terms/task-management-system-asset.md` |
+| terms-management-system asset | Asset type, который задает систему хранения и progressive disclosure терминов. | `docs/terms/project/terms/terms-management-system-asset.md` |
+| methodology asset | Asset type, который задает process model разработки и methodology-specific semantics. | `docs/terms/project/terms/methodology-asset.md` |
+| composition pack | Publishable совместимый набор assets разных типов, который можно подключить как готовый методологический стек. | `docs/terms/project/terms/composition-pack.md` |
+| Operational Documentation Layer | Временный operational слой, в котором рождается, уточняется и проверяется новое знание до его канонизации. | `docs/terms/project/terms/operational-documentation-layer.md` |
+| Engineering Documentation SoT | Канонический инженерный Source of Truth проекта. | `docs/terms/project/terms/engineering-documentation-sot.md` |
+| Release Documentation Layer | Release-ready documentation для внешнего потребления. | `docs/terms/project/terms/release-documentation-layer.md` |
+| idea artifact | Operational artifact для фиксации новой идеи, инсайта или направления дальнейшей проработки. | `docs/terms/project/terms/idea-artifact.md` |
+| plan artifact | Operational artifact для фиксации плана изменения, проектирования или исследования. | `docs/terms/project/terms/plan-artifact.md` |
+| task artifact | Operational artifact для фиксации исполнимой задачи, ее контекста и execution status. | `docs/terms/project/terms/task-artifact.md` |
+| research artifact | Operational artifact для фиксации результатов исследования и сравнения вариантов. | `docs/terms/project/terms/research-artifact.md` |
+| discussion artifact | Operational artifact для фиксации обсуждения, альтернатив и промежуточных выводов. | `docs/terms/project/terms/discussion-artifact.md` |
+| review artifact | Operational artifact для фиксации critic/reviewer feedback и quality assessment. | `docs/terms/project/terms/review-artifact.md` |
+| open question | Явно зафиксированный нерешенный вопрос, требующий дальнейшей проработки. | `docs/terms/project/terms/open-question.md` |
+| white spot | Зафиксированный пробел в знаниях, документации или понимании системы. | `docs/terms/project/terms/white-spot.md` |
+| spike report | Operational artifact с результатом небольшого PoC или кодового эксперимента для проверки гипотезы. | `docs/terms/project/terms/spike-report.md` |
 | role-specific rules | Подмножество rules, которое привязано к конкретной `agent-role` как к reusable role profile и затем используется там, где `workflow-step` через `step-vacancy` выбирает эту роль. | none |
 | role-specific skills | Подмножество skills, которое доступно конкретной `agent-role` как reusable role profile и затем используется в тех workflow-step, где эта роль назначена исполнителем через `step-vacancy`. | none |
 | role-specific MCP tools | Подмножество MCP tools, доступных или приоритетных для конкретной `agent-role` как reusable role profile. | none |
@@ -64,6 +81,23 @@
 - methodology workflow
 - workflow
 - agent-role
+- knowledge-lifecycle asset
+- task-management-system asset
+- terms-management-system asset
+- methodology asset
+- composition pack
+- Operational Documentation Layer
+- Engineering Documentation SoT
+- Release Documentation Layer
+- idea artifact
+- plan artifact
+- task artifact
+- research artifact
+- discussion artifact
+- review artifact
+- open question
+- white spot
+- spike report
 - role-specific rules
 - role-specific skills
 - role-specific MCP tools
