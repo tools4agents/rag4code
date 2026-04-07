@@ -223,6 +223,7 @@ Artifact model фиксирует `agent-role` как artifact family и baselin
 - `term`
 - `contract`
 - `test-suite`
+- `test-case`
 - `workflow-step`
 - `workflow-overview`
 - `acceptance-criteria`

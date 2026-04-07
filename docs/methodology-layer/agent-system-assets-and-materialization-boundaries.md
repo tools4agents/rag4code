@@ -270,7 +270,7 @@ Artifacts вроде `AGENTS.md` и `project/*.md` не должны тракт�
 
 ## 13. Связь с `repository-context-entry-model`
 
-Этот документ и [`Repository Context Entry Model for Project Methodology Runtime`](repository-context-entry-model.md) описывают смежные, но разные bounded contexts.
+Этот документ и [`repository-context-entry-model.md`](repository-context-entry-model.md) описывают смежные, но разные bounded contexts.
 
 `Repository-context-entry-model` отвечает на вопросы:
 - как агент входит в project context;
@@ -309,11 +309,11 @@ Artifacts вроде `AGENTS.md` и `project/*.md` не должны тракт�
 ## 16. Связь с другими каноническими документами
 
 Этот документ нужно читать вместе с:
-- [`Project Methodology Runtime Overview`](overview.md);
-- [`Artifact Model for Project Methodology Runtime`](artifact-model.md);
-- [`Layered SoT and Materialization Model for Project Methodology Runtime`](layered-sot-and-materialization-model.md);
-- [`Interfaces and Storage for Project Methodology Runtime`](interfaces-and-storage.md);
-- [`Repository Context Entry Model for Project Methodology Runtime`](repository-context-entry-model.md);
+- [`overview.md`](overview.md);
+- [`artifact-model.md`](artifact-model.md);
+- [`layered-sot-and-materialization-model.md`](layered-sot-and-materialization-model.md);
+- [`interfaces-and-storage.md`](interfaces-and-storage.md);
+- [`repository-context-entry-model.md`](repository-context-entry-model.md);
 - [`agent-system-specific asset`](../terms/project/terms/agent-system-specific-asset.md);
 - [`agent-system materialization`](../terms/project/terms/agent-system-materialization.md).
 

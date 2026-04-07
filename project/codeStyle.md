@@ -27,6 +27,33 @@
 - Имена `classes` оформляй в `PascalCase`.
 - Public API, models и integration boundaries должны иметь предсказуемые имена и не дрейфовать между слоями.
 
+## Docstrings
+
+- Python docstrings оформляй в Google style как baseline convention.
+- Module docstring используй как preferred place для suite-level metadata, если один test module реализует один suite.
+- Test function docstring используй как preferred place для `Test case:` и `Requirement:` metadata, если проект применяет testing traceability conventions.
+- Structured testing metadata не заменяет обычный explanatory docstring, а дополняет его.
+
+Пример module docstring:
+
+```python
+"""Provider OpenAI chat adapter tests.
+
+Suite: TS-PROVIDERS-OPENAI-CHAT
+"""
+```
+
+Пример test function docstring:
+
+```python
+def test_returns_429_when_quota_exhausted():
+    """Returns 429 when provider quota is exhausted.
+
+    Test case: TC-PROVIDERS-OPENAI-CHAT-003
+    Requirement: REQ-PROVIDERS-012
+    """
+```
+
 ## Стиль проектирования
 
 - Отделяй reusable semantics от runtime-specific projection.
@@ -65,4 +92,5 @@
 - `docs/principles.md`
 - `docs/methodology-layer/principles.md`
 - `docs/methodology-layer/naming-conventions.md`
+- `docs/methodology-layer/assets/testing-system/test-case-traceability.md`
 - `docs/contracts/README.md`

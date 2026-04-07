@@ -135,6 +135,9 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/assets/knowledge-lifecycle/documentation-lifecycle-layers.md` — concrete `knowledge-lifecycle asset` `document-driven-development` и его three-layer documentation flow
 - `docs/methodology-layer/assets/task-management/task-map.md` — concrete `task-management-system asset` `task-map` и baseline task storage model
 - `docs/methodology-layer/assets/terms-management/terms-map.md` — concrete `terms-management-system asset` `terms-map` и scoped terminology maps
+- `docs/methodology-layer/assets/testing-system/test-map.md` — concrete `testing-system asset` `test-map` и baseline testing documentation model
+- `docs/methodology-layer/assets/testing-system/test-suites.md` — suite page structure, implementation roots и search-boundary conventions
+- `docs/methodology-layer/assets/testing-system/test-case-traceability.md` — identifier families, traceability chain и code-level metadata placement
 - `docs/methodology-layer/repository-context-entry-model.md` — system of project context entry points, loading order, ownership boundaries и `nested repo context switching`
 - `docs/methodology-layer/agent-system-assets-and-materialization-boundaries.md` — boundaries между reusable source assets, project-owned context-entry artifacts и target `agent-system` materialization layers
 - `docs/methodology-layer/layered-sot-and-materialization-model.md` — canonical SoT layers, resolved states и runtime materialization model
@@ -171,6 +174,9 @@ Environment-facing runtime должен рассматриваться как `R
 - `assets/knowledge-lifecycle/documentation-lifecycle-layers.md` отвечает только за concrete `knowledge-lifecycle asset` `document-driven-development`;
 - `assets/task-management/task-map.md` отвечает только за concrete `task-management-system asset` `task-map`;
 - `assets/terms-management/terms-map.md` отвечает только за concrete `terms-management-system asset` `terms-map`;
+- `assets/testing-system/test-map.md` отвечает только за concrete `testing-system asset` `test-map` и baseline test index model;
+- `assets/testing-system/test-suites.md` отвечает только за suite page structure, implementation roots и search-boundary conventions;
+- `assets/testing-system/test-case-traceability.md` отвечает только за identifier conventions, target traceability chain и code-level metadata placement;
 - `repository-context-entry-model.md` отвечает только за system of project context entry points, loading order, structure + navigation + ownership и `nested repo context switching`;
 - `agent-system-assets-and-materialization-boundaries.md` отвечает только за boundaries между reusable assets, project-owned context-entry artifacts и target `agent-system` materialization layers;
 - `layered-sot-and-materialization-model.md` отвечает только за ownership model между внутренним каноном HyperGraph, `agent-system` config layers и derived runtime states;

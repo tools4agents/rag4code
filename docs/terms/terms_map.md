@@ -50,12 +50,16 @@
 | knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
 | task-management-system asset | Asset type, который задает систему хранения, индексации и управления task artifacts. | `docs/terms/project/terms/task-management-system-asset.md` |
 | terms-management-system asset | Asset type, который задает систему хранения, карты и progressive disclosure терминов. | `docs/terms/project/terms/terms-management-system-asset.md` |
+| testing-system asset | Asset type, который задает систему хранения, индексации и traceability для testing documentation и links к test implementation. | `docs/terms/project/terms/testing-system-asset.md` |
 | methodology asset | Asset type, который задает process model разработки: workflows, role usage, critique and review loops и другие methodology semantics. | `docs/terms/project/terms/methodology-asset.md` |
 | composition pack | Совместимый publishable набор assets разных типов, который можно подключить как готовый методологический стек. | `docs/terms/project/terms/composition-pack.md` |
 | agent-system-agnostic asset | Asset, который не зависит от конкретной `agent-system`, может использоваться как reusable source artifact до выбора runtime target и не содержит внутри себя `agent-system`-specific assets. | `docs/terms/project/terms/agent-system-agnostic-asset.md` |
 | agent-system-specific asset | Asset, совместимый с конкретной `agent-system` на уровне представляемого артефакта и используемый как source layer для соответствующего runtime target. | `docs/terms/project/terms/agent-system-specific-asset.md` |
 | agent-system materialization | Процесс, при котором HyperGraph раскладывает assets для выбранной `primary-agent-system` в конкретном проекте как runtime-facing artifacts. | `docs/terms/project/terms/agent-system-materialization.md` |
 | agent-role | Общая role entity для agent environment. В Kilo Code `mode` — частный случай `agent-role`. | none |
+| test-suite | Documentation unit, который объединяет связанный набор test cases, links на implementation roots и suite-level navigation metadata. | `docs/terms/project/terms/test-suite.md` |
+| test-case | Минимальная documented verification unit внутри `test-suite`, которая имеет stable identifier и связывает requirement-level intent с конкретной test implementation. | `docs/terms/project/terms/test-case.md` |
+| test-implementation | Code-level реализация test case в test module, test class или test function. | `docs/terms/project/terms/test-implementation.md` |
 | repository-context-entry-model | Система входных точек и загрузки контекста проекта, которая задает `structure + navigation + ownership` для project-scoped agent work. | `docs/terms/project/terms/repository-context-entry-model.md` |
 | nested-repo-context-switching | Правило переключения агента с parent project context на local context автономного nested project, когда task scope уходит внутрь этого repository. | `docs/terms/project/terms/nested-repo-context-switching.md` |
 | manual-hybrid discovery | Discovery mode, в котором сервис heuristically находит candidates, а разработчик вручную подтверждает final classification. | none |
@@ -86,12 +90,16 @@
 - knowledge-lifecycle asset
 - task-management-system asset
 - terms-management-system asset
+- testing-system asset
 - methodology asset
 - composition pack
 - agent-system-agnostic asset
 - agent-system-specific asset
 - agent-system materialization
 - agent-role
+- test-suite
+- test-case
+- test-implementation
 - repository-context-entry-model
 - nested-repo-context-switching
 - manual-hybrid discovery

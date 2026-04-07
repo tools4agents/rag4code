@@ -64,6 +64,16 @@ Assets могут:
 - как организован lazy loading терминов;
 - как glossary используется в инженерной и operational documentation.
 
+### `testing-system asset`
+
+Задает систему хранения, индексации и traceability для testing documentation и links к test implementation.
+
+Этот тип asset отвечает на вопросы:
+- где живет test index;
+- как устроены suite pages;
+- как задается baseline test traceability chain;
+- как documentation связана с code-level test implementation.
+
 ### `methodology asset`
 
 Задает process model разработки.
@@ -99,6 +109,7 @@ Composition pack может включать:
 - один `knowledge-lifecycle asset`;
 - один `task-management-system asset`;
 - один `terms-management-system asset`;
+- один `testing-system asset`;
 - один или несколько `methodology assets`;
 - `rules packs`;
 - `skills packs`;
@@ -130,8 +141,9 @@ Asset taxonomy не требует, чтобы каждый asset type жест�
 | Asset type | Concrete asset | Роль в composition |
 | --- | --- | --- |
 | `knowledge-lifecycle asset` | `document-driven-development` | Задает lifecycle знания через documentation layers. |
-| `task-management-system asset` | [`task-map`](assets/task-management/task-map.md) | Задает систему хранения, индексации и управления задачами. |
-| `terms-management-system asset` | [`terms-map`](assets/terms-management/terms-map.md) | Задает систему хранения и progressive disclosure терминов. |
+| `task-management-system asset` | [`task-map.md`](assets/task-management/task-map.md) | Задает систему хранения, индексации и управления задачами. |
+| `terms-management-system asset` | [`terms-map.md`](assets/terms-management/terms-map.md) | Задает систему хранения и progressive disclosure терминов. |
+| `testing-system asset` | [`test-map.md`](assets/testing-system/test-map.md) | Задает систему хранения test documentation, suite navigation и baseline traceability. |
 | `methodology asset` | `waterfall` | Задает process model разработки. |
 | `rules pack` | `project-selected rules` | Подключает набор policy и operating rules. |
 | `skills pack` | `project-selected skills` | Подключает набор reusable skills для работы с выбранной stack. |
@@ -151,15 +163,16 @@ Asset taxonomy не требует, чтобы каждый asset type жест�
 
 Этот документ нужно читать вместе с:
 
-- [`Project Methodology Runtime Overview`](overview.md);
-- [`Layered SoT and Materialization Model for Project Methodology Runtime`](layered-sot-and-materialization-model.md);
-- [`Artifact Model for Project Methodology Runtime`](artifact-model.md);
-- [`Documentation Lifecycle Layers`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md).
+- [`overview.md`](overview.md);
+- [`layered-sot-and-materialization-model.md`](layered-sot-and-materialization-model.md);
+- [`artifact-model.md`](artifact-model.md);
+- [`documentation-lifecycle-layers.md`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md).
 
 ## Canonical invariants
 
 - HyperGraph управляет экосистемой composable assets, а не одной жестко зашитой методологией.
-- `knowledge-lifecycle asset`, `task-management-system asset`, `terms-management-system asset` и `methodology asset` являются разными asset types.
+- `knowledge-lifecycle asset`, `task-management-system asset`, `terms-management-system asset`, `testing-system asset` и `methodology asset` являются разными asset types.
 - composition pack может включать совместимый набор assets разных типов.
 - task system и terms system не обязаны быть зашиты внутрь methodology asset.
+- testing system не обязана быть зашита внутрь methodology asset.
 - methodology asset может использовать существующие lifecycle, task-management и terms-management assets, не владея ими.

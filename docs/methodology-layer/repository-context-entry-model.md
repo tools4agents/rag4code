@@ -24,7 +24,7 @@
 
 ## 2. Почему это отдельный focused spec
 
-Этот bounded context нельзя смешивать с [`Project Discovery for Project Methodology Runtime`](project-discovery.md).
+Этот bounded context нельзя смешивать с [`project-discovery.md`](project-discovery.md).
 
 `Project Discovery` отвечает на вопросы:
 - какие project roots существуют;
@@ -39,7 +39,7 @@
 
 То есть здесь речь идет не про discovery, а про систему входных точек и загрузки контекста проекта.
 
-Этот focused spec опирается на принципы из [`Principles for Project Methodology Runtime`](principles.md), прежде всего на:
+Этот focused spec опирается на принципы из [`principles.md`](principles.md), прежде всего на:
 - `lazy loading` и `progressive disclosure`;
 - `explicit over implicit`;
 - `separate artifacts instead of hidden mixing`;
@@ -57,7 +57,7 @@
 - проект должен давать короткий и explainable маршрут загрузки контекста;
 - этот маршрут должен быть одинаково понятен человеку и агенту.
 
-Этот invariant прямо следует из [`Principles for Project Methodology Runtime`](principles.md):
+Этот invariant прямо следует из [`principles.md`](principles.md):
 - `lazy loading` и `progressive disclosure` требуют читать контекст по слоям, а не монолитно;
 - `explicit over implicit` требует явного loading order и ownership split;
 - `separate artifacts instead of hidden mixing` требует не смешивать router, durable context, engineering SoT, execution layer и Kilo runtime layer.
@@ -218,10 +218,10 @@
 
 ## 8. Связь с layered documentation model
 
-`Repository-context-entry-model` не заменяет [`Documentation Lifecycle Layers`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md).
+`Repository-context-entry-model` не заменяет [`documentation-lifecycle-layers.md`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md).
 
 Связь между ними такая:
-- [`Documentation Lifecycle Layers`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md) задает, где рождается и канонизируется знание;
+- [`documentation-lifecycle-layers.md`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md) задает, где рождается и канонизируется знание;
 - [`repository-context-entry-model`](../terms/project/terms/repository-context-entry-model.md) задает, как агент находит правильные entry points в уже выбранном проекте.
 
 То есть lifecycle отвечает за движение знания между слоями, а context entry model - за навигацию по этим слоям.
@@ -238,7 +238,7 @@
 
 Но он не описывает детально, какие из них являются source artifacts, какие - project-owned config, а какие - runtime materialization outputs.
 
-Эта тема принадлежит отдельному focused spec [`Agent-System Assets and Materialization Boundaries for Project Methodology Runtime`](agent-system-assets-and-materialization-boundaries.md).
+Эта тема принадлежит отдельному focused spec [`agent-system-assets-and-materialization-boundaries.md`](agent-system-assets-and-materialization-boundaries.md).
 
 ## 10. Почему это пока не отдельный asset type
 
@@ -268,13 +268,13 @@
 ## 12. Связь с другими каноническими документами
 
 Этот документ нужно читать вместе с:
-- [`Project Methodology Runtime Overview`](overview.md);
-- [`Project Discovery for Project Methodology Runtime`](project-discovery.md);
-- [`Documentation Lifecycle Layers`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md);
-- [`Task Map`](assets/task-management/task-map.md);
-- [`Terms Map`](assets/terms-management/terms-map.md);
-- [`Interfaces and Storage for Project Methodology Runtime`](interfaces-and-storage.md);
-- [`Layered SoT and Materialization Model for Project Methodology Runtime`](layered-sot-and-materialization-model.md).
+- [`overview.md`](overview.md);
+- [`project-discovery.md`](project-discovery.md);
+- [`documentation-lifecycle-layers.md`](assets/knowledge-lifecycle/documentation-lifecycle-layers.md);
+- [`task-map.md`](assets/task-management/task-map.md);
+- [`terms-map.md`](assets/terms-management/terms-map.md);
+- [`interfaces-and-storage.md`](interfaces-and-storage.md);
+- [`layered-sot-and-materialization-model.md`](layered-sot-and-materialization-model.md).
 
 ## 13. Canonical invariants
 

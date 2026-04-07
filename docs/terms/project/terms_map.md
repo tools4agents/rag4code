@@ -48,6 +48,7 @@
 | knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
 | task-management-system asset | Asset type, который задает систему хранения, индексации и управления task artifacts. | `docs/terms/project/terms/task-management-system-asset.md` |
 | terms-management-system asset | Asset type, который задает систему хранения и progressive disclosure терминов. | `docs/terms/project/terms/terms-management-system-asset.md` |
+| testing-system asset | Asset type, который задает систему хранения, индексации и traceability для testing documentation и links к test implementation. | `docs/terms/project/terms/testing-system-asset.md` |
 | methodology asset | Asset type, который задает process model разработки и methodology-specific semantics. | `docs/terms/project/terms/methodology-asset.md` |
 | composition pack | Publishable совместимый набор assets разных типов, который можно подключить как готовый методологический стек. | `docs/terms/project/terms/composition-pack.md` |
 | Operational Documentation Layer | Временный operational слой, в котором рождается, уточняется и проверяется новое знание до его канонизации. | `docs/terms/project/terms/operational-documentation-layer.md` |
@@ -67,6 +68,9 @@
 | role-specific MCP tools | Подмножество MCP tools, доступных или приоритетных для конкретной `agent-role` как reusable role profile. | none |
 | project-scoped runtime | Согласованный runtime layer проекта, который materialize для agent system как единый локальный слой consumption. | none |
 | Central methodology catalog | Локально для этого слоя — внутренний catalog methodology artifacts, откуда проект получает reusable artifacts по stable references. | none |
+| test-suite | Documentation unit, который объединяет связанный набор test cases, links на implementation roots и suite-level navigation metadata. | `docs/terms/project/terms/test-suite.md` |
+| test-case | Минимальная documented verification unit внутри `test-suite`, которая имеет stable identifier и связывает requirement-level intent с конкретной test implementation. | `docs/terms/project/terms/test-case.md` |
+| test-implementation | Code-level реализация test case в test module, test class или test function. | `docs/terms/project/terms/test-implementation.md` |
 | repository-context-entry-model | Система входных точек и загрузки контекста проекта, которая задает `structure + navigation + ownership` для project-scoped agent work. | `docs/terms/project/terms/repository-context-entry-model.md` |
 | nested-repo-context-switching | Правило переключения агента с parent project context на local context автономного nested project, когда task scope уходит внутрь этого repository. | `docs/terms/project/terms/nested-repo-context-switching.md` |
 | manual-hybrid discovery | Discovery mode для этого слоя, в котором сервис heuristically находит candidates, а разработчик вручную подтверждает final classification. | none |
@@ -86,6 +90,7 @@
 - knowledge-lifecycle asset
 - task-management-system asset
 - terms-management-system asset
+- testing-system asset
 - methodology asset
 - composition pack
 - Operational Documentation Layer
@@ -105,6 +110,9 @@
 - role-specific MCP tools
 - project-scoped runtime
 - Central methodology catalog
+- test-suite
+- test-case
+- test-implementation
 - repository-context-entry-model
 - nested-repo-context-switching
 - manual-hybrid discovery
