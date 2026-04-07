@@ -181,12 +181,12 @@ Graph layer, который связывает документацию, код,
 
 Этот документ нужно читать вместе с:
 
-- [`Project Methodology Runtime Overview`](overview.md);
-- [`Principles for Project Methodology Runtime`](principles.md);
-- [`Artifact Model for Project Methodology Runtime`](artifact-model.md);
-- [`Workflow and Roles for Project Methodology Runtime`](workflow-and-roles.md);
-- [`Interfaces and Storage for Project Methodology Runtime`](interfaces-and-storage.md);
-- [`Naming Conventions for Project Methodology Runtime`](naming-conventions.md).
+- [`overview.md`](overview.md);
+- [`principles.md`](principles.md);
+- [`artifact-model.md`](artifact-model.md);
+- [`workflow-and-roles.md`](workflow-and-roles.md);
+- [`interfaces-and-storage.md`](interfaces-and-storage.md);
+- [`naming-conventions.md`](naming-conventions.md).
 
 ## 11. Canonical invariants
 

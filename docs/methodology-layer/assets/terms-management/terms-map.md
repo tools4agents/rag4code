@@ -102,10 +102,10 @@ Knowledge movement между operational, engineering и release слоями �
 
 Этот документ нужно читать вместе с:
 
-- [`Asset Taxonomy and Composition Model for Project Methodology Runtime`](../../asset-taxonomy-and-composition-model.md);
-- [`Documentation Lifecycle Layers`](../knowledge-lifecycle/documentation-lifecycle-layers.md);
-- [`Task Map`](../task-management/task-map.md);
-- [`Project Methodology Runtime Overview`](../../overview.md).
+- [`asset-taxonomy-and-composition-model.md`](../../asset-taxonomy-and-composition-model.md);
+- [`documentation-lifecycle-layers.md`](../knowledge-lifecycle/documentation-lifecycle-layers.md);
+- [`task-map.md`](../task-management/task-map.md);
+- [`overview.md`](../../overview.md).
 
 ## Canonical invariants
 

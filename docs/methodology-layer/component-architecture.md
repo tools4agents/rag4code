@@ -124,11 +124,11 @@
 
 ## Связь с другими документами
 
-- [`Project Methodology Runtime Overview`](overview.md)
-- [`Layered SoT and Materialization Model for Project Methodology Runtime`](layered-sot-and-materialization-model.md)
-- [`Interfaces and Storage for Project Methodology Runtime`](interfaces-and-storage.md)
-- [`Project Discovery for Project Methodology Runtime`](project-discovery.md)
-- [`Asset Taxonomy and Composition Model for Project Methodology Runtime`](asset-taxonomy-and-composition-model.md)
+- [`overview.md`](overview.md)
+- [`layered-sot-and-materialization-model.md`](layered-sot-and-materialization-model.md)
+- [`interfaces-and-storage.md`](interfaces-and-storage.md)
+- [`project-discovery.md`](project-discovery.md)
+- [`asset-taxonomy-and-composition-model.md`](asset-taxonomy-and-composition-model.md)
 
 ## Canonical invariants
 

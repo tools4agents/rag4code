@@ -104,9 +104,9 @@ Task storage, task index, handoff и focus management принадлежат о�
 
 Этот документ нужно читать вместе с:
 
-- [`Asset Taxonomy and Composition Model for Project Methodology Runtime`](../../asset-taxonomy-and-composition-model.md);
-- [`Layered SoT and Materialization Model for Project Methodology Runtime`](../../layered-sot-and-materialization-model.md);
-- [`Project Methodology Runtime Overview`](../../overview.md).
+- [`asset-taxonomy-and-composition-model.md`](../../asset-taxonomy-and-composition-model.md);
+- [`layered-sot-and-materialization-model.md`](../../layered-sot-and-materialization-model.md);
+- [`overview.md`](../../overview.md).
 
 ## Canonical invariants
 

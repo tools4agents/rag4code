@@ -97,7 +97,7 @@ Web UI не обязан:
 
 Этот раздел описывает storage and runtime states внутри `Project Methodology Runtime`.
 
-Он не заменяет более широкую ownership model между внутренним каноном HyperGraph, config layers и derived states; для этого см. [`Layered SoT and Materialization Model for Project Methodology Runtime`](layered-sot-and-materialization-model.md).
+Он не заменяет более широкую ownership model между внутренним каноном HyperGraph, config layers и derived states; для этого см. [`layered-sot-and-materialization-model.md`](layered-sot-and-materialization-model.md).
 
 Для этого слоя фиксируется модель из четырех состояний.
 
