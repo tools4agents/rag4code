@@ -11,8 +11,10 @@
 1. `project/overview.md` для краткого описания проекта и его целей.
 2. `project/gitContext.md` для repository ownership, nested repositories и git boundaries.
 3. `project/techContext.md` для technical baseline и environment assumptions.
-4. `project/repository-map.md` для top-level navigation по областям репозитория.
-5. `project/context-migration.md` для текущей миграции от legacy `.kilocode` к новой layered model.
+4. `project/entry-points.md` для concrete loading order и ownership split между слоями контекста.
+5. `project/codeStyle.md` для coding style и authoring conventions.
+6. `project/repository-map.md` для top-level navigation по областям репозитория.
+7. `project/context-migration.md` для текущей миграции от legacy `.kilocode` к новой layered model.
 
 ## Границы слоя
 

@@ -35,6 +35,8 @@ This file is a navigation map of the repository contents. It explains what lives
 
 ## Related Files
 
+- `project/entry-points.md` for project-local loading order and context ownership.
 - `project/gitContext.md` for repository ownership and git boundaries.
+- `project/codeStyle.md` for project-specific coding conventions.
 - `project/techContext.md` for technical baseline.
 - `project/context-migration.md` for the current migration direction.
