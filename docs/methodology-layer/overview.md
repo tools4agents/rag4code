@@ -130,6 +130,7 @@ Environment-facing runtime должен рассматриваться как `R
 
 - `docs/methodology-layer/artifact-model.md` — `MethodologyArtifact`, `MethodologyArtifactType`, baseline types, artifact families и role packs как packaging boundary
 - `docs/methodology-layer/workflow-and-roles.md` — `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и process semantics workflow assignment
+- `docs/methodology-layer/component-architecture.md` — component-level архитектура первой итерации, boundaries и основной materialization flow
 - `docs/methodology-layer/asset-taxonomy-and-composition-model.md` — asset types, composition packs и свободная композиция reusable assets
 - `docs/methodology-layer/assets/knowledge-lifecycle/documentation-lifecycle-layers.md` — concrete `knowledge-lifecycle asset` `document-driven-development` и его three-layer documentation flow
 - `docs/methodology-layer/assets/task-management/task-map.md` — concrete `task-management-system asset` `task-map` и baseline task storage model
@@ -163,6 +164,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `overview.md` объясняет зачем слой существует, какие у него инварианты и как устроена карта документации;
 - `artifact-model.md` отвечает только за meta-model artifacts, baseline types, artifact families и role packs как packaging boundary;
 - `workflow-and-roles.md` отвечает только за process semantics `agent-role`, `workflow`, `workflow-step`, `step-vacancy` и workflow assignment layer;
+- `component-architecture.md` отвечает только за состав компонентов системы, их boundaries и основной runtime flow первой итерации;
 - `asset-taxonomy-and-composition-model.md` отвечает только за типы reusable assets, composition packs и модель свободной композиции;
 - `assets/knowledge-lifecycle/documentation-lifecycle-layers.md` отвечает только за concrete `knowledge-lifecycle asset` `document-driven-development`;
 - `assets/task-management/task-map.md` отвечает только за concrete `task-management-system asset` `task-map`;
