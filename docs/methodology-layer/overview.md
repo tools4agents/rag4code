@@ -135,6 +135,8 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/assets/knowledge-lifecycle/documentation-lifecycle-layers.md` — concrete `knowledge-lifecycle asset` `document-driven-development` и его three-layer documentation flow
 - `docs/methodology-layer/assets/task-management/task-map.md` — concrete `task-management-system asset` `task-map` и baseline task storage model
 - `docs/methodology-layer/assets/terms-management/terms-map.md` — concrete `terms-management-system asset` `terms-map` и scoped terminology maps
+- `docs/methodology-layer/repository-context-entry-model.md` — system of project context entry points, loading order, ownership boundaries и `nested repo context switching`
+- `docs/methodology-layer/agent-system-assets-and-materialization-boundaries.md` — boundaries между reusable source assets, project-owned context-entry artifacts и target `agent-system` materialization layers
 - `docs/methodology-layer/layered-sot-and-materialization-model.md` — canonical SoT layers, resolved states и runtime materialization model
 - `docs/methodology-layer/interfaces-and-storage.md` — interface model, storage boundaries, portability и runtime projection policy
 - `docs/methodology-layer/project-discovery.md` — `manual-hybrid discovery`, classification policy и минимальный graph contract
@@ -169,6 +171,8 @@ Environment-facing runtime должен рассматриваться как `R
 - `assets/knowledge-lifecycle/documentation-lifecycle-layers.md` отвечает только за concrete `knowledge-lifecycle asset` `document-driven-development`;
 - `assets/task-management/task-map.md` отвечает только за concrete `task-management-system asset` `task-map`;
 - `assets/terms-management/terms-map.md` отвечает только за concrete `terms-management-system asset` `terms-map`;
+- `repository-context-entry-model.md` отвечает только за system of project context entry points, loading order, structure + navigation + ownership и `nested repo context switching`;
+- `agent-system-assets-and-materialization-boundaries.md` отвечает только за boundaries между reusable assets, project-owned context-entry artifacts и target `agent-system` materialization layers;
 - `layered-sot-and-materialization-model.md` отвечает только за ownership model между внутренним каноном HyperGraph, `agent-system` config layers и derived runtime states;
 - `interfaces-and-storage.md` отвечает только за interfaces, `Source of Truth`, portability и storage boundary;
 - `project-discovery.md` отвечает только за discovery policy, classification model и минимальный graph contract;

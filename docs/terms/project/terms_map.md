@@ -67,6 +67,8 @@
 | role-specific MCP tools | Подмножество MCP tools, доступных или приоритетных для конкретной `agent-role` как reusable role profile. | none |
 | project-scoped runtime | Согласованный runtime layer проекта, который materialize для agent system как единый локальный слой consumption. | none |
 | Central methodology catalog | Локально для этого слоя — внутренний catalog methodology artifacts, откуда проект получает reusable artifacts по stable references. | none |
+| repository-context-entry-model | Система входных точек и загрузки контекста проекта, которая задает `structure + navigation + ownership` для project-scoped agent work. | `docs/terms/project/terms/repository-context-entry-model.md` |
+| nested-repo-context-switching | Правило переключения агента с parent project context на local context автономного nested project, когда task scope уходит внутрь этого repository. | `docs/terms/project/terms/nested-repo-context-switching.md` |
 | manual-hybrid discovery | Discovery mode для этого слоя, в котором сервис heuristically находит candidates, а разработчик вручную подтверждает final classification. | none |
 | project candidate | Найденная discovery-механизмом директория, которая может оказаться `root-project`, `nested-project`, `external-project-reference`, `ignored-git-root` или `service-managed-root`. | none |
 | nested-project | Вложенный project внутри другого project root, который классифицирован как самостоятельный project node. | none |
@@ -103,6 +105,8 @@
 - role-specific MCP tools
 - project-scoped runtime
 - Central methodology catalog
+- repository-context-entry-model
+- nested-repo-context-switching
 - manual-hybrid discovery
 - nested-project
 - external-project-reference

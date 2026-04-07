@@ -56,6 +56,8 @@
 | agent-system-specific asset | Asset, совместимый с конкретной `agent-system` на уровне представляемого артефакта и используемый как source layer для соответствующего runtime target. | `docs/terms/project/terms/agent-system-specific-asset.md` |
 | agent-system materialization | Процесс, при котором HyperGraph раскладывает assets для выбранной `primary-agent-system` в конкретном проекте как runtime-facing artifacts. | `docs/terms/project/terms/agent-system-materialization.md` |
 | agent-role | Общая role entity для agent environment. В Kilo Code `mode` — частный случай `agent-role`. | none |
+| repository-context-entry-model | Система входных точек и загрузки контекста проекта, которая задает `structure + navigation + ownership` для project-scoped agent work. | `docs/terms/project/terms/repository-context-entry-model.md` |
+| nested-repo-context-switching | Правило переключения агента с parent project context на local context автономного nested project, когда task scope уходит внутрь этого repository. | `docs/terms/project/terms/nested-repo-context-switching.md` |
 | manual-hybrid discovery | Discovery mode, в котором сервис heuristically находит candidates, а разработчик вручную подтверждает final classification. | none |
 | project candidate | Директория, которую discovery heuristics определили как возможный project root, обычно по `.git` marker или другим project signals. | none |
 | nested-project | Candidate внутри другого project root, который явно подтвержден как самостоятельный project в discovery configuration. | none |
@@ -90,6 +92,8 @@
 - agent-system-specific asset
 - agent-system materialization
 - agent-role
+- repository-context-entry-model
+- nested-repo-context-switching
 - manual-hybrid discovery
 - external-project-reference
 - graph projection
