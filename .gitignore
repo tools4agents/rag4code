@@ -43,6 +43,9 @@ services/
 .env.local
 .env.*.local
 
+# Temporary review and agent-generated reports
+tmp/
+
 # --- OS / IDE ---
 # macOS
 .DS_Store

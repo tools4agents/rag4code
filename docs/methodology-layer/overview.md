@@ -145,7 +145,12 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/project-discovery.md` — `manual-hybrid discovery`, classification policy и минимальный graph contract
 - `docs/methodology-layer/naming-conventions.md` — naming rules для glossary terms, pack layout, Python identifiers и `agent-system`-related namespaces
 
-### 5.4 Contracts
+### 5.4 Patterns
+
+- `docs/methodology-layer/patterns/index.md` — index reusable design patterns для этого слоя
+- `docs/methodology-layer/patterns/reviewable-automation-pattern.md` — collaboration loop между ИИ-агентом и deterministic algorithm/tool по схеме `plan -> review -> apply -> verify`
+
+### 5.5 Contracts
 
 - `docs/contracts/` — отдельный слой контрактов
 
@@ -183,6 +188,8 @@ Environment-facing runtime должен рассматриваться как `R
 - `interfaces-and-storage.md` отвечает только за interfaces, `Source of Truth`, portability и storage boundary;
 - `project-discovery.md` отвечает только за discovery policy, classification model и минимальный graph contract;
 - `naming-conventions.md` отвечает только за naming rules для human-facing terms, filesystem layout и Python-facing identifiers;
+- `patterns/index.md` отвечает только за navigation по reusable patterns этого слоя;
+- `patterns/reviewable-automation-pattern.md` отвечает только за reusable collaboration pattern между ИИ-агентом и deterministic algorithm/tool;
 - `docs/contracts/` отвечает только за explicit contracts.
 
 Если определение повторяется в нескольких местах, источником истины становятся `docs/terms/common/terms_map.md` и `docs/terms/project/terms_map.md`, а остальные документы должны ссылаться на них, а не копировать полное объяснение.
