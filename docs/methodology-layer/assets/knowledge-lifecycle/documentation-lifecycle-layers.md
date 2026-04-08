@@ -85,6 +85,12 @@ Task storage, task index, handoff и focus management принадлежат о�
 
 Структура `terms_map.md`, detail pages и navigation по терминам принадлежат отдельному [`terms-management-system asset`](../../../terms/project/terms/terms-management-system-asset.md).
 
+## Связь с research management
+
+Этот asset не задает детальную систему хранения и трассировки исследований.
+
+Research index, topic trees, branch dossiers и iteration traceability принадлежат отдельному [`research-management-system asset`](../../../terms/project/terms/research-management-system-asset.md).
+
 ## Связь с методологией
 
 Этот asset не равен конкретной methodology.
@@ -114,4 +120,4 @@ Task storage, task index, handoff и focus management принадлежат о�
 - `Operational Documentation Layer`, `Engineering Documentation SoT` и `Release Documentation Layer` являются разными documentation lifecycle layers.
 - operational artifacts не должны считаться engineering SoT, пока знание не канонизировано.
 - release documentation не должна подменять engineering SoT проекта.
-- `task-management-system asset` и `terms-management-system asset` остаются отдельными subsystem assets.
+- `task-management-system asset`, `terms-management-system asset` и `research-management-system asset` остаются отдельными subsystem assets.

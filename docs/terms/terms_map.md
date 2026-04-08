@@ -50,6 +50,7 @@
 | knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
 | task-management-system asset | Asset type, который задает систему хранения, индексации и управления task artifacts. | `docs/terms/project/terms/task-management-system-asset.md` |
 | terms-management-system asset | Asset type, который задает систему хранения, карты и progressive disclosure терминов. | `docs/terms/project/terms/terms-management-system-asset.md` |
+| research-management-system asset | Asset type, который задает систему хранения, дерева веток и traceability для research artifacts. | `docs/terms/project/terms/research-management-system-asset.md` |
 | testing-system asset | Asset type, который задает систему хранения, индексации и traceability для testing documentation и links к test implementation. | `docs/terms/project/terms/testing-system-asset.md` |
 | methodology asset | Asset type, который задает process model разработки: workflows, role usage, critique and review loops и другие methodology semantics. | `docs/terms/project/terms/methodology-asset.md` |
 | composition pack | Совместимый publishable набор assets разных типов, который можно подключить как готовый методологический стек. | `docs/terms/project/terms/composition-pack.md` |
@@ -90,6 +91,7 @@
 - knowledge-lifecycle asset
 - task-management-system asset
 - terms-management-system asset
+- research-management-system asset
 - testing-system asset
 - methodology asset
 - composition pack
