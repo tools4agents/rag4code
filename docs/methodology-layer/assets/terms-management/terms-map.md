@@ -21,21 +21,41 @@
 
 ## Baseline layout pattern
 
-Для первой итерации `terms-map` использует такой обобщенный baseline pattern:
+Для первой итерации `terms-map` использует такой baseline pattern:
 
 ```text
-docs/terms/<scope>/terms_map.md
+docs/terms/
+  index.md
+  <scope>/
+    terms-map.md
+    terms/
+      <term>.md
 ```
+
+Где:
+
+- `docs/terms/index.md` — карта всех `scope` groups и links на все scoped `terms-map.md` внутри проекта;
+- `docs/terms/<scope>/terms-map.md` — краткая карта терминов для конкретного `scope`;
+- `docs/terms/<scope>/terms/<term>.md` — detail page для индивидуального термина внутри `scope`.
 
 Где `<scope>`:
 
 - не фиксирован жестко;
 - может отражать логическую группировку терминов;
-- может быть устроен по-разному в разных проектах и compositions.
+- может быть устроен по-разному в разных проектах и compositions;
+- должен допускать перенос между проектами как reusable terminology package.
+
+Для единообразного bootstrap нового `terms-map.md` можно использовать шаблон:
+
+- [`terms-map.template.md`](./resources/terms-map.template.md)
+
+Для единообразного bootstrap root `docs/terms/index.md` можно использовать шаблон:
+
+- [`terms-index.template.md`](./resources/terms-index.template.md)
 
 ## Scoped terminology maps
 
-`Terms-map` предполагает, что терминология раскрывается через scoped maps.
+`Terms-map` предполагает, что терминология раскрывается через scoped maps, а root `docs/terms/index.md` играет роль entry point для всех scope groups проекта.
 
 Типичные варианты scope:
 
@@ -43,13 +63,15 @@ docs/terms/<scope>/terms_map.md
 - `project`
 - другие scope groups, если проекту так удобнее
 
-Главный invariant:
+Главные invariants:
 
-- терминологическая система должна поддерживать несколько `terms_map.md`, а не требовать один глобальный файл на все случаи.
+- терминологическая система должна поддерживать несколько scoped `terms-map.md`, а не требовать один глобальный файл на все случаи;
+- root `docs/terms/index.md` должен перечислять доступные scope groups и вести в их `terms-map.md`;
+- scope groups должны быть устроены так, чтобы их можно было переносить между проектами как отдельные terminology packages.
 
 ## Optional detail pages
 
-Помимо `terms_map.md`, система может использовать detail pages.
+Помимо `terms-map.md`, система может использовать detail pages.
 
 Обобщенный pattern такой:
 
@@ -57,22 +79,24 @@ docs/terms/<scope>/terms_map.md
 docs/terms/<scope>/terms/*.md
 ```
 
-Но detail pages являются supporting layer, а не обязательной заменой scoped `terms_map.md`.
+Но detail pages являются supporting layer, а не обязательной заменой scoped `terms-map.md`.
 
 ## Как работает navigation
 
 `Terms-map` строится вокруг progressive disclosure:
 
-1. сначала читается краткое определение в `terms_map.md`;
-2. затем при необходимости открывается detail page;
-3. после этого читатель или агент возвращается в исходный архитектурный, методологический или operational документ.
+1. сначала читается `docs/terms/index.md` как карта scopes;
+2. затем открывается нужный scoped `terms-map.md`;
+3. затем при необходимости открывается detail page термина;
+4. после этого читатель или агент возвращается в исходный архитектурный, методологический или operational документ.
 
 ## Связь с документацией
 
 Если проект использует `terms-map`:
 
 - docs должны ссылаться на термины, а не пересказывать определения в каждом документе;
-- scoped `terms_map.md` должны быть canonical entry points в своей области;
+- `docs/terms/index.md` должен быть общим terminology entry point;
+- scoped `terms-map.md` должны быть canonical entry points в своей области;
 - detail pages должны использоваться для нагруженных или часто переиспользуемых терминов.
 
 ## Связь с knowledge lifecycle
@@ -110,7 +134,9 @@ Knowledge movement между operational, engineering и release слоями �
 ## Canonical invariants
 
 - `terms-map` является concrete `terms-management-system asset`.
-- scoped `docs/terms/<scope>/terms_map.md` являются canonical terminology entry points.
+- `docs/terms/index.md` является root terminology entry point проекта.
+- scoped `docs/terms/<scope>/terms-map.md` являются canonical terminology entry points внутри своих scopes.
 - структура scope groups может различаться между проектами.
-- detail pages являются optional supporting layer поверх scoped `terms_map.md`.
+- scope groups должны допускать перенос между проектами как reusable terminology packages.
+- detail pages являются optional supporting layer поверх scoped `terms-map.md`.
 - docs и operational artifacts должны использовать glossary-first linking, а не дублировать определения терминов.
