@@ -23,6 +23,10 @@ coverage.xml
 .hypothesis/
 
 # --- Project Specific ---
+# Assets nested git repos (keep folder, ignore contents)
+assets/*
+!assets/.gitkeep
+
 # HSM (Hyper Stack Manager) artifacts
 .hpm/
 .hsm/
@@ -30,10 +34,6 @@ hsm/
 
 # Services
 services/
-
-# Serena / Agent artifacts
-.serena/
-!.serena/project.yml
 
 # Memory Bank & Rules
 .kilocode/
