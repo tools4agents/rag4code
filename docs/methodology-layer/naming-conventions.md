@@ -218,9 +218,21 @@ agent_roles/
 
 ### 10.2 Workflow semantics
 
+- term: `workflow`
+- possible Python class: `Workflow`
+- possible field: `workflow_id`
+
 - term: `workflow-step`
 - possible Python class: `WorkflowStep`
 - possible field: `workflow_step_id`
+
+- term: `workflow-pack`
+- possible directory family: `workflows/`
+- possible root file inside pack: `workflow.md`
+
+- term: `workflow-step-pack`
+- possible directory family: `steps/`
+- possible root file inside pack: `step.md`
 
 ### 10.3 Agent system semantics
 

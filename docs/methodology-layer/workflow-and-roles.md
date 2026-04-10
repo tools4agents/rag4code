@@ -52,9 +52,13 @@
 
 `Workflow` должен оставаться компактной картой, а не превращаться в перегруженный монолит.
 
+При этом важно различать:
+- `workflow` как semantic process entity;
+- `workflow-pack` как packaging boundary, внутри которой workflow authoring-ся и хранится.
+
 ### 3.2 `workflow-step`
 
-`Workflow-step` — это подробное описание одного конкретного шага workflow.
+`Workflow-step` — это semantic execution unit и подробное описание одного конкретного шага workflow.
 
 На process layer `workflow-step` отвечает за:
 - входы шага;
@@ -62,9 +66,14 @@
 - ожидаемые выходы;
 - `DoD` шага;
 - критерии провала или условия возврата;
-- ссылку на связанную `step-vacancy`.
+- ссылку на связанную `step-vacancy`;
+- связи с reusable `skills`, если шаг опирается на них.
 
 `Workflow-step` описывает работу шага, а не reusable семантику исполнителя.
+
+При этом важно различать:
+- `workflow-step` как semantic step entity;
+- `workflow-step-pack` как packaging boundary, внутри которой step authoring-ся и хранится вместе с support materials.
 
 ### 3.3 `step-vacancy`
 
@@ -108,6 +117,11 @@
 - `agent-role` не содержит знания о конкретных шагах, в которых он используется.
 
 Такое направление зависимости сохраняет reusable nature роли и не делает process layer циклическим.
+
+Для execution baseline дополнительно фиксируется:
+- агенту обычно назначают выполнение конкретного `workflow-step`;
+- один агент может последовательно выполнить несколько шагов, если это допускает process policy;
+- весь workflow не должен рассматриваться как одна непрозрачная инструкция для единственного запуска целиком.
 
 ## 5. Что значит reusable role semantics
 
@@ -239,8 +253,8 @@ Process layer признает только semantic смысл этого selec
 На текущей итерации не создается отдельный focused spec для `workflow contracts`.
 
 Причины:
-- `workflow` и `workflow-step` пока рассматриваются как markdown artifacts без жесткого API;
-- handoff contracts между шагами пока не стабилизированы как самостоятельная model;
+- `workflow` и `workflow-step` уже не считаются markdown-only сущностями: это semantic entities, которые обычно authoring-ся через `workflow-pack` и `workflow-step-pack`;
+- при этом handoff contracts между шагами пока не стабилизированы как самостоятельная formal model с жестким API;
 - current priority — traceability между documentation, ADR, contracts, code, tests и project references, а не отдельная formal contract model между workflow steps.
 
 Следствие:
@@ -258,6 +272,8 @@ Process layer признает только semantic смысл этого selec
 - зачем нужен процесс;
 - последовательность шагов.
 
+Если workflow authoring-ся через `workflow-pack`, pack должен содержать по меньшей мере канонический workflow overview и ссылки на шаги.
+
 ### 12.2 Для `workflow-step`
 
 Минимально `workflow-step` должен описывать:
@@ -267,6 +283,8 @@ Process layer признает только semantic смысл этого selec
 - выходы шага;
 - `DoD`;
 - criteria for failure or return.
+
+Если step authoring-ся через `workflow-step-pack`, pack должен содержать по меньшей мере канонический step markdown и может содержать templates, checklists, examples, references и другие support artifacts.
 
 ### 12.3 Для `step-vacancy`
 
@@ -323,7 +341,7 @@ Process layer должен быть совместим с graph-backed traceabil
 - `docs/methodology-layer/artifact-model.md` как artifact-oriented spec;
 - `docs/methodology-layer/interfaces-and-storage.md` как boundary spec для interfaces и storage;
 - `docs/methodology-layer/project-discovery.md` как discovery policy spec;
-- `docs/terms/project/terms/agent-role.md`, `docs/terms/project/terms/workflow.md`, `docs/terms/project/terms/workflow-step.md`, `docs/terms/project/terms/step-vacancy.md`, `docs/terms/project/terms/agent-system.md`, `docs/terms/project/terms/primary-agent-system.md` и `docs/terms/project/terms/role-pack.md` как glossary layer.
+- `docs/terms/project/terms/agent-role.md`, `docs/terms/project/terms/workflow.md`, `docs/terms/project/terms/workflow-pack.md`, `docs/terms/project/terms/workflow-step.md`, `docs/terms/project/terms/workflow-step-pack.md`, `docs/terms/project/terms/step-vacancy.md`, `docs/terms/project/terms/agent-system.md`, `docs/terms/project/terms/primary-agent-system.md` и `docs/terms/project/terms/role-pack.md` как glossary layer.
 
 ## 16. Canonical invariants
 
@@ -332,8 +350,11 @@ Process layer должен быть совместим с graph-backed traceabil
 - `step-vacancy` — assignment layer, а не description of work;
 - `workflow-step` — detailed step description, а не reusable role semantics;
 - `workflow` — process map, а не хранилище всех деталей шага;
+- `workflow` и `workflow-step` являются semantic entities, а не просто markdown files;
+- `workflow-pack` и `workflow-step-pack` являются packaging boundaries, а не заменой process semantics;
 - связь `workflow -> workflow-step -> step-vacancy -> agent-role` является однонаправленной;
 - `when_to_use` усиливает explainability роли, но не заменяет workflow assignment;
+- `workflow-step` может ссылаться на reusable `skills`, но не должен semantic-чески сливаться с ними;
 - наличие `agent-system`-specific asset не меняет process semantics роли;
 - `primary-agent-system` описывает active target environment для developer context, а не semantic ownership роли;
 - process layer не владеет pack structure;

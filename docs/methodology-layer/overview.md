@@ -137,6 +137,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/assets/terms-management/terms-map.md` — concrete `terms-management-system asset` `terms-map` и scoped terminology maps
 - `docs/methodology-layer/assets/research-management/research-tree.md` — concrete `research-management-system asset` `research-tree` и baseline tree-shaped research storage model
 - `docs/methodology-layer/assets/research-management/research-branches.md` — structure topic roots, branch dossiers и branch portfolio navigation
+- `docs/methodology-layer/assets/research-management/research-knowledge.md` — layered research memory, knowledge distillation и map-of-content navigation поверх history layer
 - `docs/methodology-layer/assets/research-management/research-traceability.md` — identifier families, traceability chain и grep-friendly metadata placement для research tree
 - `docs/methodology-layer/assets/testing-system/test-map.md` — concrete `testing-system asset` `test-map` и baseline testing documentation model
 - `docs/methodology-layer/assets/testing-system/test-suites.md` — suite page structure, implementation roots и search-boundary conventions
@@ -184,6 +185,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `assets/terms-management/terms-map.md` отвечает только за concrete `terms-management-system asset` `terms-map`;
 - `assets/research-management/research-tree.md` отвечает только за concrete `research-management-system asset` `research-tree` и baseline research index model;
 - `assets/research-management/research-branches.md` отвечает только за structure topic roots, branch pages и portfolio navigation внутри research tree;
+- `assets/research-management/research-knowledge.md` отвечает только за layered research memory, knowledge distillation и map-of-content navigation поверх history layer;
 - `assets/research-management/research-traceability.md` отвечает только за identifier conventions, target traceability chain и grep-friendly metadata placement для research tree;
 - `assets/testing-system/test-map.md` отвечает только за concrete `testing-system asset` `test-map` и baseline test index model;
 - `assets/testing-system/test-suites.md` отвечает только за suite page structure, implementation roots и search-boundary conventions;

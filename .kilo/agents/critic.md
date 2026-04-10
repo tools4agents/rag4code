@@ -6,7 +6,6 @@ permission:
   edit:
     "*.md": allow
     "*.txt": allow
-    "*": deny
   bash: deny
 ---
 

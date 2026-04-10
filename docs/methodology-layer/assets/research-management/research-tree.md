@@ -8,13 +8,15 @@
 
 Этот документ фиксирует первый concrete [`research-management-system asset`](../../../terms/project/terms/research-management-system-asset.md): `research-tree`.
 
-Он задает file-first систему хранения и навигации для многоитерационных исследований, где один research topic раскладывается на ветки, а ветки ведутся через bounded iterations.
+Он задает file-first систему хранения и навигации для многоитерационных исследований, где один research topic раскладывается на ветки, ветки ведутся через bounded iterations, а distilled knowledge поднимается в отдельный knowledge layer.
 
 ## Что задает `research-tree`
 
 `Research-tree` отвечает на вопросы:
 - где живет research index;
 - где живут topic roots и branch pages;
+- где хранится topic-level focus memory;
+- где живет distilled knowledge layer;
 - как research topic раскладывается на branch-level dossiers;
 - где хранится iteration history;
 - как research artifacts поддерживают handoff и continuation;
@@ -30,6 +32,9 @@ operational_scope/
   research/
     <topic-slug>/
       index.md
+      research-map.md
+      knowledge/
+        index.md
       <branch-slug>/
         index.md
         iterations/
@@ -40,6 +45,8 @@ operational_scope/
 
 - `operational_scope/research-tree.md` - канонический индекс research layer.
 - `operational_scope/research/<topic-slug>/index.md` - canonical topic root dossier.
+- `operational_scope/research/<topic-slug>/research-map.md` - topic-level working memory и handoff surface.
+- `operational_scope/research/<topic-slug>/knowledge/` - topic-level distilled knowledge layer.
 - `operational_scope/research/<topic-slug>/<branch-slug>/index.md` - canonical branch dossier.
 - `operational_scope/research/<topic-slug>/<branch-slug>/iterations/` - storage location для bounded research iterations внутри ветки.
 
@@ -67,6 +74,15 @@ operational_scope/
 - topic root является canonical documentation entry для одного research topic;
 - branch page является canonical documentation entry для одной ветки исследования;
 - iteration files фиксируют wave-by-wave progress, но не заменяют topic root и branch page как navigation roots.
+
+## Focus memory и knowledge layer
+
+`Research-tree` различает два topic-level memory layers:
+
+- `research-map.md` - working memory для current focus, counters, portfolio review triggers и next action;
+- `knowledge/` - semantic memory layer для distilled notes, branch knowledge pages и synthesis.
+
+Эта ответственность подробнее раскрывается в supporting document [`research-knowledge.md`](research-knowledge.md).
 
 ## Связь с traceability conventions
 
@@ -120,6 +136,7 @@ operational_scope/
 - [`asset-taxonomy-and-composition-model.md`](../../asset-taxonomy-and-composition-model.md);
 - [`documentation-lifecycle-layers.md`](../knowledge-lifecycle/documentation-lifecycle-layers.md);
 - [`research-branches.md`](research-branches.md);
+- [`research-knowledge.md`](research-knowledge.md);
 - [`research-traceability.md`](research-traceability.md);
 - [`overview.md`](../../overview.md).
 
@@ -128,6 +145,8 @@ operational_scope/
 - `research-tree` является concrete [`research-management-system asset`](../../../terms/project/terms/research-management-system-asset.md).
 - `operational_scope/research-tree.md` является каноническим research index для этой системы.
 - `operational_scope/research/` является baseline storage location для tree-shaped [`research artifacts`](../../../terms/project/terms/research-artifact.md).
+- `research-map.md` является working memory и handoff surface темы, а не long-form knowledge archive.
+- `knowledge/` является distilled semantic memory layer поверх history layer.
 - topic root и branch page являются разными navigation levels и не должны сливаться в один монолитный файл.
 - iteration files являются bounded progress artifacts внутри branch scope.
 - markdown остается canonical Source of Truth для research structure, navigation и continuation metadata.

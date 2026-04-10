@@ -224,8 +224,10 @@ Artifact model фиксирует `agent-role` как artifact family и baselin
 - `contract`
 - `test-suite`
 - `test-case`
+- `workflow`
 - `workflow-step`
-- `workflow-overview`
+- `workflow-pack`
+- `workflow-step-pack`
 - `acceptance-criteria`
 - `quality-gate`
 - `definition-pack`
@@ -243,6 +245,7 @@ Artifact model владеет не отдельными workflow semantics, а a
 - skill artifacts;
 - role artifacts;
 - workflow artifacts как family of artifacts;
+- workflow packaging artifacts;
 - contract artifacts;
 - support artifacts вроде notes, mappings и related metadata.
 
@@ -306,11 +309,54 @@ Ownership этого документа распространяется на:
 
 Но этот документ не описывает process semantics использования роли в workflow. Это responsibility другого focused spec.
 
-## 10. `agent-system`-agnostic и `agent-system`-specific assets
+## 10. `workflow-pack` и `workflow-step-pack` как packaging boundaries
+
+Artifact model должен явно различать semantic workflow entities и их packaging boundaries.
+
+### 10.1 `workflow-pack`
+
+`Workflow-pack` — это packaging boundary для одного `workflow`.
+
+Внутри `workflow-pack` могут существовать:
+- канонический workflow overview artifact;
+- ссылки на связанные `workflow-step`;
+- workflow-level metadata;
+- общие references и support artifacts.
+
+При этом важно:
+- `workflow-pack` не равен самому `workflow`;
+- pack structure не подменяет process semantics;
+- workflow-level packaging не должен поглощать отдельные step-level packs.
+
+### 10.2 `workflow-step-pack`
+
+`Workflow-step-pack` — это packaging boundary для одного `workflow-step`.
+
+Внутри `workflow-step-pack` могут существовать:
+- канонический step artifact;
+- templates и checklists;
+- examples;
+- references;
+- support artifacts для выполнения шага.
+
+При этом важно:
+- `workflow-step-pack` не равен самому `workflow-step`;
+- step pack может ссылаться на reusable `skills`, но не должен semantic-чески сливаться с ними;
+- support artifacts внутри pack не превращают step в runtime state.
+
+### 10.3 Почему distinction важен
+
+Такое distinction нужно, чтобы:
+- не смешивать process semantics и filesystem layout;
+- поддерживать rich executable step packages без semantic collapse;
+- делать шаги удобными для lazy loading человеком и агентом;
+- сохранять отдельную traceability между workflow, step, pack и reusable skills.
+
+## 11. `agent-system`-agnostic и `agent-system`-specific assets
 
 Artifact model должен явно поддерживать distinction между двумя reusable source classes.
 
-### 10.1 `agent-system`-agnostic asset
+### 11.1 `agent-system`-agnostic asset
 
 Это reusable source artifact, который:
 
@@ -324,7 +370,7 @@ Artifact model должен явно поддерживать distinction меж
 - часть governance artifacts;
 - abstract reusable artifacts, которые не завязаны на одну runtime platform.
 
-### 10.2 `agent-system`-specific asset
+### 11.2 `agent-system`-specific asset
 
 Это reusable source artifact, который:
 
@@ -336,7 +382,7 @@ Artifact model должен явно поддерживать distinction меж
 
 - `agent_roles/critic/agent_systems/kilo/role.md`.
 
-### 10.3 Почему distinction важен
+### 11.3 Почему distinction важен
 
 Такое distinction нужно, чтобы:
 
@@ -344,7 +390,7 @@ Artifact model должен явно поддерживать distinction меж
 - не пытаться упаковать все pack families по одному и тому же шаблону;
 - сохранить ясную границу между authored source assets и generated runtime outputs.
 
-## 11. High-level graph implications
+## 12. High-level graph implications
 
 Artifact model должен быть совместим с graph-backed traceability.
 
@@ -356,7 +402,7 @@ Artifact model должен быть совместим с graph-backed traceabi
 
 При этом точные graph contracts для отдельных bounded contexts могут быть формализованы позже в contract layer или в других focused specs.
 
-## 12. Что этот документ принципиально не делает
+## 13. Что этот документ принципиально не делает
 
 Этот документ не должен:
 - описывать `workflow -> workflow-step -> step-vacancy -> agent-role` как process semantics;
@@ -367,7 +413,7 @@ Artifact model должен быть совместим с graph-backed traceabi
 
 Если этот документ начинает описывать runtime layers, project discovery или handoff semantics workflow, это означает нарушение boundaries.
 
-## 13. Связь с другими каноническими документами
+## 14. Связь с другими каноническими документами
 
 Этот документ нужно читать вместе с:
 - `docs/methodology-layer/overview.md` как обзором слоя;
@@ -375,10 +421,10 @@ Artifact model должен быть совместим с graph-backed traceabi
 - `docs/methodology-layer/workflow-and-roles.md` как process-level spec;
 - `docs/methodology-layer/interfaces-and-storage.md` как storage and interface boundary spec;
 - `docs/methodology-layer/project-discovery.md` как discovery policy spec;
-- `docs/terms/project/terms/role-pack.md`, `docs/terms/project/terms/agent-system-agnostic-asset.md` и `docs/terms/project/terms/agent-system-specific-asset.md` как glossary layer для asset taxonomy;
+- `docs/terms/project/terms/role-pack.md`, `docs/terms/project/terms/workflow-pack.md`, `docs/terms/project/terms/workflow-step-pack.md`, `docs/terms/project/terms/agent-system-agnostic-asset.md` и `docs/terms/project/terms/agent-system-specific-asset.md` как glossary layer для asset taxonomy;
 - `docs/contracts/README.md` как contract policy layer.
 
-## 14. Canonical invariants
+## 15. Canonical invariants
 
 Для первой итерации migration baseline считаются обязательными следующие invariants:
 - artifact model строится через `MethodologyArtifact` и `MethodologyArtifactType`, а не через жесткий список hardcoded kinds;
@@ -387,17 +433,20 @@ Artifact model должен быть совместим с graph-backed traceabi
 - distinction между `agent-system`-agnostic assets и `agent-system`-specific assets должен оставаться явным;
 - `agent-system`-agnostic packs не должны содержать внутри себя `agent-system`-specific assets;
 - `role pack` является artifact-oriented packaging boundary;
+- `workflow-pack` и `workflow-step-pack` являются packaging boundaries, а не semantic replacements для `workflow` и `workflow-step`;
+- `workflow-step-pack` может агрегировать templates, references и support artifacts, не превращаясь в runtime state;
 - canonical pack structure и artifact family semantics не должны определяться process-level документом;
 - contract policy не принадлежит artifact model;
 - runtime details и storage states не принадлежат artifact model.
 
-## 15. Целевое назначение для миграции legacy docs
+## 16. Целевое назначение для миграции legacy docs
 
 При миграции legacy planning package этот документ должен стать канонической точкой сборки для:
 - meta-model artifacts;
 - baseline artifact types;
 - extensible type vocabulary;
 - reusable artifact families;
-- role pack как packaging boundary.
+- role pack как packaging boundary;
+- workflow-pack и workflow-step-pack как packaging boundaries.
 
 После завершения миграции именно этот файл должен заменить прежние legacy explanations про artifact model и связанные временные planning formulations.

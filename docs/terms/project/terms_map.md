@@ -41,8 +41,10 @@
 | Project Methodology Runtime | Слой HyperGraph, который управляет methodology artifacts проекта, хранит project methodology intent, materialize runtime для agent environment и поддерживает traceability через derived graph. | none |
 | methodology | В контексте проекта это формализованная модель разработки ПО вместе с командой ИИ-агентов: она задает `methodology workflow`, активные rules, skills, MCP tools и другие process artifacts. Методология также может содержать описания отдельных `workflow`, которые используются внутри проекта. | none |
 | methodology workflow | Центральный workflow разработки проекта. Он задает основную методологию разработки, главный процесс, которого придерживаются при разработке проекта, и определяет как связываются workflow, шаги, роли и результаты. Методология носит рекомендательный характер и должна быть удобной для разработчиков и агентов. | none |
-| workflow | Markdown-артефакт, который описывает цель процесса, optional входы, последовательность шагов с кратким идейным описанием и optional общий выход. `workflow` не назначает `step-vacancy` напрямую: он только задает карту процесса и ссылки на подробные `workflow-step`. | `docs/terms/project/terms/workflow.md` |
-| workflow-step | Отдельный markdown-артефакт, который подробно описывает конкретный шаг workflow: входы, что нужно сделать, связанную `step-vacancy`, назначенную на нее `agent-role`, выходы, `DoD` и критерии возврата на предыдущие шаги. | `docs/terms/project/terms/workflow-step.md` |
+| workflow | Семантическая process entity, которая описывает последовательность шагов, объединенных общей целью и смыслом. Технически workflow обычно authoring-ся через `workflow-pack`, внутри которого есть канонический markdown с картой процесса и ссылками на `workflow-step`. | `docs/terms/project/terms/workflow.md` |
+| workflow-pack | Packaging boundary для одного `workflow`: директория, в которой лежат канонический workflow overview, ссылки на шаги, optional workflow-level metadata и общие сопутствующие материалы. | `docs/terms/project/terms/workflow-pack.md` |
+| workflow-step | Семантическая process entity, которая описывает конкретный шаг workflow: его входы, действие, выходы, `DoD`, failure/return semantics и связь с `step-vacancy`. Технически шаг обычно authoring-ся через `workflow-step-pack`, который содержит каноническое описание шага и support artifacts. | `docs/terms/project/terms/workflow-step.md` |
+| workflow-step-pack | Packaging boundary для одного `workflow-step`: директория, в которой лежат канонический step markdown, шаблоны, чеклисты, references, examples и другие материалы, нужные для выполнения шага. | `docs/terms/project/terms/workflow-step-pack.md` |
 | agent-role | Самодостаточный reusable role profile агента или человека с `system_prompt` и подмножествами `rules`, `skills` и `MCP tools`. Роль не знает, на каких шагах ее будут использовать: это решает `workflow-step` через `step-vacancy`. Одна и та же роль может входить в общий reusable набор и затем подключаться как подмножество в разных workflow конкретной методологии. | `docs/terms/project/terms/agent-role.md` |
 | step-vacancy | Позиция на конкретном шаге конкретного workflow, которая должна быть закрыта подходящей `agent-role`. `step-vacancy` отвечает за назначение роли на шаг, а не за описание самой роли или полной логики шага. | `docs/terms/project/terms/step-vacancy.md` |
 | knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
@@ -87,6 +89,9 @@
 - methodology
 - methodology workflow
 - workflow
+- workflow-pack
+- workflow-step
+- workflow-step-pack
 - agent-role
 - knowledge-lifecycle asset
 - task-management-system asset

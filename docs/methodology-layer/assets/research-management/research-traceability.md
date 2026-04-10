@@ -11,14 +11,14 @@
 Его задача - описать:
 - целевую traceability chain;
 - baseline identifier families;
-- fixed metadata keys для topic, branch и iteration pages;
+- fixed metadata keys для topic, branch, iteration и working-memory pages;
 - conventions, удобные для grep, regex и agent navigation.
 
 ## Целевая traceability chain
 
 Для `research-tree` целевой считается chain:
 
-`white spot / open question / research brief -> research topic -> research branch -> research iteration -> evidence source -> research finding -> current synthesis`
+`white spot / open question / research brief -> research topic -> research branch -> research iteration -> evidence source -> research finding -> distilled knowledge note -> current synthesis`
 
 В этой цепочке:
 - upstream driver задает, почему исследование вообще было открыто;
@@ -27,6 +27,7 @@
 - iteration file фиксирует bounded волну поиска;
 - evidence source дает внешний или внутренний anchor;
 - research finding фиксирует локальный вывод;
+- distilled knowledge note поднимает вывод из history layer в reusable knowledge layer;
 - current synthesis связывает findings обратно с вопросом topic-level.
 
 ## Identifier families
@@ -72,6 +73,9 @@ Entity prefixes фиксируются явно:
 - `Topic ID:`
 - `Branch ID:`
 - `Iteration ID:`
+- `Current focus:`
+- `Deep iterations since last portfolio review:`
+- `Portfolio review required:`
 - `Research question:`
 - `Finding ID:`
 - `Upstream driver:`
@@ -83,6 +87,9 @@ Entity prefixes фиксируются явно:
 Topic ID: RT-PROVIDERS-MODEL-SELECTION
 Branch ID: RB-PROVIDERS-MODEL-SELECTION-OFFICIAL-DOCS
 Iteration ID: RI-PROVIDERS-MODEL-SELECTION-OFFICIAL-DOCS-001
+Current focus: compare official docs evidence with real-world reports
+Deep iterations since last portfolio review: 2
+Portfolio review required: yes
 Research question: RQ-PROVIDERS-MODEL-SELECTION-002
 Finding ID: RF-PROVIDERS-MODEL-SELECTION-004
 Upstream driver: white-spot: provider capability mismatch
@@ -120,6 +127,16 @@ Iteration metadata рекомендуется ставить в начале ite
 - parent `Branch ID:`
 - relevant `Research question:`
 
+### Working memory level
+
+Topic-level working memory metadata рекомендуется ставить в начале `research-map.md`.
+
+Минимально рекомендуется фиксировать:
+- `Topic ID:`
+- `Current focus:`
+- `Deep iterations since last portfolio review:`
+- `Portfolio review required:`
+
 ### Finding level
 
 Finding identifier рекомендуется фиксировать в заголовке finding или первой metadata line внутри finding block.
@@ -142,8 +159,8 @@ Conventions проектируются так, чтобы агент или че
 
 Практически это означает:
 - navigation начинается с `operational_scope/research-tree.md`;
-- затем search сужается до `topic/index.md`;
-- потом до `branch/index.md` и только затем до `iterations/`;
+- затем search сужается до `topic/research-map.md` и `topic/knowledge/index.md`;
+- потом до `branch/index.md` или relevant knowledge notes и только затем до `iterations/`;
 - поиск по `RT-`, `RB-`, `RI-`, `RQ-` и `RF-` identifiers должен быть тривиальным через grep или regex;
 - broad web search должен по возможности опираться на `Search anchors`, зафиксированные в branch page.
 
@@ -155,6 +172,9 @@ Conventions проектируются так, чтобы агент или че
 ^Topic ID:\s+(RT-[A-Z0-9-]+)$
 ^Branch ID:\s+(RB-[A-Z0-9-]+)$
 ^Iteration ID:\s+(RI-[A-Z0-9-]+)$
+^Current focus:\s+(.+)$
+^Deep iterations since last portfolio review:\s+([0-9]+)$
+^Portfolio review required:\s+(yes|no)$
 ^Research question:\s+(RQ-[A-Z0-9-]+)$
 ^Finding ID:\s+(RF-[A-Z0-9-]+)$
 ^Upstream driver:\s+(.+)$
@@ -174,13 +194,14 @@ Conventions проектируются так, чтобы агент или че
 Этот документ нужно читать вместе с:
 - [`research-tree.md`](research-tree.md);
 - [`research-branches.md`](research-branches.md);
+- [`research-knowledge.md`](research-knowledge.md);
 - [`testing-system/test-case-traceability.md`](../testing-system/test-case-traceability.md);
 - [`Engineering Documentation SoT`](../../../terms/project/terms/engineering-documentation-sot.md).
 
 ## Canonical invariants
 
-- target traceability chain для `research-tree` - `white spot / open question / research brief -> research topic -> research branch -> research iteration -> evidence source -> research finding -> current synthesis`.
+- target traceability chain для `research-tree` - `white spot / open question / research brief -> research topic -> research branch -> research iteration -> evidence source -> research finding -> distilled knowledge note -> current synthesis`.
 - `RT-`, `RB-`, `RI-`, `RQ-` и `RF-` являются baseline identifier families.
-- `Topic ID:`, `Branch ID:`, `Iteration ID:`, `Research question:`, `Finding ID:`, `Upstream driver:` и `Related branch:` являются baseline markdown metadata keys.
+- `Topic ID:`, `Branch ID:`, `Iteration ID:`, `Current focus:`, `Deep iterations since last portfolio review:`, `Portfolio review required:`, `Research question:`, `Finding ID:`, `Upstream driver:` и `Related branch:` являются baseline markdown metadata keys.
 - topic, branch и iteration metadata должны быть grep-friendly и machine-readable без отказа от human-readable markdown.
 - markdown-level traceability metadata дополняет narrative text, а не заменяет его.

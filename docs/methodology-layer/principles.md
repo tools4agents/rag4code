@@ -140,6 +140,8 @@ Project-specific слой должен прежде всего ссылатьс�
 - `agent-role` не равен шагу workflow;
 - `step-vacancy` не равен reusable роли;
 - `workflow-step` не равен overview workflow;
+- `workflow-step` не равен `workflow-step-pack`;
+- `workflow` не равен `workflow-pack`;
 - KiloCode projection не равен core role artifact.
 
 ## 7. Separate artifacts вместо скрытого смешения
@@ -217,7 +219,9 @@ Project-specific слой должен прежде всего ссылатьс�
 
 При этом нужно различать:
 - `workflow` как карту процесса;
-- `workflow-step` как подробное описание конкретного шага;
+- `workflow-step` как подробное и исполнимое описание конкретного шага;
+- `workflow-pack` как packaging boundary для workflow artifacts;
+- `workflow-step-pack` как packaging boundary для artifacts конкретного шага;
 - `step-vacancy` как позицию на шаге;
 - `agent-role` как reusable профиль исполнителя.
 

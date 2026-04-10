@@ -10,6 +10,7 @@
 
 Его задача - описать:
 - какую роль играет topic root dossier;
+- какую роль играет topic-level working memory;
 - какую роль играет branch dossier;
 - какие sections рекомендуется иметь на каждом уровне;
 - как фиксируются branch boundaries, search anchors и cross-branch links;
@@ -41,6 +42,32 @@ Topic root - это canonical documentation entry для одного research t
 9. `Open questions`
 10. `Next iteration plan`
 11. optional `Related artifacts`
+
+## Роль topic-level working memory
+
+`<topic>/research-map.md` - это не topic dossier и не long-form synthesis.
+
+Он нужен, чтобы:
+- передавать текущий фокус между агентами;
+- кратко фиксировать branch priority snapshot;
+- хранить counters и review triggers;
+- явно подсказывать следующему агенту, что читать первым делом и какое действие ожидается дальше.
+
+## Recommended sections for `research-map.md`
+
+Для первой итерации `research-map.md` рекомендуется делать со следующими sections:
+
+1. `Topic ID`
+2. `Current topic status`
+3. `Current decision focus`
+4. `Active branches now`
+5. `Branch priority snapshot`
+6. `Scout coverage`
+7. `Deep iterations since last portfolio review`
+8. `Portfolio review required`
+9. `Recommended next action`
+10. `Read-first links`
+11. `Handoff note`
 
 ## Роль branch dossier
 
@@ -134,6 +161,13 @@ Baseline anchors:
 - где highest information gain potential;
 - почему следующая deep iteration идет именно в выбранную ветку, а не в sibling branches.
 
+Для multi-agent continuity рекомендуется хранить lightweight counters в `research-map.md`.
+
+Baseline rule:
+- когда `Deep iterations since last portfolio review` достигает `2`, следующий агент по теме должен сначала обновить branch board, `research-map.md` и topic-level reprioritization, затем сбросить счетчик в `0`.
+
+То есть trigger живет не в narrative history, а в explicit topic-level working memory.
+
 ## Cross-branch links
 
 Branch pages должны поддерживать explicit cross-links.
@@ -158,6 +192,7 @@ Branch pages должны поддерживать explicit cross-links.
 
 Этот документ нужно читать вместе с:
 - [`research-tree.md`](research-tree.md);
+- [`research-knowledge.md`](research-knowledge.md);
 - [`research-traceability.md`](research-traceability.md);
 - [`testing-system/test-suites.md`](../testing-system/test-suites.md);
 - [`overview.md`](../../overview.md).
@@ -166,6 +201,7 @@ Branch pages должны поддерживать explicit cross-links.
 
 - topic root является canonical documentation entry для одного research topic.
 - branch page является canonical documentation entry для одной ветки исследования.
+- `research-map.md` является topic-level working memory и должен оставаться кратким operational artifact.
 - branch page должна задавать `Branch ID`, `Context roots`, `Evidence roots`, `Search anchors` и `Next action`.
 - topic root должен поддерживать branch-level navigation и portfolio overview, а не подменять собой branch dossiers.
 - sibling branches должны рассматриваться как branch portfolio, а не как линейная очередь без повторной приоритизации.
