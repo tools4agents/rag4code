@@ -2,7 +2,7 @@
 
 > Status: Draft  
 > Scope: project-specific term for HyperGraph asset classification  
-> Related: `docs/terms/terms_map.md`
+> Related: `docs/terms/index.md`
 
 ## 1. Назначение термина
 

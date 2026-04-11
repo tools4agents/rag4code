@@ -118,8 +118,9 @@ Environment-facing runtime должен рассматриваться как `R
 
 ### 5.1 Терминология
 
-- `docs/terms/common/terms_map.md` — каноническая карта общих терминов
-- `docs/terms/project/terms_map.md` — каноническая карта project-specific терминов
+- `docs/terms/index.md` — root terminology entry point
+- `docs/terms/common/terms-map.md` — каноническая карта общих терминов
+- `docs/terms/project/terms-map.md` — каноническая карта project-specific терминов
 
 ### 5.2 Обзор слоя
 
@@ -165,7 +166,7 @@ Environment-facing runtime должен рассматриваться как `R
 Для человека и агента рекомендуется одинаковый маршрут чтения:
 
 1. прочитать `docs/methodology-layer/overview.md`;
-2. открыть `docs/terms/common/terms_map.md` и `docs/terms/project/terms_map.md`, если встречаются незнакомые или нагруженные термины;
+2. открыть `docs/terms/index.md`, затем `docs/terms/common/terms-map.md` и `docs/terms/project/terms-map.md`, если встречаются незнакомые или нагруженные термины;
 3. перейти только в релевантный focused spec;
 4. открыть конкретный contract в `docs/contracts/` только когда нужна implementation detail.
 
@@ -200,7 +201,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `patterns/reviewable-automation-pattern.md` отвечает только за reusable collaboration pattern между ИИ-агентом и deterministic algorithm/tool;
 - `docs/contracts/` отвечает только за explicit contracts.
 
-Если определение повторяется в нескольких местах, источником истины становятся `docs/terms/common/terms_map.md` и `docs/terms/project/terms_map.md`, а остальные документы должны ссылаться на них, а не копировать полное объяснение.
+Если определение повторяется в нескольких местах, источником истины становятся `docs/terms/index.md`, `docs/terms/common/terms-map.md` и `docs/terms/project/terms-map.md`, а остальные документы должны ссылаться на них, а не копировать полное объяснение.
 
 ## 8. Что должно исчезнуть после миграции из planning docs
 

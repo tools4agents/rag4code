@@ -2,7 +2,7 @@
 
 > Status: Draft  
 > Scope: project-specific term for HyperGraph runtime process model  
-> Related: `docs/terms/terms_map.md`
+> Related: `docs/terms/index.md`
 
 ## 1. Назначение термина
 

@@ -3,7 +3,7 @@
 > Status: Draft  
 > Scope: discussion document before formal specification  
 > Related: `docs/terms/project/terms/agent-role.md`  
-> Related: `docs/terms/project/terms_map.md`  
+> Related: `docs/terms/project/terms-map.md`  
 > Related: `../../../../.kilocode/how_kilocode_works/modes.md`
 
 ## 1. Зачем нужен этот документ

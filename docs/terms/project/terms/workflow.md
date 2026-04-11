@@ -2,7 +2,7 @@
 
 > Status: Draft  
 > Scope: project-specific term for HyperGraph methodology  
-> Related: `docs/terms/project/terms_map.md`
+> Related: `docs/terms/project/terms-map.md`
 
 ## 1. Назначение термина
 

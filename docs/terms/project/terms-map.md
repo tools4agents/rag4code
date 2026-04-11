@@ -2,7 +2,7 @@
 
 > Status: Draft  
 > Scope: термины, специфичные для HyperGraph и слоя `Project Methodology Runtime`  
-> Role: локальный glossary для человека и агента, который дополняет общую карту из `docs/terms/common/terms_map.md`
+> Role: локальный glossary для человека и агента, который дополняет общую карту из `docs/terms/common/terms-map.md`
 
 ## 1. Назначение
 
@@ -14,7 +14,7 @@
 - фиксации локальных договоренностей проекта без смешения с переносимой общей терминологией;
 - постепенного раскрытия сложных понятий через отдельные страницы по мере необходимости.
 
-Общие термины должны жить в `docs/terms/common/terms_map.md`.
+Общие термины должны жить в `docs/terms/common/terms-map.md`.
 
 ## 2. Как пользоваться этим файлом
 
@@ -24,8 +24,8 @@
 3. вернуться в текущий архитектурный или методологический документ.
 
 Для полного терминологического контекста агент и человек должны сначала читать:
-- `docs/terms/common/terms_map.md`;
-- `docs/terms/project/terms_map.md`.
+- `docs/terms/common/terms-map.md`;
+- `docs/terms/project/terms-map.md`.
 
 ## 3. Правила для project-specific terms
 

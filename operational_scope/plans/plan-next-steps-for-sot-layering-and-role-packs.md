@@ -22,7 +22,7 @@
 - `docs/methodology-layer/artifact-model.md`
 - `docs/methodology-layer/workflow-and-roles.md`
 - `docs/methodology-layer/interfaces-and-storage.md`
-- `docs/terms/terms_map.md`
+- `docs/terms/index.md`
 - `docs/terms/project/terms/agent-role.md`
 - `docs/terms/project/terms/workflow.md`
 - `docs/terms/project/terms/workflow-step.md`

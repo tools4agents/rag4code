@@ -265,7 +265,7 @@ agent_roles/
 - `docs/methodology-layer/artifact-model.md` как artifact-oriented spec;
 - `docs/methodology-layer/workflow-and-roles.md` как process-level spec;
 - `docs/methodology-layer/interfaces-and-storage.md` как storage and runtime boundary spec;
-- `docs/terms/terms_map.md` и `docs/terms/project/terms_map.md` как glossary layer.
+- `docs/terms/index.md`, `docs/terms/common/terms-map.md` и `docs/terms/project/terms-map.md` как glossary layer.
 
 ## 13. Canonical invariants
 
