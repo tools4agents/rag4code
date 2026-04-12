@@ -94,6 +94,12 @@ operational_scope/
 - `task-setter`;
 - `task-handoff-writer`;
 - `active-task-setter` или его будущего аналога;
+- `task-materializer`;
+- `taskset-materializer`;
+- `idea-capture`;
+- `plan-capture`;
+- `deep-research-task-setter`;
+- `spike-experiment-task-setter`;
 - других task-oriented operational skills.
 
 Эти skills должны опираться на `task-map` как на task-layer baseline.
