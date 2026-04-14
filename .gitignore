@@ -23,9 +23,16 @@ coverage.xml
 .hypothesis/
 
 # --- Project Specific ---
-# Assets nested git repos (keep folder, ignore contents)
-assets/*
-!assets/.gitkeep
+# Assets nested git repos
+# Игнорировать все файлы внутри assets/
+assets/**/*
+
+# Обязательно сначала разрешаем все директории
+# Без этой строки Git НИКОГДА не будет проверять правила внутри игнорированных папок
+!assets/**/
+
+# А потом разрешаем только .gitkeep файлы на любом уровне
+!assets/**/.gitkeep
 
 # HSM (Hyper Stack Manager) artifacts
 .hpm/
