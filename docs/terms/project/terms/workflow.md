@@ -70,6 +70,26 @@ Packaging boundary не должна подменять semantic boundary.
 
 Такой подход поддерживает `lazy loading` и `progressive disclosure`.
 
+## 5.1 Связь с [`workflow-exchange layer`](./workflow-exchange-layer.md)
+
+В document-driven lifecycle знание и handoff workflow не обязаны жить только внутри канонического workflow-pack.
+
+Если workflow исполняется как реальный multi-step process, у него может быть свой [`workflow-exchange layer`](./workflow-exchange-layer.md) внутри [`Operational Documentation Layer`](./operational-documentation-layer.md).
+
+Это означает:
+
+- `workflow` как semantic process entity может иметь временный operational layer для конкретных прогонов;
+- такой слой может хранить instance-specific handoff artifacts между шагами workflow;
+- этот слой не является [`Engineering Documentation SoT`](./engineering-documentation-sot.md);
+- этот слой не является [`Release Documentation Layer`](./release-documentation-layer.md);
+- после завершения конкретного workflow-run эти artifacts могут быть удалены.
+
+Важно различать:
+
+- `workflow` как process map;
+- `workflow-pack` как source packaging boundary;
+- [`workflow-exchange layer`](./workflow-exchange-layer.md) как временный operational exchange layer для конкретного прогона.
+
 ## 6. Связь с `methodology workflow`
 
 `Methodology workflow` — это частный, центральный для проекта workflow.
@@ -118,10 +138,11 @@ Packaging boundary не должна подменять semantic boundary.
 - reusable semantics `agent-role`;
 - подробное описание одного конкретного шага;
 - `workflow-pack` как packaging boundary;
+- [`workflow-exchange layer`](./workflow-exchange-layer.md) как временный operational exchange contour;
 - runtime projection роли или шага;
 - storage layout adapter artifacts.
 
-`Workflow` — это описание процесса, а не описание packaging unit или runtime representation.
+`Workflow` — это описание процесса, а не описание packaging unit, temporary execution layer или runtime representation.
 
 ## 10. Связанные термины
 
@@ -130,7 +151,9 @@ Packaging boundary не должна подменять semantic boundary.
 - `workflow-pack`;
 - `workflow-step`;
 - `workflow-step-pack`;
+- `workflow-exchange layer`;
 - `step-vacancy`;
-- `agent-role`.
+- `agent-role`;
+- [`Operational Documentation Layer`](./operational-documentation-layer.md).
 
 Этот термин является ключевым для понимания process layer в `Project Methodology Runtime`.

@@ -45,6 +45,7 @@
 | workflow-pack | Packaging boundary для одного `workflow`: директория, в которой лежат канонический workflow overview, ссылки на шаги, optional workflow-level metadata и общие сопутствующие материалы. | `docs/terms/project/terms/workflow-pack.md` |
 | workflow-step | Семантическая process entity, которая описывает конкретный шаг workflow: его входы, действие, выходы, `DoD`, failure/return semantics и связь с `step-vacancy`. Технически шаг обычно authoring-ся через `workflow-step-pack`, который содержит каноническое описание шага и support artifacts. | `docs/terms/project/terms/workflow-step.md` |
 | workflow-step-pack | Packaging boundary для одного `workflow-step`: директория, в которой лежат канонический step markdown, шаблоны, чеклисты, references, examples и другие материалы, нужные для выполнения шага. | `docs/terms/project/terms/workflow-step-pack.md` |
+| workflow-exchange layer | Временный workflow-specific exchange layer внутри `Operational Documentation Layer`, который хранит instance-specific handoff artifacts между шагами конкретного workflow-run. | `docs/terms/project/terms/workflow-exchange-layer.md` |
 | agent-role | Самодостаточный reusable role profile агента или человека с `system_prompt` и подмножествами `rules`, `skills` и `MCP tools`. Роль не знает, на каких шагах ее будут использовать: это решает `workflow-step` через `step-vacancy`. Одна и та же роль может входить в общий reusable набор и затем подключаться как подмножество в разных workflow конкретной методологии. | `docs/terms/project/terms/agent-role.md` |
 | step-vacancy | Позиция на конкретном шаге конкретного workflow, которая должна быть закрыта подходящей `agent-role`. `step-vacancy` отвечает за назначение роли на шаг, а не за описание самой роли или полной логики шага. | `docs/terms/project/terms/step-vacancy.md` |
 | knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
@@ -92,6 +93,7 @@
 - workflow-pack
 - workflow-step
 - workflow-step-pack
+- workflow-exchange layer
 - agent-role
 - knowledge-lifecycle asset
 - task-management-system asset

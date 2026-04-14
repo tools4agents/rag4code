@@ -41,6 +41,11 @@
 - критерии провала шага с необходимостью возврата к одному из предыдущих шагов;
 - связи с reusable `skills`, если шаг опирается на них.
 
+Если шаг выполняется в рамках реального workflow-run, он также может требовать:
+
+- входящий handoff из [`workflow-exchange layer`](./workflow-exchange-layer.md);
+- исходящий handoff в [`workflow-exchange layer`](./workflow-exchange-layer.md) для следующего шага.
+
 ## 4. `workflow-step` не равен pack
 
 Важно жестко различать:
@@ -111,6 +116,12 @@ Packaging boundary не должна подменять semantic boundary.
 - один и тот же агент может последовательно выполнить несколько шагов, если process policy это допускает;
 - но сам workflow не должен рассматриваться как одна непрозрачная инструкция для одиночного исполнения целиком.
 
+При multi-agent execution это также означает:
+
+- шаг может закрываться отдельной `step-vacancy` со своей `agent-role`;
+- шаг может получать не только static context из workflow-pack и project SoT, но и instance-specific handoff из [`workflow-exchange layer`](./workflow-exchange-layer.md);
+- такой handoff layer живет в [`Operational Documentation Layer`](./operational-documentation-layer.md) и не подменяет каноническое описание шага.
+
 ## 10. Почему это важно
 
 Явное описание `workflow-step` нужно, чтобы:
@@ -131,12 +142,19 @@ Packaging boundary не должна подменять semantic boundary.
 - `DoD` шага;
 - критерии провала и условия возврата на предыдущие шаги.
 
+Для workflow, которые реально исполняются несколькими агентами, полезно дополнительно описывать:
+
+- required static context;
+- required handoff in;
+- expected handoff out.
+
 ## 12. Что не стоит смешивать с `workflow-step`
 
 С `workflow-step` не стоит смешивать:
 - сам reusable `agent-role`;
 - конкретный `skill`;
 - `workflow-step-pack` как packaging boundary;
+- [`workflow-exchange layer`](./workflow-exchange-layer.md) как временный handoff storage;
 - runtime projection для agent system;
 - execution state конкретного запуска.
 
@@ -146,9 +164,11 @@ Packaging boundary не должна подменять semantic boundary.
 - `workflow`;
 - `workflow-pack`;
 - `workflow-step-pack`;
+- `workflow-exchange layer`;
 - `methodology workflow`;
 - `step-vacancy`;
 - `agent-role`;
-- `skill`.
+- `skill`;
+- [`Operational Documentation Layer`](./operational-documentation-layer.md).
 
 Этот термин является ключевым для отделения карты процесса от подробного и исполнимого описания каждого шага.
