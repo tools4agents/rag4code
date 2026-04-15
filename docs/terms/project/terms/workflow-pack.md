@@ -87,6 +87,21 @@
 
 Этот файл нужен для внедрения pack в новый проект, а не для runtime execution уже подключенного workflow.
 
+### `terms.md`
+
+`Workflow-pack` может иметь собственную workflow-local terms page, например `terms.md`.
+
+Такая страница нужна, когда у workflow появляются локальные термины, которые:
+- активно переиспользуются между `workflow.md` и несколькими step docs;
+- не являются project-wide glossary terms;
+- не должны каждый раз переопределяться прямо в focused specs шага.
+
+Типичный пример: gate/stage terminology конкретного workflow.
+
+Такая page не заменяет project glossary в `docs/terms/`, а задает локальный terminology contract внутри самого pack.
+
+Если workflow-packу нужна такая страница, можно опираться на template [`workflow-local-terms.template.md`](../../../methodology-layer/assets/terms-management/resources/workflow-local-terms.template.md).
+
 ### `resources/`
 
 `resources/` хранит support artifacts для внедрения и чтения pack:
@@ -153,6 +168,7 @@ Instance-specific decisions и execution evidence должны жить в [`wor
 - reusable process layer (`workflow.md`);
 - step semantics layer (`STEP.md`, `SKILL.md`);
 - installation/adoption layer (`setup_instructions.md`);
+- workflow-local terminology layer (`terms.md`), если она нужна pack;
 - project-local policy layer (`project/` конкретного проекта);
 - workflow-instance execution layer (`operational_scope/...` конкретного проекта).
 
