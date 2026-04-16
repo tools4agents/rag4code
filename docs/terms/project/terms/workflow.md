@@ -6,12 +6,11 @@
 
 ## 1. Назначение термина
 
-`workflow` — это semantic process entity, которая описывает последовательность шагов, объединенных общей целью и общим смыслом.
+`workflow` — это semantic process entity, которая описывает направленный process graph, объединенный общей целью и общим смыслом.
 
 Он нужен, чтобы зафиксировать:
 - для чего существует процесс;
-- какие `workflow-step` в него входят;
-- в каком порядке они обычно выполняются;
+- какие вершины и переходы в него входят;
 - как человек и агент проходят от начала процесса к результату.
 
 `workflow` может быть:
@@ -23,14 +22,44 @@
 
 На semantic layer `workflow` описывает:
 - цель workflow и зачем он нужен;
-- последовательность шагов;
+- directed process graph;
+- вершины workflow и их роли;
+- переходы между вершинами и условия этих переходов;
 - high-level navigation по процессу;
 - optional общие входы и выходы workflow;
-- возможные high-level transition notes между шагами.
+- happy path и exception/remediation paths;
+- optional high-level transition notes между вершинами.
 
 Минимально workflow должен описывать:
 - для чего он нужен;
-- последовательность шагов.
+- directed graph процесса или его эквивалентную карту переходов.
+
+Линейная последовательность шагов — это частный случай workflow, а не его единственная возможная форма.
+
+## 2.1 Типы вершин внутри `workflow`
+
+В workflow могут встречаться разные типы вершин.
+
+Базово допустимы:
+- `workflow-step` как исполняемая единица работы;
+- user interaction node как external human interaction point;
+- lifecycle marker как вход/выход workflow-run.
+
+Проект или конкретный workflow-pack может ввести и другие vertex classes, если они не размывают semantic границы процесса.
+
+Важно:
+- не каждая вершина workflow обязана быть `workflow-step`;
+- но если gate имеет собственные входы, выходы, handoff и самостоятельную execution ценность, он может materialize-иться как отдельный `workflow-step`.
+
+## 2.2 Как workflow обычно materialize-ится в документации
+
+Каноническое описание workflow часто включает:
+- graph overview diagram;
+- vertex table;
+- edge / transition table;
+- happy path vs exception/remediation path separation.
+
+Это не обязательно всегда, но для non-linear workflow такая форма становится preferred baseline.
 
 ## 3. `workflow` не равен pack
 
@@ -59,14 +88,14 @@ Packaging boundary не должна подменять semantic boundary.
 
 ## 5. Связь с `workflow-step`
 
-`Workflow` — это карта процесса.
+`Workflow` — это карта процесса или process graph.
 
 Каждый шаг в этой карте должен ссылаться на отдельный `workflow-step`, который раскрывает шаг подробно.
 
 То есть:
 - `workflow` дает обзорную карту процесса;
 - `workflow-step` дает глубокое описание конкретного шага;
-- агент обычно исполняет не весь workflow одним запросом, а выбранный `workflow-step`.
+- агент обычно исполняет не весь workflow одним запросом, а выбранный `workflow-step` или другой explicit execution node.
 
 Такой подход поддерживает `lazy loading` и `progressive disclosure`.
 
@@ -74,12 +103,12 @@ Packaging boundary не должна подменять semantic boundary.
 
 В document-driven lifecycle знание и handoff workflow не обязаны жить только внутри канонического workflow-pack.
 
-Если workflow исполняется как реальный multi-step process, у него может быть свой [`workflow-exchange layer`](./workflow-exchange-layer.md) внутри [`Operational Documentation Layer`](./operational-documentation-layer.md).
+Если workflow исполняется как реальный multi-step directed process graph, у него может быть свой [`workflow-exchange layer`](./workflow-exchange-layer.md) внутри [`Operational Documentation Layer`](./operational-documentation-layer.md).
 
 Это означает:
 
 - `workflow` как semantic process entity может иметь временный operational layer для конкретных прогонов;
-- такой слой может хранить instance-specific handoff artifacts между шагами workflow;
+- такой слой может хранить instance-specific handoff artifacts, graph-state и transition evidence между шагами workflow;
 - этот слой не является [`Engineering Documentation SoT`](./engineering-documentation-sot.md);
 - этот слой не является [`Release Documentation Layer`](./release-documentation-layer.md);
 - после завершения конкретного workflow-run эти artifacts могут быть удалены.
@@ -112,8 +141,8 @@ Packaging boundary не должна подменять semantic boundary.
 На уровне самого `workflow` обычно не нужно подробно раскрывать reusable semantics роли.
 
 `Workflow` должен:
-- перечислить шаги;
-- показать их порядок;
+- перечислить вершины процесса;
+- показать переходы и их условия;
 - при необходимости указывать, что шаг имеет связанную `step-vacancy`.
 
 Детали того:
@@ -129,6 +158,7 @@ Packaging boundary не должна подменять semantic boundary.
 Явное введение `workflow` как semantic entity нужно, чтобы:
 - не превращать процесс в набор несвязанных step-папок без общей карты;
 - отделить обзор процесса от подробностей каждого шага;
+- поддерживать non-linear directed process graphs, а не только линейные цепочки;
 - сделать документацию процесса удобной и для человека, и для агента;
 - поддерживать reusable process patterns в проекте.
 

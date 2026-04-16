@@ -28,6 +28,7 @@
 
 В `workflow-pack` могут входить:
 - канонический workflow overview markdown;
+- canonical workflow graph document;
 - navigation/readme entrypoint для людей и агентов;
 - setup/install guide для подключения pack к новому проекту;
 - ссылки на связанные `workflow-step`;
@@ -58,12 +59,21 @@
 `workflow.md` является reusable process contract для всего workflow.
 
 Он отвечает на вопросы:
-- какие у workflow есть шаги;
-- в каком порядке они выполняются;
+- какие у workflow есть вершины;
+- какие переходы возможны между вершинами;
+- какие happy path и exception/remediation paths существуют;
 - какие workflow-level invariants действуют всегда;
 - какой handoff model и exchange layer нужны между шагами.
 
 `workflow.md` должен задавать reusable semantics и не должен хардкодить project-local branch names, release units, release-note paths или другие adaptation values.
+
+Для non-linear workflow `workflow.md` обычно включает:
+- graph overview;
+- vertex table;
+- edge / transition table;
+- happy path / exception path separation;
+- workflow-level invariants;
+- vacancies and handoff model.
 
 ### `STEP.md` / `SKILL.md`
 
@@ -112,6 +122,35 @@
 
 `resources/` не являются runtime state и не должны подменять собой project-local context текущего проекта.
 
+## 4.1 Канонические файлы внутри `workflow-pack`
+
+Внутри `workflow-pack` желательно различать канонические file roles.
+
+### Core files
+
+- `README.md` — navigation entrypoint;
+- `workflow.md` — canonical workflow graph document.
+
+### Optional but recommended files
+
+- `terms.md` — workflow-local terminology contract;
+- `setup_instructions.md` — adoption/install guide.
+
+### Step layer
+
+- `<step-pack>/STEP.md` — semantics конкретного шага;
+- `<step-pack>/SKILL.md` — reusable execution capability для шага.
+
+### Support layer
+
+- `resources/templates/` — templates для reusable materialization pack и workflow-instance artifacts;
+- `resources/examples/` — finished examples;
+- `resources/*layout*` и похожие reference files — filesystem/layout guidance.
+
+Reusable templates для canonical files `workflow-pack` смотри в adjacent resources:
+
+- [`resources/workflow-pack/`](./resources/workflow-pack/README.md)
+
 ## 5. Что должно приходить извне `workflow-pack`
 
 Чтобы reusable workflow не превращался в project-specific монолит, часть ответственности должна жить вне `workflow-pack`.
@@ -136,9 +175,12 @@ Instance-specific decisions и execution evidence должны жить в [`wor
 Сюда относятся:
 - текущий `release-run.md`;
 - step handoff artifacts;
+- gate decisions текущего прогона;
+- stage status текущего прогона;
 - branch matrix конкретного прогона;
 - approved scope и exclusions конкретного прогона;
 - publication evidence конкретного релиза.
+- remediation artifacts и return-to-graph evidence для exception paths.
 
 ## 6. Важный invariant
 
@@ -169,6 +211,7 @@ Instance-specific decisions и execution evidence должны жить в [`wor
 - step semantics layer (`STEP.md`, `SKILL.md`);
 - installation/adoption layer (`setup_instructions.md`);
 - workflow-local terminology layer (`terms.md`), если она нужна pack;
+- pack-level reusable templates/resources layer;
 - project-local policy layer (`project/` конкретного проекта);
 - workflow-instance execution layer (`operational_scope/...` конкретного проекта).
 

@@ -81,6 +81,30 @@ docs/terms/<scope>/terms/*.md
 
 Но detail pages являются supporting layer, а не обязательной заменой scoped `terms-map.md`.
 
+## Adjacent term resources
+
+Помимо detail page термина, рядом с термином могут храниться adjacent resources.
+
+Обобщенный pattern такой:
+
+```text
+docs/terms/<scope>/terms/
+  <term>.md
+  resources/
+    <term>/
+      ...templates / examples / reference files...
+```
+
+Такие resources нужны, когда рядом с термином полезно держать reusable supporting materials, не превращая filenames, layouts или templates в самостоятельные термины.
+
+Это особенно полезно для cases вроде asset packs, где:
+- term page объясняет semantic entity;
+- adjacent resources показывают, как эта entity обычно materialize-ится в reusable filesystem form.
+
+Такой подход поддерживает `lazy loading` и `progressive disclosure`:
+- сначала читается сам термин;
+- затем при необходимости открываются только те resources, которые нужны для materialization или reuse.
+
 ## Как работает navigation
 
 `Terms-map` строится вокруг progressive disclosure:
