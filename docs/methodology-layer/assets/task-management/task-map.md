@@ -17,6 +17,7 @@
 - где живут task-oriented operational artifacts;
 - какой файл считается task index;
 - как фиксируется execution context;
+- как в task index фиксируются этапы разработки и sequential tasks внутри этапов;
 - как задачи связываются с engineering SoT и при необходимости с отдельными supporting artifacts.
 
 ## Baseline layout
@@ -48,6 +49,80 @@ operational_scope/
 
 Индекс нужен для quick navigation и focus management, а не для повторного пересказа содержимого task files.
 
+## Stage-aware task maps
+
+`Task-map` может быть не только flat list задач, но и stage-aware execution index.
+
+Такой формат особенно полезен, когда:
+
+- работа идет в несколько крупных этапов;
+- между задачами есть dependency order;
+- важно не открывать downstream work до stabilizing upstream result;
+- над проектом работают разные агенты или сессии, которым нужен явный execution route.
+
+### Что такое stage-aware task map
+
+В stage-aware варианте `operational_scope/task-map.md` может явно содержать:
+
+- таблицу этапов;
+- по одной компактной таблице задач на каждый этап;
+- секцию `Current focus`;
+- короткую `Execution policy`.
+
+### Recommended minimal stage model
+
+Для software-delivery проектов полезен baseline вида:
+
+1. `Documentation SoT`
+2. `Project Structure`
+3. `Implementation`
+4. optional `Verification / Integration`
+
+Этот набор не является жестким универсальным стандартом.
+
+Но сам паттерн staged decomposition считается полезной частью `task-map`, если он помогает удерживать фокус и dependency order.
+
+### Почему stages полезны
+
+Stage-aware decomposition нужна, чтобы:
+
+- не смешивать SoT design, filesystem materialization и кодовую реализацию в одном проходе;
+- видеть, какой слой уже достаточно зрел для перехода дальше;
+- уменьшать каскадные переделки downstream artifacts после review upstream layer;
+- упрощать handoff между агентами и сессиями.
+
+### Sequential tasks inside stage
+
+Даже внутри одного этапа задачи рекомендуется упорядочивать по dependency order.
+
+Например, внутри `Documentation SoT` сначала может идти:
+
+1. documentation skeleton;
+2. architecture overview set;
+3. runtime/package traceability;
+4. contracts;
+5. terms;
+6. testing docs.
+
+Это помогает применять small-batch execution вместо широкого прохода по всему проекту сразу.
+
+### Small-batch rule
+
+Если используется stage-aware `task-map`, рекомендуется такой invariant:
+
+- следующий крупный task не открывается, пока предыдущий достаточно не stabilized;
+- не нужно materialize-ить большой пакет downstream artifacts до review upstream result;
+- отдельный task file появляется тогда, когда задача уже имеет bounded scope и понятный expected output.
+
+### Flat vs staged
+
+Оба формата допустимы:
+
+- flat `task-map` — когда delivery scope мал и стадийность не дает особой пользы;
+- staged `task-map` — когда работа multi-step, multi-session или multi-agent.
+
+`Task-management-system asset` должен поддерживать оба режима, а не навязывать только один.
+
 ## Связь с execution tracking
 
 Каждый [`task artifact`](../../../terms/project/terms/task-artifact.md) должен хранить минимальный execution context.
@@ -60,6 +135,13 @@ operational_scope/
 - шаги реализации;
 - `Definition of Done`;
 - `Execution Status`.
+
+Если проект использует stage-aware `task-map`, execution context может дополнительно включать:
+
+- `Active stage`;
+- `Active task candidate`;
+- короткое `Decision rule` для перехода к следующему task;
+- stage-level status.
 
 ## Связь с supporting artifacts
 
@@ -104,6 +186,18 @@ operational_scope/
 
 Эти skills должны опираться на `task-map` как на task-layer baseline.
 
+## Template and reuse
+
+Для bootstrap нового `operational_scope/task-map.md` можно использовать reusable template:
+
+- [`task-map.template.md`](./resources/task-map.template.md)
+
+Template не задает обязательный process model, но дает:
+
+- согласованную структуру для stage-aware task maps;
+- единообразную форму таблиц этапов и задач;
+- reusable starting point для новых проектов.
+
 ## Что этот документ не делает
 
 Этот документ не описывает:
@@ -119,6 +213,7 @@ operational_scope/
 
 - [`asset-taxonomy-and-composition-model.md`](../../asset-taxonomy-and-composition-model.md);
 - [`documentation-lifecycle-layers.md`](../knowledge-lifecycle/documentation-lifecycle-layers.md);
+- [`task-map.template.md`](./resources/task-map.template.md);
 - [`overview.md`](../../overview.md).
 
 ## Canonical invariants
@@ -126,7 +221,9 @@ operational_scope/
 - `task-map` является concrete `task-management-system asset`.
 - `operational_scope/task-map.md` является каноническим task index для этой системы.
 - `operational_scope/tasks/` является baseline storage location для [`task artifacts`](../../../terms/project/terms/task-artifact.md).
+- task index может быть как flat, так и stage-aware, если это помогает execution continuity.
 - task-oriented operational artifacts должны жить в task-layer, а не в `docs/`.
 - task system не должна подменять knowledge lifecycle model.
 - task artifacts обычно опираются на [`Engineering Documentation SoT`](../../../terms/project/terms/engineering-documentation-sot.md).
+- stage-aware task map должен помогать управлять dependency order, focus и handoff между сессиями.
 - ссылки на plans, research и spike reports являются опциональными supporting links, а не частью обязательного layout этого asset.
