@@ -55,7 +55,7 @@ operational_scope/
 
 Такой формат особенно полезен, когда:
 
-- работа идет в несколько крупных этапов;
+- работа идет в несколько крупных [`project stage`](../../../terms/project/terms/project-stage.md);
 - между задачами есть dependency order;
 - важно не открывать downstream work до stabilizing upstream result;
 - над проектом работают разные агенты или сессии, которым нужен явный execution route.

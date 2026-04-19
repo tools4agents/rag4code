@@ -54,6 +54,7 @@
 | research-management-system asset | Asset type, который задает систему хранения, дерева веток и traceability для research artifacts. | `docs/terms/project/terms/research-management-system-asset.md` |
 | testing-system asset | Asset type, который задает систему хранения, индексации и traceability для testing documentation и links к test implementation. | `docs/terms/project/terms/testing-system-asset.md` |
 | methodology asset | Asset type, который задает process model разработки и methodology-specific semantics. | `docs/terms/project/terms/methodology-asset.md` |
+| project stage | Крупная bounded phase внутри execution plan проекта, которая группирует связанные задачи и задает dependency order между слоями работы. | `docs/terms/project/terms/project-stage.md` |
 | composition pack | Publishable совместимый набор assets разных типов, который можно подключить как готовый методологический стек. | `docs/terms/project/terms/composition-pack.md` |
 | Operational Documentation Layer | Временный operational слой, в котором рождается, уточняется и проверяется новое знание до его канонизации. | `docs/terms/project/terms/operational-documentation-layer.md` |
 | Engineering Documentation SoT | Канонический инженерный Source of Truth проекта. | `docs/terms/project/terms/engineering-documentation-sot.md` |
@@ -101,6 +102,7 @@
 - research-management-system asset
 - testing-system asset
 - methodology asset
+- project stage
 - composition pack
 - Operational Documentation Layer
 - Engineering Documentation SoT
