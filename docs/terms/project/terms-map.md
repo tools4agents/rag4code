@@ -50,6 +50,7 @@
 | step-vacancy | Позиция на конкретном шаге конкретного workflow, которая должна быть закрыта подходящей `agent-role`. `step-vacancy` отвечает за назначение роли на шаг, а не за описание самой роли или полной логики шага. | `docs/terms/project/terms/step-vacancy.md` |
 | knowledge-lifecycle asset | Asset type, который задает lifecycle знания в проекте: где оно рождается, где канонизируется и где публикуется для внешнего потребления. | `docs/terms/project/terms/knowledge-lifecycle-asset.md` |
 | task-management-system asset | Asset type, который задает систему хранения, индексации и управления task artifacts. | `docs/terms/project/terms/task-management-system-asset.md` |
+| project-context-entry-system asset | Asset type, который задает reusable систему project context entry points, loading order и ownership split между `AGENTS.md`, `project/`, `docs/`, `operational_scope/` и related layers. | `docs/terms/project/terms/project-context-entry-system-asset.md` |
 | terms-management-system asset | Asset type, который задает систему хранения и progressive disclosure терминов. | `docs/terms/project/terms/terms-management-system-asset.md` |
 | research-management-system asset | Asset type, который задает систему хранения, дерева веток и traceability для research artifacts. | `docs/terms/project/terms/research-management-system-asset.md` |
 | testing-system asset | Asset type, который задает систему хранения, индексации и traceability для testing documentation и links к test implementation. | `docs/terms/project/terms/testing-system-asset.md` |
@@ -98,6 +99,7 @@
 - agent-role
 - knowledge-lifecycle asset
 - task-management-system asset
+- project-context-entry-system asset
 - terms-management-system asset
 - research-management-system asset
 - testing-system asset

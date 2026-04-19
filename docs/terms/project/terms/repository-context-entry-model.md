@@ -60,8 +60,7 @@
 
 На текущем этапе `repository-context-entry-model` фиксируется как focused specification, а не как отдельный asset type.
 
-Если позже появятся две или более alternative implementations этой системы, ее можно поднять в отдельный asset type:
-- `project-context-system asset`.
+Если позже появляется reusable asset packaging для этой системы, его правильный taxonomy-level тип — `project-context-entry-system asset`.
 
 ## 7. Связанные термины
 

@@ -240,19 +240,37 @@
 
 Эта тема принадлежит отдельному focused spec [`agent-system-assets-and-materialization-boundaries.md`](agent-system-assets-and-materialization-boundaries.md).
 
-## 10. Почему это пока не отдельный asset type
+## 10. Связь с `project-context-entry-system asset`
 
-На текущем этапе `repository-context-entry-model` фиксируется как focused spec, а не как отдельный asset type.
+На текущем этапе [`repository-context-entry-model`](../terms/project/terms/repository-context-entry-model.md) и [`project-context-entry-system asset`](../terms/project/terms/project-context-entry-system-asset.md) считаются смежными, но разными уровнями описания.
 
-Причины:
-- пока описывается одна baseline model;
-- нет нескольких зрелых alternative implementations этой системы;
-- приоритет сейчас - стабилизировать boundaries и loading order.
+### Focused spec
 
-Если позже появятся две или более совместимые альтернативные реализации этой системы, ее можно поднять в отдельный asset type:
-- `project-context-system asset`.
+Этот документ остается focused specification и отвечает на вопросы:
 
-До этого момента документ остается канонической focused specification, а не taxonomy-level reusable asset class.
+- какая модель entry points считается канонической;
+- как устроены `structure + navigation + ownership`;
+- какие invariants должен соблюдать project context loading.
+
+### Asset type
+
+`Project-context-entry-system asset` отвечает на другой вопрос:
+
+- как упаковать эту модель как reusable system of files, templates и authoring rules для инициализации новых проектов.
+
+То есть:
+
+- focused spec задает semantic model;
+- asset type задает reusable packaging and materialization baseline.
+
+Concrete reusable implementation этого asset type фиксируется в:
+
+- [`assets/project-context-entry-system/index.md`](assets/project-context-entry-system/index.md)
+
+Следствие:
+
+- этот документ не должен растворяться в template catalog;
+- asset documentation не должна подменять semantic model focused spec.
 
 ## 11. Что этот документ не должен делать
 
@@ -286,4 +304,4 @@
 - `operational_scope/` является execution layer, а не architectural canon.
 - `.kilo/` является target agent-system runtime/config layer, а не полным semantic owner layer проекта.
 - autonomous [`nested-project`](../terms/project/terms_map.md) со своим `AGENTS.md` должен переключать агента на local context для своего scope.
-- если позже появятся `2+` alternative implementations этой системы, модель может быть поднята до `project-context-system asset`.
+- reusable packaging этой модели фиксируется через `project-context-entry-system asset`.

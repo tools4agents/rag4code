@@ -134,6 +134,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/component-architecture.md` — component-level архитектура первой итерации, boundaries и основной materialization flow
 - `docs/methodology-layer/asset-taxonomy-and-composition-model.md` — asset types, composition packs и свободная композиция reusable assets
 - `docs/methodology-layer/assets/knowledge-lifecycle/documentation-lifecycle-layers.md` — concrete `knowledge-lifecycle asset` `document-driven-development` и его three-layer documentation flow
+- `docs/methodology-layer/assets/project-context-entry-system/index.md` — concrete `project-context-entry-system asset` и reusable package для `AGENTS.md`, `project/` files и entry-point templates
 - `docs/methodology-layer/assets/task-management/task-map.md` — concrete `task-management-system asset` `task-map` и baseline task storage model
 - `docs/methodology-layer/assets/terms-management/terms-map.md` — concrete `terms-management-system asset` `terms-map` и scoped terminology maps
 - `docs/methodology-layer/assets/research-management/research-tree.md` — concrete `research-management-system asset` `research-tree` и baseline tree-shaped research storage model
@@ -182,6 +183,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `component-architecture.md` отвечает только за состав компонентов системы, их boundaries и основной runtime flow первой итерации;
 - `asset-taxonomy-and-composition-model.md` отвечает только за типы reusable assets, composition packs и модель свободной композиции;
 - `assets/knowledge-lifecycle/documentation-lifecycle-layers.md` отвечает только за concrete `knowledge-lifecycle asset` `document-driven-development`;
+- `assets/project-context-entry-system/index.md` отвечает только за concrete `project-context-entry-system asset`, reusable file set и template package для project context entry layer;
 - `assets/task-management/task-map.md` отвечает только за concrete `task-management-system asset` `task-map`;
 - `assets/terms-management/terms-map.md` отвечает только за concrete `terms-management-system asset` `terms-map`;
 - `assets/research-management/research-tree.md` отвечает только за concrete `research-management-system asset` `research-tree` и baseline research index model;
