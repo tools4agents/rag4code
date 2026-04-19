@@ -27,6 +27,7 @@ Pattern стоит фиксировать здесь, если он:
 ## Текущие patterns
 
 - [`reviewable-automation-pattern.md`](reviewable-automation-pattern.md) — collaboration loop между ИИ-агентом и deterministic algorithm/tool по схеме `plan -> review -> apply -> verify`
+- [`spike-experiment-evidence-pattern.md`](spike-experiment-evidence-pattern.md) — decomposition `executor -> evidence artifacts -> analyzer -> summary -> spike report` для repeatable evidence-producing spike experiments
 
 ## Границы
 

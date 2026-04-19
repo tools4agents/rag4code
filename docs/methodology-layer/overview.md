@@ -155,6 +155,7 @@ Environment-facing runtime должен рассматриваться как `R
 
 - `docs/methodology-layer/patterns/index.md` — index reusable design patterns для этого слоя
 - `docs/methodology-layer/patterns/reviewable-automation-pattern.md` — collaboration loop между ИИ-агентом и deterministic algorithm/tool по схеме `plan -> review -> apply -> verify`
+- `docs/methodology-layer/patterns/spike-experiment-evidence-pattern.md` — decomposition `executor -> evidence artifacts -> analyzer -> summary -> spike report` для repeatable evidence-producing spike experiments
 
 ### 5.5 Contracts
 
@@ -201,6 +202,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `naming-conventions.md` отвечает только за naming rules для human-facing terms, filesystem layout и Python-facing identifiers;
 - `patterns/index.md` отвечает только за navigation по reusable patterns этого слоя;
 - `patterns/reviewable-automation-pattern.md` отвечает только за reusable collaboration pattern между ИИ-агентом и deterministic algorithm/tool;
+- `patterns/spike-experiment-evidence-pattern.md` отвечает только за reusable pattern проектирования evidence-producing spike experiments с evidence artifacts и deterministic analysis;
 - `docs/contracts/` отвечает только за explicit contracts.
 
 Если определение повторяется в нескольких местах, источником истины становятся `docs/terms/index.md`, `docs/terms/common/terms-map.md` и `docs/terms/project/terms-map.md`, а остальные документы должны ссылаться на них, а не копировать полное объяснение.

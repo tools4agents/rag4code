@@ -68,6 +68,7 @@
 | review artifact | Operational artifact для фиксации critic/reviewer feedback и quality assessment. | `docs/terms/project/terms/review-artifact.md` |
 | open question | Явно зафиксированный нерешенный вопрос, требующий дальнейшей проработки. | `docs/terms/project/terms/open-question.md` |
 | white spot | Зафиксированный пробел в знаниях, документации или понимании системы. | `docs/terms/project/terms/white-spot.md` |
+| spike experiment | Небольшая bounded validation activity в форме PoC, probe или кодового эксперимента для проверки гипотезы и снятия неопределенности. | `docs/terms/project/terms/spike-experiment.md` |
 | spike report | Operational artifact с результатом небольшого PoC или кодового эксперимента для проверки гипотезы. | `docs/terms/project/terms/spike-report.md` |
 | role-specific rules | Подмножество rules, которое привязано к конкретной `agent-role` как к reusable role profile и затем используется там, где `workflow-step` через `step-vacancy` выбирает эту роль. | none |
 | role-specific skills | Подмножество skills, которое доступно конкретной `agent-role` как reusable role profile и затем используется в тех workflow-step, где эта роль назначена исполнителем через `step-vacancy`. | none |
@@ -117,6 +118,7 @@
 - review artifact
 - open question
 - white spot
+- spike experiment
 - spike report
 - role-specific rules
 - role-specific skills
