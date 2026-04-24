@@ -4,7 +4,7 @@
 
 Этот файл фиксирует concrete project-local loading order и ownership split между `AGENTS.md`, `project/`, `docs/`, `operational_scope/` и target-specific layers.
 
-## Порядок чтения контекста
+## Порядок входа в контекст
 
 1. `AGENTS.md` как top-level router artifact.
 2. `project/index.md` как durable context entry.
@@ -20,6 +20,8 @@
 Если временный operational artifact конфликтует с `docs/`, следуй `docs/`.
 
 ## Ownership Model
+
+`project/entry-points.md` владеет routing/loading contract. Он не является индексом файлов `project/`: состав durable context layer фиксируется в `project/index.md`.
 
 ### `AGENTS.md`
 

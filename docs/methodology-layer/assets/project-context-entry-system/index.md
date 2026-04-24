@@ -20,7 +20,7 @@
 - [`project-context-entry-system.md`](./project-context-entry-system.md) — каноническая модель concrete asset-а.
 - [`agents-md.md`](./agents-md.md) — роль и границы `AGENTS.md`.
 - [`project-layer.md`](./project-layer.md) — роль `project/` как durable context layer.
-- [`project-entry-points.md`](./project-entry-points.md) — назначение `project/entry-points.md`.
+- [`project-entry-points.md`](./project-entry-points.md) — назначение `project/entry-points.md` как routing/loading contract, не индекса состава `project/`.
 - [`git-context.md`](./git-context.md) — роль `project/gitContext.md`.
 - [`tech-context.md`](./tech-context.md) — роль `project/techContext.md`.
 - [`secrets-context.md`](./secrets-context.md) — роль `project/secretsContext.md`.

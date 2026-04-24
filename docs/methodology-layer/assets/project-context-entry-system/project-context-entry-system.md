@@ -24,6 +24,9 @@
 
 - `AGENTS.md` должен оставаться thin router artifact.
 - Durable project context должен жить в `project/`, а не в `AGENTS.md`.
+- `project/index.md` владеет составом durable project context layer и кратким boundary summary.
+- `project/entry-points.md` владеет routing/loading contract и ownership split между context layers.
+- `project/index.md` не должен дублировать routing contract из `project/entry-points.md`.
 - `project/` не должен подменять `docs/` как engineering SoT.
 - `project/` не должен подменять `operational_scope/` как execution layer.
 - Secret handling baseline должен иметь отдельный explicit file.
