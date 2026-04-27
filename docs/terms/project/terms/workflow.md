@@ -50,6 +50,7 @@ workflow = markdown-defined directed graph for agent execution
 
 Базово допустимы:
 - `workflow-step` как исполняемая единица работы;
+- `workflow-step-gate` как specialized `workflow-step` для explicit readiness / eligibility / routing decision;
 - nested `workflow` как вложенный process graph, который сам раскрывается в собственную карту шагов или под-workflow;
 - user interaction node как external human interaction point;
 - lifecycle marker как вход/выход workflow-run.
@@ -59,7 +60,7 @@ workflow = markdown-defined directed graph for agent execution
 Важно:
 - не каждая вершина workflow обязана быть `workflow-step`;
 - если вершина сама содержит несколько переходов, gates, optional branches или conditional loops, ее нужно моделировать как nested `workflow`, а не как перегруженный `workflow-step`;
-- но если gate имеет собственные входы, выходы, handoff и самостоятельную execution ценность, он может materialize-иться как отдельный `workflow-step`.
+- но если gate имеет собственные входы, выходы, checklist, verdict, handoff и самостоятельную execution ценность, он должен materialize-иться как отдельный [`workflow-step-gate`](./workflow-step-gate.md).
 
 ## 2.2 Nested workflows
 
@@ -164,6 +165,7 @@ Packaging boundary не должна подменять semantic boundary.
 То есть:
 - `workflow` дает обзорную карту процесса;
 - `workflow-step` дает глубокое описание конкретного шага;
+- `workflow-step-gate` дает глубокое описание gate-step, verdicts и routing decision;
 - nested `workflow` дает карту внутреннего процесса для крупной стадии или subflow;
 - агент обычно исполняет не весь workflow одним запросом, а выбранный `workflow-step` или другой explicit execution node.
 
@@ -250,6 +252,7 @@ Packaging boundary не должна подменять semantic boundary.
 - `methodology workflow`;
 - `workflow-pack`;
 - `workflow-step`;
+- `workflow-step-gate`;
 - `workflow-step-pack`;
 - `workflow-exchange layer`;
 - `step-vacancy`;

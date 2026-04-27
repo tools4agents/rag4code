@@ -10,6 +10,8 @@
 
 `Workflow-step` должен быть bounded execution unit. Если предполагаемая вершина содержит собственную последовательность шагов, gates, branches или conditional loops, она должна моделироваться как nested `workflow`, а не как один перегруженный `workflow-step`.
 
+Если bounded execution unit является gate с explicit readiness / eligibility / routing decision, это specialized form: [`workflow-step-gate`](./workflow-step-gate.md).
+
 Он нужен, чтобы отделить:
 - краткую карту всего workflow;
 - детальное описание отдельного шага;
@@ -32,6 +34,7 @@
 То есть:
 - `workflow` дает карту процесса;
 - `workflow-step` раскрывает конкретный шаг;
+- `workflow-step-gate` раскрывает concrete gate-step, его checklist, verdicts и routing semantics;
 - nested `workflow` раскрывает внутренний process graph, если вершина верхнего workflow не является atomic step;
 - агенту обычно назначают выполнение выбранного `workflow-step`, а не всего workflow целиком.
 
@@ -45,6 +48,8 @@
 - `DoD` шага;
 - критерии провала шага с необходимостью возврата к одному из предыдущих шагов;
 - связи с reusable `skills`, если шаг опирается на них.
+
+Если шаг является gate-step, он дополнительно должен описывать allowed verdicts, meaning of each verdict и next path для каждого verdict.
 
 Если шаг выполняется в рамках реального workflow-run, он также может требовать:
 
@@ -169,6 +174,7 @@ Packaging boundary не должна подменять semantic boundary.
 `workflow-step` нужно читать вместе с:
 - `workflow`;
 - `workflow-pack`;
+- `workflow-step-gate`;
 - `workflow-step-pack`;
 - `workflow-exchange layer`;
 - `methodology workflow`;
