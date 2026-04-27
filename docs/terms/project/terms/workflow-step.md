@@ -8,6 +8,8 @@
 
 `workflow-step` — это semantic process entity, которая подробно описывает один конкретный шаг workflow.
 
+`Workflow-step` должен быть bounded execution unit. Если предполагаемая вершина содержит собственную последовательность шагов, gates, branches или conditional loops, она должна моделироваться как nested `workflow`, а не как один перегруженный `workflow-step`.
+
 Он нужен, чтобы отделить:
 - краткую карту всего workflow;
 - детальное описание отдельного шага;
@@ -19,15 +21,18 @@
 
 `Workflow` — это верхнеуровневая process map, которая описывает:
 - цель workflow и зачем он нужен;
-- последовательность шагов;
+- directed process graph или последовательность шагов как частный случай;
 - optional общие входы и выходы;
 - high-level navigation по процессу.
 
-Каждый шаг в таком workflow должен ссылаться на отдельный `workflow-step`, который и раскрывает шаг подробно.
+Каждая atomic step-вершина в таком workflow должна ссылаться на отдельный `workflow-step`, который и раскрывает шаг подробно.
+
+Если вершина сама является процессом с несколькими шагами, gates или branches, она должна ссылаться на nested `workflow`.
 
 То есть:
 - `workflow` дает карту процесса;
 - `workflow-step` раскрывает конкретный шаг;
+- nested `workflow` раскрывает внутренний process graph, если вершина верхнего workflow не является atomic step;
 - агенту обычно назначают выполнение выбранного `workflow-step`, а не всего workflow целиком.
 
 ## 3. Что описывает `workflow-step`
@@ -153,6 +158,7 @@ Packaging boundary не должна подменять semantic boundary.
 С `workflow-step` не стоит смешивать:
 - сам reusable `agent-role`;
 - конкретный `skill`;
+- nested `workflow` как внутренний process graph;
 - `workflow-step-pack` как packaging boundary;
 - [`workflow-exchange layer`](./workflow-exchange-layer.md) как временный handoff storage;
 - runtime projection для agent system;

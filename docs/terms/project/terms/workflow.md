@@ -6,7 +6,7 @@
 
 ## 1. Назначение термина
 
-`workflow` — это semantic process entity, которая описывает направленный process graph, объединенный общей целью и общим смыслом.
+`workflow` — это semantic process entity, которая описывает markdown-defined directed graph for agent execution, объединенный общей целью и общим смыслом.
 
 Он нужен, чтобы зафиксировать:
 - для чего существует процесс;
@@ -17,6 +17,14 @@
 - частью общей методологии проекта;
 - локальным процессом для отдельного класса задач;
 - reusable process pattern, который можно применять повторно.
+
+Короткая практическая формула:
+
+```text
+workflow = markdown-defined directed graph for agent execution
+```
+
+То есть workflow является human-readable и agent-readable описанием process graph, а не только prose-инструкцией.
 
 ## 2. Что описывает `workflow`
 
@@ -42,6 +50,7 @@
 
 Базово допустимы:
 - `workflow-step` как исполняемая единица работы;
+- nested `workflow` как вложенный process graph, который сам раскрывается в собственную карту шагов или под-workflow;
 - user interaction node как external human interaction point;
 - lifecycle marker как вход/выход workflow-run.
 
@@ -49,9 +58,40 @@
 
 Важно:
 - не каждая вершина workflow обязана быть `workflow-step`;
+- если вершина сама содержит несколько переходов, gates, optional branches или conditional loops, ее нужно моделировать как nested `workflow`, а не как перегруженный `workflow-step`;
 - но если gate имеет собственные входы, выходы, handoff и самостоятельную execution ценность, он может materialize-иться как отдельный `workflow-step`.
 
-## 2.2 Как workflow обычно materialize-ится в документации
+## 2.2 Nested workflows
+
+`Workflow` может содержать другие `workflow` как вершины своего process graph.
+
+Это нужно, когда верхнеуровневый процесс состоит из крупных стадий, каждая из которых сама имеет внутреннюю последовательность шагов, gates, exception paths или conditional subflows.
+
+Пример semantic hierarchy:
+
+```text
+SDLC workflow
+  -> stage workflow
+      -> workflow-step
+```
+
+Или более общий случай:
+
+```text
+workflow
+  -> workflow-step
+  -> nested workflow
+      -> workflow-step
+      -> nested workflow
+```
+
+Правило выбора:
+
+- если vertex можно выполнить как bounded atomic execution unit, materialize it as `workflow-step`;
+- если vertex требует собственной карты процесса, transition semantics и нескольких execution units, materialize it as nested `workflow`;
+- один агент может выполнить несколько последовательных `workflow-step`, но это не превращает их в один semantic step.
+
+## 2.3 Как workflow обычно materialize-ится в документации
 
 Каноническое описание workflow часто включает:
 - graph overview diagram;
@@ -60,6 +100,32 @@
 - happy path vs exception/remediation path separation.
 
 Это не обязательно всегда, но для non-linear workflow такая форма становится preferred baseline.
+
+## 2.4 Полезные аналогии
+
+Для понимания `workflow` полезны две аналогии.
+
+### LangGraph analogy
+
+`workflow` похож на markdown-based LangGraph graph:
+
+- vertices задают `workflow-step`, nested `workflow`, gate, human interaction или lifecycle marker;
+- edges задают transitions, handoff rules и условия перехода;
+- nested workflows похожи на вложенные graph/subgraph;
+- workflow-instance state живет не в source pack, а в operational layer конкретного прогона.
+
+Подробно см. [`langgraph-analogy.md`](./resources/workflow/langgraph-analogy.md).
+
+### C4 analogy
+
+`workflow` также похож на C4-style progressive disclosure:
+
+- верхний workflow показывает общий process context;
+- nested workflow раскрывает крупную стадию;
+- `workflow-step` раскрывает bounded execution unit;
+- skill или runtime command materialization находится еще ниже и не подменяет process map.
+
+Подробно см. [`c4-analogy.md`](./resources/workflow/c4-analogy.md).
 
 ## 3. `workflow` не равен pack
 
@@ -81,20 +147,24 @@ Packaging boundary не должна подменять semantic boundary.
 `Workflow-pack` — это директория, внутри которой может лежать:
 - канонический markdown-файл с описанием workflow;
 - ссылки на связанные `workflow-step`;
+- ссылки на nested `workflow` и их `workflow-pack`, если workflow декомпозируется на под-workflow;
 - workflow-level metadata;
 - общие workflow-level references и support artifacts.
 
 Это позволяет хранить process map отдельно от support materials, не превращая один markdown в перегруженный монолит.
 
-## 5. Связь с `workflow-step`
+## 5. Связь с `workflow-step` и nested `workflow`
 
 `Workflow` — это карта процесса или process graph.
 
-Каждый шаг в этой карте должен ссылаться на отдельный `workflow-step`, который раскрывает шаг подробно.
+Каждая исполняемая atomic step-вершина в этой карте должна ссылаться на отдельный `workflow-step`, который раскрывает шаг подробно.
+
+Если вершина является не atomic step, а внутренним процессом, она должна ссылаться на nested `workflow`.
 
 То есть:
 - `workflow` дает обзорную карту процесса;
 - `workflow-step` дает глубокое описание конкретного шага;
+- nested `workflow` дает карту внутреннего процесса для крупной стадии или subflow;
 - агент обычно исполняет не весь workflow одним запросом, а выбранный `workflow-step` или другой explicit execution node.
 
 Такой подход поддерживает `lazy loading` и `progressive disclosure`.
@@ -185,5 +255,10 @@ Packaging boundary не должна подменять semantic boundary.
 - `step-vacancy`;
 - `agent-role`;
 - [`Operational Documentation Layer`](./operational-documentation-layer.md).
+
+Adjacent resources:
+
+- [`langgraph-analogy.md`](./resources/workflow/langgraph-analogy.md);
+- [`c4-analogy.md`](./resources/workflow/c4-analogy.md).
 
 Этот термин является ключевым для понимания process layer в `Project Methodology Runtime`.

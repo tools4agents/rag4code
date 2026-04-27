@@ -8,6 +8,8 @@
 
 `workflow-pack` — это packaging boundary для одного `workflow`.
 
+Если этот `workflow` содержит nested workflows, его pack может ссылаться на nested `workflow-pack` или хранить их рядом как вложенные source packages.
+
 Он нужен, чтобы хранить связанные source artifacts workflow как согласованный package, не смешивая semantic process entity и filesystem layout.
 
 ## 2. Зачем нужен этот термин
@@ -32,11 +34,14 @@
 - navigation/readme entrypoint для людей и агентов;
 - setup/install guide для подключения pack к новому проекту;
 - ссылки на связанные `workflow-step`;
+- ссылки на nested `workflow` или nested `workflow-pack`;
 - workflow-level metadata;
 - общие references;
 - support artifacts, относящиеся ко всему workflow.
 
 При этом сам `workflow-pack` не должен подменять отдельные `workflow-step-pack`.
+
+Если workflow содержит nested workflow, parent pack не должен подменять его process contract. Parent workflow должен ссылаться на nested workflow overview, а не раскрывать всю его step-level logic внутри себя.
 
 ## 4. Слои ответственности внутри `workflow-pack`
 
@@ -64,6 +69,11 @@
 - какие happy path и exception/remediation paths существуют;
 - какие workflow-level invariants действуют всегда;
 - какой handoff model и exchange layer нужны между шагами.
+
+Если workflow содержит nested workflows, `workflow.md` также должен показывать:
+- какие вершины являются nested workflow;
+- где находится их canonical workflow overview;
+- какие handoff и gate conditions связывают parent workflow и nested workflow.
 
 `workflow.md` должен задавать reusable semantics и не должен хардкодить project-local branch names, release units, release-note paths или другие adaptation values.
 
@@ -141,6 +151,12 @@
 - `<step-pack>/STEP.md` — semantics конкретного шага;
 - `<step-pack>/SKILL.md` — reusable execution capability для шага.
 
+### Nested workflow layer
+
+- `<nested-workflow-pack>/workflow.md` — canonical overview для вложенного workflow;
+- `<nested-workflow-pack>/steps/<step-pack>/STEP.md` — step semantics внутри вложенного workflow;
+- `<nested-workflow-pack>/resources/` — support artifacts вложенного workflow.
+
 ### Support layer
 
 - `resources/templates/` — templates для reusable materialization pack и workflow-instance artifacts;
@@ -189,6 +205,7 @@ Instance-specific decisions и execution evidence должны жить в [`wor
 Это значит:
 - файлы workflow могут лежать рядом внутри одной директории;
 - но сам `workflow`, его шаги и support artifacts остаются разными сущностями;
+- nested workflows внутри pack остаются отдельными semantic workflows со своими process contracts;
 - physical proximity не отменяет логических границ.
 
 Из этого же следует дополнительный layering invariant:
@@ -201,6 +218,7 @@ Instance-specific decisions и execution evidence должны жить в [`wor
 С `workflow-pack` не стоит смешивать:
 - сам термин `workflow`;
 - `workflow-step-pack`;
+- nested `workflow-pack` как отдельную semantic/process boundary;
 - `skill` как reusable capability;
 - runtime materialization state;
 - execution instance конкретного прогона workflow.
