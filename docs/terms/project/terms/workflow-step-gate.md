@@ -16,10 +16,14 @@
 
 - обычный execution step, который создает или изменяет содержательный artifact;
 - gate-step, который проверяет readiness и принимает routing decision;
-- abstract gate как условие перехода на graph edge;
+- visual transition label на graph edge;
 - human interaction node, где требуется external confirmation.
 
-Gate может быть простым edge condition. Но если gate имеет собственные inputs, outputs, checklist, verdict, rationale, handoff или самостоятельную execution value, его нужно materialize-ить как `workflow-step-gate`.
+Для executable methodology workflow semantic gate не должен оставаться абстрактным нераскрытым условием.
+
+Если routing decision требует inputs, checklist, verdict, rationale, handoff, observability или самостоятельной execution value, его нужно materialize-ить как `workflow-step-gate`.
+
+Mermaid edge labels and simple transition labels may show routing outcomes, but they must not be treated as decision owners.
 
 ## 3. Связь с `workflow-step`
 
@@ -37,7 +41,31 @@ Gate может быть простым edge condition. Но если gate им�
 
 Отличие в том, что центральным output является не новый domain artifact, а explicit gate result.
 
-## 4. Что должен фиксировать `workflow-step-gate`
+## 4. Gate vs `workflow-step-gate`
+
+В этой методологической модели `gate` не является самостоятельной executable process entity.
+
+Allowed usage:
+
+- как informal short name внутри названия конкретного `workflow-step-gate`, например `Intent Readiness Gate`;
+- как visual label на transition edge, если решение уже принято конкретным step;
+- как часть workflow-local terminology, если она ссылается на materialized gate-step.
+
+Not allowed usage:
+
+- оставить semantic routing decision как абстрактный gate без `STEP.md`;
+- сказать агенту “пройти gate” без criteria, verdicts and rationale format;
+- использовать edge label вместо observable decision artifact.
+
+Policy for SDLC workflows:
+
+```text
+Every semantic routing decision is a workflow-step-gate.
+```
+
+Даже lightweight gate-step может быть коротким. Но он должен дать агенту понятные criteria, allowed verdicts, next path and required recorded rationale.
+
+## 5. Что должен фиксировать `workflow-step-gate`
 
 Минимально gate-step должен описывать:
 
@@ -49,8 +77,9 @@ Gate может быть простым edge condition. Но если gate им�
 - next path for each verdict;
 - rationale format;
 - handoff artifact, если следующий step зависит от gate result.
+- expected operational artifact for the recorded decision.
 
-## 5. Типичные verdicts
+## 6. Типичные verdicts
 
 Verdicts зависят от конкретного workflow.
 
@@ -67,7 +96,7 @@ Verdicts зависят от конкретного workflow.
 
 Workflow-pack должен задавать локальный список verdicts и semantics для каждого gate-step, а не полагаться на неявные значения.
 
-## 6. Что gate-step не должен делать
+## 7. Что gate-step не должен делать
 
 `workflow-step-gate` не должен:
 
@@ -76,8 +105,9 @@ Workflow-pack должен задавать локальный список verd
 - скрывать unresolved unknowns под verdict `passed`;
 - принимать irreversible product, architecture или release decisions без rationale;
 - смешивать gate result с user confirmation, если нужна отдельная human interaction node.
+- оставлять semantic routing decision только в Mermaid edge label.
 
-## 7. Примеры
+## 8. Примеры
 
 Примеры gate-step:
 
@@ -87,7 +117,7 @@ Workflow-pack должен задавать локальный список verd
 - implementation readiness gate перед decomposition into tasks;
 - documentation sync gate перед cleanup operational artifacts.
 
-## 8. Связанные термины
+## 9. Связанные термины
 
 `workflow-step-gate` нужно читать вместе с:
 
@@ -99,4 +129,4 @@ Workflow-pack должен задавать локальный список verd
 - [`step-vacancy`](./step-vacancy.md);
 - [`agent-role`](./agent-role.md).
 
-Этот термин нужен для явного моделирования gates как first-class executable process nodes, когда gate имеет самостоятельную проверочную и routing-семантику.
+Этот термин нужен для явного моделирования semantic gates как first-class executable process nodes, когда routing decision требует наблюдаемости, criteria и recorded rationale.

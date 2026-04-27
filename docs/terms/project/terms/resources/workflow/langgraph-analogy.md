@@ -31,7 +31,8 @@ workflow = markdown-defined directed graph for agent execution
 | `workflow` | directed graph definition of process |
 | `workflow-step` | bounded executable node |
 | nested `workflow` | subgraph / nested graph |
-| gate | conditional transition or decision node |
+| `workflow-step-gate` | executable decision node with verdict and recorded rationale |
+| transition label | edge condition or already-decided routing outcome |
 | human interaction node | external input node |
 | lifecycle marker | start/end marker |
 | transition | graph edge |
@@ -63,7 +64,7 @@ workflow
   -> workflow-step
   -> nested workflow
       -> workflow-step
-      -> gate
+      -> workflow-step-gate
       -> optional nested workflow
 ```
 

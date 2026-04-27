@@ -8,9 +8,9 @@
 
 `workflow-step` — это semantic process entity, которая подробно описывает один конкретный шаг workflow.
 
-`Workflow-step` должен быть bounded execution unit. Если предполагаемая вершина содержит собственную последовательность шагов, gates, branches или conditional loops, она должна моделироваться как nested `workflow`, а не как один перегруженный `workflow-step`.
+`Workflow-step` должен быть bounded execution unit. Если предполагаемая вершина содержит собственную последовательность шагов, gate-steps, branches или conditional loops, она должна моделироваться как nested `workflow`, а не как один перегруженный `workflow-step`.
 
-Если bounded execution unit является gate с explicit readiness / eligibility / routing decision, это specialized form: [`workflow-step-gate`](./workflow-step-gate.md).
+Если bounded execution unit принимает explicit readiness / eligibility / routing decision, это specialized form: [`workflow-step-gate`](./workflow-step-gate.md).
 
 Он нужен, чтобы отделить:
 - краткую карту всего workflow;
@@ -29,7 +29,7 @@
 
 Каждая atomic step-вершина в таком workflow должна ссылаться на отдельный `workflow-step`, который и раскрывает шаг подробно.
 
-Если вершина сама является процессом с несколькими шагами, gates или branches, она должна ссылаться на nested `workflow`.
+Если вершина сама является процессом с несколькими шагами, gate-steps или branches, она должна ссылаться на nested `workflow`.
 
 То есть:
 - `workflow` дает карту процесса;

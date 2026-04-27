@@ -59,14 +59,14 @@ workflow = markdown-defined directed graph for agent execution
 
 Важно:
 - не каждая вершина workflow обязана быть `workflow-step`;
-- если вершина сама содержит несколько переходов, gates, optional branches или conditional loops, ее нужно моделировать как nested `workflow`, а не как перегруженный `workflow-step`;
-- но если gate имеет собственные входы, выходы, checklist, verdict, handoff и самостоятельную execution ценность, он должен materialize-иться как отдельный [`workflow-step-gate`](./workflow-step-gate.md).
+- если вершина сама содержит несколько переходов, gate-steps, optional branches или conditional loops, ее нужно моделировать как nested `workflow`, а не как перегруженный `workflow-step`;
+- если вершина принимает explicit readiness / eligibility / routing decision, ее нужно моделировать как [`workflow-step-gate`](./workflow-step-gate.md), даже если gate-step остается lightweight.
 
 ## 2.2 Nested workflows
 
 `Workflow` может содержать другие `workflow` как вершины своего process graph.
 
-Это нужно, когда верхнеуровневый процесс состоит из крупных стадий, каждая из которых сама имеет внутреннюю последовательность шагов, gates, exception paths или conditional subflows.
+Это нужно, когда верхнеуровневый процесс состоит из крупных стадий, каждая из которых сама имеет внутреннюю последовательность шагов, gate-steps, exception paths или conditional subflows.
 
 Пример semantic hierarchy:
 
@@ -110,7 +110,7 @@ workflow
 
 `workflow` похож на markdown-based LangGraph graph:
 
-- vertices задают `workflow-step`, nested `workflow`, gate, human interaction или lifecycle marker;
+- vertices задают `workflow-step`, `workflow-step-gate`, nested `workflow`, human interaction или lifecycle marker;
 - edges задают transitions, handoff rules и условия перехода;
 - nested workflows похожи на вложенные graph/subgraph;
 - workflow-instance state живет не в source pack, а в operational layer конкретного прогона.
