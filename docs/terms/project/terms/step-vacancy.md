@@ -19,18 +19,39 @@
 На этом уровне имеет смысл задавать:
 - идентификатор позиции внутри workflow;
 - ссылку на конкретный шаг workflow;
-- требуемую или допустимую `agent-role`.
+- требуемую или допустимую `agent-role`;
+- prompt-steering requirements для выбора подходящего исполнителя.
 
 Важно:
-- `step-vacancy` не описывает входы и выходы шага;
-- `step-vacancy` не описывает, что именно нужно сделать на шаге;
-- это зона ответственности самого workflow step.
+- `step-vacancy` не дублирует входы, действия и `DoD` шага;
+- `step-vacancy` не подменяет `workflow-step` contract;
+- `step-vacancy` описывает, какой тип мышления, capabilities, tools/skills и output discipline нужны исполнителю этого шага.
 
 Сам workflow step должен описывать:
 - входы в шаг;
 - что нужно сделать;
 - какая `agent-role` это делает через связанную `step-vacancy`;
 - какой результат должен быть получен.
+
+`step-vacancy` может кратко ссылаться на expected output шага, но только как role-selection signal, а не как replacement for `STEP.md`.
+
+## 2.1 Prompt-steering requirements
+
+`step-vacancy` является practical prompt-steering artifact.
+
+Он помогает выбрать или создать подходящую `agent-role`, потому что фиксирует:
+
+- какой тип мышления нужен;
+- какие capabilities нужны;
+- какие tools, skills or MCP capabilities нужны;
+- какой output discipline ожидается;
+- какие negative steering constraints важны;
+- какие existing roles can cover this vacancy;
+- есть ли gap, требующий новой `agent-role`.
+
+Таким образом, `step-vacancy` связывает workflow-level need с reusable role layer.
+
+Подробнее о prompt-steering технике см. [`prompt-steering.md`](./resources/step-vacancy/prompt-steering.md).
 
 ## 3. Связь с `agent-role`
 
@@ -79,5 +100,9 @@
 - `workflow`;
 - `methodology workflow`;
 - `Project Portable Intent`.
+
+Adjacent resources:
+
+- [`prompt-steering.md`](./resources/step-vacancy/prompt-steering.md).
 
 Этот термин является ключевым для разделения reusable role layer и workflow assignment layer.
