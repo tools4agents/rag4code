@@ -45,6 +45,8 @@
 - [`workflow-step.md`](../../docs/terms/project/terms/workflow-step.md)
 - [`workflow-step-gate.md`](../../docs/terms/project/terms/workflow-step-gate.md)
 - [`workflow-exchange-layer.md`](../../docs/terms/project/terms/workflow-exchange-layer.md)
+- [`step-vacancy.md`](../../docs/terms/project/terms/step-vacancy.md)
+- [`prompt-steering.md`](../../docs/terms/project/terms/resources/step-vacancy/prompt-steering.md)
 
 ## Цель
 
@@ -87,6 +89,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/07-release-
 - [ ] `stages/07-release-cleanup/workflow.md` exists.
 - [ ] Stage 7 clearly distinguishes generic SDLC release/cleanup from project-specific release workflow.
 - [ ] Stage 7 explains user-facing documentation update preparation without hardcoding Docusaurus.
+- [ ] Each workflow-step folder contains `vacancy.md` with role-selection and prompt-steering requirements.
 - [ ] Stage 7 includes cleanup/readiness gate as `workflow-step-gate`.
 - [ ] Stage 7 defines when operational artifacts may be archived or removed.
 - [ ] Stage 7 includes graph sync/snapshot checkpoint guidance as derived representation, not SoT.

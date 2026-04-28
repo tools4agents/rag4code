@@ -44,6 +44,8 @@
 - [`workflow-step.md`](../../docs/terms/project/terms/workflow-step.md)
 - [`workflow-step-gate.md`](../../docs/terms/project/terms/workflow-step-gate.md)
 - [`workflow-exchange-layer.md`](../../docs/terms/project/terms/workflow-exchange-layer.md)
+- [`step-vacancy.md`](../../docs/terms/project/terms/step-vacancy.md)
+- [`prompt-steering.md`](../../docs/terms/project/terms/resources/step-vacancy/prompt-steering.md)
 
 ## Цель
 
@@ -85,6 +87,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/03-delivery
 - [ ] `stages/03-delivery-planning-task-decomposition/workflow.md` exists.
 - [ ] Stage 3 describes how engineering SoT becomes task-map and task files.
 - [ ] Stage 3 uses `workflow-step-gate` for planning readiness and taskset quality decisions.
+- [ ] Each workflow-step folder contains `vacancy.md` with role-selection and prompt-steering requirements.
 - [ ] Task materialization boundaries point to `taskset-materializer` and `task-materializer` skills.
 - [ ] Task files are required to include explicit canonical references and DoD.
 - [ ] Return path to Stage 2 exists when SoT is incomplete.

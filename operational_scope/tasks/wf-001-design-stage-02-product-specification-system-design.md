@@ -52,6 +52,8 @@ Stage 2 принимает accepted discovery output из Stage 1 и materialize
 - [`workflow-step.md`](../../docs/terms/project/terms/workflow-step.md)
 - [`workflow-step-gate.md`](../../docs/terms/project/terms/workflow-step-gate.md)
 - [`workflow-step-pack.md`](../../docs/terms/project/terms/workflow-step-pack.md)
+- [`step-vacancy.md`](../../docs/terms/project/terms/step-vacancy.md)
+- [`prompt-steering.md`](../../docs/terms/project/terms/resources/step-vacancy/prompt-steering.md)
 
 ### Old source corpus / synthesis inputs
 
@@ -117,6 +119,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/02-product-
 - [ ] Stage 2 is modeled as nested workflow, not one large `STEP.md`.
 - [ ] Each meaningful semantic routing decision is materialized as `workflow-step-gate`.
 - [ ] Each workflow-step has bounded inputs/actions/outputs/DoD/return conditions.
+- [ ] Each workflow-step folder contains `vacancy.md` with role-selection and prompt-steering requirements.
 - [ ] Stage 2 explains how accepted discovery output becomes durable `docs/product/` and system design SoT.
 - [ ] Stage 2 establishes graph-ready anchor expectations for product, architecture, contracts, ADR and testing artifacts.
 - [ ] `software-development-methodology/workflow.md` links to the new Stage 2 workflow.

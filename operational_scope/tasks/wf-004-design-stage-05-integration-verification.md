@@ -37,6 +37,8 @@
 - [`workflow-step.md`](../../docs/terms/project/terms/workflow-step.md)
 - [`workflow-step-gate.md`](../../docs/terms/project/terms/workflow-step-gate.md)
 - [`workflow-exchange-layer.md`](../../docs/terms/project/terms/workflow-exchange-layer.md)
+- [`step-vacancy.md`](../../docs/terms/project/terms/step-vacancy.md)
+- [`prompt-steering.md`](../../docs/terms/project/terms/resources/step-vacancy/prompt-steering.md)
 
 ## Цель
 
@@ -78,6 +80,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/05-integrat
 - [ ] `stages/05-integration-verification/workflow.md` exists.
 - [ ] Stage 5 models integration and verification as a nested workflow.
 - [ ] Stage 5 includes verification gate as `workflow-step-gate`.
+- [ ] Each workflow-step folder contains `vacancy.md` with role-selection and prompt-steering requirements.
 - [ ] Stage 5 defines how failures become defect tasks or return paths.
 - [ ] Stage 5 records verification evidence and traceability check expectations.
 - [ ] `software-development-methodology/workflow.md` links to the new Stage 5 workflow.

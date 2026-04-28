@@ -37,6 +37,8 @@
 - [`workflow-step.md`](../../docs/terms/project/terms/workflow-step.md)
 - [`workflow-step-gate.md`](../../docs/terms/project/terms/workflow-step-gate.md)
 - [`workflow-exchange-layer.md`](../../docs/terms/project/terms/workflow-exchange-layer.md)
+- [`step-vacancy.md`](../../docs/terms/project/terms/step-vacancy.md)
+- [`prompt-steering.md`](../../docs/terms/project/terms/resources/step-vacancy/prompt-steering.md)
 
 ### Source corpus / implementation principles
 
@@ -82,6 +84,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/04-task-imp
 
 - [ ] `stages/04-task-implementation/workflow.md` exists.
 - [ ] Stage 4 shows how a bounded task is implemented with code and tests.
+- [ ] Each workflow-step folder contains `vacancy.md` with role-selection and prompt-steering requirements.
 - [ ] Stage 4 has explicit return path if implementation reveals SoT/design gap.
 - [ ] Stage 4 requires updating task execution status and handoff evidence.
 - [ ] Stage 4 preserves traceability from task to code and tests.

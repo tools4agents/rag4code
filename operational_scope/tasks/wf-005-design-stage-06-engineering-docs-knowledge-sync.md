@@ -40,6 +40,8 @@
 - [`workflow-step.md`](../../docs/terms/project/terms/workflow-step.md)
 - [`workflow-step-gate.md`](../../docs/terms/project/terms/workflow-step-gate.md)
 - [`workflow-exchange-layer.md`](../../docs/terms/project/terms/workflow-exchange-layer.md)
+- [`step-vacancy.md`](../../docs/terms/project/terms/step-vacancy.md)
+- [`prompt-steering.md`](../../docs/terms/project/terms/resources/step-vacancy/prompt-steering.md)
 
 ## Цель
 
@@ -81,6 +83,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/06-engineer
 - [ ] `stages/06-engineering-docs-knowledge-sync/workflow.md` exists.
 - [ ] Stage 6 clearly follows `documentation-lifecycle-layers`.
 - [ ] Stage 6 distinguishes engineering SoT from release/user-facing documentation.
+- [ ] Each workflow-step folder contains `vacancy.md` with role-selection and prompt-steering requirements.
 - [ ] Stage 6 includes a docs sync gate as `workflow-step-gate`.
 - [ ] Stage 6 explains how graph-ready anchors are checked/updated.
 - [ ] Stage 6 produces handoff to Stage 7 with release-facing documentation candidates.
