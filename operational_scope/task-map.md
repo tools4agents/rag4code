@@ -13,10 +13,14 @@
 
 | Задача | Статус | Файл |
 | --- | --- | --- |
-| Design Stage 02 — Product Specification & System Design workflow | queued | `operational_scope/tasks/wf-001-design-stage-02-product-specification-system-design.md` |
-| Design Stage 03 — Delivery Planning & Task Decomposition workflow | queued | `operational_scope/tasks/wf-002-design-stage-03-delivery-planning-task-decomposition.md` |
-| Design Stage 04 — Task Implementation workflow | queued | `operational_scope/tasks/wf-003-design-stage-04-task-implementation.md` |
-| Design Stage 05 — Integration & Verification workflow | queued | `operational_scope/tasks/wf-004-design-stage-05-integration-verification.md` |
-| Design Stage 06 — Engineering Docs & Knowledge Sync workflow | queued | `operational_scope/tasks/wf-005-design-stage-06-engineering-docs-knowledge-sync.md` |
-| Design Stage 07 — Release & Cleanup workflow | queued | `operational_scope/tasks/wf-006-design-stage-07-release-cleanup.md` |
-| Run agent-role coverage pass for Adaptive Waterfall | queued | `operational_scope/tasks/wf-007-run-agent-role-coverage-pass-for-adaptive-waterfall.md` |
+| Design Stage 02 — Architecture Design internal steps | queued | `operational_scope/tasks/wf-008-design-stage-02-architecture-design-internal-steps.md` |
+| Design Stage 03 — System Design internal steps | queued | `operational_scope/tasks/wf-009-design-stage-03-system-design-internal-steps.md` |
+| Design process workflow — Design Baseline Consolidation internal steps | queued | `operational_scope/tasks/wf-010-design-process-design-baseline-consolidation-internal-steps.md` |
+| Design Stage 04 — Test Design internal steps | queued | `operational_scope/tasks/wf-011-design-stage-04-test-design-internal-steps.md` |
+| Design process workflow — Pre-Planning Baseline Freeze internal steps | queued | `operational_scope/tasks/wf-012-design-process-pre-planning-baseline-freeze-internal-steps.md` |
+| Design Stage 05 — Delivery Planning & Task Decomposition internal steps | queued | `operational_scope/tasks/wf-013-design-stage-05-delivery-planning-task-decomposition-internal-steps.md` |
+| Design Stage 06 — Task Implementation internal steps | queued | `operational_scope/tasks/wf-014-design-stage-06-task-implementation-internal-steps.md` |
+| Design Stage 07 — Integration & Verification internal steps | queued | `operational_scope/tasks/wf-015-design-stage-07-integration-verification-internal-steps.md` |
+| Design Stage 08 — Engineering Docs & Knowledge Sync internal steps | queued | `operational_scope/tasks/wf-016-design-stage-08-engineering-docs-knowledge-sync-internal-steps.md` |
+| Design Stage 09 — Release & Cleanup internal steps | queued | `operational_scope/tasks/wf-017-design-stage-09-release-cleanup-internal-steps.md` |
+| Run agent-role coverage pass for Adaptive Waterfall internal steps | queued | `operational_scope/tasks/wf-018-run-agent-role-coverage-pass-for-adaptive-waterfall.md` |
