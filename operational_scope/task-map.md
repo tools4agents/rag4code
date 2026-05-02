@@ -14,7 +14,7 @@
 | Задача | Статус | Файл |
 | --- | --- | --- |
 | Design Stage 02 — Architecture Design internal steps | completed | `operational_scope/tasks/wf-008-design-stage-02-architecture-design-internal-steps.md` |
-| Design Stage 03 — System Design internal steps | queued | `operational_scope/tasks/wf-009-design-stage-03-system-design-internal-steps.md` |
+| Design Stage 03 — System Design internal steps | completed | `operational_scope/tasks/wf-009-design-stage-03-system-design-internal-steps.md` |
 | Design process workflow — Design Baseline Consolidation internal steps | queued | `operational_scope/tasks/wf-010-design-process-design-baseline-consolidation-internal-steps.md` |
 | Design Stage 04 — Test Design internal steps | queued | `operational_scope/tasks/wf-011-design-stage-04-test-design-internal-steps.md` |
 | Design process workflow — Pre-Planning Baseline Freeze internal steps | queued | `operational_scope/tasks/wf-012-design-process-pre-planning-baseline-freeze-internal-steps.md` |
