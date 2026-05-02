@@ -112,19 +112,19 @@ assets/metodologes/waterfall/software-development-methodology/stages/02-architec
 
 ## Definition of Done
 
-- [ ] План internal steps обсужден с человеком до создания step packs.
-- [ ] Согласованный internal workflow graph добавлен в `stages/02-architecture-design/workflow.md`.
-- [ ] Каждый meaningful semantic routing decision modeled as `workflow-step-gate`.
-- [ ] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
-- [ ] Каждый step pack имеет `vacancy.md`.
-- [ ] Step boundaries не дублируют System Design или Test Design.
-- [ ] ADR описан как capability / SoT materialization option, а не обязательный architecture step.
-- [ ] Stage workflow не требует hidden knowledge from `operational_scope/` as SoT.
-- [ ] Links and terminology follow documentation rules.
+- [x] План internal steps обсужден с человеком до создания step packs.
+- [x] Согласованный internal workflow graph добавлен в `stages/02-architecture-design/workflow.md`.
+- [x] Каждый meaningful semantic routing decision modeled as `workflow-step-gate`.
+- [x] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
+- [x] Каждый step pack имеет `vacancy.md`.
+- [x] Step boundaries не дублируют System Design или Test Design.
+- [x] ADR описан как capability / SoT materialization option, а не обязательный architecture step.
+- [x] Stage workflow не требует hidden knowledge from `operational_scope/` as SoT.
+- [x] Links and terminology follow documentation rules.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: Обсудить с человеком план internal steps для Architecture Design.
+- Current State: completed
+- Next Step: none
 - Blockers: none
-- Verification: Проверить stage workflow, step packs and vacancies на consistency, progressive disclosure and link correctness.
+- Verification: Stage workflow, step packs and vacancies согласованы; проверены consistency, progressive disclosure and link correctness.
