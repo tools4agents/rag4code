@@ -24,3 +24,7 @@
 | Design Stage 08 — Engineering Docs & Knowledge Sync internal steps | queued | `operational_scope/tasks/wf-016-design-stage-08-engineering-docs-knowledge-sync-internal-steps.md` |
 | Design Stage 09 — Release & Cleanup internal steps | queued | `operational_scope/tasks/wf-017-design-stage-09-release-cleanup-internal-steps.md` |
 | Run agent-role coverage pass for Adaptive Waterfall internal steps | queued | `operational_scope/tasks/wf-018-run-agent-role-coverage-pass-for-adaptive-waterfall.md` |
+| Design process workflow — Initiative Workspace Preparation | queued | `operational_scope/tasks/wf-019-design-process-initiative-workspace-preparation.md` |
+| Design pre-stage workflow — Opportunity Discovery | queued | `operational_scope/tasks/wf-020-design-pre-stage-opportunity-discovery.md` |
+| Redesign Stage 01 — Product Design inside Early Design Convergence Loop | queued | `operational_scope/tasks/wf-021-redesign-stage-01-product-design-early-design-loop.md` |
+| Synchronize SDLC workflow graph with pre-design workflows and Product Design | queued | `operational_scope/tasks/wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md` |
