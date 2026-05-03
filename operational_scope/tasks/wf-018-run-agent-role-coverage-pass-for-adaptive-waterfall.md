@@ -16,7 +16,7 @@
 - `wf-010` — Design Baseline Consolidation;
 - `wf-011` — Stage 04 Test Design;
 - `wf-012` — Pre-Planning Baseline Freeze;
-- `wf-013` — Stage 05 Delivery Planning & Task Decomposition;
+- `wf-013` — Stage 05 Execution Planning & Task Decomposition;
 - `wf-014` — Stage 06 Task Implementation;
 - `wf-015` — Stage 07 Integration & Verification;
 - `wf-016` — Stage 08 Engineering Docs & Knowledge Sync;

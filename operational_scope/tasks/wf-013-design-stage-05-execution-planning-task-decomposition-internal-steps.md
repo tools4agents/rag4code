@@ -1,13 +1,13 @@
-# Task: Design Stage 05 — Delivery Planning & Task Decomposition internal steps
+# Task: Design Stage 05 — Execution Planning & Task Decomposition internal steps
 
 ## Контекст
 
 Новая модель `Adaptive Waterfall for Agents` разделяет SDLC stage workflows и process workflows.
 
-`Stage 05 — Delivery Planning & Task Decomposition` уже имеет stage workflow-pack:
+`Stage 05 — Execution Planning & Task Decomposition` уже имеет stage workflow-pack:
 
 ```text
-assets/metodologes/waterfall/software-development-methodology/stages/05-delivery-planning-task-decomposition/
+assets/metodologes/waterfall/software-development-methodology/stages/05-execution-planning-task-decomposition/
   README.md
   workflow.md
 ```
@@ -16,11 +16,11 @@ assets/metodologes/waterfall/software-development-methodology/stages/05-delivery
 
 ```text
 Pre-Planning Baseline Freeze
-  -> Delivery Planning & Task Decomposition
+  -> Execution Planning & Task Decomposition
   -> Task Implementation
 ```
 
-`Delivery Planning & Task Decomposition` не выполняет SoT freeze и не сокращает большие operational plans. Он consumes self-contained engineering SoT and short implementation plan, подготовленные в `Pre-Planning Baseline Freeze`, и превращает их в executable task set.
+`Execution Planning & Task Decomposition` не выполняет SoT freeze и не сокращает большие operational plans. Он consumes self-contained engineering SoT and short implementation plan, подготовленные в `Pre-Planning Baseline Freeze`, и превращает их в executable task set.
 
 ## Обязательный reading context
 
@@ -36,8 +36,8 @@ Pre-Planning Baseline Freeze
 
 ### Target stage
 
-- [`README.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-delivery-planning-task-decomposition/README.md)
-- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-delivery-planning-task-decomposition/workflow.md)
+- [`README.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-execution-planning-task-decomposition/README.md)
+- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-execution-planning-task-decomposition/workflow.md)
 
 ### Adjacent workflow context
 
@@ -77,7 +77,7 @@ Relevant assets include:
 
 ## Цель
 
-Проработать internal steps для `Stage 05 — Delivery Planning & Task Decomposition` по схеме:
+Проработать internal steps для `Stage 05 — Execution Planning & Task Decomposition` по схеме:
 
 1. обсудить с человеком план внутренних `workflow-step` and `workflow-step-gate`;
 2. после согласования зафиксировать план в stage `workflow.md`;
@@ -89,7 +89,7 @@ Relevant assets include:
 
 Включить:
 
-- Delivery Planning internal workflow graph;
+- Execution Planning internal workflow graph;
 - список step vertices and gate vertices;
 - happy path and return/remediation paths;
 - intake from Pre-Planning Baseline Freeze;
@@ -134,7 +134,7 @@ Relevant assets include:
 После выполнения задачи должны появиться:
 
 ```text
-assets/metodologes/waterfall/software-development-methodology/stages/05-delivery-planning-task-decomposition/
+assets/metodologes/waterfall/software-development-methodology/stages/05-execution-planning-task-decomposition/
   workflow.md                         # updated with internal graph and step table
   steps/<step-slug>/STEP.md
   steps/<step-slug>/vacancy.md
@@ -143,7 +143,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/05-delivery
 ## Definition of Done
 
 - [ ] План internal steps обсужден с человеком до создания step packs.
-- [ ] Согласованный internal workflow graph добавлен в `stages/05-delivery-planning-task-decomposition/workflow.md`.
+- [ ] Согласованный internal workflow graph добавлен в `stages/05-execution-planning-task-decomposition/workflow.md`.
 - [ ] Каждый meaningful semantic routing decision modeled as `workflow-step-gate`.
 - [ ] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
 - [ ] Каждый step pack имеет `vacancy.md`.
@@ -156,6 +156,6 @@ assets/metodologes/waterfall/software-development-methodology/stages/05-delivery
 ## Execution Status
 
 - Current State: queued
-- Next Step: Обсудить с человеком план internal steps для Delivery Planning & Task Decomposition.
+- Next Step: Обсудить с человеком план internal steps для Execution Planning & Task Decomposition.
 - Blockers: none
 - Verification: Проверить stage workflow, step packs and vacancies на consistency, progressive disclosure and link correctness.

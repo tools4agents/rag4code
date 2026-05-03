@@ -12,10 +12,10 @@ assets/metodologes/waterfall/software-development-methodology/stages/06-task-imp
   workflow.md
 ```
 
-Этот stage идет после `Stage 05 — Delivery Planning & Task Decomposition` и перед `Stage 07 — Integration & Verification`:
+Этот stage идет после `Stage 05 — Execution Planning & Task Decomposition` и перед `Stage 07 — Integration & Verification`:
 
 ```text
-Delivery Planning & Task Decomposition
+Execution Planning & Task Decomposition
   -> Task Implementation
   -> Integration & Verification
 ```
@@ -41,7 +41,7 @@ Delivery Planning & Task Decomposition
 
 ### Adjacent workflow context
 
-- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-delivery-planning-task-decomposition/workflow.md)
+- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-execution-planning-task-decomposition/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/07-integration-verification/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/pre-planning-baseline-freeze/workflow.md)
 
@@ -111,7 +111,7 @@ Relevant assets include:
 - release cleanup;
 - large redesign inside implementation;
 - silent architecture/product/system decisions;
-- creating new task sets unless returning to Delivery Planning;
+- creating new task sets unless returning to Execution Planning;
 - publishing release-facing docs.
 
 ## Suggested discussion topics

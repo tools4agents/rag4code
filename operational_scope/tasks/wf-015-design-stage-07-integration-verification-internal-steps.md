@@ -44,7 +44,7 @@ Task Implementation
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/06-task-implementation/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/08-engineering-docs-knowledge-sync/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/04-test-design/workflow.md)
-- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-delivery-planning-task-decomposition/workflow.md)
+- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-execution-planning-task-decomposition/workflow.md)
 
 ### Required dependent assets
 

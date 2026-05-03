@@ -12,12 +12,12 @@ assets/metodologes/waterfall/software-development-methodology/workflows/pre-plan
   workflow.md
 ```
 
-Этот workflow расположен между `Stage 04 — Test Design` и `Stage 05 — Delivery Planning & Task Decomposition`:
+Этот workflow расположен между `Stage 04 — Test Design` и `Stage 05 — Execution Planning & Task Decomposition`:
 
 ```text
 Test Design
   -> Pre-Planning Baseline Freeze
-  -> Delivery Planning & Task Decomposition
+  -> Execution Planning & Task Decomposition
 ```
 
 Его задача — после Test Design зафиксировать self-contained engineering SoT для selected scope, учесть findings из Test Design и подготовить short implementation plan, из которого можно создавать tasks.
@@ -42,7 +42,7 @@ Test Design
 ### Adjacent workflow context
 
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/04-test-design/workflow.md)
-- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-delivery-planning-task-decomposition/workflow.md)
+- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/05-execution-planning-task-decomposition/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/03-system-design/workflow.md)
 
@@ -87,7 +87,7 @@ Test Design
 - plan cleanup / shortening до short implementation plan with links to SoT;
 - handling of blockers, white spots and open questions;
 - routing to Early Design Convergence Loop, Test Design, Research / Deep Research / Spike Experiments;
-- readiness decision for Delivery Planning & Task Decomposition;
+- readiness decision for Execution Planning & Task Decomposition;
 - `STEP.md` для каждого согласованного step;
 - `vacancy.md` для каждого step pack.
 
@@ -104,7 +104,7 @@ Test Design
 
 Перед созданием step packs обсудить с человеком:
 
-- какие checks обязательны перед Delivery Planning;
+- какие checks обязательны перед Execution Planning;
 - что значит self-contained SoT for selected implementation scope;
 - как учитывать findings из Test Design;
 - как определить, что operational plan слишком длинный и дублирует SoT;

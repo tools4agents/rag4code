@@ -18,7 +18,7 @@
 | Design process workflow — Design Baseline Consolidation internal steps | queued | `operational_scope/tasks/wf-010-design-process-design-baseline-consolidation-internal-steps.md` |
 | Design Stage 04 — Test Design internal steps | queued | `operational_scope/tasks/wf-011-design-stage-04-test-design-internal-steps.md` |
 | Design process workflow — Pre-Planning Baseline Freeze internal steps | queued | `operational_scope/tasks/wf-012-design-process-pre-planning-baseline-freeze-internal-steps.md` |
-| Design Stage 05 — Delivery Planning & Task Decomposition internal steps | queued | `operational_scope/tasks/wf-013-design-stage-05-delivery-planning-task-decomposition-internal-steps.md` |
+| Design Stage 05 — Execution Planning & Task Decomposition internal steps | queued | `operational_scope/tasks/wf-013-design-stage-05-execution-planning-task-decomposition-internal-steps.md` |
 | Design Stage 06 — Task Implementation internal steps | queued | `operational_scope/tasks/wf-014-design-stage-06-task-implementation-internal-steps.md` |
 | Design Stage 07 — Integration & Verification internal steps | queued | `operational_scope/tasks/wf-015-design-stage-07-integration-verification-internal-steps.md` |
 | Design Stage 08 — Engineering Docs & Knowledge Sync internal steps | queued | `operational_scope/tasks/wf-016-design-stage-08-engineering-docs-knowledge-sync-internal-steps.md` |
