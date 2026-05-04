@@ -120,12 +120,18 @@ assets/metodologes/waterfall/software-development-methodology/workflows/initiati
 ## Execution Status
 
 - Current State: in_progress — baseline workflow-pack materialized; key decision resources for handling classes, route decisions, workspace decisions, split handling, duplicate handling, source links schema, initiative index template and preparation decisions template created; operational artifact path rules and task-management scope model updated; detailed `STEP.md` / `vacancy.md` files not created yet.
-- Next Step: decide migration policy for existing `operational_scope/discovery/<initiative-slug>/` workspaces or define detailed return/remediation paths for gates.
+- Next Step: continue discussion from the operational artifact lifecycle/path model: decide how `Initiative Workspace Preparation` should align with the “diploma model” (`inputs` as external sources, `source-links.md` as bibliography/provenance, workspace as processed local context), then update IWP resources accordingly before moving to return/remediation paths.
 - Blockers: none
-- Contract Changes: present — methodology workflow docs and stage naming updated.
+- Contract Changes: present — methodology workflow docs, task-management SoT, path rules and stage naming updated.
 - Verification: read/grep consistency checks only; no automated test command run because changes are documentation/process artifacts.
 
 ## Handoff Notes
+
+### Previous conversation recall
+
+- Current session title for local recall: `Подготовка workspace для wf-019`.
+- A new agent can use the local conversation recall tool to search/read this session if more detailed discussion context is needed.
+- Earlier relevant session title: `Шаги этапа Initiative Workspace Preparation`.
 
 ### What is done
 
@@ -169,6 +175,12 @@ assets/metodologes/waterfall/software-development-methodology/workflows/initiati
   - Unscoped tasks live under `operational_scope/tasks/<task-type>/`.
   - Evidence outputs live outside `tasks/` under the matching evidence artifact area.
   - `task-management-learner` marked as legacy reference.
+- Discussed and tentatively aligned on the “diploma model” for operational artifacts:
+  - `operational_scope/inputs/<artifact-type>/` is the raw/external input inbox.
+  - Initiative workspace is a namespace for processed local context, scoped tasks and scoped evidence outputs.
+  - `source-links.md` remains useful as a bibliography/provenance map for external inputs, not as a replacement for local working artifacts.
+  - `Context Intake` steps in Discovery/Product/System/Architecture workflows should be understood as converting external/raw context plus SoT into local stage-ready workspace context.
+  - Execution task outputs are the project changes themselves (`docs/`, code, tests, contracts, etc.); no separate operational output folder is needed for execution results.
 - Created general resource placement guideline:
   - [`resource-placement-guidelines.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/resource-placement-guidelines.md)
 - Renamed Stage 05 across methodology assets from `Delivery Planning & Task Decomposition` to `Execution Planning & Task Decomposition`:
@@ -184,14 +196,24 @@ assets/metodologes/waterfall/software-development-methodology/workflows/initiati
 
 ### Immediate fix first
 
-Discuss the next open question: migration policy for existing `operational_scope/discovery/<initiative-slug>/` workspaces or detailed return/remediation paths for gates.
+Continue from the “diploma model” discussion and decide what needs to be reflected in `Initiative Workspace Preparation` resources:
+
+1. Whether to keep `source-links.md` name and schema as-is or clarify its role as bibliography/provenance map for external inputs.
+2. Whether to update `initiative-index-template.md` minimal workspace shape/file map to mention local processed context areas, scoped tasks and evidence outputs.
+3. Whether to update Stage 02/03 `Context Intake` step semantics later so they explicitly create/update local stage-ready workspace context instead of just collecting links.
+
+After that, move to either migration policy for existing `operational_scope/discovery/<initiative-slug>/` resources or detailed return/remediation paths for gates.
 
 ### Pending work
 
+- Decide how the “diploma model” changes IWP artifacts and whether current `source-links-schema.md` needs wording update only or structural changes.
+- Decide whether initiative workspace minimal shape stays `index.md`, `source-links.md`, `preparation-decisions.md` only, or should mention optional local areas (`tasks/`, `research/`, `deep-research/`, `spikes/`, stage-local context folders) in `initiative-index-template.md`.
+- Decide how `Context Intake` in Stage 01/Product Design, Stage 02 Architecture Design and Stage 03 System Design should relate to initiative workspace local context. Current Stage 02/03 docs describe context reconstruction but not yet the “external input -> local processed context -> SoT” model explicitly.
 - Decide migration policy for existing `operational_scope/discovery/<initiative-slug>/` workspaces. Context note: this workflow has not yet been applied to any project, so there are no real project migrations; question is mostly about Stage 01 legacy resource compatibility.
 - Define detailed return/remediation paths for each gate.
 - After open questions are resolved, materialize `steps/<step-slug>/STEP.md` and `steps/<step-slug>/vacancy.md` for agreed steps.
 - Update Stage 01 / discovery workspace resources if needed after finalizing initiative workspace lifecycle.
+- Later cleanup/update outside immediate IWP scope: align operational skills (`task-materializer`, `taskset-materializer`, `active-task-setter`, research/spike setters) with the new task-management SoT and path rules. `task-management-learner` is legacy and should not drive the new SDLC model.
 
 ### Commands to run
 
@@ -200,6 +222,7 @@ cd /data/develop/education/hyper-projects/hyper-graph
 rg "work-item-triviality-boundaries|Delivery Planning|05-delivery-planning-task-decomposition" assets/metodologes/waterfall/software-development-methodology operational_scope
 rg "source-links-schema|route-decision-model|workspace-decision-model|split-handling|duplicate-handling|preparation-decisions-template|work-item-handling-classes" assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation assets/metodologes/waterfall/software-development-methodology/resources
 rg "tasks/<initiative-slug>|tasks/<scope-slug>|tasks/trivial|<initiative-slug>/evidence" docs/methodology-layer/assets/task-management assets/metodologes/waterfall/software-development-methodology/resources
+rg "operational-artifact-path-rules|operational_scope/inputs|source-links.md|Context Intake" docs/methodology-layer/assets/task-management assets/metodologes/waterfall/software-development-methodology
 ```
 
 ### User constraints
