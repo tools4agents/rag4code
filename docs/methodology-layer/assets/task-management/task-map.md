@@ -30,10 +30,41 @@ operational_scope/
   task-map.md
 ```
 
+Scope-aware layout расширяет этот baseline и следует path rules из [`operational-artifact-path-rules.md`](./resources/operational-artifact-path-rules.md):
+
+```text
+operational_scope/
+  task-map.md
+  inputs/
+  tasks/
+    task-map.md
+    execution/
+    research/
+    deep-research/
+    spikes/
+  research/
+  deep-research/
+  spikes/
+  initiatives/
+    <initiative-slug>/
+      tasks/
+        task-map.md
+        execution/
+        research/
+        deep-research/
+        spikes/
+      research/
+      deep-research/
+      spikes/
+```
+
 ## Роли элементов layout
 
-- `operational_scope/task-map.md` — канонический индекс task-layer;
-- `operational_scope/tasks/` — исполнимые [`task artifacts`](../../../terms/project/terms/task-artifact.md).
+- `operational_scope/task-map.md` — канонический индекс task-layer; в scope-aware режиме это central navigation index для task scopes;
+- `operational_scope/tasks/` — baseline storage location для исполнимых [`task artifacts`](../../../terms/project/terms/task-artifact.md);
+- `operational_scope/tasks/task-map.md` — task index для unscoped tasks;
+- `operational_scope/initiatives/<initiative-slug>/tasks/task-map.md` — task index внутри initiative workspace;
+- `operational_scope/initiatives/<initiative-slug>/tasks/<task-type>/` — initiative-scoped task artifacts.
 
 Другие каталоги внутри `operational_scope/` могут существовать, но они не определяются этим asset и не считаются его обязательной частью.
 
@@ -41,13 +72,81 @@ operational_scope/
 
 Для `task-map` каноническим индексом task-layer считается `operational_scope/task-map.md`.
 
-Этот файл должен давать краткую карту задач:
+В scope-aware режиме этот файл является центральным индексом task scopes, а не flat list всех задач.
+
+Центральный индекс должен давать краткую карту scopes:
+
+- scope slug;
+- scope type;
+- статус;
+- ссылку на scope task index;
+- связанную initiative, если она есть.
+
+В flat режиме этот файл может давать краткую карту задач:
 
 - название;
 - статус;
 - ссылку на task file.
 
 Индекс нужен для quick navigation и focus management, а не для повторного пересказа содержимого task files.
+
+## Scope-aware task maps
+
+`Task-map` должен поддерживать scope-aware модель, когда task artifacts группируются по initiative workspace или unscoped task area.
+
+Detailed path rules live in [`operational-artifact-path-rules.md`](./resources/operational-artifact-path-rules.md).
+
+### Scope identity
+
+Scope определяется так:
+
+```text
+initiative work:
+  scope = <initiative-slug>
+  task map = operational_scope/initiatives/<initiative-slug>/tasks/task-map.md
+
+unscoped work:
+  scope = unscoped
+  task map = operational_scope/tasks/task-map.md
+```
+
+Все work items, связанные с initiative, используют initiative workspace as namespace.
+
+Все work items без конкретной initiative используют unscoped task area.
+
+### Task types inside task map
+
+Task map может содержать секции по task types:
+
+```text
+execution tasks
+research tasks
+deep-research tasks
+spike tasks
+```
+
+### Evidence tasks and outputs
+
+Evidence task может быть создан из разных мест SDLC workflow, когда нужно уменьшить неопределенность.
+
+Evidence task фиксирует:
+
+- какую uncertainty нужно уменьшить;
+- что нужно проверить или исследовать;
+- какой evidence ожидается;
+- куда evidence должен вернуться в SDLC context.
+
+Evidence output влияет на дальнейшее движение SDLC workflow, но task-management layer не принимает route/product/system/architecture decisions сам.
+
+Task artifacts and evidence outputs use different paths:
+
+```text
+task artifact:
+  .../tasks/<task-type>/<task-slug>.md
+
+evidence output:
+  .../<evidence-type>/<evidence-slug>/
+```
 
 ## Stage-aware task maps
 
@@ -143,6 +242,26 @@ Stage-aware decomposition нужна, чтобы:
 - короткое `Decision rule` для перехода к следующему task;
 - stage-level status.
 
+## Связь с SDLC workflow
+
+`Task-map` не заменяет SDLC workflow и не определяет, когда именно work item должен стать задачей.
+
+В новой SDLC модели:
+
+```text
+input artifacts
+  -> Initiative Workspace Preparation / downstream design and evidence workflows
+  -> Execution Planning & Task Decomposition
+  -> execution tasks
+  -> Task Implementation
+```
+
+`execution tasks` обычно появляются как результат `Execution Planning & Task Decomposition` для конкретной initiative.
+
+`trivial-direct` не создает initiative workspace, но все равно получает task-level traceability через unscoped task area and lightweight Execution Planning.
+
+`Research`, `Deep Research` and `Spike` могут создавать `evidence tasks` из разных мест SDLC, если нужно уменьшить неопределенность до продолжения design или execution flow.
+
 ## Связь с supporting artifacts
 
 Обычно задачи в этой системе опираются прежде всего на [`Engineering Documentation SoT`](../../../terms/project/terms/engineering-documentation-sot.md).
@@ -154,6 +273,8 @@ Stage-aware decomposition нужна, чтобы:
 - [`spike reports`](../../../terms/project/terms/spike-report.md).
 
 Но такие связи являются опциональными и не определяют базовую структуру `task-map`.
+
+Idea, plan, research and spike artifacts являются supporting/source artifacts. Они не образуют обязательный универсальный pipeline `idea -> plan -> taskset -> task` внутри этого asset.
 
 ## Связь с knowledge lifecycle
 
@@ -194,7 +315,7 @@ Stage-aware decomposition нужна, чтобы:
 
 Template не задает обязательный process model, но дает:
 
-- согласованную структуру для stage-aware task maps;
+- согласованную структуру для scope-aware and stage-aware task maps;
 - единообразную форму таблиц этапов и задач;
 - reusable starting point для новых проектов.
 
@@ -213,14 +334,20 @@ Template не задает обязательный process model, но дает
 
 - [`asset-taxonomy-and-composition-model.md`](../../asset-taxonomy-and-composition-model.md);
 - [`documentation-lifecycle-layers.md`](../knowledge-lifecycle/documentation-lifecycle-layers.md);
+- [`operational-artifact-path-rules.md`](./resources/operational-artifact-path-rules.md);
 - [`task-map.template.md`](./resources/task-map.template.md);
 - [`overview.md`](../../overview.md).
 
 ## Canonical invariants
 
 - `task-map` является concrete `task-management-system asset`.
-- `operational_scope/task-map.md` является каноническим task index для этой системы.
+- `operational_scope/task-map.md` является каноническим task index для этой системы and may act as central navigation index for task scopes.
 - `operational_scope/tasks/` является baseline storage location для [`task artifacts`](../../../terms/project/terms/task-artifact.md).
+- Scope-aware task maps group tasks by initiative workspace or unscoped task area.
+- Initiative task artifacts live under `operational_scope/initiatives/<initiative-slug>/tasks/<task-type>/`.
+- Unscoped task artifacts live under `operational_scope/tasks/<task-type>/`.
+- Evidence output artifacts live outside `tasks/`: under `operational_scope/initiatives/<initiative-slug>/<evidence-type>/<evidence-slug>/` or `operational_scope/<evidence-type>/<evidence-slug>/`.
+- Detailed path rules are defined in [`operational-artifact-path-rules.md`](./resources/operational-artifact-path-rules.md).
 - task index может быть как flat, так и stage-aware, если это помогает execution continuity.
 - task-oriented operational artifacts должны жить в task-layer, а не в `docs/`.
 - task system не должна подменять knowledge lifecycle model.

@@ -15,6 +15,31 @@
 - двигаться по связным задачам в порядке их зависимости;
 - упрощать handoff между агентами и сессиями.
 
+## Task scopes
+
+Используй этот блок в central `operational_scope/task-map.md`, если проект ведет scope-aware task map.
+
+| Scope | Type | Статус | Task index | Related initiative |
+| --- | --- | --- | --- | --- |
+| unscoped | no-initiative | active | [`tasks/task-map.md`](./tasks/task-map.md) | none |
+| `<initiative-slug>` | initiative | pending | [`initiatives/<initiative-slug>/tasks/task-map.md`](./initiatives/<initiative-slug>/tasks/task-map.md) | [`initiatives/<initiative-slug>/index.md`](./initiatives/<initiative-slug>/index.md) |
+
+Если проект использует flat `task-map`, этот блок может быть заменен flat list задач.
+
+## Scope task map shape
+
+Для каждого task scope можно создать отдельный task index:
+
+```text
+unscoped:
+  operational_scope/tasks/task-map.md
+
+initiative:
+  operational_scope/initiatives/<initiative-slug>/tasks/task-map.md
+```
+
+Внутри scope task map можно использовать stage-aware sections ниже.
+
 ## Этапы
 
 | Stage | Название | Цель | Статус |
@@ -57,8 +82,14 @@
 
 - Сначала стабилизируется upstream layer, затем открывается downstream work.
 - Не materialize-ить большой пакет зависимых артефактов до review предыдущего шага.
-- После завершения каждой задачи обновлять этот индекс и при необходимости создавать отдельный task file в `operational_scope/tasks/`.
+- После завершения каждой задачи обновлять этот индекс и при необходимости создавать отдельный task file в relevant task area.
 - Если задача становится слишком широкой, разделять ее на более узкие sequential tasks.
+- Для initiative work использовать scope `<initiative-slug>`.
+- Для work без initiative использовать unscoped task area.
+- Execution tasks для initiative хранить в `operational_scope/initiatives/<initiative-slug>/tasks/execution/`.
+- Evidence tasks, связанные с initiative, хранить в `operational_scope/initiatives/<initiative-slug>/tasks/research/`, `operational_scope/initiatives/<initiative-slug>/tasks/deep-research/` или `operational_scope/initiatives/<initiative-slug>/tasks/spikes/`.
+- Unscoped tasks хранить в `operational_scope/tasks/<task-type>/`.
+- Evidence outputs хранить вне `tasks/`, согласно [`operational-artifact-path-rules.md`](./operational-artifact-path-rules.md).
 
 ## Как использовать template
 
