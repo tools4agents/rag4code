@@ -4,7 +4,7 @@
 
 Текущий `Stage 01 — Discovery & Intent Framing` противоречиво позиционирован: он одновременно выглядит как preparation/handoff workflow и как vertex внутри Early Design Convergence Loop.
 
-Принято направление: Stage 01 должен стать `Product Design & Intent Framing` — полноценной product-design областью внутри Early Design Convergence Loop. Workspace preparation and exploratory discovery должны быть вынесены в отдельные workflows.
+Принято направление: Stage 01 должен стать `Product Design` — полноценной product-design областью внутри Early Design Convergence Loop. `Intent Framing` остается responsibility stage, но не входит в название. Workspace preparation and exploratory discovery должны быть вынесены в отдельные workflows.
 
 Product Design работает рядом с `Architecture Design` and `System Design`; все три являются design-stage областями, но отвечают за разные concerns:
 
@@ -47,7 +47,7 @@ Product Design работает рядом с `Architecture Design` and `System 
 
 ## Цель
 
-Переделать Stage 01 в `Product Design & Intent Framing` внутри Early Design Convergence Loop.
+Переделать Stage 01 в `Product Design` внутри Early Design Convergence Loop.
 
 Нужно:
 
@@ -102,11 +102,10 @@ Product Design работает рядом с `Architecture Design` and `System 
 После выполнения задачи должны появиться или быть обновлены:
 
 ```text
-assets/metodologes/waterfall/software-development-methodology/stages/01-product-design-intent-framing/
+assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/
   README.md
   workflow.md
   steps/<step-slug>/STEP.md
-  steps/<step-slug>/vacancy.md
 ```
 
 Если path migration откладывается, допустимо сначала обновить существующий path:
@@ -119,20 +118,57 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-discover
 
 ## Definition of Done
 
-- [ ] План internal steps обсужден с человеком до создания step packs.
-- [ ] Stage 01 описан как Product Design vertex inside Early Design Convergence Loop.
-- [ ] Workspace preparation and Opportunity Discovery removed from Stage 01 core responsibility.
-- [ ] Re-entry from Architecture Design and System Design is first-class.
-- [ ] Product SoT Materialization / product baseline fixation route defined.
-- [ ] Stage 01 boundaries согласованы с `early-design-stage-boundaries.md`.
-- [ ] Каждый meaningful semantic routing decision modeled as `workflow-step-gate`.
-- [ ] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
-- [ ] Каждый step pack имеет `vacancy.md`.
-- [ ] Links and terminology follow documentation rules.
+- [x] План internal steps обсужден с человеком до создания step packs.
+- [x] Stage 01 описан как Product Design vertex inside Early Design Convergence Loop.
+- [x] Workspace preparation and Opportunity Discovery removed from Stage 01 core responsibility.
+- [x] Re-entry from Architecture Design and System Design is first-class.
+- [x] Product SoT Materialization / product baseline fixation route defined.
+- [x] Stage 01 boundaries согласованы с `early-design-stage-boundaries.md`.
+- [x] Meaningful semantic routing decisions represented as gate-like draft `workflow-step` guidance according to human-orchestrated draft mode.
+- [x] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
+- [x] Links and terminology follow documentation rules for the current draft pass.
+
+Deferred by agreed authoring mode:
+
+- [ ] `vacancy.md` для каждого step pack не создавались в этом draft pass, потому текущий accepted mode — [`human-orchestrated-stage-draft-authoring.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/human-orchestrated-stage-draft-authoring.md), где vacancies explicitly не обязательны.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: обсудить с человеком target Stage 01 graph and migration strategy.
-- Blockers: depends on conceptual agreement with tasks `wf-019` and `wf-020`.
-- Verification: pending
+- Current State: completed as draft
+- Completed At: 2026-05-06
+- Result: создан новый draft stage pack `assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/`.
+- Verification: structure checked; legacy `stages/01-discovery-intent-framing/` intentionally not removed by agreement with human.
+
+## Handoff
+
+Created artifacts:
+
+```text
+assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/
+  README.md
+  workflow.md
+  steps/
+    01-product-design-context-intake/STEP.md
+    02-product-problem-value-actor-framing/STEP.md
+    03-product-capabilities-responsibilities-scope-framing/STEP.md
+    04-product-usage-scenarios-acceptance-criteria/STEP.md
+    05-product-uncertainty-evidence-routing/STEP.md
+    06-product-baseline-materialization/STEP.md
+    07-product-intent-review-design-routing/STEP.md
+```
+
+Key accepted decisions:
+
+- Stage name: `Product Design`.
+- `Intent Framing` остается responsibility stage, но не часть названия.
+- Stage 01 является полноценной вершиной Early Design Convergence Loop, а не pre-loop handoff.
+- Workspace preparation and Opportunity Discovery не входят в core responsibility Stage 01.
+- Focused re-entry из `Architecture Design` and `System Design` поддержан через target step + lightweight context refresh.
+- Product SoT default location: `docs/product/`, with `docs/specification/` or project-selected durable product/specification area as allowed alternatives.
+- Human-orchestrated draft mode intentionally avoids strict machine graph, strict verdict schema and mandatory `vacancy.md` files.
+- Legacy `stages/01-discovery-intent-framing/` оставлен на месте; human может удалить его отдельно later.
+
+Known follow-up:
+
+- `wf-022` should synchronize top-level SDLC workflow graph and references with `Product Design` and pre-design workflows.
+- After separate human decision, legacy `01-discovery-intent-framing` can be removed to force broken-link discovery during later agent work.
