@@ -63,15 +63,13 @@ Workflow должен отвечать за:
 
 Включить:
 
-- process workflow graph;
-- step vertices and gate vertices;
-- happy path and return/remediation paths;
+- human-orchestrated workflow overview;
+- agreed lightweight steps and happy path;
+- `STEP.md` для каждого agreed step as focus/guidance artifact;
 - правила создания/reuse workspace в `operational_scope/`;
 - source link preservation rules;
-- route decision rules для downstream workflows;
-- explicit boundary: workspace preparation does not own product/system/architecture decisions;
-- `STEP.md` для каждого согласованного step;
-- `vacancy.md` для каждого step pack.
+- route recommendation guidance для downstream workflows;
+- explicit boundary: workspace preparation does not own product/system/architecture decisions.
 
 Не включать:
 
@@ -80,7 +78,11 @@ Workflow должен отвечать за:
 - system boundary design;
 - architecture design;
 - implementation planning;
-- production code.
+- production code;
+- strict gate verdict contracts;
+- full Mermaid graph with return/remediation paths;
+- exact input/output schemas between agents;
+- `vacancy.md` files.
 
 ## Suggested discussion topics
 
@@ -89,7 +91,7 @@ Workflow должен отвечать за:
 - является ли `Initiative Workspace Preparation` обязательным pre-step для всех initiatives или только для non-trivial work;
 - где canonical workspace должен жить для разных типов работы: discovery, product design, research, planning;
 - нужно ли сохранять существующий `operational_scope/discovery/<initiative-slug>/` или ввести более общий `operational_scope/initiatives/<initiative-slug>/`;
-- какие route verdicts нужны;
+- какие route recommendations нужны;
 - какие artifacts должны быть reusable downstream без превращения их в durable SoT.
 
 ## Expected output
@@ -101,31 +103,50 @@ assets/metodologes/waterfall/software-development-methodology/workflows/initiati
   README.md
   workflow.md
   steps/<step-slug>/STEP.md
-  steps/<step-slug>/vacancy.md
 ```
 
 Возможно обновление current Stage 01 resources, если workspace lifecycle будет вынесен из Stage 01.
 
 ## Definition of Done
 
-- [ ] План workflow steps обсужден с человеком до создания step packs.
-- [ ] `Initiative Workspace Preparation` оформлен как process workflow, не как SDLC delivery stage.
-- [ ] Workflow явно отделяет workspace mechanics от Product Design and Opportunity Discovery.
-- [ ] Route verdicts зафиксированы и linkable to downstream workflows.
-- [ ] Existing Stage 01 workspace-related content либо переиспользован, либо помечен к migration.
-- [ ] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
-- [ ] Каждый step pack имеет `vacancy.md`.
-- [ ] Links and terminology follow documentation rules.
+- [x] План workflow steps обсужден с человеком до создания step packs.
+- [x] `Initiative Workspace Preparation` оформлен как process workflow, не как SDLC delivery stage.
+- [x] Workflow явно отделяет workspace mechanics от Product Design and Opportunity Discovery.
+- [x] Route recommendations зафиксированы and linkable to downstream workflows without strict gate contract.
+- [ ] Existing Stage 01 workspace-related content либо переиспользован, либо помечен к migration. Не входит в completed draft; оставить как follow-up для Stage 01/Product Design compatibility work.
+- [x] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
+- [x] `vacancy.md` intentionally not created under the updated human-orchestrated draft mode.
+- [x] Links and terminology follow documentation rules for the completed draft scope.
 
 ## Execution Status
 
-- Current State: in_progress — baseline workflow-pack materialized; key decision resources for handling classes, route decisions, workspace decisions, split handling, duplicate handling, source links schema, initiative index template and preparation decisions template created; operational artifact path rules and task-management scope model updated; “diploma model” extracted into reusable methodology resource; detailed `STEP.md` / `vacancy.md` files not created yet.
-- Next Step: review how `Initiative Workspace Preparation` resources should further reflect [`operational-workspace-diploma-model.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/operational-workspace-diploma-model.md), especially optional local workspace areas in `initiative-index-template.md`, then move to return/remediation paths.
+- Current State: completed as draft — `Initiative Workspace Preparation` materialized as human-orchestrated draft workflow; `workflow.md`, `README.md` and lightweight `STEP.md` files exist; `vacancy.md`, strict gate verdict contracts and full return/remediation graph intentionally not created.
+- Next Step: use this draft in real project work. If legacy Stage 01 workspace resources become relevant, handle compatibility/migration in a follow-up task tied to Stage 01/Product Design redesign or workflow graph synchronization.
 - Blockers: none
 - Contract Changes: present — methodology workflow docs, task-management SoT, path rules and stage naming updated.
 - Verification: read/grep consistency checks only; no automated test command run because changes are documentation/process artifacts.
 
 ## Handoff Notes
+
+### Draft completion handoff
+
+- Completed draft artifacts:
+  - [`README.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/README.md)
+  - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/workflow.md)
+  - [`steps/01-incoming-signal-intake/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/01-incoming-signal-intake/STEP.md)
+  - [`steps/02-context-classification/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/02-context-classification/STEP.md)
+  - [`steps/03-initiative-identity-slug-selection/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/03-initiative-identity-slug-selection/STEP.md)
+  - [`steps/04-workspace-decision/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/04-workspace-decision/STEP.md)
+  - [`steps/05-workspace-activation-reuse/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/05-workspace-activation-reuse/STEP.md)
+  - [`steps/06-source-links-provenance-preservation/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/06-source-links-provenance-preservation/STEP.md)
+  - [`steps/07-initial-workspace-index/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/07-initial-workspace-index/STEP.md)
+  - [`steps/08-downstream-route-recommendation/STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/initiative-workspace-preparation/steps/08-downstream-route-recommendation/STEP.md)
+- Current design mode: human-orchestrated draft. Человек управляет order, returns and handoffs; workflow фиксирует happy path and step focus only.
+- Explicitly postponed: `vacancy.md`, strict gate verdict contracts, exact input/output schemas between agents, full transition graph and legacy Stage 01 workspace migration.
+- Supporting methodology additions created during this task:
+  - [`human-orchestrated-stage-draft-authoring.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/human-orchestrated-stage-draft-authoring.md)
+  - [`human-orchestrated-sdlc-evolution-pattern.md`](../../docs/methodology-layer/patterns/human-orchestrated-sdlc-evolution-pattern.md)
+- Status in [`task-map.md`](../task-map.md): `completed as draft`.
 
 ### Previous conversation recall
 
@@ -201,23 +222,21 @@ assets/metodologes/waterfall/software-development-methodology/workflows/initiati
   - [`task-map.md`](../task-map.md)
   - [`wf-013-design-stage-05-execution-planning-task-decomposition-internal-steps.md`](./wf-013-design-stage-05-execution-planning-task-decomposition-internal-steps.md)
 
-### Immediate fix first
+### Follow-up candidates after completed draft
 
-Continue from the reusable “diploma model” resource and decide what still needs to be reflected in `Initiative Workspace Preparation` resources:
+These items are outside the completed draft scope and can be handled later if real usage shows they are needed:
 
 1. Whether to update `initiative-index-template.md` minimal workspace shape/file map to mention local processed context areas, scoped tasks and evidence outputs.
-2. Whether to update Stage 01/02/03 `Context Intake` step semantics later so they explicitly create/update local stage-ready workspace context instead of just collecting links.
+2. Whether to update Stage 01/Product Design, Stage 02 and Stage 03 `Context Intake` step semantics later so they explicitly create/update local stage-ready workspace context instead of just collecting links.
+3. Whether old `operational_scope/discovery/<initiative-slug>/` Stage 01 resources need compatibility notes or migration policy.
 
-After that, move to either migration policy for existing `operational_scope/discovery/<initiative-slug>/` resources or detailed return/remediation paths for gates.
-
-### Pending work
+### Post-draft postponed work
 
 - Decide whether `source-links-schema.md` needs structural changes after its role was clarified as bibliography/provenance map.
 - Decide whether initiative workspace minimal shape stays `index.md`, `source-links.md`, `preparation-decisions.md` only, or should mention optional local areas (`tasks/`, `research/`, `deep-research/`, `spikes/`, stage-local context folders) in `initiative-index-template.md`.
 - Decide how `Context Intake` in Stage 01/Product Design, Stage 02 Architecture Design and Stage 03 System Design should relate to initiative workspace local context. Current Stage 02/03 docs describe context reconstruction but not yet the “external input -> local processed context -> SoT” model explicitly.
 - Decide migration policy for existing `operational_scope/discovery/<initiative-slug>/` workspaces. Context note: this workflow has not yet been applied to any project, so there are no real project migrations; question is mostly about Stage 01 legacy resource compatibility.
-- Define detailed return/remediation paths for each gate.
-- After open questions are resolved, materialize `steps/<step-slug>/STEP.md` and `steps/<step-slug>/vacancy.md` for agreed steps.
+- Do not materialize `vacancy.md` files in the current draft mode.
 - Update Stage 01 / discovery workspace resources if needed after finalizing initiative workspace lifecycle.
 - Later cleanup/update outside immediate IWP scope: align operational skills (`task-materializer`, `taskset-materializer`, `active-task-setter`, research/spike setters) with the new task-management SoT and path rules. `task-management-learner` is legacy and should not drive the new SDLC model.
 
@@ -234,7 +253,7 @@ rg "operational-artifact-path-rules|operational_scope/inputs|source-links.md|Con
 ### User constraints
 
 - Рабочий язык documentation: русский, но accepted English terms and stage/workflow names remain English.
-- Do not create `STEP.md` / `vacancy.md` until workflow steps and open questions are agreed with the human.
+- Do not create `vacancy.md` in the current human-orchestrated draft mode.
 - Apply documentation granularity rules from [`documentation-navigation-and-granularity.md`](../../assets/rules/rules-documentation/documentation-navigation-and-granularity.md): keep runtime-focused docs small, move detailed local semantics into focused resources, and link instead of duplicating.
 - Route decisions are recommendations for human-orchestrated execution, not automatic workflow execution.
 - New entities/fields should follow Occam's razor: add them only when actually needed.

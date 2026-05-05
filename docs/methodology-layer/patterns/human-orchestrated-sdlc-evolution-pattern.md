@@ -8,7 +8,7 @@
 
 Этот pattern фиксирует подход к созданию SDLC для работы с code agents, когда полная автономная orchestration model еще не известна из практики.
 
-Ключевая идея: сначала сделать гибкий human-orchestrated SDLC draft, применить его на реальных проектах, а затем постепенно формализовать то, что действительно повторяется and proves useful.
+Ключевая идея: сначала сделать гибкий human-orchestrated SDLC draft, применить его на реальных проектах, а затем постепенно формализовать то, что действительно повторяется и proves useful.
 
 ## 2. Anti-pattern
 
@@ -49,7 +49,7 @@ project work
   -> gradual formalization
 ```
 
-То, что часто повторяется and proves useful, можно позже превратить в:
+То, что часто повторяется и proves useful, можно позже превратить в:
 
 - explicit route rule;
 - gate-like step;
@@ -100,12 +100,12 @@ draft SDLC
 - artifact shape becomes stable and useful;
 - human orchestration repeatedly follows the same route.
 
-До этого момента lightweight description is preferable.
+До этого момента lightweight description предпочтительнее.
 
 ## 8. Invariants
 
 - Практическое применение важнее преждевременной полноты.
-- Human orchestration является valid runtime model, not failure of automation.
+- Human orchestration является valid runtime model, а не failure of automation.
 - Happy path можно фиксировать раньше, чем full transition graph.
 - Formalization should follow observed workflow behavior.
 - SDLC draft должен быть usable now and evolvable later.
