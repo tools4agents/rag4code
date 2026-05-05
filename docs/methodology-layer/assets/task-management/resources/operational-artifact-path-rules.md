@@ -10,6 +10,8 @@
 
 Цель — единообразно размещать artifacts, связанные с initiative, внутри initiative workspace, а artifacts без initiative — в соответствующих top-level каталогах `operational_scope/`.
 
+Conceptual model for raw inputs, `source-links.md`, processed initiative workspace context, SoT materialization and cleanup is defined in [`operational-workspace-diploma-model.md`](../../../../../assets/metodologes/waterfall/software-development-methodology/resources/operational-workspace-diploma-model.md).
+
 ## Core rule
 
 ```text
