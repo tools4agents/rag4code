@@ -154,6 +154,7 @@ Environment-facing runtime должен рассматриваться как `R
 ### 5.4 Patterns
 
 - `docs/methodology-layer/patterns/index.md` — index reusable design patterns для этого слоя
+- `docs/methodology-layer/patterns/human-orchestrated-sdlc-evolution-pattern.md` — постепенное развитие SDLC для code agents через practical human orchestration, real project usage and delayed formalization
 - `docs/methodology-layer/patterns/reviewable-automation-pattern.md` — collaboration loop между ИИ-агентом и deterministic algorithm/tool по схеме `plan -> review -> apply -> verify`
 - `docs/methodology-layer/patterns/spike-experiment-evidence-pattern.md` — decomposition `executor -> evidence artifacts -> analyzer -> summary -> spike report` для repeatable evidence-producing spike experiments
 
