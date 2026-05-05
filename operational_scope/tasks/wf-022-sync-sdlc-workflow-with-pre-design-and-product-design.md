@@ -103,17 +103,17 @@ assets/metodologes/waterfall/software-development-methodology/roles.md
 
 ## Definition of Done
 
-- [ ] Top-level graph distinguishes pre-design workflows from Early Design Convergence Loop stages.
-- [ ] Stage 01 is named and described as Product Design / Intent Framing inside Early Design Convergence Loop.
-- [ ] `Initiative Workspace Preparation` and `Opportunity Discovery` links are present and semantically correct.
-- [ ] Vertex map does not describe Stage 01 as pre-loop handoff workflow.
-- [ ] Boundary resource terminology is synchronized with Product Design naming.
-- [ ] Design Baseline Consolidation remains the only allowed transition from Early Design Convergence Loop to Test Design.
-- [ ] Links and terminology follow documentation rules.
+- [x] Top-level graph distinguishes pre-design workflows from Early Design Convergence Loop stages.
+- [x] Stage 01 is named and described as Product Design / Intent Framing inside Early Design Convergence Loop.
+- [x] `Initiative Workspace Preparation` and `Opportunity Discovery` links are present and semantically correct.
+- [x] Vertex map does not describe Stage 01 as pre-loop handoff workflow.
+- [x] Boundary resource terminology is synchronized with Product Design naming.
+- [x] Design Baseline Consolidation remains the only allowed transition from Early Design Convergence Loop to Test Design.
+- [x] Links and terminology follow documentation rules.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: run after target workflow artifacts exist or after their naming/path decisions are frozen.
-- Blockers: depends on `wf-019`, `wf-020`, and `wf-021` decisions.
-- Verification: pending
+- Current State: completed
+- Next Step: legacy `stages/01-discovery-intent-framing/` can be removed manually after human review.
+- Blockers: none after Product Design naming/path and Evidence Process topology were frozen in discussion.
+- Verification: top-level workflow, boundary resource and related references synchronized; remaining `Discovery & Intent Framing` references are limited to legacy stage folder and baseline decision history.

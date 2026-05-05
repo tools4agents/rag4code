@@ -27,4 +27,4 @@
 | Design process workflow — Initiative Workspace Preparation | completed as draft | `operational_scope/tasks/wf-019-design-process-initiative-workspace-preparation.md` |
 | Design pre-stage workflow — Opportunity Discovery | completed as draft | `operational_scope/tasks/wf-020-design-pre-stage-opportunity-discovery.md` |
 | Redesign Stage 01 — Product Design inside Early Design Convergence Loop | completed as draft | `operational_scope/tasks/wf-021-redesign-stage-01-product-design-early-design-loop.md` |
-| Synchronize SDLC workflow graph with pre-design workflows and Product Design | queued | `operational_scope/tasks/wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md` |
+| Synchronize SDLC workflow graph with pre-design workflows and Product Design | completed as draft  | `operational_scope/tasks/wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md` |
