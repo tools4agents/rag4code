@@ -4,22 +4,19 @@
 
 Этот файл указывает агентам, где в проекте находятся traceability entry points.
 
+Он должен оставаться тонким routing artifact. Detailed catalogs and maps live in `docs/traceability/`.
+
 ## Entry point
 
 - [`index.md`](../docs/traceability/index.md)
 
-## Entity registries
+## Selected traceability assets
 
-| Domain | Registry |
-| --- | --- |
-| `<domain>` | [`entities-map.md`](../docs/<domain>/entities-map.md) |
-
-## Relationship maps
-
-- Edges: [`edges-map.md`](../docs/traceability/edges-map.md)
-- Traces: [`trace-map.md`](../docs/traceability/trace-map.md)
+- Generic asset: `<traceability-system asset ref>`
+- Methodology profile: `<methodology traceability profile ref>`
 
 ## Notes
 
 - Markdown/code files are Source of Truth.
 - Graph DB and MCP are derived projection and navigation helpers.
+- Use `docs/traceability/index.md` for entity registries, catalogs, edges and traces.

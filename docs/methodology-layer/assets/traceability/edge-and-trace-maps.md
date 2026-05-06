@@ -85,7 +85,13 @@ Without atomic edges, trace chains become hard to validate and project into grap
 
 Generic traceability asset does not freeze a global relationship catalog.
 
-Methodology profiles or projects should define their own common labels, for example:
+Methodology profiles may recommend labels, but the active project label catalog should live in:
+
+```text
+docs/traceability/relationship-label-catalog.md
+```
+
+Projects should define common labels there, for example:
 
 - `details`;
 - `realizes`;

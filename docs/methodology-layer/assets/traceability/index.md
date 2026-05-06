@@ -34,6 +34,8 @@ project/
 
 docs/traceability/
   index.md
+  entity-type-catalog.md
+  relationship-label-catalog.md
   edges-map.md
   trace-map.md
 
@@ -42,6 +44,8 @@ docs/<domain>/
   entities/
     <entity-id>.md
 ```
+
+`project/traceabilityContext.md` should remain a thin routing artifact. Detailed traceability catalogs live under `docs/traceability/` to preserve lazy loading and progressive disclosure.
 
 Project-specific methodology or context may choose concrete domain locations, for example `docs/product/entities-map.md` or `docs/architecture/entities-map.md`.
 

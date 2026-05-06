@@ -50,6 +50,36 @@ Trace map — curated collection of meaningful paths over edges.
 docs/traceability/trace-map.md
 ```
 
+### Entity type catalog
+
+Entity type catalog defines active project entity types, identifier prefixes or patterns, domains and registries.
+
+Recommended location:
+
+```text
+docs/traceability/entity-type-catalog.md
+```
+
+This catalog is project-level SoT for questions like:
+
+```text
+What does US-* mean in this project?
+Where should an agent look up SYSDR-* entities?
+Which prefixes are active, provisional or deprecated?
+```
+
+### Relationship label catalog
+
+Relationship label catalog defines allowed or recommended edge labels and their semantics.
+
+Recommended location:
+
+```text
+docs/traceability/relationship-label-catalog.md
+```
+
+This catalog prevents `edges-map.md` from using ambiguous labels without shared meaning.
+
 ### Project traceability context
 
 Project traceability context tells agents where traceability entry points live in this project.
@@ -59,6 +89,19 @@ Recommended location:
 ```text
 project/traceabilityContext.md
 ```
+
+This file should stay thin. It points to `docs/traceability/index.md`, while detailed catalogs live in `docs/traceability/`.
+
+## Layered ownership model
+
+| Layer | Typical location | Responsibility |
+| --- | --- | --- |
+| Generic traceability asset | `docs/methodology-layer/assets/traceability/` | Defines mechanics: entity registries, edge maps, trace maps, catalogs and graph projection rule. |
+| Methodology traceability profile | methodology-specific resources | Defines which domains, entity families and trace chains matter for a methodology. |
+| Project traceability context | `project/traceabilityContext.md` | Thin project routing entry point to the active traceability docs. |
+| Project traceability catalogs | `docs/traceability/entity-type-catalog.md`, `relationship-label-catalog.md` | Active project SoT for entity types, identifier patterns and edge label meanings. |
+| Project traceability instance | `docs/traceability/*`, `docs/<domain>/entities-map.md` | Actual project entities, edges and traces. |
+| Derived graph projection | graph DB / MCP runtime | Rebuildable query/navigation projection over source facts. |
 
 ## Source of Truth rule
 

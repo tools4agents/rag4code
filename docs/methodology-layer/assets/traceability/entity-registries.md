@@ -90,6 +90,14 @@ docs/testing/entities-map.md
 
 Generic traceability asset does not prescribe domains. Methodology profiles or project context define concrete domains.
 
+The active project catalog of entity types, prefixes and registry locations should live in:
+
+```text
+docs/traceability/entity-type-catalog.md
+```
+
+`project/traceabilityContext.md` should point agents to `docs/traceability/index.md`, not duplicate the full catalog.
+
 ## Agent usage
 
 When an agent sees an identifier, preferred navigation is:

@@ -21,11 +21,12 @@
 | Edges map | Atomic relationships between entities. | [`edges-map.md`](./edges-map.md) |
 | Trace map | Curated meaningful paths over edges. | [`trace-map.md`](./trace-map.md) |
 
-## Identifier families
+## Catalogs
 
-| Prefix / pattern | Domain | Meaning |
+| Catalog | Purpose | Link |
 | --- | --- | --- |
-| `<PREFIX>-` | `<domain>` | <Meaning> |
+| Entity type catalog | Active entity types, prefixes and registry locations. | [`entity-type-catalog.md`](./entity-type-catalog.md) |
+| Relationship label catalog | Allowed or recommended edge labels and meanings. | [`relationship-label-catalog.md`](./relationship-label-catalog.md) |
 
 ## Notes
 
