@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | Design Stage 02 — Architecture Design internal steps | completed | `operational_scope/tasks/wf-008-design-stage-02-architecture-design-internal-steps.md` |
 | Design Stage 03 — System Design internal steps | completed | `operational_scope/tasks/wf-009-design-stage-03-system-design-internal-steps.md` |
-| Design process workflow — Design Baseline Consolidation internal steps | queued | `operational_scope/tasks/wf-010-design-process-design-baseline-consolidation-internal-steps.md` |
+| Design process workflow — Design Baseline Consolidation internal steps | completed as draft | `operational_scope/tasks/wf-010-design-process-design-baseline-consolidation-internal-steps.md` |
 | Design Stage 04 — Test Design internal steps | queued | `operational_scope/tasks/wf-011-design-stage-04-test-design-internal-steps.md` |
 | Design process workflow — Pre-Planning Baseline Freeze internal steps | queued | `operational_scope/tasks/wf-012-design-process-pre-planning-baseline-freeze-internal-steps.md` |
 | Design Stage 05 — Execution Planning & Task Decomposition internal steps | queued | `operational_scope/tasks/wf-013-design-stage-05-execution-planning-task-decomposition-internal-steps.md` |
@@ -29,3 +29,6 @@
 | Redesign Stage 01 — Product Design inside Early Design Convergence Loop | completed as draft | `operational_scope/tasks/wf-021-redesign-stage-01-product-design-early-design-loop.md` |
 | Synchronize SDLC workflow graph with pre-design workflows and Product Design | completed as draft  | `operational_scope/tasks/wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md` |
 | Reconcile Early Design Discovery split references | queued | `operational_scope/tasks/wf-023-reconcile-early-design-discovery-split-references.md` |
+| Integrate traceability artifacts into Stage 01 Product Design | queued | `operational_scope/tasks/wf-024-integrate-traceability-artifacts-into-stage-01-product-design.md` |
+| Integrate traceability artifacts into Stage 02 Architecture Design | queued | `operational_scope/tasks/wf-025-integrate-traceability-artifacts-into-stage-02-architecture-design.md` |
+| Integrate traceability artifacts into Stage 03 System Design | queued | `operational_scope/tasks/wf-026-integrate-traceability-artifacts-into-stage-03-system-design.md` |

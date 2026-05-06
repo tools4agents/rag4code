@@ -43,7 +43,7 @@ Specification / SoT Materialization может закреплять отдель
 
 ### Adjacent workflow context
 
-- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-discovery-intent-framing/workflow.md)
+- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/03-system-design/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/04-test-design/workflow.md)
@@ -51,6 +51,8 @@ Specification / SoT Materialization может закреплять отдель
 ### Required dependent assets
 
 - [`documentation-lifecycle-layers.md`](../../docs/methodology-layer/assets/knowledge-lifecycle/documentation-lifecycle-layers.md)
+- [`traceability-system asset`](../../docs/methodology-layer/assets/traceability/index.md)
+- [`sdlc-traceability-profile.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/traceability/sdlc-traceability-profile.md)
 - [`terms-map.md`](../../docs/methodology-layer/assets/terms-management/terms-map.md)
 - [`rules-documentation`](../../assets/rules/rules-documentation)
 
@@ -70,25 +72,26 @@ Specification / SoT Materialization может закреплять отдель
 1. обсудить с человеком план внутренних `workflow-step` and `workflow-step-gate`;
 2. после согласования зафиксировать план в process `workflow.md`;
 3. создать `steps/<step-slug>/STEP.md` для каждого согласованного step;
-4. создать `vacancy.md` для каждого step pack;
-5. проверить согласованность process workflow, step packs, vacancies and top-level methodology graph.
+4. не создавать `vacancy.md` в текущем human-orchestrated draft mode;
+5. проверить согласованность process workflow, step packs, traceability profile and top-level methodology graph.
 
 ## Scope
 
 Включить:
 
-- internal workflow graph для Design Baseline Consolidation;
-- список step vertices and gate vertices;
-- happy path and return/remediation paths;
+- human-orchestrated internal step model для Design Baseline Consolidation;
+- список bounded step vertices and gate-like readiness step;
+- happy path and return/remediation guidance;
 - intake из Early Design Convergence Loop;
 - использование Specification / SoT Materialization для product / architecture / system docs;
+- Project Image traceability checks: entity registries, edge map and trace map;
 - consistency and non-contradiction review;
 - проверку полноты baseline для Test Design;
 - white spots, open questions, assumptions and risks triage;
 - routing to Research / Deep Research / Spike Experiments;
 - readiness decision for Test Design;
 - `STEP.md` для каждого согласованного step;
-- `vacancy.md` для каждого step pack.
+- `vacancy.md` intentionally not included in current human-orchestrated draft mode.
 
 Не включать:
 
@@ -118,25 +121,40 @@ Specification / SoT Materialization может закреплять отдель
 
 ```text
 assets/metodologes/waterfall/software-development-methodology/workflows/design-baseline-consolidation/
-  workflow.md                         # updated with internal graph and step table
+  workflow.md                         # updated with human-orchestrated internal steps and step table
   steps/<step-slug>/STEP.md
-  steps/<step-slug>/vacancy.md
 ```
 
 ## Definition of Done
 
-- [ ] План internal steps обсужден с человеком до создания step packs.
-- [ ] Согласованный internal workflow graph добавлен в `workflows/design-baseline-consolidation/workflow.md`.
-- [ ] Каждый meaningful semantic routing decision modeled as `workflow-step-gate`.
-- [ ] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
-- [ ] Каждый step pack имеет `vacancy.md`.
-- [ ] Workflow явно фиксирует, что Specification / SoT Materialization не выпускает напрямую в Test Design.
-- [ ] Workflow проверяет consistency, non-contradiction, white spots and readiness for Test Design.
-- [ ] Links and terminology follow documentation rules.
+- [x] План internal steps обсужден с человеком до создания step packs.
+- [x] Согласованный human-orchestrated step model добавлен в `workflows/design-baseline-consolidation/workflow.md`.
+- [x] Gate-like readiness decision represented as ordinary draft `STEP.md` guidance according to current authoring mode.
+- [x] Каждый agreed step имеет `steps/<step-slug>/STEP.md`.
+- [x] `vacancy.md` intentionally not created under current human-orchestrated draft mode.
+- [x] Workflow явно фиксирует, что Specification / SoT Materialization не выпускает напрямую в Test Design.
+- [x] Workflow проверяет Project Image traceability, consistency, non-contradiction, white spots and readiness for Test Design.
+- [x] Links and terminology follow documentation rules for completed draft scope.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: Обсудить с человеком план internal steps для Design Baseline Consolidation.
+- Current State: completed as draft
+- Next Step: Use the workflow on real consolidation work; later formalize stricter gates/vacancies only if practical usage shows they are needed.
 - Blockers: none
-- Verification: Проверить process workflow, step packs and vacancies на consistency, progressive disclosure and link correctness.
+- Verification: workflow, README and 9 `STEP.md` files created; no `vacancy.md` files by agreed draft mode; grep/read consistency checks only.
+
+## Handoff Notes
+
+- Created human-orchestrated draft steps:
+  - `01-consolidation-context-intake`
+  - `02-stage-contribution-readiness-intake`
+  - `03-entity-registry-readiness-check`
+  - `04-cross-domain-edge-map-structural-review`
+  - `05-project-image-trace-map-structural-review`
+  - `06-cross-baseline-semantic-consistency-review`
+  - `07-test-design-input-sufficiency-review`
+  - `08-open-questions-white-spots-remediation-routing`
+  - `09-test-design-readiness-recommendation`
+- Key design decision: traceability structural checks happen before semantic consistency review because they provide the declared Project Image graph for semantic review.
+- Design Baseline Consolidation does not repeat deep Product/System/Architecture reviews; it consumes stage-local contribution readiness and owns cross-domain consolidation before Test Design.
+- Traceability is modeled through SDLC profile: entity registries, `edges-map.md`, `trace-map.md`, then semantic consistency and Test Design sufficiency.
