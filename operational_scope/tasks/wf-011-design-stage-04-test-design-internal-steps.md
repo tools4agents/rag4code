@@ -88,7 +88,7 @@ Design Baseline Consolidation
 - optional contract, UI, visual, smoke, regression, performance, security, migration, compatibility, property-based and golden/snapshot tests;
 - testing strategy and test-map expectations;
 - traceability from product/system/architecture/contracts to tests;
-- handling of test design gaps that return to Architecture Design, System Design or Discovery;
+- handling of test design gaps that return to Architecture Design, System Design or Product Design;
 - readiness output for Pre-Planning Baseline Freeze;
 - `STEP.md` для каждого согласованного step;
 - `vacancy.md` для каждого step pack.
@@ -135,7 +135,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/04-test-des
 - [ ] Каждый step pack имеет `vacancy.md`.
 - [ ] Workflow покрывает required baseline: unit, integration and e2e.
 - [ ] Optional test types описаны как conditional, а не mandatory для всех проектов.
-- [ ] Workflow может вернуть gaps в Architecture Design, System Design, Discovery или Research/Spike.
+- [ ] Workflow может вернуть gaps в Architecture Design, System Design, Product Design или Research/Spike.
 - [ ] Stage workflow не требует hidden knowledge from `operational_scope/` as SoT.
 - [ ] Links and terminology follow documentation rules.
 

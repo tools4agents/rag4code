@@ -16,7 +16,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-discover
 
 устарел и больше не должен использоваться как current Stage 01 reference в активных methodology tasks.
 
-Есть critic finding artifact [`critic_early_design_loop_findings.md`](../findings/critic_early_design_loop_findings.md), написанный до split. Его findings нужно переоценить по текущим workflow artifacts: часть уже закрыта `wf-019`, `wf-020`, `wf-021` and `wf-022`, часть может остаться актуальной как follow-up.
+Pre-split critic finding artifact `operational_scope/findings/critic_early_design_loop_findings.md` был переоценен по текущим workflow artifacts. Его findings закрыты `wf-019`, `wf-020`, `wf-021`, `wf-022` and follow-up traceability tasks, поэтому artifact удален как obsolete temporary finding file.
 
 ## Обязательный reading context
 
@@ -32,9 +32,9 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-discover
 - [`human-orchestrated-stage-draft-authoring.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/human-orchestrated-stage-draft-authoring.md)
 - [`early-design-stage-boundaries.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/early-design-stage-boundaries.md)
 
-### Critic findings
+### Removed critic findings
 
-- [`critic_early_design_loop_findings.md`](../findings/critic_early_design_loop_findings.md)
+- Obsolete pre-split artifact `operational_scope/findings/critic_early_design_loop_findings.md` was reviewed and removed during this task because no finding remained actionable for the current SDLC workflow state.
 
 ### Current split workflow targets
 
@@ -62,10 +62,10 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-discover
 - [`wf-010-design-process-design-baseline-consolidation-internal-steps.md`](./wf-010-design-process-design-baseline-consolidation-internal-steps.md)
 - [`wf-011-design-stage-04-test-design-internal-steps.md`](./wf-011-design-stage-04-test-design-internal-steps.md)
 - [`wf-012-design-process-pre-planning-baseline-freeze-internal-steps.md`](./wf-012-design-process-pre-planning-baseline-freeze-internal-steps.md)
-- [`wf-019-design-process-initiative-workspace-preparation.md`](./wf-019-design-process-initiative-workspace-preparation.md)
-- [`wf-020-design-pre-stage-opportunity-discovery.md`](./wf-020-design-pre-stage-opportunity-discovery.md)
-- [`wf-021-redesign-stage-01-product-design-early-design-loop.md`](./wf-021-redesign-stage-01-product-design-early-design-loop.md)
-- [`wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md`](./wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md)
+- [`wf-019-design-process-initiative-workspace-preparation.md`](./wf-019-design-process-initiative-workspace-preparation.md) — historical split task; preserve pre-split references as historical context.
+- [`wf-020-design-pre-stage-opportunity-discovery.md`](./wf-020-design-pre-stage-opportunity-discovery.md) — historical split task; preserve pre-split references as historical context.
+- [`wf-021-redesign-stage-01-product-design-early-design-loop.md`](./wf-021-redesign-stage-01-product-design-early-design-loop.md) — historical split task; preserve pre-split references as historical context.
+- [`wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md`](./wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md) — historical split synchronization task; preserve pre-split/intermediate naming as historical context.
 
 ## Цель
 
@@ -74,9 +74,9 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-discover
 Нужно:
 
 1. перечитать critic findings и текущие split workflows;
-2. проверить, какие findings critic artifact все еще актуальны после `wf-019`–`wf-022`;
+2. проверить, какие findings critic artifact все еще актуальны после `wf-019`–`wf-022`, and remove the obsolete finding artifact if no finding remains actionable;
 3. обновить stale references в task artifacts на актуальные paths and names;
-4. не переписывать historical context там, где старое имя используется как historical baseline, но явно отделить historical references от current references;
+4. не переписывать historical split tasks (`wf-019`–`wf-022`), где старое имя используется как historical baseline or intermediate decision history;
 5. зафиксировать remaining open consistency issues, если они обнаружены.
 
 ## Scope
@@ -94,6 +94,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-discover
   - `Product Design`, если речь о Stage 01 внутри Early Design Convergence Loop;
 - update task reading context links, scope wording, expected outputs and handoff notes where they currently point to stale Stage 01 path/name;
 - preserve historical statements in completed tasks when they explain why split happened, but clarify that they refer to legacy state;
+- do not edit historical split tasks `wf-019`–`wf-022` only to normalize old names/paths;
 - produce a short remaining-findings note inside this task artifact or in handoff notes after execution.
 
 Не включать:
@@ -121,9 +122,9 @@ operational_scope/tasks/wf-022-sync-sdlc-workflow-with-pre-design-and-product-de
 
 There may be more. Do not rely only on this list; run a fresh search during execution.
 
-## Critic findings reassessment guidance
+## Critic findings reassessment result
 
-Use [`critic_early_design_loop_findings.md`](../findings/critic_early_design_loop_findings.md) as historical critic input, then classify each finding as one of:
+Obsolete pre-split critic input `operational_scope/findings/critic_early_design_loop_findings.md` was reviewed during execution and removed. Findings were classified as:
 
 - `resolved-by-current-workflows`;
 - `partially-resolved`;
@@ -131,14 +132,14 @@ Use [`critic_early_design_loop_findings.md`](../findings/critic_early_design_loo
 - `obsolete-after-split`;
 - `needs-new-task`.
 
-Expected likely outcomes to verify, not assume:
+Verified outcomes:
 
-1. Stage 01 as loop vs pre-loop gate — likely resolved by `Product Design` and pre-design workflows split.
-2. Symmetrical re-entry into Stage 01 — likely resolved by Product Design re-entry model.
-3. Product baseline materialization — likely resolved or partially resolved by Product Design Step 06 and Design Baseline Consolidation.
-4. First routing after Stage 01 — likely resolved by Product Design routing guidance and top-level workflow wording.
-5. Stage 02/03 overlap — likely resolved or partially resolved by local boundary notes.
-6. Stage 02/03 direct route to Design Baseline Consolidation — likely still needs careful wording check in stage-local tasks and workflow docs.
+1. Stage 01 as loop vs pre-loop gate — resolved by `Product Design` and pre-design workflows split.
+2. Symmetrical re-entry into Stage 01 — resolved by Product Design re-entry model.
+3. Product baseline materialization — resolved by Product Design Step 06 and Design Baseline Consolidation; traceability strengthening is already represented by `wf-024`–`wf-026`.
+4. First routing after Stage 01 — resolved by Product Design routing guidance and top-level workflow wording.
+5. Stage 02/03 overlap — resolved by local boundary notes.
+6. Stage 02/03 direct route to Design Baseline Consolidation — resolved by stage-local contribution wording and Design Baseline Consolidation readiness checks.
 
 ## Expected output
 
@@ -159,20 +160,62 @@ operational_scope/tasks/*.md
 
 ## Definition of Done
 
-- [ ] Fresh search for stale Stage 01 names/paths completed.
-- [ ] Current split workflow artifacts reviewed.
-- [ ] Critic findings reassessed against current workflows.
-- [ ] Active task reading contexts no longer point to `stages/01-discovery-intent-framing/workflow.md` as current Stage 01.
-- [ ] References to workspace preparation route to `Initiative Workspace Preparation`.
-- [ ] References to exploratory opportunity route to `Opportunity Discovery`.
-- [ ] References to current Stage 01 route to `stages/01-product-design/workflow.md` and `Product Design`.
-- [ ] Historical legacy references are either preserved intentionally or clarified as historical.
-- [ ] No `vacancy.md` expectations are reintroduced contrary to current human-orchestrated draft mode.
-- [ ] Task handoff notes summarize changed files and remaining issues.
+- [x] Fresh search for stale Stage 01 names/paths completed.
+- [x] Current split workflow artifacts reviewed.
+- [x] Critic findings reassessed against current workflows.
+- [x] Obsolete critic finding artifact removed because no finding remains actionable for current SDLC workflow state.
+- [x] Active task reading contexts no longer point to `stages/01-discovery-intent-framing/workflow.md` as current Stage 01, excluding historical split tasks intentionally left unchanged.
+- [x] References to workspace preparation route to `Initiative Workspace Preparation`.
+- [x] References to exploratory opportunity route to `Opportunity Discovery`.
+- [x] References to current Stage 01 route to `stages/01-product-design/workflow.md` and `Product Design`.
+- [x] Historical legacy references are preserved intentionally in split tasks `wf-019`–`wf-022`.
+- [x] No `vacancy.md` expectations are reintroduced contrary to current human-orchestrated draft mode.
+- [x] Task handoff notes summarize changed files and remaining issues.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: Run fresh grep/search, reassess critic findings against current workflow docs, then update affected task artifacts.
+- Current State: completed
+- Completed At: 2026-05-06
+- Next Step: none
 - Blockers: none
-- Verification: grep for stale references and manual semantic review of updated task links.
+- Verification: fresh grep/search and manual semantic review of updated task links completed.
+
+## Handoff Notes
+
+### Changed files
+
+- Deleted obsolete temporary finding artifact:
+  - `operational_scope/findings/critic_early_design_loop_findings.md`
+- Updated current task references:
+  - [`wf-008-design-stage-02-architecture-design-internal-steps.md`](./wf-008-design-stage-02-architecture-design-internal-steps.md) — adjacent Stage 01 link now points to `stages/01-product-design/workflow.md`.
+  - [`wf-009-design-stage-03-system-design-internal-steps.md`](./wf-009-design-stage-03-system-design-internal-steps.md) — current Early Design wording now uses `Product Design`; adjacent Stage 01 link now points to `stages/01-product-design/workflow.md`.
+  - [`wf-011-design-stage-04-test-design-internal-steps.md`](./wf-011-design-stage-04-test-design-internal-steps.md) — current return paths now use `Product Design` instead of legacy `Discovery`.
+  - This task artifact — updated to record critic finding deletion, split-task preservation policy and execution handoff.
+
+### Critic findings reassessment
+
+The pre-split critic findings no longer contain actionable issues for the current SDLC workflow state:
+
+- Stage 01 as loop vs pre-loop gate — resolved by `Initiative Workspace Preparation`, `Opportunity Discovery` and `Product Design` split.
+- Symmetrical re-entry into Stage 01 — resolved by `Product Design` entry/re-entry model.
+- Product baseline materialization — resolved by `Product Design` Step 06 and `Design Baseline Consolidation`; traceability strengthening is already captured by `wf-024`–`wf-026`.
+- First routing after Stage 01 — resolved by `Product Design` routing guidance and top-level workflow wording.
+- Stage 02/03 overlap — resolved by local boundary notes and `early-design-stage-boundaries.md`.
+- Stage 02/03 direct route to Design Baseline Consolidation — resolved by stage-local “contribution ready” wording and `Design Baseline Consolidation` cross-stage readiness checks.
+
+Because all findings are resolved, obsolete-after-split or already represented by later tasks, `critic_early_design_loop_findings.md` was removed.
+
+### Historical references intentionally preserved
+
+Per human instruction, tasks dedicated to splitting old Stage 01 were not edited only to normalize historical names/paths:
+
+- `wf-019-design-process-initiative-workspace-preparation.md`
+- `wf-020-design-pre-stage-opportunity-discovery.md`
+- `wf-021-redesign-stage-01-product-design-early-design-loop.md`
+- `wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md`
+
+Their references to `Discovery & Intent Framing`, `01-discovery-intent-framing`, `Product Design & Intent Framing` or intermediate paths are treated as split history / intermediate decision history, not current Stage 01 guidance.
+
+### Follow-up
+
+No new follow-up task is needed for stale split references. Traceability-related remaining work is already captured by `wf-024`, `wf-025` and `wf-026`.

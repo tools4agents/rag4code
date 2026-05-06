@@ -14,7 +14,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/03-system-d
 
 Текущая задача не должна заново проектировать top-level methodology graph. Нужно проработать внутренний план `workflow-step` для Stage 03, согласовать его с человеком, а затем materialize-ить step packs.
 
-`System Design` работает внутри Early Design Convergence Loop вместе с Discovery and Architecture Design. Его фокус — описать продукт на языке системы: system boundary, external context, system-level behavior, data/state, operational constraints and integration surfaces.
+`System Design` работает внутри Early Design Convergence Loop вместе с Product Design and Architecture Design. Его фокус — описать продукт на языке системы: system boundary, external context, system-level behavior, data/state, operational constraints and integration surfaces.
 
 ## Обязательный reading context
 
@@ -35,7 +35,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/03-system-d
 
 ### Adjacent workflow context
 
-- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-discovery-intent-framing/workflow.md)
+- [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/workflow.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/design-baseline-consolidation/workflow.md)
 
@@ -71,7 +71,7 @@ assets/metodologes/waterfall/software-development-methodology/stages/03-system-d
 - System Design internal workflow graph;
 - список step vertices and gate vertices;
 - happy path and return/remediation paths;
-- boundaries между System Design, Architecture Design, Discovery and Design Baseline Consolidation;
+- boundaries между System Design, Architecture Design, Product Design and Design Baseline Consolidation;
 - system boundary and external context framing;
 - system-level behavior and scenario modeling;
 - data/state ownership and lifecycle framing;

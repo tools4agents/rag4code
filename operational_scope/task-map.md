@@ -28,7 +28,7 @@
 | Design pre-stage workflow — Opportunity Discovery | completed as draft | `operational_scope/tasks/wf-020-design-pre-stage-opportunity-discovery.md` |
 | Redesign Stage 01 — Product Design inside Early Design Convergence Loop | completed as draft | `operational_scope/tasks/wf-021-redesign-stage-01-product-design-early-design-loop.md` |
 | Synchronize SDLC workflow graph with pre-design workflows and Product Design | completed as draft  | `operational_scope/tasks/wf-022-sync-sdlc-workflow-with-pre-design-and-product-design.md` |
-| Reconcile Early Design Discovery split references | queued | `operational_scope/tasks/wf-023-reconcile-early-design-discovery-split-references.md` |
+| Reconcile Early Design Discovery split references | completed | `operational_scope/tasks/wf-023-reconcile-early-design-discovery-split-references.md` |
 | Integrate traceability artifacts into Stage 01 Product Design | queued | `operational_scope/tasks/wf-024-integrate-traceability-artifacts-into-stage-01-product-design.md` |
 | Integrate traceability artifacts into Stage 02 Architecture Design | queued | `operational_scope/tasks/wf-025-integrate-traceability-artifacts-into-stage-02-architecture-design.md` |
 | Integrate traceability artifacts into Stage 03 System Design | queued | `operational_scope/tasks/wf-026-integrate-traceability-artifacts-into-stage-03-system-design.md` |
