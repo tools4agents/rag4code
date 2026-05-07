@@ -2,7 +2,7 @@
 
 > Status: Draft  
 > Scope: project traceability entry point  
-> Role: navigation map for entity registries, edge map and trace map
+> Role: navigation map for Entity registries, Relationship registry and Trace map
 
 ## Назначение
 
@@ -14,19 +14,19 @@
 | --- | --- | --- |
 | `<domain>` | [`entities-map.md`](../<domain>/entities-map.md) | <What this domain owns> |
 
-## Relationship maps
+## Relationship and trace registries
 
-| Map | Purpose | Link |
+| Registry | Purpose | Link |
 | --- | --- | --- |
-| Edges map | Atomic relationships between entities. | [`edges-map.md`](./edges-map.md) |
-| Trace map | Curated meaningful paths over edges. | [`trace-map.md`](./trace-map.md) |
+| Relationship registry | Atomic Relationship instances between Entity instances. | [`relationships-map.md`](./relationships-map.md) |
+| Trace map | Curated meaningful paths over Relationships. | [`trace-map.md`](./trace-map.md) |
 
 ## Catalogs
 
 | Catalog | Purpose | Link |
 | --- | --- | --- |
-| Entity type catalog | Active entity types, prefixes and registry locations. | [`entity-type-catalog.md`](./entity-type-catalog.md) |
-| Relationship label catalog | Allowed or recommended edge labels and meanings. | [`relationship-label-catalog.md`](./relationship-label-catalog.md) |
+| Entity type catalog | Active Entity types, prefixes and registry locations. | [`entity-type-catalog.md`](./entity-type-catalog.md) |
+| Relationship type catalog | Allowed or recommended Relationship types and meanings. | [`relationship-type-catalog.md`](./relationship-type-catalog.md) |
 
 ## Notes
 

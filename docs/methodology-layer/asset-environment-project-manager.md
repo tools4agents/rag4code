@@ -72,7 +72,7 @@ Example for traceability:
 traceability-system package templates
   -> project/traceabilityContext.md
   -> docs/traceability/index.md
-  -> docs/traceability/edges-map.md
+  -> docs/traceability/relationships-map.md
   -> docs/traceability/trace-map.md
 ```
 
@@ -108,7 +108,7 @@ Drift exists when installed asset expectations and project files disagree.
 Examples:
 
 - installed traceability profile expects `docs/traceability/index.md`, but file is missing;
-- package version expects a column in `edges-map.md`, but project file uses older format;
+- package version expects a column in `relationships-map.md`, but project file uses older format;
 - project context points to an entity registry that no longer exists;
 - generated graph projection is stale relative to markdown SoT;
 - package cache says asset is installed, but project inventory lacks it.
@@ -160,7 +160,7 @@ docs/architecture/entities-map.md
 
 For a future `traceability-system asset`, environment manager owns installation and materialization of the traceability structure.
 
-It does not own actual entities, edges and traces.
+It does not own actual Entity instances, Relationship instances and Trace chain instances.
 
 Project docs own:
 
@@ -168,7 +168,7 @@ Project docs own:
 docs/product/entities-map.md
 docs/system_design/entities-map.md
 docs/architecture/entities-map.md
-docs/traceability/edges-map.md
+docs/traceability/relationships-map.md
 docs/traceability/trace-map.md
 ```
 

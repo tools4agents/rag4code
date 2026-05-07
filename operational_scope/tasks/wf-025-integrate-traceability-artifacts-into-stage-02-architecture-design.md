@@ -4,9 +4,9 @@
 
 После проектирования generic [`traceability-system asset`](../../docs/methodology-layer/assets/traceability/index.md), SDLC [`sdlc-traceability-profile.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/traceability/sdlc-traceability-profile.md) and `Design Baseline Consolidation` стало видно white spot:
 
-`Stage 02 — Architecture Design` пока не имеет явных steps/guidance для создания and updating architecture traceability artifacts, хотя SDLC profile назначает Stage 02 владельцем architecture entity registration and architecture links to product/system entities.
+`Stage 02 — Architecture Design` пока не имеет явных steps/guidance для создания and updating architecture traceability artifacts, хотя SDLC profile назначает Stage 02 владельцем architecture Entity registration and architecture Relationship instances to product/system entities.
 
-`Design Baseline Consolidation` теперь ожидает architecture entities, edge map contributions and trace chains before Test Design.
+`Design Baseline Consolidation` теперь ожидает architecture Entity instances, Relationship registry contributions and Trace chains before Test Design.
 
 ## Обязательный reading context
 
@@ -24,7 +24,7 @@
 - [`traceability-system asset`](../../docs/methodology-layer/assets/traceability/index.md)
 - [`traceability-system.md`](../../docs/methodology-layer/assets/traceability/traceability-system.md)
 - [`entity-registries.md`](../../docs/methodology-layer/assets/traceability/entity-registries.md)
-- [`edge-and-trace-maps.md`](../../docs/methodology-layer/assets/traceability/edge-and-trace-maps.md)
+- [`relationship-and-trace-maps.md`](../../docs/methodology-layer/assets/traceability/relationship-and-trace-maps.md)
 - [`sdlc-traceability-profile.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/traceability/sdlc-traceability-profile.md)
 
 ### Target stage and downstream consolidation
@@ -38,20 +38,21 @@
 
 Обновить Stage 02 `Architecture Design`, чтобы он явно создавал/обновлял architecture traceability artifacts according to SDLC traceability profile.
 
-Нужно определить, где в Stage 02 workflow появляются architecture entities and cross-domain edges/traces, and update relevant workflow/STEP docs.
+Нужно определить, где в Stage 02 workflow появляются architecture Entity instances and cross-domain Relationship instances/Trace chains, and update relevant workflow/STEP docs.
 
 ## Scope
 
 Включить:
 
-- architecture entity families guidance: components, architecture boundaries, runtime flows, contracts, key models, ADRs and durable architecture decisions;
+- architecture Entity families guidance: components, architecture boundaries, runtime flows, contracts, key models, ADRs and durable architecture decisions;
 - guidance for updating `docs/architecture/entities-map.md`;
 - guidance for architecture-related entities in `docs/contracts/` and `docs/adr/` to remain discoverable from traceability entry points;
 - guidance for adding optional `docs/architecture/entities/<entity-id>.md` detail pages when row-level description is insufficient;
-- guidance for adding edges to `docs/traceability/edges-map.md`, especially links from system behavior/scenarios to components, flows, contracts and ADRs;
-- guidance for contributing trace chains to `docs/traceability/trace-map.md` when architecture closes a meaningful product/system path;
+- guidance for adding Relationship instances to `docs/traceability/relationships-map.md`, especially links from system behavior/scenarios to components, flows, contracts and ADRs;
+- guidance for contributing Trace chains to `docs/traceability/trace-map.md` when architecture closes a meaningful product/system path;
+- guidance to use/request Relationship types from `docs/traceability/relationship-type-catalog.md`;
 - update Architecture SoT Materialization and/or Architecture Baseline Review Gate docs to mention traceability artifacts;
-- clarify that Architecture Design does not own Product/System entity definitions;
+- clarify that Architecture Design does not own Product/System Entity definitions;
 - clarify handoff expectations for Design Baseline Consolidation.
 
 Не включать:
@@ -85,11 +86,11 @@ Add new step only if the current step model clearly cannot express traceability 
 
 ## Definition of Done
 
-- [ ] Stage 02 docs explicitly say Architecture Design owns architecture entity registration.
-- [ ] Architecture entity registry target `docs/architecture/entities-map.md` is mentioned.
+- [ ] Stage 02 docs explicitly say Architecture Design owns architecture Entity registration.
+- [ ] Architecture Entity registry target `docs/architecture/entities-map.md` is mentioned.
 - [ ] Contract/ADR discoverability through traceability entry points is clarified.
-- [ ] Optional architecture entity detail page guidance is present.
-- [ ] Architecture edge/trace contribution guidance is present.
+- [ ] Optional architecture Entity detail page guidance is present.
+- [ ] Architecture Relationship/Trace contribution guidance is present.
 - [ ] Stage 02 handoff to Design Baseline Consolidation includes architecture traceability readiness.
 - [ ] Boundaries with Product Design and System Design remain clear.
 - [ ] No `vacancy.md` files created under current human-orchestrated draft mode.

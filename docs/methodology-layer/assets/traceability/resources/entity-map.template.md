@@ -1,12 +1,12 @@
 # <Domain> Entities Map
 
 > Status: Draft  
-> Scope: <domain> entity registry  
-> Role: graph vertex registry and navigation entrypoint
+> Scope: <domain> Entity registry  
+> Role: Entity instance registry and navigation entrypoint
 
 ## Назначение
 
-Этот файл регистрирует `<domain>` entities with stable IDs.
+Этот файл регистрирует `<domain>` Entity instances with stable IDs.
 
 ## Entity registry
 
@@ -17,5 +17,5 @@
 ## Notes
 
 - Keep IDs stable and searchable.
-- Use detail pages for large or frequently referenced entities.
-- Relationships to other domains live in `docs/traceability/edges-map.md`.
+- Use detail pages for large or frequently referenced Entity instances.
+- Relationships to other domains live in `docs/traceability/relationships-map.md`.

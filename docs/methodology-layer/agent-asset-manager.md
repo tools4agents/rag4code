@@ -100,7 +100,7 @@ discover package
 | --- | --- | --- |
 | Package source | asset package / registry | reusable `traceability-system` templates |
 | Installed asset inventory | project asset environment | selected assets and versions for one project |
-| Project-owned SoT | project | actual `docs/traceability/edges-map.md`, tasks, docs, code |
+| Project-owned SoT | project | actual `docs/traceability/relationships-map.md`, tasks, docs, code |
 | Derived runtime / graph projection | tooling | generated DB projection, MCP query state |
 
 Important invariant:

@@ -146,7 +146,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/assets/testing-system/test-map.md` — concrete `testing-system asset` `test-map` и baseline testing documentation model
 - `docs/methodology-layer/assets/testing-system/test-suites.md` — suite page structure, implementation roots и search-boundary conventions
 - `docs/methodology-layer/assets/testing-system/test-case-traceability.md` — identifier families, traceability chain и code-level metadata placement
-- `docs/methodology-layer/assets/traceability/index.md` — concrete `traceability-system asset` для markdown-first entity registries, edges, traces and derived graph projection
+- `docs/methodology-layer/assets/traceability/index.md` — concrete `traceability-system asset` для markdown-first Entity registries, Relationship registries, Trace maps and derived graph projection
 - `docs/methodology-layer/repository-context-entry-model.md` — system of project context entry points, loading order, ownership boundaries и `nested repo context switching`
 - `docs/methodology-layer/agent-system-assets-and-materialization-boundaries.md` — boundaries между reusable source assets, project-owned context-entry artifacts и target `agent-system` materialization layers
 - `docs/methodology-layer/layered-sot-and-materialization-model.md` — canonical SoT layers, resolved states и runtime materialization model
@@ -200,7 +200,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `assets/testing-system/test-map.md` отвечает только за concrete `testing-system asset` `test-map` и baseline test index model;
 - `assets/testing-system/test-suites.md` отвечает только за suite page structure, implementation roots и search-boundary conventions;
 - `assets/testing-system/test-case-traceability.md` отвечает только за identifier conventions, target traceability chain и code-level metadata placement;
-- `assets/traceability/index.md` отвечает только за concrete `traceability-system asset`, markdown-first entity registries, edge maps, trace maps and derived graph projection boundaries;
+- `assets/traceability/index.md` отвечает только за concrete `traceability-system asset`, markdown-first Entity registries, Relationship registries, Trace maps and derived graph projection boundaries;
 - `repository-context-entry-model.md` отвечает только за system of project context entry points, loading order, structure + navigation + ownership и `nested repo context switching`;
 - `agent-system-assets-and-materialization-boundaries.md` отвечает только за boundaries между reusable assets, project-owned context-entry artifacts и target `agent-system` materialization layers;
 - `layered-sot-and-materialization-model.md` отвечает только за ownership model между внутренним каноном HyperGraph, `agent-system` config layers и derived runtime states;

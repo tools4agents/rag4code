@@ -10,11 +10,11 @@ Graph projection — derived representation built from markdown/code Source of T
 
 В traceability context graph DB полезна для:
 
-- fast lookup by entity ID;
+- fast lookup by Entity ID;
 - relationship traversal;
 - impact analysis;
 - MCP-based agent navigation;
-- detecting orphan entities or broken edges.
+- detecting orphan entities or broken relationships.
 
 Но graph DB не является Source of Truth.
 
@@ -22,10 +22,22 @@ Graph projection — derived representation built from markdown/code Source of T
 
 ```text
 project markdown/code SoT
-  -> extract entities, edges, traces and code/test metadata
+  -> extract Entity instances, Relationship instances, Trace chain instances and code/test metadata
   -> build graph DB projection
   -> expose query interface via MCP or tools
 ```
+
+## Semantic-to-graph mapping
+
+Traceability SoT uses Entity / Relationship / Trace chain terminology by default. Graph terms are technical projection terms:
+
+```text
+Entity instance -> graph vertex
+Relationship instance -> graph edge
+Trace chain instance -> curated graph path over Relationship instances
+```
+
+This mapping is one-way for ownership: graph projection may accelerate traversal, but source files own accepted traceability facts.
 
 ## MCP role
 
@@ -46,8 +58,8 @@ Projection drift happens when graph DB state no longer matches source files.
 
 Examples:
 
-- entity removed from `entities-map.md` but still exists in graph DB;
-- edge changed in `edges-map.md` but old graph edge remains;
+- Entity instance removed from `entities-map.md` but still exists in graph DB;
+- Relationship instance changed in `relationships-map.md` but old graph edge remains;
 - code/test metadata changed but projection not rebuilt.
 
 The projection must be rebuildable from source layers.

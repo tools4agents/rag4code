@@ -19,4 +19,4 @@
 
 - Markdown/code files are Source of Truth.
 - Graph DB and MCP are derived projection and navigation helpers.
-- Use `docs/traceability/index.md` for entity registries, catalogs, edges and traces.
+- Use `docs/traceability/index.md` for Entity registries, catalogs, Relationship instances and Trace chains.

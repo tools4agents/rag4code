@@ -6,21 +6,22 @@
 
 ## Назначение
 
-`Traceability System` задает reusable asset для регистрации project entities, relationships and meaningful traces в file-first Source of Truth.
+`Traceability System` задает reusable asset для регистрации project Entity instances, Relationship instances and meaningful Trace chain instances в file-first Source of Truth.
 
 Он нужен, чтобы человек и агент могли:
 
 - находить сущности проекта по stable identifiers;
-- видеть atomic relationships между сущностями;
-- читать meaningful trace chains поверх relationships;
+- видеть atomic Relationship instances между сущностями;
+- читать meaningful Trace chains поверх Relationships;
 - строить derived graph database projection без переноса Source of Truth в database;
 - использовать MCP/graph tools как navigation accelerator, а не как canonical truth.
 
 ## Состав asset package
 
 - [`traceability-system.md`](./traceability-system.md) — core model and boundaries.
-- [`entity-registries.md`](./entity-registries.md) — registry pattern для graph vertices.
-- [`edge-and-trace-maps.md`](./edge-and-trace-maps.md) — edge map and trace map model.
+- [`terms.md`](./terms.md) — local terminology for traceability docs, methodology profiles, skills and workflow steps.
+- [`entity-registries.md`](./entity-registries.md) — registry pattern для Entity instances.
+- [`relationship-and-trace-maps.md`](./relationship-and-trace-maps.md) — Relationship registry and Trace map model.
 - [`graph-projection.md`](./graph-projection.md) — derived graph DB and MCP relationship.
 - [`resources/`](./resources/) — templates для project materialization.
 
@@ -35,8 +36,8 @@ project/
 docs/traceability/
   index.md
   entity-type-catalog.md
-  relationship-label-catalog.md
-  edges-map.md
+  relationship-type-catalog.md
+  relationships-map.md
   trace-map.md
 
 docs/<domain>/
@@ -53,7 +54,7 @@ Project-specific methodology or context may choose concrete domain locations, fo
 
 ### This asset does
 
-- defines generic entity registry, edge map and trace map conventions;
+- defines generic Entity registry, Relationship registry and Trace map conventions;
 - defines markdown-first Source of Truth rule;
 - provides templates for project-local materialization;
 - explains how graph database can be derived from markdown/code sources.
@@ -61,7 +62,7 @@ Project-specific methodology or context may choose concrete domain locations, fo
 ### This asset does not
 
 - does not own project facts;
-- does not define SDLC-specific entity families;
+- does not define SDLC-specific Entity families;
 - does not decide product, architecture, system or testing semantics;
 - does not define concrete graph DB schema or MCP API contract;
 - does not replace methodology-specific traceability profiles.

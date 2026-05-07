@@ -1,12 +1,12 @@
 # Entity Type Catalog
 
 > Status: Draft  
-> Scope: active project traceability entity types and identifier families  
-> Role: project-level SoT for entity type meanings, prefixes and registry locations
+> Scope: active project traceability Entity types and identifier families  
+> Role: project-level SoT for Entity type meanings, prefixes and registry locations
 
 ## Назначение
 
-Этот файл фиксирует, какие entity types and identifier patterns используются в проекте.
+Этот файл фиксирует, какие Entity types and identifier patterns используются в проекте.
 
 ## Entity type catalog
 
@@ -24,4 +24,4 @@
 
 - This catalog defines where agents should look up identifiers.
 - Entity instances live in domain `entities-map.md` files.
-- Relationship labels live in [`relationship-label-catalog.md`](./relationship-label-catalog.md).
+- Relationship types live in [`relationship-type-catalog.md`](./relationship-type-catalog.md).

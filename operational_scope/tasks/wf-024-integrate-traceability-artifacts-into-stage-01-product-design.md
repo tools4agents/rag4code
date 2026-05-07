@@ -4,9 +4,9 @@
 
 После проектирования generic [`traceability-system asset`](../../docs/methodology-layer/assets/traceability/index.md), SDLC [`sdlc-traceability-profile.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/traceability/sdlc-traceability-profile.md) and `Design Baseline Consolidation` стало видно white spot:
 
-`Stage 01 — Product Design` пока не имеет явных steps/guidance для создания and updating traceability artifacts, хотя SDLC profile назначает Stage 01 владельцем product entity registration.
+`Stage 01 — Product Design` пока не имеет явных steps/guidance для создания and updating traceability artifacts, хотя SDLC profile назначает Stage 01 владельцем product Entity registration.
 
-`Design Baseline Consolidation` теперь ожидает, что Product Design contribution может предоставить product entities and trace seeds before cross-domain consolidation.
+`Design Baseline Consolidation` теперь ожидает, что Product Design contribution может предоставить product Entity instances and trace seeds before cross-domain consolidation.
 
 ## Обязательный reading context
 
@@ -24,7 +24,7 @@
 - [`traceability-system asset`](../../docs/methodology-layer/assets/traceability/index.md)
 - [`traceability-system.md`](../../docs/methodology-layer/assets/traceability/traceability-system.md)
 - [`entity-registries.md`](../../docs/methodology-layer/assets/traceability/entity-registries.md)
-- [`edge-and-trace-maps.md`](../../docs/methodology-layer/assets/traceability/edge-and-trace-maps.md)
+- [`relationship-and-trace-maps.md`](../../docs/methodology-layer/assets/traceability/relationship-and-trace-maps.md)
 - [`sdlc-traceability-profile.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/traceability/sdlc-traceability-profile.md)
 
 ### Target stage and downstream consolidation
@@ -38,18 +38,19 @@
 
 Обновить Stage 01 `Product Design`, чтобы он явно создавал/обновлял product traceability artifacts according to SDLC traceability profile.
 
-Нужно определить, где в Stage 01 workflow появляются product entities and product trace seeds, and update relevant workflow/STEP docs.
+Нужно определить, где в Stage 01 workflow появляются product Entity instances and product trace seeds, and update relevant workflow/STEP docs.
 
 ## Scope
 
 Включить:
 
-- product entity families guidance: requirements, product capabilities, user stories, user scenarios, acceptance criteria and product-level assumptions/risks when stable references are needed;
+- product Entity families guidance: requirements, product capabilities, user stories, user scenarios, acceptance criteria and product-level assumptions/risks when stable references are needed;
 - guidance for updating `docs/product/entities-map.md`;
 - guidance for adding optional `docs/product/entities/<entity-id>.md` detail pages when row-level description is insufficient;
-- guidance for contributing product-local or downstream trace seeds to `docs/traceability/edges-map.md` or as handoff notes when downstream entities do not exist yet;
+- guidance for contributing product-local Relationship instances to `docs/traceability/relationships-map.md` or downstream trace seeds as handoff notes when downstream Entity instances do not exist yet;
+- guidance to use/request Relationship types from `docs/traceability/relationship-type-catalog.md`;
 - update Product Baseline Materialization and/or Product Intent Review step docs to mention traceability artifacts;
-- clarify that Product Design does not own System/Architecture entities;
+- clarify that Product Design does not own System/Architecture Entity instances;
 - clarify handoff expectations for Design Baseline Consolidation.
 
 Не включать:
@@ -83,10 +84,10 @@ Add new step only if the current step model clearly cannot express traceability 
 
 ## Definition of Done
 
-- [ ] Stage 01 docs explicitly say Product Design owns product entity registration.
-- [ ] Product entity registry target `docs/product/entities-map.md` is mentioned.
-- [ ] Optional product entity detail page guidance is present.
-- [ ] Product trace seeds / edge handoff guidance is present.
+- [ ] Stage 01 docs explicitly say Product Design owns product Entity registration.
+- [ ] Product Entity registry target `docs/product/entities-map.md` is mentioned.
+- [ ] Optional product Entity detail page guidance is present.
+- [ ] Product trace seeds / Relationship handoff guidance is present.
 - [ ] Stage 01 handoff to Design Baseline Consolidation includes product traceability readiness.
 - [ ] Boundaries with System Design and Architecture Design remain clear.
 - [ ] No `vacancy.md` files created under current human-orchestrated draft mode.

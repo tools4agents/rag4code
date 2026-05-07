@@ -86,17 +86,17 @@ Assets могут:
 
 ### `traceability-system asset`
 
-Задает систему markdown-first traceability для регистрации graph-ready entities, edges and traces с возможной derived graph projection.
+Задает систему markdown-first traceability для регистрации graph-ready Entity instances, Relationship instances and Trace chain instances с возможной derived graph projection.
 
 Этот тип asset отвечает на вопросы:
 
 - где находятся entry points для traceability navigation;
-- как устроены entity registries для graph vertices;
+- как устроены Entity registries for Entity instances that can be projected as graph vertices;
 - как описываются atomic relationships между entities;
-- как описываются curated trace chains поверх atomic edges;
+- как описываются curated Trace chains поверх Relationship instances;
 - как markdown/code Source of Truth соотносится с derived graph database and MCP query layer.
 
-`traceability-system asset` задает generic mechanics traceability и не должен владеть SDLC-specific entity families. Например, он может описывать pattern `entity registry -> edges map -> trace map`, но не обязан знать, что конкретная методология связывает Product Design, System Design, Architecture Design, Test Design, tasks and code.
+`traceability-system asset` задает generic mechanics traceability и не должен владеть SDLC-specific Entity families. Например, он может описывать pattern `Entity registry -> Relationship registry -> Trace map`, но не обязан знать, что конкретная методология связывает Product Design, System Design, Architecture Design, Test Design, tasks and code.
 
 ### `workflow asset`
 
@@ -211,7 +211,7 @@ Asset taxonomy не требует, чтобы каждый asset type жест�
 | `terms-management-system asset` | [`terms-map.md`](assets/terms-management/terms-map.md) | Задает систему хранения и progressive disclosure терминов. |
 | `research-management-system asset` | [`research-tree.md`](assets/research-management/research-tree.md) | Задает tree-shaped research storage, branch navigation и research traceability. |
 | `testing-system asset` | [`test-map.md`](assets/testing-system/test-map.md) | Задает систему хранения test documentation, suite navigation и baseline traceability. |
-| `traceability-system asset` | [`index.md`](assets/traceability/index.md) | Задает markdown-first entity registries, edge maps, trace maps and derived graph projection conventions. |
+| `traceability-system asset` | [`index.md`](assets/traceability/index.md) | Задает markdown-first Entity registries, Relationship registries, Trace maps and derived graph projection conventions. |
 | `methodology-workflow asset` | `Adaptive Waterfall for Agents workflow` | Задает top-level SDLC graph, stages, process workflows, return paths and consolidation/freeze points. |
 | `workflow asset` | `supporting workflows` | Задает reusable bounded workflows, которые могут подключаться к methodology workflow или использоваться standalone. |
 | `methodology asset` | `waterfall` | Задает process model разработки. |

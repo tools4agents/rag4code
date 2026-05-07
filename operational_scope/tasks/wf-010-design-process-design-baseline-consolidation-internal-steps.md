@@ -84,7 +84,7 @@ Specification / SoT Materialization может закреплять отдель
 - happy path and return/remediation guidance;
 - intake из Early Design Convergence Loop;
 - использование Specification / SoT Materialization для product / architecture / system docs;
-- Project Image traceability checks: entity registries, edge map and trace map;
+- Project Image traceability checks: Entity registries, Relationship registry and Trace map;
 - consistency and non-contradiction review;
 - проверку полноты baseline для Test Design;
 - white spots, open questions, assumptions and risks triage;
@@ -149,7 +149,7 @@ assets/metodologes/waterfall/software-development-methodology/workflows/design-b
   - `01-consolidation-context-intake`
   - `02-stage-contribution-readiness-intake`
   - `03-entity-registry-readiness-check`
-  - `04-cross-domain-edge-map-structural-review`
+  - `04-cross-domain-relationship-registry-structural-review`
   - `05-project-image-trace-map-structural-review`
   - `06-cross-baseline-semantic-consistency-review`
   - `07-test-design-input-sufficiency-review`
@@ -157,4 +157,4 @@ assets/metodologes/waterfall/software-development-methodology/workflows/design-b
   - `09-test-design-readiness-recommendation`
 - Key design decision: traceability structural checks happen before semantic consistency review because they provide the declared Project Image graph for semantic review.
 - Design Baseline Consolidation does not repeat deep Product/System/Architecture reviews; it consumes stage-local contribution readiness and owns cross-domain consolidation before Test Design.
-- Traceability is modeled through SDLC profile: entity registries, `edges-map.md`, `trace-map.md`, then semantic consistency and Test Design sufficiency.
+- Traceability is modeled through SDLC profile: Entity registries, `relationships-map.md`, `trace-map.md`, then semantic consistency and Test Design sufficiency.

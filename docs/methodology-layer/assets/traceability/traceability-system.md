@@ -1,7 +1,7 @@
 # Traceability System Asset
 
 > Status: Draft  
-> Scope: generic traceability model для project graph vertices, edges and traces  
+> Scope: generic traceability model для project Entity instances, Relationship instances and Trace chain instances  
 > Role: Source of Truth для mechanics reusable `traceability-system asset`
 
 ## Назначение
@@ -11,17 +11,25 @@
 Короткая формула:
 
 ```text
-entity registries define vertices
-edges-map defines atomic edges
-trace-map defines meaningful paths
+Entity registries define Entity instances
+relationships-map defines Relationship instances
+trace-map defines meaningful Trace chain instances
 graph database is derived projection
+```
+
+Graph terminology is derived-projection terminology, not canonical traceability Source of Truth wording:
+
+```text
+Entity instance -> graph vertex
+Relationship instance -> graph edge
+Trace chain instance -> curated graph path
 ```
 
 ## Core concepts
 
 ### Entity registry
 
-Entity registry — карта сущностей, которые должны стать graph vertices или agent-readable navigation anchors.
+Entity registry — карта Entity instances, которые должны стать agent-readable navigation anchors and can be projected as graph vertices.
 
 Обычно materialize-ится как:
 
@@ -30,19 +38,19 @@ docs/<domain>/entities-map.md
 docs/<domain>/entities/<entity-id>.md
 ```
 
-### Edge map
+### Relationship registry
 
-Edge map — markdown registry atomic relationships между entities.
+Relationship registry — markdown registry of Relationship instances между Entity instances.
 
-Обычно materialize-ится как:
+Canonical semantic filename:
 
 ```text
-docs/traceability/edges-map.md
+docs/traceability/relationships-map.md
 ```
 
 ### Trace map
 
-Trace map — curated collection of meaningful paths over edges.
+Trace map — curated collection of meaningful Trace chain instances over Relationships.
 
 Обычно materialize-ится как:
 
@@ -52,7 +60,7 @@ docs/traceability/trace-map.md
 
 ### Entity type catalog
 
-Entity type catalog defines active project entity types, identifier prefixes or patterns, domains and registries.
+Entity type catalog defines active project Entity types, Entity Identifier families/patterns, domains and registries.
 
 Recommended location:
 
@@ -68,17 +76,17 @@ Where should an agent look up SYSDR-* entities?
 Which prefixes are active, provisional or deprecated?
 ```
 
-### Relationship label catalog
+### Relationship type catalog
 
-Relationship label catalog defines allowed or recommended edge labels and their semantics.
+Relationship type catalog defines allowed or recommended Relationship types and their semantics.
 
 Recommended location:
 
 ```text
-docs/traceability/relationship-label-catalog.md
+docs/traceability/relationship-type-catalog.md
 ```
 
-This catalog prevents `edges-map.md` from using ambiguous labels without shared meaning.
+This catalog prevents `relationships-map.md` from using ambiguous Relationship type values without shared meaning. If a stored table cell is called a label in implementation context, that label is only the stored representation of a Relationship type value.
 
 ### Project traceability context
 
@@ -96,11 +104,11 @@ This file should stay thin. It points to `docs/traceability/index.md`, while det
 
 | Layer | Typical location | Responsibility |
 | --- | --- | --- |
-| Generic traceability asset | `docs/methodology-layer/assets/traceability/` | Defines mechanics: entity registries, edge maps, trace maps, catalogs and graph projection rule. |
-| Methodology traceability profile | methodology-specific resources | Defines which domains, entity families and trace chains matter for a methodology. |
+| Generic traceability asset | `docs/methodology-layer/assets/traceability/` | Defines mechanics: Entity registries, Relationship registries, Trace maps, catalogs and graph projection rule. |
+| Methodology traceability profile | methodology-specific resources | Defines which domains, Entity families and Trace chains matter for a methodology. |
 | Project traceability context | `project/traceabilityContext.md` | Thin project routing entry point to the active traceability docs. |
-| Project traceability catalogs | `docs/traceability/entity-type-catalog.md`, `relationship-label-catalog.md` | Active project SoT for entity types, identifier patterns and edge label meanings. |
-| Project traceability instance | `docs/traceability/*`, `docs/<domain>/entities-map.md` | Actual project entities, edges and traces. |
+| Project traceability catalogs | `docs/traceability/entity-type-catalog.md`, `relationship-type-catalog.md` | Active project SoT for Entity types, identifier patterns and Relationship type meanings. |
+| Project traceability instance | `docs/traceability/*`, `docs/<domain>/entities-map.md` | Actual project Entity instances, Relationship instances and Trace chain instances. |
 | Derived graph projection | graph DB / MCP runtime | Rebuildable query/navigation projection over source facts. |
 
 ## Source of Truth rule
@@ -123,14 +131,14 @@ The graph DB must be rebuildable from source layers.
 This asset owns generic mechanics:
 
 - registry shape;
-- edge and trace concepts;
+- Relationship and Trace chain concepts;
 - identifier requirements;
 - project entrypoint pattern;
 - derived graph projection rule.
 
 Methodology-specific profile owns concrete traceability expectations. For example, an SDLC methodology may say that product entities should connect to system design entities, architecture entities and tests.
 
-Project owns actual facts: concrete entity IDs, edges and traces.
+Project owns actual facts: concrete Entity IDs, Relationship instances and Trace chain instances.
 
 ## Identifier requirements
 
@@ -147,9 +155,9 @@ This asset does not freeze global identifier grammar. Methodology profiles and p
 
 ## Canonical invariants
 
-- Entity registries define graph vertices.
-- Edge maps define atomic graph relationships.
-- Trace maps define curated meaningful paths over edges.
+- Entity registries define Entity instances.
+- Relationship registries define atomic Relationship instances.
+- Trace maps define curated meaningful paths over Relationship instances.
 - Markdown/code remains Source of Truth.
 - Graph DB and MCP state are derived and rebuildable.
 - Generic traceability mechanics must not be coupled to one methodology.

@@ -1,8 +1,8 @@
 # Trace Map
 
 > Status: Draft  
-> Scope: curated trace chains  
-> Role: markdown Source of Truth for meaningful paths over edges
+> Scope: curated Trace chain instances  
+> Role: markdown Source of Truth for meaningful paths over Relationships
 
 ## Trace chains
 

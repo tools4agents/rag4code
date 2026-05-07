@@ -6,7 +6,7 @@
 
 ## Summary
 
-<Short explanation of the entity.>
+<Short explanation of the Entity instance.>
 
 ## Details
 
@@ -14,4 +14,4 @@
 
 ## Traceability
 
-Relevant relationships should be registered in `docs/traceability/edges-map.md` and relevant chains in `docs/traceability/trace-map.md`.
+Relevant Relationship instances should be registered in `docs/traceability/relationships-map.md` and relevant Trace chains in `docs/traceability/trace-map.md`.
