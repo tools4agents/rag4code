@@ -16,8 +16,9 @@
 
 ## Status values
 
-- `active` — Relationship type is currently recommended.
+- `draft` — Relationship type is proposed and may be removed, renamed or changed.
 - `provisional` — Relationship type is allowed temporarily or under validation.
+- `active` — Relationship type is currently recommended.
 - `deprecated` — Relationship type should not be used for new Relationship instances.
 
 ## Notes

@@ -16,8 +16,9 @@
 
 ## Status values
 
-- `active` — prefix/type is currently used.
+- `draft` — prefix/type is proposed and may be removed, renamed or changed.
 - `provisional` — prefix/type is allowed temporarily or under validation.
+- `active` — prefix/type is currently used.
 - `deprecated` — prefix/type should not be used for new entities.
 
 ## Notes
