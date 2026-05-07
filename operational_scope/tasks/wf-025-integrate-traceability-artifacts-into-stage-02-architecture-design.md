@@ -86,19 +86,19 @@ Add new step only if the current step model clearly cannot express traceability 
 
 ## Definition of Done
 
-- [ ] Stage 02 docs explicitly say Architecture Design owns architecture Entity registration.
-- [ ] Architecture Entity registry target `docs/architecture/entities-map.md` is mentioned.
-- [ ] Contract/ADR discoverability through traceability entry points is clarified.
-- [ ] Optional architecture Entity detail page guidance is present.
-- [ ] Architecture Relationship/Trace contribution guidance is present.
-- [ ] Stage 02 handoff to Design Baseline Consolidation includes architecture traceability readiness.
-- [ ] Boundaries with Product Design and System Design remain clear.
-- [ ] No `vacancy.md` files created under current human-orchestrated draft mode.
-- [ ] Links to generic traceability asset and SDLC traceability profile are correct.
+- [x] Stage 02 docs explicitly say Architecture Design owns architecture Entity registration.
+- [x] Architecture Entity registry target `docs/architecture/entities-map.md` is mentioned.
+- [x] Contract/ADR discoverability through traceability entry points is clarified.
+- [x] Optional architecture Entity detail page guidance is present.
+- [x] Architecture Relationship/Trace contribution guidance is present.
+- [x] Stage 02 handoff to Design Baseline Consolidation includes architecture traceability readiness.
+- [x] Boundaries with Product Design and System Design remain clear.
+- [x] No `vacancy.md` files created under current human-orchestrated draft mode.
+- [x] Links to generic traceability asset and SDLC traceability profile are correct.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: Review Stage 02 materialization/review steps and update them with architecture traceability responsibilities.
+- Current State: completed
+- Next Step: Follow-up task should generalize Stage 01 local traceability skills to universal instance-level skills after WF-025.
 - Blockers: none
-- Verification: read/grep consistency checks for traceability mentions and link correctness.
+- Verification: read/grep consistency checks for Stage 02 traceability mentions, old step references and vacancy handling.
