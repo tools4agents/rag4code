@@ -4,7 +4,7 @@
 
 После проектирования generic [`traceability-system asset`](../../docs/methodology-layer/assets/traceability/index.md), SDLC [`sdlc-traceability-profile.md`](../../assets/metodologes/waterfall/software-development-methodology/resources/traceability/sdlc-traceability-profile.md) and `Design Baseline Consolidation` стало видно white spot:
 
-`Stage 01 — Product Design` пока не имеет явных steps/guidance для создания and updating traceability artifacts, хотя SDLC profile назначает Stage 01 владельцем product Entity registration.
+`Stage 01 — Product Design` теперь получает явные steps/guidance для создания and updating traceability artifacts, так как SDLC profile назначает Stage 01 владельцем product Entity registration.
 
 `Design Baseline Consolidation` теперь ожидает, что Product Design contribution может предоставить product Entity instances and trace seeds before cross-domain consolidation.
 
@@ -30,8 +30,11 @@
 ### Target stage and downstream consolidation
 
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/workflow.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/06-product-baseline-materialization/STEP.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/07-product-intent-review-design-routing/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/05-product-entity-registry-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/06-product-relationship-trace-skeleton-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/08-product-baseline-materialization/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/09-product-traceability-structural-review/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/10-product-intent-semantic-review-design-routing/STEP.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/design-baseline-consolidation/workflow.md)
 
 ## Цель
@@ -49,7 +52,8 @@
 - guidance for adding optional `docs/product/entities/<entity-id>.md` detail pages when row-level description is insufficient;
 - guidance for contributing product-local Relationship instances to `docs/traceability/relationships-map.md` or downstream trace seeds as handoff notes when downstream Entity instances do not exist yet;
 - guidance to use/request Relationship types from `docs/traceability/relationship-type-catalog.md`;
-- update Product Baseline Materialization and/or Product Intent Review step docs to mention traceability artifacts;
+- add Product Entity Registry Consolidation, Product Relationship & Trace Skeleton Consolidation and Product Traceability Structural Review steps;
+- update Product Baseline Materialization and Product Intent Semantic Review step docs to mention traceability artifacts;
 - clarify that Product Design does not own System/Architecture Entity instances;
 - clarify handoff expectations for Design Baseline Consolidation.
 
@@ -73,29 +77,31 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-product-
   steps/*/STEP.md
 ```
 
-Likely affected steps:
+Affected steps:
 
 ```text
-06-product-baseline-materialization/STEP.md
-07-product-intent-review-design-routing/STEP.md
+05-product-entity-registry-consolidation/STEP.md
+06-product-relationship-trace-skeleton-consolidation/STEP.md
+07-product-uncertainty-evidence-routing/STEP.md
+08-product-baseline-materialization/STEP.md
+09-product-traceability-structural-review/STEP.md
+10-product-intent-semantic-review-design-routing/STEP.md
 ```
-
-Add new step only if the current step model clearly cannot express traceability responsibilities without overloading existing steps.
 
 ## Definition of Done
 
-- [ ] Stage 01 docs explicitly say Product Design owns product Entity registration.
-- [ ] Product Entity registry target `docs/product/entities-map.md` is mentioned.
-- [ ] Optional product Entity detail page guidance is present.
-- [ ] Product trace seeds / Relationship handoff guidance is present.
-- [ ] Stage 01 handoff to Design Baseline Consolidation includes product traceability readiness.
-- [ ] Boundaries with System Design and Architecture Design remain clear.
-- [ ] No `vacancy.md` files created under current human-orchestrated draft mode.
-- [ ] Links to generic traceability asset and SDLC traceability profile are correct.
+- [x] Stage 01 docs explicitly say Product Design owns product Entity registration.
+- [x] Product Entity registry target `docs/product/entities-map.md` is mentioned.
+- [x] Optional product Entity detail page guidance is present.
+- [x] Product trace seeds / Relationship handoff guidance is present.
+- [x] Stage 01 handoff to Design Baseline Consolidation includes product traceability readiness.
+- [x] Boundaries with System Design and Architecture Design remain clear.
+- [x] No `vacancy.md` files created under current human-orchestrated draft mode.
+- [x] Links to generic traceability asset and SDLC traceability profile are correct.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: Review Stage 01 materialization/review steps and update them with product traceability responsibilities.
+- Current State: completed as draft
+- Next Step: Use updated Stage 01 traceability steps during Stage 02/03 traceability integration and future Product Design runs.
 - Blockers: none
-- Verification: read/grep consistency checks for traceability mentions and link correctness.
+- Verification: read/grep consistency checks for traceability mentions, stale step references and link correctness completed.
