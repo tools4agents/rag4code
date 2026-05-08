@@ -249,7 +249,7 @@ Do not remove graph terms from graph projection / technical implementation conte
 - [x] `relationship-type-catalog.md` is the canonical semantic filename for Relationship type catalog in docs/templates/profile.
 - [x] `edges-map.md` no longer appears as current canonical semantic traceability registry outside explicit legacy/migration notes or graph projection context.
 - [x] Design Baseline Consolidation checks Relationship registry / Relationship instances terminology.
-- [x] Stage 01 traceability skills use Relationship terminology and request `relationship-type-drafter` when a needed Relationship type is missing.
+- [x] Stage 01 traceability skills use Relationship terminology and request `relationship-type-draft-registration` when a needed Relationship type is missing.
 - [x] Pending tasks `wf-024`–`wf-026` are synchronized with new filenames/terminology.
 - [x] Graph projection docs still explain technical mapping Entity -> vertex, Relationship -> edge, Trace chain -> path.
 - [x] Links are correct after any file rename.

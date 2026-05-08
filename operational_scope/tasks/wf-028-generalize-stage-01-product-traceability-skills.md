@@ -10,8 +10,8 @@
 Позже в рамках WF-025 для Stage 02 были созданы universal instance-level traceability skills на уровне methodology package:
 
 - [`entity-instance-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/entity-instance-draft-registration/SKILL.md)
-- [`relationship-instance-draft-capture`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-instance-draft-capture/SKILL.md)
-- [`trace-chain-draft-capture`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-chain-draft-capture/SKILL.md)
+- [`relationship-instance-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-instance-draft-registration/SKILL.md)
+- [`trace-chain-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-chain-draft-registration/SKILL.md)
 
 Принята модель:
 
@@ -46,11 +46,11 @@ Stage 01 local skills теперь частично дублируют universal
 
 ### Current universal skills
 
-- [`trace-type-drafter`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-type-drafter/SKILL.md)
-- [`relationship-type-drafter`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-type-drafter/SKILL.md)
+- [`entity-type-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/entity-type-draft-registration/SKILL.md)
+- [`relationship-type-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-type-draft-registration/SKILL.md)
 - [`entity-instance-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/entity-instance-draft-registration/SKILL.md)
-- [`relationship-instance-draft-capture`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-instance-draft-capture/SKILL.md)
-- [`trace-chain-draft-capture`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-chain-draft-capture/SKILL.md)
+- [`relationship-instance-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-instance-draft-registration/SKILL.md)
+- [`trace-chain-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-chain-draft-registration/SKILL.md)
 
 ### Stage 01 Product Design
 

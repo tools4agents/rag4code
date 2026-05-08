@@ -43,10 +43,10 @@ Stage 03 should apply the same model with System-specific ownership and boundari
 ### Universal traceability skills
 
 - [`entity-instance-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/entity-instance-draft-registration/SKILL.md)
-- [`relationship-instance-draft-capture`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-instance-draft-capture/SKILL.md)
-- [`trace-chain-draft-capture`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-chain-draft-capture/SKILL.md)
-- [`trace-type-drafter`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-type-drafter/SKILL.md)
-- [`relationship-type-drafter`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-type-drafter/SKILL.md)
+- [`relationship-instance-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-instance-draft-registration/SKILL.md)
+- [`trace-chain-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/trace-chain-draft-registration/SKILL.md)
+- [`entity-type-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/entity-type-draft-registration/SKILL.md)
+- [`relationship-type-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/skills/relationship-type-draft-registration/SKILL.md)
 
 ### Target stage and downstream consolidation
 
