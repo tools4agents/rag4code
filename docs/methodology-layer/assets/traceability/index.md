@@ -23,7 +23,10 @@
 - [`entity-registries.md`](./entity-registries.md) — registry pattern для Entity instances.
 - [`relationship-and-trace-maps.md`](./relationship-and-trace-maps.md) — Relationship registry and Trace map model.
 - [`graph-projection.md`](./graph-projection.md) — derived graph DB and MCP relationship.
+- [`adr/`](./adr/) — asset-local design records for traceability-system decisions.
 - [`resources/`](./resources/) — templates для project materialization.
+
+Asset design records in `adr/` фиксируют локальные design decisions этого asset. Они похожи на ADR по смыслу, но относятся к design governance конкретного methodology asset, not to whole-system architecture.
 
 ## Baseline project materialization
 

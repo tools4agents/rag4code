@@ -64,6 +64,8 @@ Recommended table:
 
 Trace chain is not a replacement for Relationship instances. It is a curated path over atomic Relationships.
 
+Trace map does not use a `Trace chain type catalog` by default. Trace chain instances use the default `TR-` Trace Identifier family unless project-local documentation explicitly overrides it. Rationale is recorded in [`trace-chain-type-catalog-decision.md`](./adr/trace-chain-type-catalog-decision.md).
+
 ## Why both registries exist
 
 Atomic Relationship instances are good for graph projection and precise relationship maintenance.

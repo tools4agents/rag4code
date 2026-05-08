@@ -229,7 +229,13 @@ Default family:
 TR-
 ```
 
-Этот asset не вводит `Trace chain type` taxonomy. Если после practical usage появятся устойчивые кластеры Trace chains, их можно выделить отдельным decision/task.
+Этот asset сейчас использует одну Trace Identifier family and does not define a `Trace chain type catalog`.
+
+Причина: Trace chain instances are curated meaningful paths over Relationship instances. В отличие от Entity instances and Relationship instances, для Trace chain instances пока нет stable, reusable type families with distinct governance, lifecycle or routing semantics.
+
+Если practical usage позже выявит устойчивые кластеры Trace chains с разными lifecycle, review, routing, ownership or downstream-consumption semantics, asset может ввести `Trace chain type` taxonomy через explicit design decision.
+
+See: [`trace-chain-type-catalog-decision.md`](./adr/trace-chain-type-catalog-decision.md).
 
 ### Trace map / Trace chain registry
 
