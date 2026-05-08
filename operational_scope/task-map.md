@@ -34,6 +34,6 @@
 | Integrate traceability artifacts into Stage 03 System Design | queued | `operational_scope/tasks/wf-026-integrate-traceability-artifacts-into-stage-03-system-design.md` |
 | Migrate traceability terminology to Entity / Relationship model | completed | `operational_scope/tasks/wf-027-migrate-traceability-terminology-to-entity-relationship-model.md` |
 | Generalize Stage 01 Product traceability skills to universal SDLC skills | completed | `operational_scope/tasks/wf-028-generalize-stage-01-product-traceability-skills.md` |
-| Migrate Stage 02 traceability profile to profile-map pattern | queued | `operational_scope/tasks/wf-029-migrate-stage-02-traceability-profile-to-profile-map.md` |
-| Review Stage 02 traceability profile-map migration | queued | `operational_scope/tasks/wf-030-review-stage-02-traceability-profile-map-migration.md` |
+| Migrate Stage 02 traceability profile to profile-map pattern | completed | `operational_scope/tasks/wf-029-migrate-stage-02-traceability-profile-to-profile-map.md` |
+| Review Stage 02 traceability profile-map migration | completed | `operational_scope/tasks/wf-030-review-stage-02-traceability-profile-map-migration.md` |
 | Validate/generalize Stage Traceability Profile for Stage 04+ and later SDLC stages | blocked | `operational_scope/findings/stage-traceability-profile-critic-pass.md` |

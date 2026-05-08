@@ -156,31 +156,45 @@ assets/metodologes/waterfall/software-development-methodology/stages/02-architec
 
 ## Definition of Done
 
-- [ ] `architecture-traceability-profile.md` is a profile map, not a monolithic detailed guidance document.
-- [ ] Stage 02 has five focused docs under `resources/traceability/`.
-- [ ] Focused docs contain Architecture-specific boundaries, candidates, examples and routing rules.
-- [ ] Focused docs do not duplicate universal skill governance/algorithms.
-- [ ] Architecture ownership boundaries remain explicit and correct.
-- [ ] Product/System/Test/task/code ownership is not silently taken by Architecture Design.
-- [ ] Universal skill names are current:
+- [x] `architecture-traceability-profile.md` is a profile map, not a monolithic detailed guidance document.
+- [x] Stage 02 has five focused docs under `resources/traceability/`.
+- [x] Focused docs contain Architecture-specific boundaries, candidates, examples and routing rules.
+- [x] Focused docs do not duplicate universal skill governance/algorithms.
+- [x] Architecture ownership boundaries remain explicit and correct.
+- [x] Product/System/Test/task/code ownership is not silently taken by Architecture Design.
+- [x] Universal skill names are current:
   - `entity-type-draft-registration`;
   - `relationship-type-draft-registration`;
   - `entity-instance-draft-registration`;
   - `relationship-instance-draft-registration`;
   - `trace-chain-draft-registration`.
-- [ ] No old skill names remain under Stage 02:
+- [x] No old skill names remain under Stage 02:
   - `trace-type-drafter`;
   - `relationship-type-drafter`;
   - `relationship-instance-draft-capture`;
   - `trace-chain-draft-capture`.
-- [ ] No `draft capture` / `draft-capture` wording remains under Stage 02 traceability docs unless there is explicit rationale.
-- [ ] No Trace chain type catalog is introduced.
-- [ ] Links to pattern, skills, generic traceability asset and SDLC traceability resources are correct.
-- [ ] Report changed files and unresolved semantic questions, if any.
+- [x] No `draft capture` / `draft-capture` wording remains under Stage 02 traceability docs unless there is explicit rationale.
+- [x] No Trace chain type catalog is introduced.
+- [x] Links to pattern, skills, generic traceability asset and SDLC traceability resources are correct.
+- [x] Report changed files and unresolved semantic questions, if any.
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: Assign to implementation agent, then run independent critical review against Stage 01 pattern and Stage 02 ownership boundaries.
+- Current State: completed
+- Next Step: Run independent critical review against Stage 01 pattern and Stage 02 ownership boundaries (`wf-030`).
 - Blockers: none known.
-- Verification: grep old skill names/draft-capture wording under Stage 02; read profile map and focused docs for layering and ownership consistency.
+- Verification: grep old skill names/draft-capture wording under Stage 02; read profile map and focused docs for layering and ownership consistency. Completed during migration.
+
+## Completion Notes
+
+- Changed files:
+  - `assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/resources/architecture-traceability-profile.md`;
+  - `assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/resources/traceability/entity-types.md`;
+  - `assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/resources/traceability/relationship-types.md`;
+  - `assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/resources/traceability/entities.md`;
+  - `assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/resources/traceability/relationships.md`;
+  - `assets/metodologes/waterfall/software-development-methodology/stages/02-architecture-design/resources/traceability/trace-chains.md`;
+  - `operational_scope/task-map.md`;
+  - `operational_scope/tasks/wf-029-migrate-stage-02-traceability-profile-to-profile-map.md`.
+- Unresolved semantic questions: none identified during this migration.
+- Follow-up: `wf-030` remains the independent critical review task.
