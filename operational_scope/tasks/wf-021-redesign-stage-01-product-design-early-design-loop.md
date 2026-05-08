@@ -150,11 +150,12 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-product-
   steps/
     01-product-design-context-intake/STEP.md
     02-product-problem-value-actor-framing/STEP.md
-    03-product-capabilities-responsibilities-scope-framing/STEP.md
-    04-product-usage-scenarios-acceptance-criteria/STEP.md
-    05-product-uncertainty-evidence-routing/STEP.md
-    06-product-baseline-materialization/STEP.md
-    07-product-intent-review-design-routing/STEP.md
+    03-product-capabilities-responsibilities-framing/STEP.md
+    04-product-scope-nongoals-risk-acceptance-framing/STEP.md
+    05-product-usage-scenarios-acceptance-criteria/STEP.md
+    09-product-uncertainty-evidence-routing/STEP.md
+    10-product-baseline-materialization/STEP.md
+    12-product-intent-semantic-review-design-routing/STEP.md
 ```
 
 Key accepted decisions:

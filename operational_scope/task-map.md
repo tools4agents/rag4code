@@ -33,4 +33,4 @@
 | Integrate traceability artifacts into Stage 02 Architecture Design | completed | `operational_scope/tasks/wf-025-integrate-traceability-artifacts-into-stage-02-architecture-design.md` |
 | Integrate traceability artifacts into Stage 03 System Design | queued | `operational_scope/tasks/wf-026-integrate-traceability-artifacts-into-stage-03-system-design.md` |
 | Migrate traceability terminology to Entity / Relationship model | completed | `operational_scope/tasks/wf-027-migrate-traceability-terminology-to-entity-relationship-model.md` |
-| Generalize Stage 01 Product traceability skills to universal SDLC skills | queued | `operational_scope/tasks/wf-028-generalize-stage-01-product-traceability-skills.md` |
+| Generalize Stage 01 Product traceability skills to universal SDLC skills | completed | `operational_scope/tasks/wf-028-generalize-stage-01-product-traceability-skills.md` |

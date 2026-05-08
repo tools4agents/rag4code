@@ -55,11 +55,11 @@ Stage 01 local skills теперь частично дублируют universal
 ### Stage 01 Product Design
 
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/workflow.md)
-- [`product-entity-draft-registration`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/skills/product-entity-draft-registration/SKILL.md)
-- [`product-trace-seed-capture`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/skills/product-trace-seed-capture/SKILL.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/05-product-entity-registry-consolidation/STEP.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/06-product-relationship-trace-skeleton-consolidation/STEP.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/09-product-traceability-structural-review/STEP.md)
+- [`product-traceability-profile.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/resources/product-traceability-profile.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/06-product-entity-registry-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/07-product-relationship-instance-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/08-product-trace-chain-handoff-seed-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/11-product-traceability-structural-review/STEP.md)
 
 ### Stage 02 reference implementation
 
@@ -141,7 +141,7 @@ Do not create new stage-specific mechanics skills unless analysis shows a clear 
 
 ## Execution Status
 
-- Current State: queued
-- Next Step: Analyze Stage 01 local skills against universal skills and propose migration strategy before editing.
+- Current State: completed
+- Completed outcome: Stage 01 Product traceability now uses a stage-local `product-traceability-profile.md` plus universal methodology-level traceability skills; old Stage 01 local skill files were removed; Stage 01 steps were split so authoring-time partial capture happens in steps 02–05 and traceability consolidation/review is separated into Entity, Relationship, Trace/Handoff and Structural Review steps.
 - Blockers: none
-- Verification: read/grep consistency checks for Stage 01 skill references, universal skill references, link correctness and absence of duplicated generic mechanics.
+- Verification: grep consistency checks for removed Stage 01 local skill references, universal skill references, product traceability profile references, and absence of new `vacancy.md` files.

@@ -30,11 +30,12 @@
 ### Target stage and downstream consolidation
 
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/workflow.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/05-product-entity-registry-consolidation/STEP.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/06-product-relationship-trace-skeleton-consolidation/STEP.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/08-product-baseline-materialization/STEP.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/09-product-traceability-structural-review/STEP.md)
-- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/10-product-intent-semantic-review-design-routing/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/06-product-entity-registry-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/07-product-relationship-instance-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/08-product-trace-chain-handoff-seed-consolidation/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/10-product-baseline-materialization/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/11-product-traceability-structural-review/STEP.md)
+- [`STEP.md`](../../assets/metodologes/waterfall/software-development-methodology/stages/01-product-design/steps/12-product-intent-semantic-review-design-routing/STEP.md)
 - [`workflow.md`](../../assets/metodologes/waterfall/software-development-methodology/workflows/design-baseline-consolidation/workflow.md)
 
 ## Цель
@@ -52,7 +53,7 @@
 - guidance for adding optional `docs/product/entities/<entity-id>.md` detail pages when row-level description is insufficient;
 - guidance for contributing product-local Relationship instances to `docs/traceability/relationships-map.md` or downstream trace seeds as handoff notes when downstream Entity instances do not exist yet;
 - guidance to use/request Relationship types from `docs/traceability/relationship-type-catalog.md`;
-- add Product Entity Registry Consolidation, Product Relationship & Trace Skeleton Consolidation and Product Traceability Structural Review steps;
+- add Product Entity Registry Consolidation, Product Relationship Instance Consolidation, Product Trace Chain & Handoff Seed Consolidation and Product Traceability Structural Review steps;
 - update Product Baseline Materialization and Product Intent Semantic Review step docs to mention traceability artifacts;
 - clarify that Product Design does not own System/Architecture Entity instances;
 - clarify handoff expectations for Design Baseline Consolidation.
@@ -80,12 +81,13 @@ assets/metodologes/waterfall/software-development-methodology/stages/01-product-
 Affected steps:
 
 ```text
-05-product-entity-registry-consolidation/STEP.md
-06-product-relationship-trace-skeleton-consolidation/STEP.md
-07-product-uncertainty-evidence-routing/STEP.md
-08-product-baseline-materialization/STEP.md
-09-product-traceability-structural-review/STEP.md
-10-product-intent-semantic-review-design-routing/STEP.md
+06-product-entity-registry-consolidation/STEP.md
+07-product-relationship-instance-consolidation/STEP.md
+08-product-trace-chain-handoff-seed-consolidation/STEP.md
+09-product-uncertainty-evidence-routing/STEP.md
+10-product-baseline-materialization/STEP.md
+11-product-traceability-structural-review/STEP.md
+12-product-intent-semantic-review-design-routing/STEP.md
 ```
 
 ## Definition of Done
