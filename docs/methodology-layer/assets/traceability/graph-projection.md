@@ -37,7 +37,7 @@ Relationship instance -> graph edge
 Trace chain instance -> curated graph path over Relationship instances
 ```
 
-This mapping is one-way for ownership: graph projection may accelerate traversal, but source files own accepted traceability facts.
+This mapping is one-way for ownership: graph projection may accelerate traversal, but source files own active traceability facts.
 
 ## MCP role
 

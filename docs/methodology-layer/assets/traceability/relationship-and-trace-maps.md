@@ -30,7 +30,7 @@ Recommended table:
 ```markdown
 | From | Relationship type | To | Source | Status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| ENT-A | relates-to | ENT-B | `docs/example/entities-map.md` | accepted | Short rationale. |
+| ENT-A | relates-to | ENT-B | `docs/example/entities-map.md` | active | Short rationale. |
 ```
 
 Column meaning:
@@ -39,7 +39,7 @@ Column meaning:
 - `Relationship type` — semantic type of Relationship, preferably from `relationship-type-catalog.md`;
 - `To` — target Entity instance ID;
 - `Source` — document or evidence source for the Relationship;
-- `Status` — `draft`, `accepted`, `provisional`, `deprecated` or project-selected status;
+- `Status` — `draft`, `provisional`, `active`, `deprecated` or project-selected status;
 - `Notes` — short rationale or qualification.
 
 If an implementation or table parser calls the stored type value a `label`, treat that as storage representation only. The semantic concept remains Relationship type.
@@ -59,7 +59,7 @@ Recommended table:
 ```markdown
 | Trace ID | Chain | Meaning | Status | Notes |
 | --- | --- | --- | --- | --- |
-| TR-001 | `ENT-A -> ENT-B -> ENT-C` | Why this path matters. | accepted | Optional note. |
+| TR-001 | `ENT-A -> ENT-B -> ENT-C` | Why this path matters. | active | Optional note. |
 ```
 
 Trace chain is not a replacement for Relationship instances. It is a curated path over atomic Relationships.

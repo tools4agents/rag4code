@@ -37,7 +37,7 @@ Recommended minimum table:
 ```markdown
 | ID | Type | Name | Short meaning | Detail page | Status |
 | --- | --- | --- | --- | --- | --- |
-| ENT-001 | example-type | Example entity | Short explanation. | [`ENT-001`](./entities/ENT-001.md) | accepted |
+| ENT-001 | example-type | Example entity | Short explanation. | [`ENT-001`](./entities/ENT-001.md) | active |
 ```
 
 Recommended columns:
@@ -47,7 +47,7 @@ Recommended columns:
 - `Name` — human-readable name;
 - `Short meaning` — concise agent-readable explanation;
 - `Detail page` — optional link;
-- `Status` — lifecycle status such as `draft`, `accepted`, `deprecated`, `provisional`.
+- `Status` — lifecycle status such as `draft`, `provisional`, `active`, `deprecated`.
 
 Projects may add columns if needed, but should preserve grep-friendly identifiers.
 
@@ -57,9 +57,9 @@ Baseline `Status` values:
 
 | Status | Meaning | Agent expectation |
 | --- | --- | --- |
-| `draft` | Entity is being shaped and is not accepted as stable project knowledge yet. | Do not treat as durable baseline without checking context or owner. |
+| `draft` | Entity is being shaped and is not active stable project knowledge yet. | Do not treat as durable baseline without checking context or owner. |
 | `provisional` | Entity is usable for current reasoning, but has explicit assumptions, warnings or unresolved validation needs. | May use with caution; preserve warnings and avoid hiding uncertainty. |
-| `accepted` | Entity is accepted as current project SoT for its domain. | May use as baseline and link from relationships/traces/tests/tasks. |
+| `active` | Entity is current accepted project SoT for its domain. | May use as baseline and link from relationships/traces/tests/tasks. |
 | `deprecated` | Entity was valid before but should no longer be used for new decisions. | Follow replacement note if present; do not create new traces unless migration requires it. |
 
 Projects may add more specific statuses if needed, but these four statuses form the generic traceability baseline.

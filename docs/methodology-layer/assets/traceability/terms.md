@@ -221,7 +221,7 @@ Trace chain instance не заменяет Relationship instances. Его chain 
 
 ### Trace Identifier family
 
-Stable project-local identifier family for Trace chain instances.
+Stable project-local identifier family для Trace chain instances.
 
 Default family:
 
@@ -229,13 +229,13 @@ Default family:
 TR-
 ```
 
-Этот asset сейчас использует одну Trace Identifier family and does not define a `Trace chain type catalog`.
+Этот asset сейчас использует одну Trace Identifier family и не определяет `Trace chain type catalog`.
 
-Причина: Trace chain instances are curated meaningful paths over Relationship instances. В отличие от Entity instances and Relationship instances, для Trace chain instances пока нет stable, reusable type families with distinct governance, lifecycle or routing semantics.
+Причина: Trace chain instances — это curated meaningful paths over Relationship instances. В отличие от Entity instances and Relationship instances, для Trace chain instances пока нет stable, reusable type families with distinct governance, lifecycle or routing semantics.
 
 Если practical usage позже выявит устойчивые кластеры Trace chains с разными lifecycle, review, routing, ownership or downstream-consumption semantics, asset может ввести `Trace chain type` taxonomy через explicit design decision.
 
-See: [`trace-chain-type-catalog-decision.md`](./adr/trace-chain-type-catalog-decision.md).
+См. [`trace-chain-type-catalog-decision.md`](./adr/trace-chain-type-catalog-decision.md).
 
 ### Trace map / Trace chain registry
 
