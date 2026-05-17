@@ -26,6 +26,8 @@ coverage.xml
 # Assets nested git repos
 # Игнорировать все файлы внутри assets/
 assets/**/*
+# Nested git repo waterfall
+assets/metodologes/waterfall/.git
 
 # Обязательно сначала разрешаем все директории
 # Без этой строки Git НИКОГДА не будет проверять правила внутри игнорированных папок
