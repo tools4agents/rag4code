@@ -160,6 +160,7 @@ Environment-facing runtime должен рассматриваться как `R
 - `docs/methodology-layer/patterns/human-orchestrated-sdlc-evolution-pattern.md` — постепенное развитие SDLC для code agents через practical human orchestration, real project usage and delayed formalization
 - `docs/methodology-layer/patterns/reviewable-automation-pattern.md` — collaboration loop между ИИ-агентом и deterministic algorithm/tool по схеме `plan -> review -> apply -> verify`
 - `docs/methodology-layer/patterns/spike-experiment-evidence-pattern.md` — decomposition `executor -> evidence artifacts -> analyzer -> summary -> spike report` для repeatable evidence-producing spike experiments
+- `docs/methodology-layer/patterns/spike-to-prototype-evolution-pattern.md` — итеративная разработка прототипа через `spike -> draft component -> componentized spike -> hardening`
 
 ### 5.5 Contracts
 
