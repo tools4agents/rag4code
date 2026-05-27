@@ -120,6 +120,14 @@ Unscoped task map:
 operational_scope/tasks/task-map.md
 ```
 
+Optional active focus router:
+
+```text
+operational_scope/tasks/active_task_focus.md
+```
+
+`active_task_focus.md` points to current task maps, current task files and important supporting artifacts. It is a current-focus router, not a replacement for task maps or task artifacts.
+
 Task maps can group tasks by sections:
 
 ```markdown
@@ -191,3 +199,4 @@ Do not create a separate operational output folder for execution task results un
 - `tasks/<task-type>/` contains task briefs / execution tracking, not evidence reports.
 - `<evidence-type>/<evidence-slug>/` contains evidence outputs, not task briefs.
 - `operational_scope/task-map.md` is central navigation, while local task maps live in `tasks/task-map.md` or `initiatives/<initiative-slug>/tasks/task-map.md`.
+- `operational_scope/tasks/active_task_focus.md`, if present, is a current-focus router and must not duplicate full task inventories.

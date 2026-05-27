@@ -16,6 +16,7 @@
 
 - где живут task-oriented operational artifacts;
 - какой файл считается task index;
+- какой файл может фиксировать current active task focus;
 - как фиксируется execution context;
 - как в task index фиксируются этапы разработки и sequential tasks внутри этапов;
 - как задачи связываются с engineering SoT и при необходимости с отдельными supporting artifacts.
@@ -27,6 +28,7 @@
 ```text
 operational_scope/
   tasks/
+    active_task_focus.md
   task-map.md
 ```
 
@@ -37,6 +39,7 @@ operational_scope/
   task-map.md
   inputs/
   tasks/
+    active_task_focus.md
     task-map.md
     execution/
     research/
@@ -62,6 +65,7 @@ operational_scope/
 
 - `operational_scope/task-map.md` — канонический индекс task-layer; в scope-aware режиме это central navigation index для task scopes;
 - `operational_scope/tasks/` — baseline storage location для исполнимых [`task artifacts`](../../../terms/project/terms/task-artifact.md);
+- `operational_scope/tasks/active_task_focus.md` — optional active focus router для текущей работы;
 - `operational_scope/tasks/task-map.md` — task index для unscoped tasks;
 - `operational_scope/initiatives/<initiative-slug>/tasks/task-map.md` — task index внутри initiative workspace;
 - `operational_scope/initiatives/<initiative-slug>/tasks/<task-type>/` — initiative-scoped task artifacts.
@@ -89,6 +93,60 @@ operational_scope/
 - ссылку на task file.
 
 Индекс нужен для quick navigation и focus management, а не для повторного пересказа содержимого task files.
+
+## Active task focus
+
+`active_task_focus.md` — optional companion artifact для task-map system.
+
+Он нужен, когда проекту или workspace требуется короткий current-focus router, который агент читает после project entry points и перед погружением в task index, task files and supporting docs.
+
+Baseline path:
+
+```text
+operational_scope/tasks/active_task_focus.md
+```
+
+### Роль active focus
+
+`active_task_focus.md` отвечает на вопросы:
+
+- что делается прямо сейчас;
+- зачем это делается в текущем SDLC context;
+- какие task files нужно выполнять сейчас;
+- какие task files, decisions, contracts, architecture docs or evidence нужно держать в контексте;
+- чего не делать по умолчанию в текущем focus window.
+
+### Граница с task-map
+
+`Task-map` остается индексом задач, stages, статусов and dependency route.
+
+`active_task_focus.md` не должен становиться альтернативным task index. Он может ссылаться на один или несколько task maps and task files, но не должен повторять полные таблицы задач.
+
+Если текущая работа меняет route, source-of-truth update должен затронуть оба слоя:
+
+```text
+task-map.md
+  stable task route, statuses and task inventory
+
+active_task_focus.md
+  current focus, read-first route and local do/do-not-do guidance
+```
+
+### Когда active focus полезен
+
+Отдельный `active_task_focus.md` особенно полезен, когда:
+
+- task map большой или stage-aware;
+- текущий focus зависит от нескольких task files, contracts, architecture docs or evidence outputs;
+- агентам нужен short handoff между сессиями;
+- есть важные non-goals, которые должны быть видны до чтения всех деталей;
+- task-map должен оставаться compact index, а не narrative context dump.
+
+Для маленьких проектов current focus section внутри `task-map.md` может быть достаточной. Если появляется отдельный `active_task_focus.md`, current focus в `task-map.md` должен оставаться коротким и указывать на active focus file.
+
+Reusable template:
+
+- [`active-task-focus.template.md`](./resources/active-task-focus.template.md)
 
 ## Scope-aware task maps
 
@@ -165,7 +223,7 @@ evidence output:
 
 - таблицу этапов;
 - по одной компактной таблице задач на каждый этап;
-- секцию `Current focus`;
+- короткую секцию `Current focus` или ссылку на `active_task_focus.md`;
 - короткую `Execution policy`.
 
 ### Recommended minimal stage model
@@ -242,6 +300,16 @@ Stage-aware decomposition нужна, чтобы:
 - короткое `Decision rule` для перехода к следующему task;
 - stage-level status.
 
+`active_task_focus.md` может дополнительно хранить session-facing execution context:
+
+- `Read first` route;
+- `Execute now` task pointer;
+- important related tasks to keep in context;
+- current invariants and non-goals;
+- pointers to contracts, architecture docs and evidence outputs.
+
+Он не заменяет `Execution Status` внутри bounded task artifacts.
+
 ## Связь с SDLC workflow
 
 `Task-map` не заменяет SDLC workflow и не определяет, когда именно work item должен стать задачей.
@@ -296,7 +364,7 @@ Idea, plan, research and spike artifacts являются supporting/source arti
 
 - `task-setter`;
 - `task-handoff-writer`;
-- `active-task-setter` или его будущего аналога;
+- `active-task-setter` или его будущего аналога для обновления `active_task_focus.md`;
 - `task-materializer`;
 - `taskset-materializer`;
 - `idea-capture`;
@@ -312,6 +380,7 @@ Idea, plan, research and spike artifacts являются supporting/source arti
 Для bootstrap нового `operational_scope/task-map.md` можно использовать reusable template:
 
 - [`task-map.template.md`](./resources/task-map.template.md)
+- [`active-task-focus.template.md`](./resources/active-task-focus.template.md) для optional current-focus router.
 
 Template не задает обязательный process model, но дает:
 
@@ -336,6 +405,7 @@ Template не задает обязательный process model, но дает
 - [`documentation-lifecycle-layers.md`](../knowledge-lifecycle/documentation-lifecycle-layers.md);
 - [`operational-artifact-path-rules.md`](./resources/operational-artifact-path-rules.md);
 - [`task-map.template.md`](./resources/task-map.template.md);
+- [`active-task-focus.template.md`](./resources/active-task-focus.template.md);
 - [`overview.md`](../../overview.md).
 
 ## Canonical invariants
@@ -343,12 +413,14 @@ Template не задает обязательный process model, но дает
 - `task-map` является concrete `task-management-system asset`.
 - `operational_scope/task-map.md` является каноническим task index для этой системы and may act as central navigation index for task scopes.
 - `operational_scope/tasks/` является baseline storage location для [`task artifacts`](../../../terms/project/terms/task-artifact.md).
+- `operational_scope/tasks/active_task_focus.md` может использоваться как короткий current-focus router and handoff artifact.
 - Scope-aware task maps group tasks by initiative workspace or unscoped task area.
 - Initiative task artifacts live under `operational_scope/initiatives/<initiative-slug>/tasks/<task-type>/`.
 - Unscoped task artifacts live under `operational_scope/tasks/<task-type>/`.
 - Evidence output artifacts live outside `tasks/`: under `operational_scope/initiatives/<initiative-slug>/<evidence-type>/<evidence-slug>/` or `operational_scope/<evidence-type>/<evidence-slug>/`.
 - Detailed path rules are defined in [`operational-artifact-path-rules.md`](./resources/operational-artifact-path-rules.md).
 - task index может быть как flat, так и stage-aware, если это помогает execution continuity.
+- task-map остается индексом задач; active focus, если он существует, хранит current focus narrative and read-first route.
 - task-oriented operational artifacts должны жить в task-layer, а не в `docs/`.
 - task system не должна подменять knowledge lifecycle model.
 - task artifacts обычно опираются на [`Engineering Documentation SoT`](../../../terms/project/terms/engineering-documentation-sot.md).

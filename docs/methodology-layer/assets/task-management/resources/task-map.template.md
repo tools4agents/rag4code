@@ -74,9 +74,14 @@ initiative:
 
 ## Текущий фокус
 
+Если проект использует отдельный `active_task_focus.md`, держи этот блок коротким и ссылайся на него.
+
 - Active stage: `<Stage N>`
 - Active task candidate: `<Task ID and name>`
 - Decision rule: <What must be agreed or stabilized before the next task opens>
+- Active focus file: [`active_task_focus.md`](./active_task_focus.md) или `not used`
+
+Для отдельного active focus файла используй [`active-task-focus.template.md`](./active-task-focus.template.md).
 
 ## Execution policy
 
@@ -96,4 +101,5 @@ initiative:
 - Используй этот template как стартовую форму для stage-aware `task-map`.
 - Убирай лишние stages, если проект меньше и flat list удобнее.
 - Не превращай `task-map` в длинный narrative plan: детали исполнения живут в task files.
+- Если current focus требует narrative context, read-first route или do/do-not-do guidance, вынеси это в `active_task_focus.md`.
 - Архитектурный канон должен жить в `docs/`, а `task-map` должен оставаться execution index.
