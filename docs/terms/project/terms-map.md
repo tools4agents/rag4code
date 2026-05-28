@@ -38,6 +38,17 @@
 
 | Термин | Краткое определение | Детальная страница |
 | --- | --- | --- |
+| project | Доменная сущность HyperGraph, которая представляет один локальный engineering project с собственным root, config и производной graph database. | `docs/terms/project/terms/project.md` |
+| project-root | Локальная filesystem директория, которая задает границу одного `project` для индексации, анализа и файловых операций HyperGraph. | `docs/terms/project/terms/project-root.md` |
+| project-config | Настройки одного `project`, которые определяют project-local поведение HyperGraph, включая exclude rules для индексации. | `docs/terms/project/terms/project-config.md` |
+| project-database | Изолированное хранилище derived graph representation для одного `project`; пересчитывается из project files и не является Source of Truth. | `docs/terms/project/terms/project-database.md` |
+| source-of-truth | Слой или artifact, которому принадлежит authoritative state для конкретного вида знания или данных. | `docs/terms/project/terms/source-of-truth.md` |
+| derived-index | Пересчитываемое представление состояния проекта, построенное из project files и project configuration. | `docs/terms/project/terms/derived-index.md` |
+| graph-node | Vertex в graph representation HyperGraph, который представляет файл, инженерный artifact, термин, code artifact, project или другую domain entity. | `docs/terms/project/terms/graph-node.md` |
+| file-type | Physical classification файла, из которого HyperGraph строит или может строить graph representation. | `docs/terms/project/terms/file-type.md` |
+| semantic-type | Смысловая классификация graph node или artifact внутри HyperGraph. | `docs/terms/project/terms/semantic-type.md` |
+| affected-file | Файл внутри `project`, который может потребовать изменения, проверки или review из-за операции над другим artifact. | `docs/terms/project/terms/affected-file.md` |
+| impact-report | Explainable report, который показывает последствия planned или performed операции в HyperGraph. | `docs/terms/project/terms/impact-report.md` |
 | Project Methodology Runtime | Слой HyperGraph, который управляет methodology artifacts проекта, хранит project methodology intent, materialize runtime для agent environment и поддерживает traceability через derived graph. | none |
 | methodology | В контексте проекта это формализованная модель разработки ПО вместе с командой ИИ-агентов: она задает `methodology workflow`, активные rules, skills, MCP tools и другие process artifacts. Методология также может содержать описания отдельных `workflow`, которые используются внутри проекта. | none |
 | methodology workflow | Центральный workflow разработки проекта. Он задает основную методологию разработки, главный процесс, которого придерживаются при разработке проекта, и определяет как связываются workflow, шаги, роли и результаты. Методология носит рекомендательный характер и должна быть удобной для разработчиков и агентов. | none |
@@ -90,6 +101,17 @@
 ## 5. Какие термины требуют особой синхронизации
 
 Следующие project-specific термины должны использоваться во всех документах слоя строго единообразно:
+- project
+- project-root
+- project-config
+- project-database
+- source-of-truth
+- derived-index
+- graph-node
+- file-type
+- semantic-type
+- affected-file
+- impact-report
 - Project Methodology Runtime
 - methodology
 - methodology workflow
