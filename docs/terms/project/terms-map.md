@@ -39,9 +39,15 @@
 | Термин | Краткое определение | Детальная страница |
 | --- | --- | --- |
 | project | Доменная сущность HyperGraph, которая представляет один локальный engineering project с собственным root, config и производной graph database. | `docs/terms/project/terms/project.md` |
+| project-key | Portable logical identity одного `project`, заданный человеком в project-local config. | `docs/terms/project/terms/project-key.md` |
+| project-instance-id | Machine-local identifier конкретной регистрации `project` в HyperGraph registry. | `docs/terms/project/terms/project-instance-id.md` |
+| project-registry | Machine-local реестр projects, зарегистрированных в HyperGraph на ОС пользователя. | `docs/terms/project/terms/project-registry.md` |
 | project-root | Локальная filesystem директория, которая задает границу одного `project` для индексации, анализа и файловых операций HyperGraph. | `docs/terms/project/terms/project-root.md` |
 | project-config | Настройки одного `project`, которые определяют project-local поведение HyperGraph, включая exclude rules для индексации. | `docs/terms/project/terms/project-config.md` |
-| project-database | Изолированное хранилище derived graph representation для одного `project`; пересчитывается из project files и не является Source of Truth. | `docs/terms/project/terms/project-database.md` |
+| project-database | Logical derived graph database для одного `project`; пересчитывается из project files и может обслуживаться отдельным `database-service`. | `docs/terms/project/terms/project-database.md` |
+| database-service | Runtime backend, с которым HyperGraph service общается для чтения и записи derived graph state. | `docs/terms/project/terms/database-service.md` |
+| database-backend-config | Machine-local configuration, которая описывает available `database-service` backend и способ подключения или запуска этого backend. | `docs/terms/project/terms/database-backend-config.md` |
+| project-database-binding | Machine-local registry record, который связывает конкретный `project-instance-id` с logical `project-database` inside selected `database-service`. | `docs/terms/project/terms/project-database-binding.md` |
 | source-of-truth | Слой или artifact, которому принадлежит authoritative state для конкретного вида знания или данных. | `docs/terms/project/terms/source-of-truth.md` |
 | derived-index | Пересчитываемое представление состояния проекта, построенное из project files и project configuration. | `docs/terms/project/terms/derived-index.md` |
 | graph-node | Vertex в graph representation HyperGraph, который представляет файл, инженерный artifact, термин, code artifact, project или другую domain entity. | `docs/terms/project/terms/graph-node.md` |
@@ -102,9 +108,15 @@
 
 Следующие project-specific термины должны использоваться во всех документах слоя строго единообразно:
 - project
+- project-key
+- project-instance-id
+- project-registry
 - project-root
 - project-config
 - project-database
+- database-service
+- database-backend-config
+- project-database-binding
 - source-of-truth
 - derived-index
 - graph-node
