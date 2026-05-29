@@ -14,6 +14,7 @@ Architecture Design опирается на [`Product Documentation`](../product
 
 1. [`core-and-adapters.md`](./core-and-adapters.md) — core, ports, adapters, CLI and MCP boundary.
 2. [`storage-and-indexing.md`](./storage-and-indexing.md) — derived storage, indexing pipeline, parser boundary and storage capability requirements.
+3. [`project-registry-and-database-service.md`](./project-registry-and-database-service.md) — registry storage, database backend config, project database binding and database service integration.
 
 ## Границы раздела
 

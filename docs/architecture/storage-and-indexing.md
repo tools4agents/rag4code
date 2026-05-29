@@ -21,6 +21,8 @@ Architecture implications:
 - storage adapter must not become authoritative owner of project content;
 - storage corruption or loss should be recoverable through rebuild.
 
+Physical access to a project database is resolved through [`project-database-binding`](../terms/project/terms/project-database-binding.md) and [`database-backend-config`](../terms/project/terms/database-backend-config.md), as described in [`project-registry-and-database-service.md`](./project-registry-and-database-service.md).
+
 ## Indexing pipeline
 
 First-iteration indexing pipeline:
@@ -88,11 +90,15 @@ Storage backend should support the product/system direction:
 
 These are capability requirements for architecture evaluation, not a product-level commitment to a specific database technology.
 
+Storage backend configuration must be separated from project database binding: backend connection/startup settings belong to `database-backend-config`, while the mapping from project instance to logical database belongs to `project-database-binding`.
+
 ## Storage backend candidates
 
 Graph-capable or multi-model database can be a strong architecture candidate because HyperGraph needs typed relations, traversal and filtering.
 
 ArcadeDB remains a candidate implementation choice, not a product requirement.
+
+MongoDB and MongoDB Atlas may be candidates for document-oriented registry storage and may also be evaluated for database-service roles if they satisfy graph/query needs or are paired with suitable graph representation strategy.
 
 Other backends may be evaluated if they satisfy first-iteration needs and future graph direction without unnecessary operational complexity.
 

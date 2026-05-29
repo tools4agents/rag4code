@@ -13,8 +13,10 @@ System Design переводит product intent из [`Product Documentation`](.
 ## Порядок чтения
 
 1. [`project-model.md`](./project-model.md) — system-level модель `project`, root, config, database, isolation and excludes.
-2. [`state-ownership.md`](./state-ownership.md) — ownership между Git, filesystem, project files and derived database.
-3. [`graph-model.md`](./graph-model.md) — system-level модель graph nodes, classifications, relations and first-iteration boundaries.
+2. [`project-identity-and-registry.md`](./project-identity-and-registry.md) — identity, local registry, database backend config and project database binding.
+3. [`project-config-format.md`](./project-config-format.md) — TOML format decision for `.hypergraph/project.toml` and config ownership boundaries.
+4. [`state-ownership.md`](./state-ownership.md) — ownership между Git, filesystem, project files and derived database.
+5. [`graph-model.md`](./graph-model.md) — system-level модель graph nodes, classifications, relations and first-iteration boundaries.
 
 ## Границы раздела
 

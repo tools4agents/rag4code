@@ -16,6 +16,9 @@ Product documentation отвечает на вопрос: какой проду�
 2. [`first-iteration-scope.md`](./first-iteration-scope.md) — scope первой итерации, MVP capabilities and non-goals.
 3. [`future-capabilities.md`](./future-capabilities.md) — future capability directions outside first iteration scope.
 
+Related system-level product note:
+- [`project-config-format.md`](../system_design/project-config-format.md) — TOML decision for project-local shared config.
+
 ## Границы раздела
 
 Этот раздел не фиксирует:

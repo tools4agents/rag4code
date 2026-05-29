@@ -10,16 +10,22 @@
 
 Все CLI and MCP operations выполняются в контексте выбранного project. Project задает локальную границу анализа, изоляцию graph state and project-specific configuration.
 
+Project identity and local registration semantics are defined in [`project-identity-and-registry.md`](./project-identity-and-registry.md).
+
 ## Project composition
 
 На первой итерации каждый project имеет:
 - ровно один [`project-root`](../terms/project/terms/project-root.md);
 - один [`project-config`](../terms/project/terms/project-config.md);
 - одну изолированную [`project-database`](../terms/project/terms/project-database.md);
+- один portable [`project-key`](../terms/project/terms/project-key.md);
+- один local [`project-instance-id`](../terms/project/terms/project-instance-id.md) per registration;
 - набор project files внутри root, которые являются Source of Truth для indexed content.
 
 ```text
 Project
+  project-key
+  project-instance-id
   project-root
   project-config
   project-database
@@ -59,7 +65,8 @@ System behavior:
 - database не разделяется между projects;
 - database can be rebuilt from project files;
 - потеря database не является потерей project Source of Truth;
-- stale database после внешних изменений project files требует reindex/rebuild.
+- stale database после внешних изменений project files требует reindex/rebuild;
+- database binding and backend service selection are machine-local registry concerns.
 
 ## Multi-project model
 
