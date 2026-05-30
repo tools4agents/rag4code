@@ -1,5 +1,16 @@
 # Карта задач
 
+## HyperGraph First Iteration
+
+| Задача | Статус | Файл |
+| --- | --- | --- |
+| Consolidate HyperGraph design docs and context entry navigation | queued | `operational_scope/tasks/hg-001-consolidate-design-docs-and-context-entry-navigation.md` |
+| Define project config schema for `.hypergraph/project.toml` | queued | `operational_scope/tasks/hg-002-define-project-config-schema.md` |
+| Define project registry and database binding schemas | queued | `operational_scope/tasks/hg-003-define-project-registry-and-database-binding-schemas.md` |
+| Design project lifecycle CLI/MCP operations | queued | `operational_scope/tasks/hg-004-design-project-lifecycle-operations.md` |
+| Define Markdown MVP link syntax matrix | queued | `operational_scope/tasks/hg-005-define-markdown-link-syntax-matrix.md` |
+| Define link resolution and root safety policy | queued | `operational_scope/tasks/hg-006-define-link-resolution-and-root-safety-policy.md` |
+
 ## Project Methodology Runtime
 
 | Задача | Статус | Файл |
