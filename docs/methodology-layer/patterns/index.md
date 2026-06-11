@@ -27,6 +27,7 @@ Pattern стоит фиксировать здесь, если он:
 ## Текущие patterns
 
 - [`framing-to-terminology-documentation-pattern.md`](framing-to-terminology-documentation-pattern.md) — выбор порядка между architecture focused specs, terms-map и term pages при фиксации новой архитектурной модели
+- [`canonical-model-with-iterative-implementation-profile-pattern.md`](canonical-model-with-iterative-implementation-profile-pattern.md) — фиксация canonical architecture model отдельно от текущего script/proto implementation profile без размножения временных терминов
 - [`human-orchestrated-sdlc-evolution-pattern.md`](human-orchestrated-sdlc-evolution-pattern.md) — постепенное развитие SDLC для code agents через practical human orchestration, real project usage and delayed formalization
 - [`reviewable-automation-pattern.md`](reviewable-automation-pattern.md) — collaboration loop между ИИ-агентом и deterministic algorithm/tool по схеме `plan -> review -> apply -> verify`
 - [`spike-experiment-evidence-pattern.md`](spike-experiment-evidence-pattern.md) — decomposition `executor -> evidence artifacts -> analyzer -> summary -> spike report` для repeatable evidence-producing spike experiments
