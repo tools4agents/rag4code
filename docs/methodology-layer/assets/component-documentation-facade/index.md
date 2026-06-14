@@ -25,10 +25,16 @@
 
 ```text
 README.md
-  -> docs/operational-guide.md for quick operational use
-    -> focused operational docs for the current question
-  -> docs/index.md when full documentation map is needed
-    -> design / ADR / rationale / source code when task requires deeper context
+  -> docs/operational_index.md for quick operational onboarding
+       -> docs/operational-guide.md
+       -> focused operational docs for the current question
+
+  -> docs/index.md for full stable component documentation map
+       -> contracts / design / ADR / rationale / test docs as needed
+
+  -> docs/develop_index.md for development-only context, when it exists
+       -> docs/develop/active_focus.md
+       -> docs/develop/discussions/open_questions.md
 ```
 
 ## Когда использовать
@@ -44,12 +50,30 @@ README.md
 ## Files
 
 - [`SKILL.md`](./SKILL.md) — короткая operational instruction для агента.
+- [`entry-points.md`](./entry-points.md) — intent-based модель трех entry points: operational, stable map и development-only route.
 - [`rationale.md`](./rationale.md) — explanation of why facade-first documentation scales better than source-first discovery.
 - [`structure.md`](./structure.md) — practical layout guide for README, `operational-guide.md`, focused docs and optional `docs/index.md`.
 
+## Entry points
+
+The facade uses intent-based routing:
+
+```text
+docs/operational_index.md
+  answers: how do I quickly understand and use this component?
+
+docs/index.md
+  answers: what stable documentation exists for this component?
+
+docs/develop_index.md
+  answers: how do I continue development and find current state/history?
+```
+
+Detailed rules are defined in [`entry-points.md`](./entry-points.md).
+
 ## Facade vs full documentation map
 
-`docs/operational-guide.md` отвечает:
+`docs/operational_index.md` and `docs/operational-guide.md` отвечают:
 
 ```text
 How do I quickly understand and use this component safely?
@@ -62,6 +86,8 @@ What documentation exists for this component, and where are the entry points / S
 ```
 
 Small components may start without `docs/index.md`. Create `docs/index.md` when component docs grow beyond the operational facade: ADRs, design notes, rationale, multiple contracts, evidence or test documentation.
+
+Create `docs/develop_index.md` only when development-only artifacts exist. Development-only artifacts should live under `docs/develop/` and must not be directly linked from the operational facade.
 
 ## Source code boundary
 

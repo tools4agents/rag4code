@@ -15,18 +15,28 @@ Use it when creating or refactoring component-local docs so the component can be
 ```text
 README.md
 docs/
+  operational_index.md      # quick operational facade route
+  index.md                  # full stable documentation map
+  develop_index.md          # create when development-only artifacts exist
+
   operational-guide.md
-  index.md                  # create when full documentation map is needed
   service-contract.md       # for HTTP/service components
   cli-contract.md           # for CLI-oriented components
   api-contract.md           # for library/package APIs
   config-and-env.md         # for config, env and Secret Reference behavior
   integration-usage.md      # for runner/orchestrator/adjacent component usage
+
+  develop/
+    active_focus.md
+    discussions/
+      open_questions.md
+      <historical-discussion>.md
+
   design/
   adr/
 ```
 
-Not every component needs every file. Create focused docs when the component exposes that operational surface.
+Not every component needs every file. Create focused docs when the component exposes that operational surface. Create `develop_index.md` and `docs/develop/` only when the component has development-only state or discussion history.
 
 ## README.md role
 
@@ -45,13 +55,36 @@ commands
 boundary
 ```
 
-README should link to:
+README should route by intent:
 
-- [`operational-guide.md`](#docsoperational-guidemd-role) for quick operational onboarding;
-- `docs/index.md` when a full documentation map exists;
-- the most important focused docs if that helps immediate navigation.
+```text
+docs/operational_index.md
+  quick operational onboarding
+
+docs/index.md
+  full stable component documentation map
+
+docs/develop_index.md
+  development-only route, when development-only artifacts exist
+```
+
+README may also link to [`operational-guide.md`](#docsoperational-guidemd-role) or the most important contracts when that improves immediate navigation, but route selection should remain clear.
 
 README should not contain all contracts, all config shapes, all design rationale or long troubleshooting history.
+
+## docs/operational_index.md role
+
+`docs/operational_index.md` is the quick operational facade route.
+
+It answers:
+
+```text
+Which small set of docs should I read to understand and use this component now?
+```
+
+It should route to `docs/operational-guide.md` and the few focused docs needed for ordinary use: CLI/API/service contract, config/env, evidence/output and integration usage.
+
+It should not route directly to development-only artifacts under `docs/develop/`.
 
 ## docs/operational-guide.md role
 
@@ -101,6 +134,31 @@ Create `docs/index.md` when component docs include materials that should not be 
 - migration or compatibility notes.
 
 A small component may start without `docs/index.md`. Add it when `operational-guide.md` would otherwise become a mixed navigation map.
+
+`docs/index.md` may link to `docs/develop_index.md` as a clearly separated development-only route, but should not inline current focus, unresolved question lists or historical discussion summaries.
+
+## docs/develop_index.md role
+
+`docs/develop_index.md` is the development-only route.
+
+It answers:
+
+```text
+How do I continue development, and where are current focus, open questions and historical discussion notes?
+```
+
+Create it when the component has current implementation handoff, unresolved questions or historical discussion artifacts.
+
+It should route to:
+
+```text
+docs/develop/active_focus.md
+docs/develop/discussions/open_questions.md
+docs/develop/discussions/<historical-discussion>.md
+stable contracts required before behavior changes
+```
+
+Development-only artifacts should stay under `docs/develop/` so they do not mix with stable component docs.
 
 ## Focused operational docs
 
@@ -157,6 +215,8 @@ Which trade-offs were accepted?
 
 Operational docs may link to them, but should not duplicate their reasoning.
 
+Development-only handoff and discussion docs are different from stable design/ADR docs. Keep temporary state and unresolved questions under `docs/develop/`; promote stabilized decisions into stable focused docs, design docs or ADRs.
+
 ## Source code orientation
 
 The facade should make source code loading selective.
@@ -176,6 +236,7 @@ For a new component, start with:
 
 ```text
 README.md
+docs/operational_index.md
 docs/operational-guide.md
 ```
 
@@ -191,6 +252,8 @@ integration usage
 
 Add `docs/index.md` when the documentation set grows beyond the operational facade.
 
+Add `docs/develop_index.md` and `docs/develop/` when there are development-only artifacts such as active focus, open questions or historical discussion notes.
+
 When creating or updating multiple related docs, use [`batched-artifact-generation`](../batched-artifact-generation/SKILL.md).
 
 ## Consistency checklist
@@ -198,8 +261,11 @@ When creating or updating multiple related docs, use [`batched-artifact-generati
 Before finishing, check:
 
 - README routes instead of becoming a full manual;
+- `operational_index.md` routes only to quick operational/stable usage docs;
 - `operational-guide.md` remains the fast operational path;
 - `docs/index.md`, if present, is a full map rather than another quickstart;
+- `develop_index.md`, if present, is the only route to development-only artifacts;
+- operational facade does not link directly to `docs/develop/active_focus.md`, `docs/develop/discussions/open_questions.md` or historical discussions;
 - focused docs have one bounded context each;
 - operational docs do not absorb ADR/design/rationale material;
 - examples are runnable or clearly marked as candidate/intended;
@@ -214,6 +280,8 @@ Avoid:
 - `index_fast.md` or other names that describe speed rather than document role;
 - README as a dumping ground for every example;
 - one `usage.md` containing service contract, config, ADRs and integration history;
+- operational facade linking directly to active focus, open questions or historical discussion notes;
+- `docs/index.md` becoming a development handoff instead of stable documentation map;
 - duplicating full contract examples across many docs without local need;
 - hiding operational assumptions only in tests;
 - making `docs/index.md` the operational guide after the documentation tree grows.
@@ -222,5 +290,6 @@ Avoid:
 
 - [`index.md`](./index.md)
 - [`SKILL.md`](./SKILL.md)
+- [`entry-points.md`](./entry-points.md)
 - [`rationale.md`](./rationale.md)
 - [`batched-artifact-generation`](../batched-artifact-generation/index.md)
