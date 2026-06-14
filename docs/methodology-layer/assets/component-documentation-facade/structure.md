@@ -232,7 +232,32 @@ Do not write docs as if source code reading is forbidden. The goal is to avoid s
 
 ## Creation workflow
 
-For a new component, start with:
+### Step 0 — component draft without operational facade
+
+If a component source is only a draft, skeleton or development placeholder and does not yet expose stable operational usage, start with a development-only pre-facade:
+
+```text
+README.md
+docs/develop_index.md
+docs/develop/active_focus.md
+```
+
+Use this route when:
+
+```text
+component cannot be safely used as an operational unit yet;
+CLI/API/service contracts are not stable;
+integration behavior is still being designed;
+the main need is to hand off current development focus and project-level context to agents.
+```
+
+`README.md` should briefly describe the intended component role, current maturity and where to read next. `docs/develop_index.md` should route to development-only state and to stable project-level Source of Truth docs required before implementation. `docs/develop/active_focus.md` should describe current implementation focus, immediate next steps, open assumptions and relevant links.
+
+Do not create `docs/operational_index.md` or `docs/operational-guide.md` at this step unless there is a real operational surface to document. A fake operational facade makes unfinished behavior look stable.
+
+### Step 1 — operational facade for usable components
+
+When a component exposes a usable CLI, service, package API, adapter contract or integration route, create the operational facade:
 
 ```text
 README.md
@@ -261,6 +286,7 @@ When creating or updating multiple related docs, use [`batched-artifact-generati
 Before finishing, check:
 
 - README routes instead of becoming a full manual;
+- component drafts without stable operational usage use the pre-facade development route instead of fake operational docs;
 - `operational_index.md` routes only to quick operational/stable usage docs;
 - `operational-guide.md` remains the fast operational path;
 - `docs/index.md`, if present, is a full map rather than another quickstart;
@@ -279,6 +305,7 @@ Avoid:
 
 - `index_fast.md` or other names that describe speed rather than document role;
 - README as a dumping ground for every example;
+- fake `operational-guide.md` for a component draft that cannot yet be safely used;
 - one `usage.md` containing service contract, config, ADRs and integration history;
 - operational facade linking directly to active focus, open questions or historical discussion notes;
 - `docs/index.md` becoming a development handoff instead of stable documentation map;

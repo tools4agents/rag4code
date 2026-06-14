@@ -47,6 +47,16 @@ README.md
 - source-first discovery может перегрузить context window;
 - нужно отделить quick operational usage от design/ADR/motivation documentation.
 
+Для component source, который еще является заготовкой и не имеет стабильного operational surface, не создавай искусственный operational facade. Начни с pre-facade development route:
+
+```text
+README.md
+docs/develop_index.md
+docs/develop/active_focus.md
+```
+
+Такой нулевой шаг фиксирует роль заготовки, current development focus и ссылки на project-level Source of Truth, не выдавая незрелый component за готовый к operational usage.
+
 ## Files
 
 - [`SKILL.md`](./SKILL.md) — короткая operational instruction для агента.

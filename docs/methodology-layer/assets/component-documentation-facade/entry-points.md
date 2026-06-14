@@ -36,6 +36,16 @@ README.md
 
 `README.md` is the top-level intent router. It should help the reader choose the correct route, not become a complete manual.
 
+For component drafts without stable operational usage, use a pre-facade route instead of creating operational facade files prematurely:
+
+```text
+README.md
+  -> docs/develop_index.md
+       development-only route for current implementation focus and project-level Source of Truth links
+```
+
+Promote the component to the full entry point model only when it has a real CLI/API/service/adapter surface that can be documented as operational usage.
+
 ## `docs/operational_index.md`
 
 `docs/operational_index.md` answers:
